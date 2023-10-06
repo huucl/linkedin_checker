@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_chrome_app/app_routes.dart';
 import 'package:flutter_chrome_app/domain/repository/auth_repository.dart';
 import 'package:flutter_chrome_app/model/login_response.dart';
 import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
@@ -12,6 +13,14 @@ class LoginController extends GetxController {
   final TextEditingController emailController = TextEditingController(text: 'admin@gmail.com');
   final TextEditingController passwordController = TextEditingController(text: 'Password12#');
 
+  @override
+  void onReady() {
+    super.onReady();
+    if(PrefUtils().accessToken.isNotEmpty){
+      AppNavigators.gotoCheckSearch();
+    }
+  }
+
   void login() async {
     try {
       var loginResponse = await _authRepository.login(
@@ -21,6 +30,7 @@ class LoginController extends GetxController {
       if (loginResponse != LoginResponse()){
         PrefUtils().accessToken = loginResponse.accessToken ?? '';
       }
+      AppNavigators.gotoCheckSearch();
       print(PrefUtils().accessToken);
     } catch (e) {
       print(e);
