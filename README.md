@@ -9,4 +9,5 @@ For a comprehensive understanding, be sure to check out the full tutorial availa
 ![image](https://user-images.githubusercontent.com/99202813/217265270-ff9c765b-8bbe-473b-947c-7ef71d1a571f.png)
 
 BUILD:
-flutter build web --csp --web-renderer=canvaskit --no-web-resources-cdn
+flutter build web --web-renderer html --csp
+

@@ -1,19 +1,22 @@
-import 'dart:math';
-
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chrome_extension/devtools_panels.dart';
 import 'package:chrome_extension/tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:chrome_extension/runtime.dart';
+import 'package:flutter_chrome_app/app_routes.dart';
+import 'package:flutter_chrome_app/binding.dart';
 import 'package:flutter_chrome_app/linkedin_user_model.dart';
 import 'package:flutter_chrome_app/user_item.dart';
 import 'package:flutter_chrome_app/user_parser.dart';
+import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
+import 'package:flutter_chrome_app/utils/style/style.dart';
 import 'package:html/parser.dart';
-import 'package:responsive_grid/responsive_grid.dart';
 import 'package:toast/toast.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:get/get.dart';
 
-void main() {
+void main() async {
+  await PrefUtils().init();
+  MainBinding().dependencies();
   runApp(const MyApp());
 }
 
@@ -23,12 +26,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ToastContext().init(context);
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return GetMaterialApp(
+      title: 'HeyCRM duplicate checker',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: const ColorScheme.light().copyWith(primary: theme.p700),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      getPages: routes,
+      initialRoute: AppRoutes.splash,
+      initialBinding: MainBinding(),
     );
   }
 }
@@ -47,8 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String _vlc = "VLC";
   bool isLoading = false;
 
-  TextEditingController _textEditingController =
-      TextEditingController(text: '');
+  TextEditingController _textEditingController = TextEditingController(text: '');
 
   List<LinkedinUserModel> users = [];
 
@@ -57,16 +63,12 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
 
-    var currentTabid = (await chrome.tabs
-            .query(QueryInfo(currentWindow: true, active: true)))[0]
-        .id;
+    var currentTabid = (await chrome.tabs.query(QueryInfo(currentWindow: true, active: true)))[0].id;
     setState(() {
       _vlc = 'currentTabid ${currentTabid}';
     });
 
-    chrome.runtime
-        .sendMessage(null, {"type": "counter", "data": _counter}, null)
-        .then((value) {
+    chrome.runtime.sendMessage(null, {"type": "counter", "data": _counter}, null).then((value) {
       setState(() {
         _vlc = "OK ON ${value.runtimeType}";
       });
@@ -223,13 +225,10 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 TextButton(
                   onPressed: () {
-                    var url =
-                        'https://www.linkedin.com/search/results/people/?keywords=${_textEditingController.text}';
+                    var url = 'https://www.linkedin.com/search/results/people/?keywords=${_textEditingController.text}';
                     launchUrl(Uri.parse(url));
                   },
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.purple.shade100)),
+                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.purple.shade100)),
                   child: const Text('Search'),
                 ),
               ],
@@ -242,9 +241,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _fetchData() {
-    chrome.tabs
-        .query(QueryInfo(currentWindow: true, active: true))
-        .then((value) {
+    chrome.tabs.query(QueryInfo(currentWindow: true, active: true)).then((value) {
       chrome.tabs.sendMessage(value[0].id!, "message", null).then((value) {
         var html = parse(value.toString());
         setState(() {
