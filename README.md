@@ -10,4 +10,6 @@ For a comprehensive understanding, be sure to check out the full tutorial availa
 
 BUILD:
 flutter build web --web-renderer html --csp
+flutter build web --web-renderer html --csp --no-tree-shake-icons 
+
 
