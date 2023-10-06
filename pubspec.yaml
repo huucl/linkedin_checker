@@ -40,6 +40,11 @@ dependencies:
   chrome_extension: ^0.1.2
   html: ^0.15.4
   cached_network_image: ^3.3.0
+  responsive_grid: ^2.4.4
+  url_launcher: ^6.1.14
+  fluttertoast: ^8.2.2
+  toast: ^0.3.0
+  oktoast: ^3.3.2
 
 dev_dependencies:
   flutter_test:

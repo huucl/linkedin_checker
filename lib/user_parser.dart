@@ -44,11 +44,24 @@ class UserParser {
     String? result = '';
 
     try {
-      result =  element
+      if(element
           .getElementsByClassName("entity-result__universal-image")[0]
           .getElementsByClassName("app-aware-link")[0]
-          .getElementsByTagName("img")[0]
-          .attributes['alt'];
+          .getElementsByTagName("img").isEmpty == true){
+
+       result =  element
+           .getElementsByClassName("entity-result__universal-image")[0]
+           .getElementsByClassName("app-aware-link")[0]
+           .getElementsByClassName("visually-hidden")[0].text;
+
+      }
+   else{
+        result =  element
+            .getElementsByClassName("entity-result__universal-image")[0]
+            .getElementsByClassName("app-aware-link")[0]
+            .getElementsByTagName("img")[0]
+            .attributes['alt'];
+      }
     } on Exception catch (e) {
       result=  "KO CO _getName";
     }
@@ -56,13 +69,9 @@ class UserParser {
   }
 
   static String? _getAvvat(Element element) {
-    String? result = '';
+    String? result = 'https://media.licdn.com/dms/image/D4D0BAQH4TwiyEOT6Vg/company-logo_200_200/0/1686631084785?e=1704326400&v=beta&t=zkc8S6unhad3pfO2b34ilM5OFQsOQsg0spZSC_7ibPQ';
     try {
-      result =  element
-          .getElementsByClassName("entity-result__universal-image")[0]
-          .getElementsByClassName("app-aware-link")[0]
-          .getElementsByTagName("img")[0]
-          .attributes['src'];
+
       if (element.getElementsByClassName("entity-result__universal-image").isEmpty == true
       || element
               .getElementsByClassName("entity-result__universal-image")[0]
@@ -76,10 +85,16 @@ class UserParser {
               .getElementsByClassName("app-aware-link")[0]
               .getElementsByTagName("img")[0].attributes.isEmpty
       ){
-        return "KO CO";
+        return "https://media.licdn.com/dms/image/D4D0BAQH4TwiyEOT6Vg/company-logo_200_200/0/1686631084785?e=1704326400&v=beta&t=zkc8S6unhad3pfO2b34ilM5OFQsOQsg0spZSC_7ibPQ";
+      }else{
+        result =  element
+            .getElementsByClassName("entity-result__universal-image")[0]
+            .getElementsByClassName("app-aware-link")[0]
+            .getElementsByTagName("img")[0]
+            .attributes['src'];
       }
     } catch (e) {
-      result = "KO CO _getAvvat";
+      result = "https://media.licdn.com/dms/image/D4D0BAQH4TwiyEOT6Vg/company-logo_200_200/0/1686631084785?e=1704326400&v=beta&t=zkc8S6unhad3pfO2b34ilM5OFQsOQsg0spZSC_7ibPQ";
     }
     return result;
   }
