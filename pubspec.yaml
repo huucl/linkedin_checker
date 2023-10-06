@@ -45,6 +45,11 @@ dependencies:
   fluttertoast: ^8.2.2
   toast: ^0.3.0
   oktoast: ^3.3.2
+  flutter_svg: ^2.0.7
+  country_picker: ^2.0.21
+  dio: ^5.3.3
+  get: ^4.6.6
+  shared_preferences: ^2.2.1
 
 dev_dependencies:
   flutter_test:
