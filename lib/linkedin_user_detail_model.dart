@@ -1,9 +1,9 @@
-class LinkedinUserModel {
+class LinkedinUserDetailModel {
   String name;
   String avatar;
   String url;
 
-  LinkedinUserModel(
+  LinkedinUserDetailModel(
       {required this.name, required this.avatar, required this.url});
 
   @override

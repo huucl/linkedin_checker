@@ -3,6 +3,7 @@
 import 'package:dio/dio.dart' as dio;
 import 'package:dio/dio.dart';
 import 'package:flutter_chrome_app/domain/exception/base_exception.dart';
+import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
 import 'package:get/get.dart';
 
 class HTTPProvider {
@@ -27,12 +28,11 @@ class HTTPProvider {
       dio.CancelToken? cancelToken,
       dio.ProgressCallback? onReceiveProgress}) async {
     try {
-      // var accessToken = PrefsUtils.instance.getAccessToken();
-      var accessToken = 'PrefsUtils.instance.getAccessToken()';
+      var accessToken = PrefUtils().accessToken;
       var opt = Options(
         headers: {
           Headers.contentTypeHeader: 'application/json', // set content-length\
-          'Cookie': 'access_token=$accessToken',
+          'Authorization': 'Bearer $accessToken',
         },
       );
       var response = await _dio.get(path,
@@ -50,11 +50,10 @@ class HTTPProvider {
       dio.CancelToken? cancelToken,
       dio.ProgressCallback? onSendProgress,
       dio.ProgressCallback? onReceiveProgress}) async {
-    // var accessToken = PrefsUtils.instance.getAccessToken();
-    var accessToken = 'PrefsUtils.instance.getAccessToken()';
+    var accessToken = PrefUtils().accessToken;
     var opt = Options(
       headers: {
-        'Cookie': 'access_token=$accessToken',
+        'Authorization': 'Bearer $accessToken',
       },
     );
     try {

@@ -4,6 +4,8 @@ import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:flutter_chrome_app/data/client/network_client.dart';
+import 'package:flutter_chrome_app/data/repository/linked_check_repository_impl.dart';
+import 'package:flutter_chrome_app/domain/repository/linked_check_repository.dart';
 import 'package:get/get.dart';
 
 import 'data/repository/auth_repository_impl.dart';
@@ -16,5 +18,6 @@ class MainBinding extends Bindings {
   Future<void> dependencies() async {
     Get.put<HTTPProvider>(HTTPProvider(), permanent: true);
     Get.put<AuthRepository>(AuthRepositoryImpl(), permanent: true);
+    Get.put<LinkedCheckRepository>(LinkedCheckRepositoryImpl(), permanent: true);
   }
 }

@@ -16,9 +16,9 @@ class LoginController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    if(PrefUtils().accessToken.isNotEmpty){
-      AppNavigators.gotoCheckSearch();
-    }
+    // if(PrefUtils().accessToken.isNotEmpty){
+    //   AppNavigators.gotoHome();
+    // }
   }
 
   void login() async {
@@ -30,10 +30,9 @@ class LoginController extends GetxController {
       if (loginResponse != LoginResponse()){
         PrefUtils().accessToken = loginResponse.accessToken ?? '';
       }
-      AppNavigators.gotoCheckSearch();
-      print(PrefUtils().accessToken);
+      AppNavigators.gotoHome();
     } catch (e) {
-      print(e);
+      AppNavigators.gotoLogInfo(e.toString());
     }
   }
 }
