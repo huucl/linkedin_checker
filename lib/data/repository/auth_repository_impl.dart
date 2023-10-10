@@ -29,4 +29,13 @@ class AuthRepositoryImpl implements AuthRepository {
     throw UnimplementedError();
   }
 
+  @override
+  Future checkToken() async {
+    try {
+      await _client.makeGet('/locations');
+    } catch (e) {
+      rethrow;
+    }
+  }
+
 }

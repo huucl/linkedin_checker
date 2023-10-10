@@ -6,4 +6,6 @@ abstract class AuthRepository {
   Future requestResetPassword({required String email});
 
   Future logout();
+
+  Future checkToken();
 }

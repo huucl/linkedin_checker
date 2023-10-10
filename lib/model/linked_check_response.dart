@@ -4,9 +4,9 @@
 
 import 'dart:convert';
 
-LinkedCheckResponse linkedCheckResponseFromMap(String str) => LinkedCheckResponse.fromMap(json.decode(str));
+List<LinkedCheckResponse> linkedCheckResponseFromMap(String str) => List<LinkedCheckResponse>.from(json.decode(str).map((x) => LinkedCheckResponse.fromMap(x)));
 
-String linkedCheckResponseToMap(LinkedCheckResponse data) => json.encode(data.toMap());
+String linkedCheckResponseToMap(List<LinkedCheckResponse> data) => json.encode(List<dynamic>.from(data.map((x) => x.toMap())));
 
 class LinkedCheckResponse {
   final String? url;

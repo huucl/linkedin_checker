@@ -61,16 +61,14 @@ class UserItem extends StatelessWidget {
                 height: 50.0,
                 width: 50.0,
                 fit: BoxFit.cover,
-                placeholder: (
-                  BuildContext context,
-                  String url,
-                ) {
+                placeholder: (BuildContext context,
+                    String url,) {
                   return const Icon(Icons.person);
                 },
                 errorWidget: (_, __, ___) {
                   return CachedNetworkImage(
                       imageUrl:
-                          'https://media.licdn.com/dms/image/D4D0BAQH4TwiyEOT6Vg/company-logo_200_200/0/1686631084785?e=1704326400&v=beta&t=zkc8S6unhad3pfO2b34ilM5OFQsOQsg0spZSC_7ibPQ');
+                      'https://media.licdn.com/dms/image/D4D0BAQH4TwiyEOT6Vg/company-logo_200_200/0/1686631084785?e=1704326400&v=beta&t=zkc8S6unhad3pfO2b34ilM5OFQsOQsg0spZSC_7ibPQ');
                 },
               ),
             ),
@@ -81,7 +79,7 @@ class UserItem extends StatelessWidget {
               children: [
                 Text(item.name),
                 const SizedBox(width: 4),
-                Text(Random().nextBool() == true ? '✅' : '🚫'),
+                item.getIcon(),
                 Text(item.url)
               ],
             ),

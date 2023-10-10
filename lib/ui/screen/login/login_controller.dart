@@ -16,9 +16,12 @@ class LoginController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    // if(PrefUtils().accessToken.isNotEmpty){
-    //   AppNavigators.gotoHome();
-    // }
+    if (PrefUtils().accessToken.isNotEmpty) {
+      try {
+        _authRepository.checkToken();
+        AppNavigators.gotoHome();
+      } catch (_) {}
+    }
   }
 
   void login() async {
@@ -27,7 +30,7 @@ class LoginController extends GetxController {
         email: emailController.text,
         password: passwordController.text,
       );
-      if (loginResponse != LoginResponse()){
+      if (loginResponse != LoginResponse()) {
         PrefUtils().accessToken = loginResponse.accessToken ?? '';
       }
       AppNavigators.gotoHome();

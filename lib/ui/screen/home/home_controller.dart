@@ -26,7 +26,7 @@ class HomeController extends GetxController {
   void onReady() {
     super.onReady();
     fetchData();
-    // checkIsCorrectSites();
+    checkIsCorrectSites();
   }
 
   void checkIsCorrectSites(){
@@ -58,12 +58,21 @@ class HomeController extends GetxController {
 
   void checkDuplicateLinkedinProfile() async {
     var urls = users.map((e) => e.url).toList();
+    isLoading.value = true;
     try {
-      var response = await _linkedCheckRepository.checkLinkedinExistence(urls);
-      print(response.map((e) => e.toMap()).toList().join('\n'));
-      AppNavigators.gotoLogInfo(response.join('\n'));
+      var usersResponse = await _linkedCheckRepository.checkLinkedinExistence(urls);
+      for (var user in usersResponse) {
+        if (user.status == 'Linkedin account is not registed'){
+          users.firstWhereOrNull((p0) => p0.url == user.url)?.isFetch = false;
+        } else {
+          users.firstWhereOrNull((p0) => p0.url == user.url)?.isFetch = true;
+        }
+      }
+      users.refresh();
+      isLoading.value = false;
     } catch (e) {
       AppNavigators.gotoLogInfo(PrefUtils().accessToken + '\n' + e.toString());
+      isLoading.value = false;
     }
   }
 }
