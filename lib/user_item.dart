@@ -12,40 +12,56 @@ import 'package:html/parser.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class UserItem extends StatelessWidget {
-  const UserItem({super.key, required this.item, required this.stt, this.onTap});
+  UserItem({super.key, required this.item, required this.stt, this.onTap});
 
   final LinkedinUserModel item;
   final int stt;
   final VoidCallback? onTap;
 
+  int experienceTabId = 0;
+  int skillTabId = 0;
+
+  String experienceHTML = '';
+  String skillHTML = '';
+
   void launchNewTabURL(String url) async {
-    chrome.tabs.create(CreateProperties(url: url, active: false)).then((value) => fetchTabHTML(value.id ?? 0));
+    var experienceValue = await chrome.tabs.create(CreateProperties(url: '$url/details/experience', active: false));
+    experienceTabId = experienceValue.id ?? 0;
+    fetchTabHTML(experienceTabId);
+
+    var skillValue = await chrome.tabs.create(CreateProperties(url: '$url/details/skills', active: false));
+    skillTabId = skillValue.id ?? 0;
+    await fetchTabHTML(skillTabId);
+
+    var profile = parseExperiences(experienceHTML: experienceHTML, skillHTML: skillHTML);
+
+    AppNavigators.gotoLogInfo(profile.toString());
   }
 
-  void fetchTabHTML(int tabID) async {
-    // AppNavigators.gotoLogInfo(tabID.toString());
-    Future.delayed(Duration(seconds: 5), () {
-      chrome.tabs.sendMessage(tabID, "message_item", null).then((value) {
+  Future<void> fetchTabHTML(int tabID) async {
+    await Future.delayed(const Duration(seconds: 5));
+    var value = await chrome.tabs.get(tabID);
+    if (value.status != TabStatus.loading) {
+      try {
+        var value = await chrome.tabs.sendMessage(tabID, "message_item", null);
         var html = parse(value.toString());
-        var res = parseExperiences(experienceHTML: html.outerHtml);
-        AppNavigators.gotoLogInfo(res.toString());
-      }).catchError((onError) {
-        AppNavigators.gotoLogInfo(onError.toString());
-      });
-    });
+        if (tabID == experienceTabId) {
+          experienceHTML = html.outerHtml;
+        } else {
+          skillHTML = html.outerHtml;
+        }
+      } catch (e) {
+        AppNavigators.gotoLogInfo(e.toString());
+      }
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onLongPress: () async {
-        if (await canLaunchUrl(Uri.parse(item.url)) == true) {
-          launchUrl(Uri.parse(item.url));
-        }
-      },
       onTap: () {
         onTap?.call();
-        launchNewTabURL('${item.url}/details/experience/');
+        launchNewTabURL(item.url);
       },
       child: Container(
         color: Colors.transparent,
@@ -61,14 +77,16 @@ class UserItem extends StatelessWidget {
                 height: 50.0,
                 width: 50.0,
                 fit: BoxFit.cover,
-                placeholder: (BuildContext context,
-                    String url,) {
+                placeholder: (
+                  BuildContext context,
+                  String url,
+                ) {
                   return const Icon(Icons.person);
                 },
                 errorWidget: (_, __, ___) {
                   return CachedNetworkImage(
                       imageUrl:
-                      'https://media.licdn.com/dms/image/D4D0BAQH4TwiyEOT6Vg/company-logo_200_200/0/1686631084785?e=1704326400&v=beta&t=zkc8S6unhad3pfO2b34ilM5OFQsOQsg0spZSC_7ibPQ');
+                          'https://media.licdn.com/dms/image/D4D0BAQH4TwiyEOT6Vg/company-logo_200_200/0/1686631084785?e=1704326400&v=beta&t=zkc8S6unhad3pfO2b34ilM5OFQsOQsg0spZSC_7ibPQ');
                 },
               ),
             ),
@@ -80,7 +98,7 @@ class UserItem extends StatelessWidget {
                 Text(item.name),
                 const SizedBox(width: 4),
                 item.getIcon(),
-                Text(item.url)
+                Text(item.url),
               ],
             ),
           ],

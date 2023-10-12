@@ -1,40 +1,37 @@
 import 'package:html/dom.dart';
 import 'package:html/parser.dart';
 
-ProfileResult parseExperiences({required String experienceHTML}) {
+ProfileResult parseExperiences({required String experienceHTML,required String skillHTML}) {
   var document = parse(experienceHTML);
+  var skills = getSkills(skillHTML: skillHTML);
 // Get all experience elements
   List<Element> experiences = document.querySelectorAll('.pvs-list__item--line-separated');
-
-  List<String> skills = [];
   List<String> roles = [];
 // Loop through each experience
   for (var experience in experiences) {
     roles.addAll(getRoles(experience).map((e) => e.name).toList());
-    String skill;
-    try {
-      skill = experience.querySelectorAll('.pvs-list__item--one-column .t-black > span[aria-hidden="true"]').last.text;
-      if (skill.startsWith('Skills: ')) {
-        skill = skill.substring(8);
-      } else {
-        skill = '';
-      }
-    } catch (e) {
-      skill = '';
-    }
-
-    if (skill != ''){
-      List<String> tempSkill = skill.split(' · ');
-      skills.addAll(tempSkill);
-    }
-
-
   }
 
-  Set<String> setSkills = Set<String>.from(skills);
   Set<String> setRoles = Set<String>.from(roles);
 
-  return (ProfileResult(setSkills.toList(), setRoles.toList()));
+  return (ProfileResult(skills, setRoles.toList()));
+}
+
+List<String> getSkills({required String skillHTML}) {
+  var document = parse(skillHTML);
+
+  var skills = document.querySelectorAll('.pvs-entity');
+
+  List<String> skillNames = [];
+
+  for (var skill in skills) {
+    var name = skill.querySelector('.hoverable-link-text')?.text;
+    if (name != null) {
+      skillNames.add(name);
+    }
+  }
+
+  return skillNames;
 }
 
 List<Role> getRoles(Element element) {
