@@ -11,6 +11,14 @@ class LogInfoScreen extends GetWidget<LogInfoController> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Log Info'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              controller.copyToClipboard();
+            },
+            icon: const Icon(Icons.copy),
+          ),
+        ],
       ),
       body: Center(
         child: Obx(() {

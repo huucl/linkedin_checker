@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_chrome_app/app_routes.dart';
 import 'package:flutter_chrome_app/linkedin_user_model.dart';
+import 'package:flutter_chrome_app/utils/profile_parser.dart';
 import 'package:html/parser.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -18,8 +19,6 @@ class UserItem extends StatelessWidget {
   final VoidCallback? onTap;
 
   void launchNewTabURL(String url) async {
-    //copy to clipboard
-    await Clipboard.setData(ClipboardData(text: url));
     chrome.tabs.create(CreateProperties(url: url, active: false)).then((value) => fetchTabHTML(value.id ?? 0));
   }
 
@@ -28,7 +27,8 @@ class UserItem extends StatelessWidget {
     Future.delayed(Duration(seconds: 5), () {
       chrome.tabs.sendMessage(tabID, "message_item", null).then((value) {
         var html = parse(value.toString());
-        AppNavigators.gotoLogInfo(html.outerHtml);
+        var res = parseExperiences(experienceHTML: html.outerHtml);
+        AppNavigators.gotoLogInfo(res.toString());
       }).catchError((onError) {
         AppNavigators.gotoLogInfo(onError.toString());
       });
@@ -45,7 +45,7 @@ class UserItem extends StatelessWidget {
       },
       onTap: () {
         onTap?.call();
-        launchNewTabURL(item.url);
+        launchNewTabURL('${item.url}/details/experience/');
       },
       child: Container(
         color: Colors.transparent,

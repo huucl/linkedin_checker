@@ -10,7 +10,6 @@ class LogInfoController extends GetxController {
   void onInit() {
     super.onInit();
     textDisplay.value = Get.arguments;
-    copyToClipboard();
   }
 
   void copyToClipboard() async {

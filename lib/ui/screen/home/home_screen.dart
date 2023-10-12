@@ -21,10 +21,9 @@ class HomeScreen extends GetWidget<HomeController> {
         ],
       ),
       body: Obx(() {
-        return controller.isCorrectSites.value
+        return (controller.isProfile.value || controller.isSearch.value)
             ? Stack(
               children: [
-
                 Container(
                   color: controller.isLoading.value ? Colors.black.withOpacity(0.2) : Colors.transparent,
                   child: Padding(

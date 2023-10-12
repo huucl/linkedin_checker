@@ -9,21 +9,21 @@ List<LinkedCheckResponse> linkedCheckResponseFromMap(String str) => List<LinkedC
 String linkedCheckResponseToMap(List<LinkedCheckResponse> data) => json.encode(List<dynamic>.from(data.map((x) => x.toMap())));
 
 class LinkedCheckResponse {
-  final String? url;
+  final int? order;
   final String? status;
 
   LinkedCheckResponse({
-    this.url,
+    this.order,
     this.status,
   });
 
   factory LinkedCheckResponse.fromMap(Map<String, dynamic> json) => LinkedCheckResponse(
-    url: json["url"],
+    order: json["order"],
     status: json["status"],
   );
 
   Map<String, dynamic> toMap() => {
-    "url": url,
+    "order": order,
     "status": status,
   };
 }
