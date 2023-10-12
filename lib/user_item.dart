@@ -12,19 +12,39 @@ import 'package:html/parser.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class UserItem extends StatelessWidget {
-  UserItem({super.key, required this.item, required this.stt, this.onTap});
+  const UserItem({super.key, required this.item, required this.stt, this.onTap});
 
   final LinkedinUserModel item;
   final int stt;
   final VoidCallback? onTap;
 
-  int experienceTabId = 0;
-  int skillTabId = 0;
 
-  String experienceHTML = '';
-  String skillHTML = '';
 
   void launchNewTabURL(String url) async {
+    int experienceTabId = 0;
+    int skillTabId = 0;
+
+    String experienceHTML = '';
+    String skillHTML = '';
+
+    Future<void> fetchTabHTML(int tabID) async {
+      await Future.delayed(const Duration(seconds: 5));
+      var value = await chrome.tabs.get(tabID);
+      if (value.status != TabStatus.loading) {
+        try {
+          var value = await chrome.tabs.sendMessage(tabID, "message_item", null);
+          var html = parse(value.toString());
+          if (tabID == experienceTabId) {
+            experienceHTML = html.outerHtml;
+          } else {
+            skillHTML = html.outerHtml;
+          }
+        } catch (e) {
+          AppNavigators.gotoLogInfo(e.toString());
+        }
+      }
+    }
+
     var experienceValue = await chrome.tabs.create(CreateProperties(url: '$url/details/experience', active: false));
     experienceTabId = experienceValue.id ?? 0;
     fetchTabHTML(experienceTabId);
@@ -38,23 +58,7 @@ class UserItem extends StatelessWidget {
     AppNavigators.gotoLogInfo(profile.toString());
   }
 
-  Future<void> fetchTabHTML(int tabID) async {
-    await Future.delayed(const Duration(seconds: 5));
-    var value = await chrome.tabs.get(tabID);
-    if (value.status != TabStatus.loading) {
-      try {
-        var value = await chrome.tabs.sendMessage(tabID, "message_item", null);
-        var html = parse(value.toString());
-        if (tabID == experienceTabId) {
-          experienceHTML = html.outerHtml;
-        } else {
-          skillHTML = html.outerHtml;
-        }
-      } catch (e) {
-        AppNavigators.gotoLogInfo(e.toString());
-      }
-    }
-  }
+
 
   @override
   Widget build(BuildContext context) {

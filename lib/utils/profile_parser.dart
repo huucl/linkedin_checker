@@ -27,6 +27,7 @@ List<String> getSkills({required String skillHTML}) {
   for (var skill in skills) {
     var name = skill.querySelector('.hoverable-link-text')?.text;
     if (name != null) {
+      name = name.trim();
       skillNames.add(name);
     }
   }
@@ -84,6 +85,6 @@ class ProfileResult {
 
   @override
   String toString() {
-    return 'ProfileResult{skills: $skills, roles: $roles}';
+    return 'SKILLS:\n ・ ${skills.join('\n ・ ')}\n ROLES:\n ・ ${roles.join('\n ・ ')}';
   }
 }

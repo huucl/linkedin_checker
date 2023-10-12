@@ -20,10 +20,12 @@ class LogInfoScreen extends GetWidget<LogInfoController> {
           ),
         ],
       ),
-      body: Center(
-        child: Obx(() {
-          return Text(controller.textDisplay.value);
-        }),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Obx(() {
+            return SelectableText(controller.textDisplay.value);
+          }),
+        ),
       ),
     );
   }
