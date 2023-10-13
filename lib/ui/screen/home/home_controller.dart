@@ -24,6 +24,7 @@ class HomeController extends GetxController {
     super.onReady();
     fetchData();
     checkIsCorrectSites();
+    ever(users, (callback) => checkDuplicateLinkedinProfile());
   }
 
   void checkIsCorrectSites(){

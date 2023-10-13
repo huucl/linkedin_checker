@@ -1,15 +1,15 @@
 import 'dart:math';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:chrome_extension/chrome.dart';
 import 'package:chrome_extension/tabs.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_chrome_app/app_routes.dart';
+import 'package:flutter_chrome_app/linkedin_user_detail_model.dart';
 import 'package:flutter_chrome_app/linkedin_user_model.dart';
+import 'package:flutter_chrome_app/ui/screen/home/home_controller.dart';
 import 'package:flutter_chrome_app/utils/profile_parser.dart';
+import 'package:get/get.dart';
 import 'package:html/parser.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class UserItem extends StatelessWidget {
   const UserItem({super.key, required this.item, required this.stt, this.onTap});
@@ -55,7 +55,12 @@ class UserItem extends StatelessWidget {
 
     var profile = parseExperiences(experienceHTML: experienceHTML, skillHTML: skillHTML);
 
-    AppNavigators.gotoLogInfo(profile.toString());
+    //close tabs
+    chrome.tabs.remove(experienceTabId);
+    chrome.tabs.remove(skillTabId);
+
+    Get.find<HomeController>().isLoading.value = false;
+    AppNavigators.gotoAddCandidate(user: LinkedinUserDetailModel.fromObjects(user: item, profileResult: profile));
   }
 
 

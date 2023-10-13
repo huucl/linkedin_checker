@@ -1,3 +1,4 @@
+import 'package:flutter_chrome_app/utils/mock_profile.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart';
 
@@ -25,10 +26,12 @@ List<String> getSkills({required String skillHTML}) {
   List<String> skillNames = [];
 
   for (var skill in skills) {
-    var name = skill.querySelector('.hoverable-link-text')?.text;
+    var name = skill.querySelector('.hoverable-link-text > span[aria-hidden="true"]')?.text;
     if (name != null) {
       name = name.trim();
-      skillNames.add(name);
+      if (!skillNames.contains(name)) {
+        skillNames.add(name);
+      }
     }
   }
 
