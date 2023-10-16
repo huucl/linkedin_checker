@@ -7,7 +7,7 @@ class LinkedinUserDetailModel {
   bool? isFetch;
   String? url;
   List<String>? skills;
-  List<String>? roles;
+  List<Role>? roles;
 
   LinkedinUserDetailModel({
     this.name,
@@ -46,7 +46,7 @@ class LinkedinUserDetailModel {
       isFetch: map['isFetch'] as bool,
       url: map['url'] as String,
       skills: map['skills'] as List<String>,
-      roles: map['roles'] as List<String>,
+      roles: map['roles'],
     );
   }
 }

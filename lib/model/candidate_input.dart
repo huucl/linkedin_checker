@@ -62,17 +62,21 @@ class Candidate {
 
 class Skills {
   final List<String>? newSkills;
+  final List<String>? skillIds;
 
   Skills({
     this.newSkills,
+    this.skillIds,
   });
 
   factory Skills.fromMap(Map<String, dynamic> json) => Skills(
     newSkills: json["newSkills"] == null ? [] : List<String>.from(json["newSkills"]!.map((x) => x)),
+    skillIds: json["skillIds"] == null ? [] : List<String>.from(json["skillIds"]!.map((x) => x)),
   );
 
   Map<String, dynamic> toMap() => {
     "newSkills": newSkills == null ? [] : List<dynamic>.from(newSkills!.map((x) => x)),
+    "skillIds": skillIds == null ? [] : List<dynamic>.from(skillIds!.map((x) => x)),
   };
 }
 
@@ -134,4 +138,10 @@ class NewRoleExperience {
     "newRoleExperience": newRoleExperience,
     "yearsOfExperience": yearsOfExperience,
   };
+}
+
+extension MapExtension on Map<String,dynamic>{
+  Map<String,dynamic> removeNull(){
+    return Map.fromEntries(entries.where((element) => (element.value != null && element.value != '')));
+  }
 }
