@@ -4,8 +4,7 @@ import 'package:html/parser.dart';
 
 String getProfileUrl(String url) {
   int i = url.indexOf('?');
-  url = url.substring(0, i + 1);
-  url = url.replaceAll('?', '/');
+  url = url.substring(0, i);
   return url;
 }
 
