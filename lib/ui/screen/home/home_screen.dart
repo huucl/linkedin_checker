@@ -36,19 +36,19 @@ class HomeScreen extends GetWidget<HomeController> {
                               return UserItem(
                                 item: user,
                                 stt: i + 1,
-                                // onTap: () {
-                                //   controller.isLoading.value = true;
-                                //   Future.delayed(const Duration(seconds: 2), () {
-                                //     controller.isLoading.value = true;
-                                //     var snackBar = const SnackBar(
-                                //       content: Text('UPDATED'),
-                                //       duration: Duration(milliseconds: 200),
-                                //     );
-                                //     ScaffoldMessenger.of(context).showSnackBar(
-                                //       snackBar,
-                                //     );
-                                //   });
-                                // },
+                                onTap: () {
+                                  controller.isLoading.value = true;
+                                  Future.delayed(const Duration(seconds: 2), () {
+                                    controller.isLoading.value = true;
+                                    var snackBar = const SnackBar(
+                                      content: Text('UPDATED'),
+                                      duration: Duration(milliseconds: 200),
+                                    );
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      snackBar,
+                                    );
+                                  });
+                                },
                               );
                             },
                             separatorBuilder: (c, i) {

@@ -68,10 +68,10 @@ class UserItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // onTap: () {
-      //   onTap?.call();
-      //   launchNewTabURL(item.url);
-      // },
+      onTap: () {
+        onTap?.call();
+        launchNewTabURL(item.url);
+      },
       child: Container(
         color: Colors.transparent,
         child: Row(
