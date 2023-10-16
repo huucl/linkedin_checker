@@ -8,6 +8,8 @@ class SplashScreen extends GetWidget<SplashController> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(
+      child: CircularProgressIndicator(),
+    );
   }
 }

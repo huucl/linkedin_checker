@@ -9,7 +9,7 @@ import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
 class HTTPProvider {
   final _dio = dio.Dio(
     BaseOptions(
-        baseUrl: 'https://dev.api-crm.heydevs.io/v1',
+        baseUrl: 'https://api-crm.heydevs.io/v1',
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Credentials": true,

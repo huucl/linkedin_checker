@@ -104,10 +104,10 @@ class UserItem extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(item.name),
+                SelectableText(item.name),
                 const SizedBox(width: 4),
                 item.getIcon(),
-                Text(item.url),
+                SelectableText(item.url),
               ],
             ),
           ],

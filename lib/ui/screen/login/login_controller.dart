@@ -10,13 +10,8 @@ class LoginController extends GetxController {
 
   LoginController(this._authRepository);
 
-  final TextEditingController emailController = TextEditingController(text: 'admin@gmail.com');
-  final TextEditingController passwordController = TextEditingController(text: 'Password12#');
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   void login() async {
     try {
