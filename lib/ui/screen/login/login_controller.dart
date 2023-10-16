@@ -13,11 +13,6 @@ class LoginController extends GetxController {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  @override
-  void onReady() async {
-    super.onReady();
-  }
-
   void login() async {
     try {
       var loginResponse = await _authRepository.login(
