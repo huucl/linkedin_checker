@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chrome_app/ui/component/component_input.dart';
 import 'package:flutter_chrome_app/ui/screen/add_candidate/add_candidate_controller.dart';
+import 'package:flutter_chrome_app/utils/profile_parser.dart';
 import 'package:get/get.dart';
 
 class AddCandidateScreen extends GetWidget<AddCandidateController> {
@@ -63,7 +64,7 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
                 height: 16,
               ),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Flexible(
                     flex: 2,
@@ -91,11 +92,12 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
                       onPressed: () {
                         //if have a same role, remove it
                         if (controller.isEdit) {
-                          controller.roles.removeWhere((element) => element.role == controller.workExperience.text);
+                          controller.roles.removeWhere((element) => element.name == controller.workExperience.text);
                           controller.isEdit = false;
                         }
-                        controller.roles.add(
-                            Role(role: controller.workExperience.text, yoe: int.parse(controller.yearExperience.text)));
+                        var role = Role(controller.workExperience.text,
+                            DurationModel(year: int.parse(controller.yearExperience.text), month: 0));
+                        controller.roles.add(role);
                         controller.roles.refresh();
                         controller.workExperience.clear();
                         controller.yearExperience.clear();
@@ -123,8 +125,8 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
                               InkWell(
                                 onTap: () {
                                   controller.isEdit = true;
-                                  controller.workExperience.text = e.role;
-                                  controller.yearExperience.text = e.yoe.toString();
+                                  controller.workExperience.text = e.name;
+                                  controller.yearExperience.text = e.duration.year.toString();
                                 },
                                 child: const Icon(
                                   Icons.edit,

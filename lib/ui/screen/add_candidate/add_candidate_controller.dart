@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_chrome_app/linkedin_user_detail_model.dart';
+import 'package:flutter_chrome_app/ui/screen/home/home_controller.dart';
+import 'package:flutter_chrome_app/utils/profile_parser.dart';
 import 'package:get/get.dart';
 
 class AddCandidateController extends GetxController {
@@ -32,26 +34,14 @@ class AddCandidateController extends GetxController {
     lastNameController.text = user.value.name!.split(' ')[1];
     linkedinUrl.text = user.value.url!;
     skills.value = user.value.skills ?? [];
-    roles.value = user.value.roles?.map((e) => Role(role: e, yoe: 1)).toList() ?? [];
+    roles.value = user.value.roles ?? [];
   }
 
-  void addCandidate() {}
-}
-
-class Role {
-  String role;
-  int yoe;
-
-  Role({
-    required this.role,
-    required this.yoe,
-  });
-
-  String getTextDisplay(){
-    if (yoe > 1 ) {
-      return '$role - $yoe years';
-    } else {
-      return '$role - $yoe year';
-    }
+  void addCandidate() {
+    var homeController = Get.find<HomeController>();
+    homeController.users.where((p0) => p0.url == user.value.url).first.isFetch = true;
+    homeController.users.refresh();
+    Get.back();
   }
 }
+
