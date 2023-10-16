@@ -1,4 +1,7 @@
+import 'package:flutter_chrome_app/model/candidate_input.dart';
+import 'package:flutter_chrome_app/model/search_item.dart';
 import 'package:flutter_chrome_app/utils/mock_profile.dart';
+import 'package:get/get.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart';
 
@@ -20,7 +23,6 @@ void main() {
 
 ProfileResult parseExperiences({required String experienceHTML, required String skillHTML}) {
   var document = parse(experienceHTML);
-  document = parse(document.querySelector('.scaffold-finite-scroll__content')?.outerHtml);
   var skills = getSkills(skillHTML: skillHTML);
 // Get all experience elements
   List<Element> experienceBlocks = document.querySelectorAll('.pvs-list__item--line-separated');
@@ -98,6 +100,14 @@ class Role {
       return '$name - ${duration.month} months ${duration.isNew == true ? 'Present' : ''}';
     }
     return '${duration.year} years ${duration.month} months';
+  }
+
+  int getYOE(){
+    if (duration.year >= 1){
+      return duration.year;
+    } else {
+      return 1;
+    }
   }
 }
 
@@ -193,5 +203,21 @@ extension RoleListExtension on List<Role> {
     final List<Role> combinedRoles = roleMap.values.toList();
 
     return combinedRoles;
+  }
+
+  WorkExperiences toWorkExperiences(List<SearchItem> havingRoles) {
+    var existRoles = <ExistRoleExperience>[];
+    var newRoles = <NewRoleExperience>[];
+
+    for (var role in this) {
+      var roleItem = havingRoles.firstWhereOrNull((element) => element.label?.toUpperCase() == role.name.toUpperCase());
+      if (roleItem != null){
+        existRoles.add(ExistRoleExperience(roleExperienceId: roleItem.id, yearsOfExperience: role.getYOE()));
+      } else {
+        newRoles.add(NewRoleExperience(newRoleExperience: role.name, yearsOfExperience: role.getYOE()));
+      }
+    }
+
+    return WorkExperiences(existRoleExperience: existRoles, newRoleExperience: newRoles);
   }
 }

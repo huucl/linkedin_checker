@@ -16,12 +16,6 @@ class LoginController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    if (PrefUtils().accessToken.isNotEmpty) {
-      try {
-        _authRepository.checkToken();
-        AppNavigators.gotoHome();
-      } catch (_) {}
-    }
   }
 
   void login() async {
