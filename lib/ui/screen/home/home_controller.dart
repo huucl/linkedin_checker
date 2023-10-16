@@ -24,7 +24,7 @@ class HomeController extends GetxController {
     super.onReady();
     fetchData();
     checkIsCorrectSites();
-    ever(users, (callback) => checkDuplicateLinkedinProfile());
+    // ever(users, (callback) => checkDuplicateLinkedinProfile());
   }
 
   void checkIsCorrectSites(){
@@ -45,7 +45,7 @@ class HomeController extends GetxController {
       chrome.tabs.sendMessage(value[0].id!, "message_getList", null).then((value) {
         users.value = UserParser.bem(value.toString());
         users.refresh();
-        // checkDuplicateLinkedinProfile();
+        checkDuplicateLinkedinProfile();
         // AppNavigators.gotoLogInfo(users.map((element) => element.toString()).join('\n'));
       }).catchError((onError) {
         AppNavigators.gotoLogInfo(onError.toString());
