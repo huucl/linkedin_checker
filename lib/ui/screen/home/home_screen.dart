@@ -10,8 +10,9 @@ class HomeScreen extends GetWidget<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: null,
+        leading: Container(),
         title: const Text('HeyCRM duplicate checker'),
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             onPressed: () {
