@@ -5,12 +5,13 @@ class LinkedinUserModel {
   String avatar;
   bool? isFetch;
   String url;
+  String location;
 
-  LinkedinUserModel({required this.name, required this.avatar, required this.url, this.isFetch});
+  LinkedinUserModel({required this.name, required this.avatar, required this.url, this.isFetch,required this.location});
 
   @override
   String toString() {
-    return 'LinkedinUserModel{name: $name, avatar: $avatar, url: $url, isFetch: $isFetch}';
+    return 'LinkedinUserModel{name: $name, avatar: $avatar, url: $url, isFetch: $isFetch, location: $location}';
   }
 
   Widget getIcon() {

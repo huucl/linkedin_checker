@@ -6,6 +6,7 @@ class LinkedinUserDetailModel {
   String? avatar;
   bool? isFetch;
   String? url;
+  String? address;
   List<String>? skills;
   List<Role>? roles;
 
@@ -14,6 +15,7 @@ class LinkedinUserDetailModel {
     this.avatar,
     this.url,
     this.isFetch,
+    this.address,
     this.skills,
     this.roles,
   });
@@ -24,6 +26,7 @@ class LinkedinUserDetailModel {
   })  : name = user.name,
         avatar = user.avatar,
         url = user.url,
+        address = user.location,
         isFetch = user.isFetch,
         skills = profileResult.skills,
         roles = profileResult.roles;

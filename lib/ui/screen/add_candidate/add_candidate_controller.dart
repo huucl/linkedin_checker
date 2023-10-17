@@ -56,6 +56,7 @@ class AddCandidateController extends GetxController {
     firstNameController.text = user.value.name!.split(' ')[0];
     lastNameController.text = user.value.name!.split(' ')[1];
     linkedinUrl.text = user.value.url!;
+    addressController.text = user.value.address ?? '';
     skills.value = user.value.skills ?? [];
     roles.value = user.value.roles ?? [];
   }

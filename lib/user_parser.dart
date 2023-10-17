@@ -23,11 +23,14 @@ class UserParser {
         var name = _getName(element);
 
         var link = _getLink(element);
+
+        var location = _getLocation(element);
         users.add(
           LinkedinUserModel(
             name: name ?? '',
             avatar: avatar ?? '',
             url: getProfileUrl(link ?? ''),
+            location: location ?? '',
           ),
         );
       } catch (e) {
@@ -114,5 +117,43 @@ class UserParser {
           "https://media.licdn.com/dms/image/D4D0BAQH4TwiyEOT6Vg/company-logo_200_200/0/1686631084785?e=1704326400&v=beta&t=zkc8S6unhad3pfO2b34ilM5OFQsOQsg0spZSC_7ibPQ";
     }
     return result;
+  }
+
+  static String? _getLocation(Element element) {
+    String? result = '';
+
+    try {
+      result = element.getElementsByClassName("entity-result__secondary-subtitle")[0].text.trim();
+    } on Exception catch (e) {
+      result = "k co LOCATION";
+    }
+    return result;
+  }
+}
+
+class UserProfileParser {
+  static LinkedinUserModel userParser(String htmlString,String url) {
+
+    var document = parse(htmlString);
+    Element contentBlock = document.getElementsByClassName('artdeco-card ember-view pv-top-card').first;
+
+    // Extract the avatar URL
+    final Element? avatarImg = contentBlock.querySelector('.profile-photo-edit__preview');
+    final String? avatarUrl = avatarImg?.attributes['src'];
+
+    // Extract the name
+    final Element? nameElement = contentBlock.querySelector('.text-heading-xlarge');
+    final String? name = nameElement?.text;
+
+    // Extract the location
+    final Element? locationElement = contentBlock.querySelector('.text-body-small.inline.t-black--light.break-words');
+    final String? location = locationElement?.text.trim();
+
+    return LinkedinUserModel(
+      name: name ?? 'NULL',
+      avatar: avatarUrl ?? '',
+      url: url.substring(0,url.length-1),
+      location: location ?? '',
+    );
   }
 }

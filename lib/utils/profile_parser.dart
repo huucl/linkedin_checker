@@ -5,22 +5,6 @@ import 'package:get/get.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart';
 
-void main() {
-  var document = parse(mockProfileHtml);
-  document = parse(document.querySelector('.scaffold-finite-scroll__content')?.outerHtml);
-
-  List<Element> experienceBlocks = document.querySelectorAll('.pvs-list__item--line-separated');
-  List<Role> roles = [];
-
-  for (var experience in experienceBlocks) {
-    roles.addAll(getRoles(experience));
-  }
-
-
-  print(roles.combineRoles());
-  // Set<String> setRoles = Set<String>.from(roles);
-}
-
 ProfileResult parseExperiences({required String experienceHTML, required String skillHTML}) {
   var document = parse(experienceHTML);
   var skills = getSkills(skillHTML: skillHTML);

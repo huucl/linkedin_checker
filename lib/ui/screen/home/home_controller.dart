@@ -20,30 +20,46 @@ class HomeController extends GetxController {
   String currentTabUrl = '';
 
   @override
-  void onReady() {
+  void onReady() async {
     super.onReady();
-    fetchData();
-    checkIsCorrectSites();
+    await checkIsCorrectSites();
+    if (isSearch.value || isProfile.value) {
+      fetchData();
+    }
+
     // ever(users, (callback) => checkDuplicateLinkedinProfile());
   }
 
-  void checkIsCorrectSites(){
-    chrome.tabs.query(QueryInfo(active: true,currentWindow: true)).then((tabs) {
-      var currentTab = tabs[0];
-      currentTabUrl = currentTab.url ?? '';
-      if (currentTab.url?.contains('https://www.linkedin.com/in') == true){
-        isProfile.value = true;
-      }
-      if (currentTab.url?.contains('https://www.linkedin.com/search/results/people') == true){
-        isSearch.value = true;
-      }
-    });
+  Future<void> checkIsCorrectSites() async {
+    isLoading.value = true;
+    var tabs = await chrome.tabs.query(QueryInfo(currentWindow: true, active: true));
+    var currentTab = tabs[0];
+    currentTabUrl = currentTab.url ?? '';
+    if (currentTab.url?.contains('https://www.linkedin.com/in') == true) {
+      isProfile.value = true;
+    } else {
+      isProfile.value = false;
+    }
+    if (currentTab.url?.contains('https://www.linkedin.com/search/results/people') == true) {
+      isSearch.value = true;
+    } else {
+      isSearch.value = false;
+    }
+
+    isLoading.value = false;
   }
 
   void fetchData() {
     chrome.tabs.query(QueryInfo(currentWindow: true, active: true)).then((value) {
-      chrome.tabs.sendMessage(value[0].id!, "message_getList", null).then((value) {
-        users.value = UserParser.bem(value.toString());
+      var currentTab = value[0];
+      chrome.tabs.sendMessage(currentTab.id!, "message_getList", null).then((value) {
+        if (isSearch.value) {
+          users.value = UserParser.bem(value.toString());
+        }
+        if (isProfile.value) {
+          var user = UserProfileParser.userParser(value.toString(), currentTabUrl);
+          users.value = [user];
+        }
         users.refresh();
         checkDuplicateLinkedinProfile();
         // AppNavigators.gotoLogInfo(users.map((element) => element.toString()).join('\n'));

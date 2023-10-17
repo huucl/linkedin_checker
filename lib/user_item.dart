@@ -107,6 +107,7 @@ class UserItem extends StatelessWidget {
                 SelectableText(item.name),
                 const SizedBox(width: 4),
                 item.getIcon(),
+                SelectableText(item.location),
                 SelectableText(item.url),
               ],
             ),

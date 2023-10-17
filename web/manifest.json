@@ -8,6 +8,9 @@
   "background": {
     "service_worker": "background.js"
   },
+  "permissions": [
+    "tabs"
+  ],
   "content_scripts": [
     {
       "matches": [
