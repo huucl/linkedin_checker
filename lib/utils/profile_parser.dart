@@ -76,12 +76,12 @@ class Role {
 
   String getTextDisplay() {
     if (duration.year > 1) {
-      return '$name - ${duration.year} years ${duration.month} months ${duration.isNew == true ? 'Present' : ''}';
+      return '$name - ${duration.year} years ${duration.month} months';
     }
     if (duration.year == 1) {
-      return '$name - ${duration.year} year ${duration.isNew == true ? 'Present' : ''}';
+      return '$name - ${duration.year} year';
     } else {
-      return '$name - ${duration.month} months ${duration.isNew == true ? 'Present' : ''}';
+      return '$name - ${duration.month} months';
     }
     return '${duration.year} years ${duration.month} months';
   }
