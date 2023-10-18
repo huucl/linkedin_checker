@@ -86,12 +86,26 @@ class Role {
     return '${duration.year} years ${duration.month} months';
   }
 
-  int getYOE(){
-    if (duration.year >= 1){
+  int getYOE() {
+    if (duration.year >= 1) {
       return duration.year;
     } else {
       return 1;
     }
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'name': name,
+      'duration': duration.toMap(),
+    };
+  }
+
+  factory Role.fromMap(Map<String, dynamic> map) {
+    return Role(
+      map['name'] as String,
+      DurationModel.fromMap(map["duration"]),
+    );
   }
 }
 
@@ -129,6 +143,22 @@ class DurationModel {
       month = int.parse(duration.split('mo')[0].trim());
     }
   }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'year': year,
+      'month': month,
+      'isNew': isNew,
+    };
+  }
+
+  factory DurationModel.fromMap(Map<String, dynamic> map) {
+    return DurationModel(
+      year: map['year'] as int,
+      month: map['month'] as int,
+      isNew: map['isNew'] as bool,
+    );
+  }
 }
 
 class ProfileResult {
@@ -162,7 +192,7 @@ extension RoleExtension on Role {
         totalMonths %= 12;
       }
 
-      return Role(name, DurationModel(year: totalYears,month:totalMonths , isNew: isNew));
+      return Role(name, DurationModel(year: totalYears, month: totalMonths, isNew: isNew));
     } else {
       // If roles have different names, return the original role
       return this;
@@ -195,7 +225,7 @@ extension RoleListExtension on List<Role> {
 
     for (var role in this) {
       var roleItem = havingRoles.firstWhereOrNull((element) => element.label?.toUpperCase() == role.name.toUpperCase());
-      if (roleItem != null){
+      if (roleItem != null) {
         existRoles.add(ExistRoleExperience(roleExperienceId: roleItem.id, yearsOfExperience: role.getYOE()));
       } else {
         newRoles.add(NewRoleExperience(newRoleExperience: role.name, yearsOfExperience: role.getYOE()));

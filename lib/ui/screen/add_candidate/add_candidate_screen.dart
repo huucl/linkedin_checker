@@ -12,6 +12,14 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Add Candidate'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              controller.saveToSharePref();
+            },
+            icon: const Icon(Icons.save),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -42,9 +50,26 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
               const SizedBox(
                 height: 16,
               ),
-              ComponentInput(
-                label: 'Phone',
-                controller: controller.phoneController,
+              Row(
+                children: [
+                  Flexible(
+                    flex: 1,
+                    child: ComponentInput(
+                      label: 'Phone code',
+                      controller: controller.phoneCodeController,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Flexible(
+                    flex: 3,
+                    child: ComponentInput(
+                      label: 'Phone Number',
+                      controller: controller.phoneController,
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(
                 height: 16,

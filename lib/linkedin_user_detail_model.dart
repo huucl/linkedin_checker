@@ -1,4 +1,5 @@
 import 'package:flutter_chrome_app/linkedin_user_model.dart';
+import 'package:flutter_chrome_app/model/candidate_input.dart';
 import 'package:flutter_chrome_app/utils/profile_parser.dart';
 
 class LinkedinUserDetailModel {
@@ -10,6 +11,9 @@ class LinkedinUserDetailModel {
   List<String>? skills;
   List<Role>? roles;
 
+  String? phoneCode;
+  String? phoneNumber;
+
   LinkedinUserDetailModel({
     this.name,
     this.avatar,
@@ -18,6 +22,8 @@ class LinkedinUserDetailModel {
     this.address,
     this.skills,
     this.roles,
+    this.phoneCode,
+    this.phoneNumber,
   });
 
   LinkedinUserDetailModel.fromObjects({
@@ -37,19 +43,23 @@ class LinkedinUserDetailModel {
       'avatar': avatar,
       'isFetch': isFetch,
       'url': url,
+      'address': address,
       'skills': skills,
-      'roles': roles,
+      'roles': roles == null ? [] : List<dynamic>.from(roles!.map((x) => x.toMap())),
+      'phoneCode': phoneCode,
+      'phoneNumber': phoneNumber,
     };
   }
 
-  factory LinkedinUserDetailModel.fromMap(Map<String, dynamic> map) {
-    return LinkedinUserDetailModel(
-      name: map['name'] as String,
-      avatar: map['avatar'] as String,
-      isFetch: map['isFetch'] as bool,
-      url: map['url'] as String,
-      skills: map['skills'] as List<String>,
-      roles: map['roles'],
-    );
-  }
+  factory LinkedinUserDetailModel.fromMap(Map<String, dynamic> json) => LinkedinUserDetailModel(
+    name: json["name"],
+    avatar: json["avatar"],
+    isFetch: json["isFetch"],
+    url: json["url"],
+    address: json["address"],
+    skills: json["skills"] == null ? [] : List<String>.from(json["skills"]!.map((x) => x)),
+    roles: json["roles"] == null ? [] : List<Role>.from(json["roles"]!.map((x) => Role.fromMap(x))),
+    phoneCode: json["phoneCode"],
+    phoneNumber: json["phoneNumber"],
+  );
 }

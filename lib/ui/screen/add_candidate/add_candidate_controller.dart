@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_chrome_app/app_routes.dart';
 import 'package:flutter_chrome_app/domain/repository/linked_check_repository.dart';
@@ -5,6 +7,7 @@ import 'package:flutter_chrome_app/linkedin_user_detail_model.dart';
 import 'package:flutter_chrome_app/model/candidate_input.dart';
 import 'package:flutter_chrome_app/model/search_item.dart';
 import 'package:flutter_chrome_app/ui/screen/home/home_controller.dart';
+import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
 import 'package:flutter_chrome_app/utils/profile_parser.dart';
 import 'package:get/get.dart';
 
@@ -52,6 +55,32 @@ class AddCandidateController extends GetxController {
     });
   }
 
+  void listenToOnChange() {
+    firstNameController.addListener(() {
+      saveToSharePref();
+    });
+    lastNameController.addListener(() {
+      saveToSharePref();
+    });
+    linkedinUrl.addListener(() {
+      saveToSharePref();
+    });
+    emailController.addListener(() {
+      saveToSharePref();
+    });
+    phoneController.addListener(() {
+      saveToSharePref();
+    });
+    phoneCodeController.addListener(() {
+      saveToSharePref();
+    });
+    addressController.addListener(() {
+      saveToSharePref();
+    });
+    ever(skills, (callback) => saveToSharePref());
+    ever(roles, (callback) => saveToSharePref());
+  }
+
   void initData() {
     firstNameController.text = user.value.name!.split(' ')[0];
     lastNameController.text = user.value.name!.split(' ')[1];
@@ -78,12 +107,37 @@ class AddCandidateController extends GetxController {
 
   void addCandidate() async {
     mapCandidate();
+    PrefUtils().candidateObject = '';
     try {
       await _linkedCheckRepository.addNewCandidate([candidate]);
       var homeController = Get.find<HomeController>();
-      homeController.users.where((p0) => p0.url == user.value.url).first.isFetch = true;
+      homeController.users
+          .where((p0) => p0.url == user.value.url)
+          .first
+          .isFetch = true;
       homeController.users.refresh();
       Get.back();
+    } catch (e) {
+      AppNavigators.gotoLogInfo(e.toString());
+    }
+  }
+
+  void saveToSharePref() {
+    try {
+      LinkedinUserDetailModel savedUser = LinkedinUserDetailModel(
+        name: '${firstNameController.text} ${lastNameController.text}',
+        avatar: user.value.avatar,
+        isFetch: user.value.isFetch,
+        url: linkedinUrl.text,
+        skills: skills,
+        address: addressController.text,
+        roles: roles,
+        phoneNumber: phoneController.text,
+        phoneCode: phoneCodeController.text,
+      );
+
+      String encryptData = jsonEncode(savedUser.toMap());
+      PrefUtils().candidateObject = encryptData;
     } catch (e) {
       AppNavigators.gotoLogInfo(e.toString());
     }

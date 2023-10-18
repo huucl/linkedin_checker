@@ -14,4 +14,10 @@ class PrefUtils {
   set accessToken(String token) {
     _sharedPrefs.setString(PrefKey.accessToken, token);
   }
+
+  String get candidateObject => _sharedPrefs.getString(PrefKey.candidateObject) ?? '';
+
+  set candidateObject(String candidate) {
+    _sharedPrefs.setString(PrefKey.candidateObject, candidate);
+  }
 }
