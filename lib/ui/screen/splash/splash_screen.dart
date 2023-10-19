@@ -9,22 +9,31 @@ class SplashScreen extends GetWidget<SplashController> {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        TextButton(
-          onPressed: () {
-            AppNavigators.gotoHome();
-          },
-          child: const Text('START CHECKING',style: TextStyle(fontSize: 20),),
-        ),
-        TextButton(
-          onPressed: () {
-            controller.gotoAddCandidate();
-          },
-          child: const Text('GO TO SAVED PROFILE',style: TextStyle(fontSize: 20),),
-        ),
-      ],
-    );
+    return Obx(() {
+      if (controller.isLoading.value) return const Center(child: CircularProgressIndicator());
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          TextButton(
+            onPressed: () {
+              AppNavigators.gotoHome();
+            },
+            child: const Text(
+              'START CHECKING',
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              controller.gotoAddCandidate();
+            },
+            child: const Text(
+              'GO TO SAVED PROFILE',
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+        ],
+      );
+    });
   }
 }

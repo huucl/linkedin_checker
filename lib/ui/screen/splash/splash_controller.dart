@@ -10,10 +10,12 @@ class SplashController extends GetxController {
   final AuthRepository _authRepository;
 
   SplashController(this._authRepository);
+  RxBool isLoading = false.obs;
 
   @override
   void onReady() async {
     super.onReady();
+    isLoading.value = true;
     if (PrefUtils().accessToken.isNotEmpty) {
       try {
         await _authRepository.checkToken();
@@ -28,6 +30,7 @@ class SplashController extends GetxController {
     } else {
       AppNavigators.gotoLogin();
     }
+    isLoading.value = false;
   }
 
   void gotoAddCandidate() {

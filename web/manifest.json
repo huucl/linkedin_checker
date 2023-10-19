@@ -1,6 +1,6 @@
 {
-  "name": "flutter_chrome_app",
-  "description": "A new Flutter project.",
+  "name": "HeyCRM checker",
+  "description": "CRM duplicate checker",
   "version": "1.0.0",
   "content_security_policy": {
     "extension_pages": "script-src 'self' ; object-src 'self'"
