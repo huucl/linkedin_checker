@@ -85,6 +85,9 @@ class AddCandidateController extends GetxController {
     firstNameController.text = user.value.name!.split(' ')[0];
     lastNameController.text = user.value.name!.split(' ')[1];
     linkedinUrl.text = user.value.url!;
+    emailController.text = user.value.email ?? '';
+    phoneController.text = user.value.phoneNumber ?? '';
+    phoneCodeController.text = user.value.phoneCode ?? '';
     addressController.text = user.value.address ?? '';
     skills.value = user.value.skills ?? [];
     roles.value = user.value.roles ?? [];
@@ -111,10 +114,7 @@ class AddCandidateController extends GetxController {
     try {
       await _linkedCheckRepository.addNewCandidate([candidate]);
       var homeController = Get.find<HomeController>();
-      homeController.users
-          .where((p0) => p0.url == user.value.url)
-          .first
-          .isFetch = true;
+      homeController.users.where((p0) => p0.url == user.value.url).first.isFetch = true;
       homeController.users.refresh();
       Get.back();
     } catch (e) {
@@ -130,6 +130,7 @@ class AddCandidateController extends GetxController {
         isFetch: user.value.isFetch,
         url: linkedinUrl.text,
         skills: skills,
+        email: emailController.text,
         address: addressController.text,
         roles: roles,
         phoneNumber: phoneController.text,

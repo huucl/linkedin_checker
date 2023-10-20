@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chrome_extension/tabs.dart';
+import 'package:chrome_extension/windows.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chrome_app/app_routes.dart';
 import 'package:flutter_chrome_app/linkedin_user_detail_model.dart';
@@ -17,8 +18,6 @@ class UserItem extends StatelessWidget {
   final LinkedinUserModel item;
   final int stt;
   final VoidCallback? onTap;
-
-
 
   void launchNewTabURL(String url) async {
     int experienceTabId = 0;
@@ -63,7 +62,14 @@ class UserItem extends StatelessWidget {
     AppNavigators.gotoAddCandidate(user: LinkedinUserDetailModel.fromObjects(user: item, profileResult: profile));
   }
 
-
+  void launchNewWindow() {
+    chrome.windows.create(
+      CreateData(
+        url: item.url,
+        state: WindowState.minimized,
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +114,12 @@ class UserItem extends StatelessWidget {
                 const SizedBox(width: 4),
                 item.getIcon(),
                 SelectableText(item.location),
-                SelectableText(item.url),
+                TextButton(
+                  onPressed: () {
+                    launchNewWindow();
+                  },
+                  child: Text(item.url),
+                ),
               ],
             ),
           ],

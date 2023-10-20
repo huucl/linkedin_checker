@@ -10,7 +10,7 @@ class LinkedinUserDetailModel {
   String? address;
   List<String>? skills;
   List<Role>? roles;
-
+  String? email;
   String? phoneCode;
   String? phoneNumber;
 
@@ -21,6 +21,7 @@ class LinkedinUserDetailModel {
     this.isFetch,
     this.address,
     this.skills,
+    this.email,
     this.roles,
     this.phoneCode,
     this.phoneNumber,
@@ -44,6 +45,7 @@ class LinkedinUserDetailModel {
       'isFetch': isFetch,
       'url': url,
       'address': address,
+      'email': email,
       'skills': skills,
       'roles': roles == null ? [] : List<dynamic>.from(roles!.map((x) => x.toMap())),
       'phoneCode': phoneCode,
@@ -57,6 +59,7 @@ class LinkedinUserDetailModel {
     isFetch: json["isFetch"],
     url: json["url"],
     address: json["address"],
+    email: json["email"],
     skills: json["skills"] == null ? [] : List<String>.from(json["skills"]!.map((x) => x)),
     roles: json["roles"] == null ? [] : List<Role>.from(json["roles"]!.map((x) => Role.fromMap(x))),
     phoneCode: json["phoneCode"],

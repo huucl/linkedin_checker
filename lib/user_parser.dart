@@ -138,7 +138,7 @@ class UserProfileParser {
     Element contentBlock = document.getElementsByClassName('artdeco-card ember-view pv-top-card').first;
 
     // Extract the avatar URL
-    final Element? avatarImg = contentBlock.querySelector('.profile-photo-edit__preview');
+    final Element? avatarImg = contentBlock.querySelector('.pv-top-card-profile-picture__image');
     final String? avatarUrl = avatarImg?.attributes['src'];
 
     // Extract the name
