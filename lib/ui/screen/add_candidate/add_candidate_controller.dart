@@ -82,8 +82,9 @@ class AddCandidateController extends GetxController {
   }
 
   void initData() {
-    firstNameController.text = user.value.name!.split(' ')[0];
-    lastNameController.text = user.value.name!.split(' ')[1];
+    var index = user.value.name!.lastIndexOf(' ');
+    firstNameController.text = user.value.name!.substring(0, index);
+    lastNameController.text = user.value.name!.substring(index + 1);
     linkedinUrl.text = user.value.url!;
     emailController.text = user.value.email ?? '';
     phoneController.text = user.value.phoneNumber ?? '';
