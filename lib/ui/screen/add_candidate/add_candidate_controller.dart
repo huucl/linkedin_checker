@@ -50,8 +50,7 @@ class AddCandidateController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    // user.value = Get.arguments;
-    user.value = LinkedinUserDetailModel.sample();
+    user.value = Get.arguments;
     initData();
     fetchItems();
   }
