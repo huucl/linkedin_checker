@@ -1,10 +1,9 @@
 import 'dart:convert';
-
-import 'package:flutter_chrome_app/app_routes.dart';
 import 'package:flutter_chrome_app/data/client/network_client.dart';
 import 'package:flutter_chrome_app/domain/repository/linked_check_repository.dart';
 import 'package:flutter_chrome_app/model/candidate_input.dart';
 import 'package:flutter_chrome_app/model/linked_check_response.dart';
+import 'package:flutter_chrome_app/model/location_model.dart';
 import 'package:flutter_chrome_app/model/search_item.dart';
 import 'package:get/get.dart';
 
@@ -48,6 +47,16 @@ class LinkedCheckRepositoryImpl implements LinkedCheckRepository {
     try {
       var res = await _client.makeGet('/skills');
       return searchItemFromMap(jsonEncode(res));
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<List<LocationModel>> getLocations() async {
+    try {
+      var res = await _client.makeGet('/locations');
+      return locationFromMap(jsonEncode(res));
     } catch (e) {
       rethrow;
     }

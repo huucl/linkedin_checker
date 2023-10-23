@@ -1,15 +1,17 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_chrome_app/app_routes.dart';
 import 'package:flutter_chrome_app/domain/repository/linked_check_repository.dart';
 import 'package:flutter_chrome_app/linkedin_user_detail_model.dart';
 import 'package:flutter_chrome_app/model/candidate_input.dart';
+import 'package:flutter_chrome_app/model/location_model.dart';
 import 'package:flutter_chrome_app/model/search_item.dart';
 import 'package:flutter_chrome_app/ui/screen/home/home_controller.dart';
 import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
 import 'package:flutter_chrome_app/utils/profile_parser.dart';
 import 'package:get/get.dart';
+import 'package:searchfield/searchfield.dart';
 
 class AddCandidateController extends GetxController {
   final LinkedCheckRepository _linkedCheckRepository;
@@ -24,7 +26,7 @@ class AddCandidateController extends GetxController {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController phoneCodeController = TextEditingController(text: '+84');
-  final TextEditingController addressController = TextEditingController();
+  final TextEditingController locationController = TextEditingController();
   final TextEditingController workExperience = TextEditingController();
   final TextEditingController yearExperience = TextEditingController();
   final TextEditingController skill = TextEditingController();
@@ -36,12 +38,20 @@ class AddCandidateController extends GetxController {
   List<SearchItem> searchSkills = [];
   List<SearchItem> searchRoles = [];
 
+  RxList<SearchFieldListItem> searchFieldListSkills = <SearchFieldListItem>[].obs;
+  RxList<SearchFieldListItem> searchFieldListRoles = <SearchFieldListItem>[].obs;
+
+  List<LocationModel> locations = [];
+  RxList<DropdownMenuItem<LocationModel>> locationItems = <DropdownMenuItem<LocationModel>>[].obs;
+
   bool isEdit = false;
+  Rxn<LocationModel> matchLocation = Rxn<LocationModel>();
 
   @override
   void onInit() {
     super.onInit();
-    user.value = Get.arguments;
+    // user.value = Get.arguments;
+    user.value = LinkedinUserDetailModel.sample();
     initData();
     fetchItems();
   }
@@ -49,9 +59,47 @@ class AddCandidateController extends GetxController {
   void fetchItems() {
     _linkedCheckRepository.getSkills().then((value) {
       searchSkills = value;
+      searchFieldListSkills.value = searchSkills
+          .map(
+            (e) => SearchFieldListItem(
+              e.label ?? UniqueKey().toString(),
+              child: Text(e.label ?? ''),
+            ),
+          )
+          .toList();
+      searchFieldListSkills.refresh();
     });
     _linkedCheckRepository.getRoles().then((value) {
       searchRoles = value;
+      searchFieldListRoles.value = searchRoles
+          .map(
+            (e) => SearchFieldListItem(
+              e.label ?? UniqueKey().toString(),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Text(e.label ?? ''),
+              ),
+            ),
+          )
+          .toList();
+      searchFieldListRoles.refresh();
+    });
+    _linkedCheckRepository.getLocations().then((value) {
+      locations = value;
+      locationItems.value = locations
+          .map(
+            (e) => DropdownMenuItem<LocationModel>(
+              value: e,
+              child: Text(e.label ?? ''),
+            ),
+          )
+          .toList();
+      locationItems.add(DropdownMenuItem<LocationModel>(value: LocationModel(), child: const Text('Other')));
+      locationItems.refresh();
+      matchLocation.value = locations.firstWhereOrNull((element) =>
+              user.value.address?.toUpperCase().contains(element.label?.toUpperCase() ?? UniqueKey().toString()) ??
+              false) ??
+          LocationModel();
     });
   }
 
@@ -74,7 +122,7 @@ class AddCandidateController extends GetxController {
     phoneCodeController.addListener(() {
       saveToSharePref();
     });
-    addressController.addListener(() {
+    locationController.addListener(() {
       saveToSharePref();
     });
     ever(skills, (callback) => saveToSharePref());
@@ -89,7 +137,7 @@ class AddCandidateController extends GetxController {
     emailController.text = user.value.email ?? '';
     phoneController.text = user.value.phoneNumber ?? '';
     phoneCodeController.text = user.value.phoneCode ?? '';
-    addressController.text = user.value.address ?? '';
+    locationController.text = user.value.address ?? '';
     skills.value = user.value.skills ?? [];
     roles.value = user.value.roles ?? [];
   }
@@ -102,7 +150,7 @@ class AddCandidateController extends GetxController {
       email: emailController.text,
       phoneCode: phoneCodeController.text,
       phoneNumber: phoneController.text,
-      address: addressController.text,
+      locationId: matchLocation.value?.id,
       skills: skills.toSkills(searchSkills),
       avatar: user.value.avatar,
       workExperiences: roles.toWorkExperiences(searchRoles),
@@ -132,7 +180,7 @@ class AddCandidateController extends GetxController {
         url: linkedinUrl.text,
         skills: skills,
         email: emailController.text,
-        address: addressController.text,
+        address: locationController.text,
         roles: roles,
         phoneNumber: phoneController.text,
         phoneCode: phoneCodeController.text,

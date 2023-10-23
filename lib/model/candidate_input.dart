@@ -15,7 +15,7 @@ class Candidate {
   final String? avatar;
   final String? phoneCode;
   final String? phoneNumber;
-  final String? address;
+  final String? locationId;
   final Skills? skills;
   final String? linkedin;
   final WorkExperiences? workExperiences;
@@ -27,7 +27,7 @@ class Candidate {
     this.avatar,
     this.phoneCode,
     this.phoneNumber,
-    this.address,
+    this.locationId,
     this.skills,
     this.linkedin,
     this.workExperiences,
@@ -40,7 +40,7 @@ class Candidate {
     avatar: json["avatar"],
     phoneCode: json["phoneCode"],
     phoneNumber: json["phoneNumber"],
-    address: json["address"],
+    locationId: json["locationId"],
     skills: json["skills"] == null ? null : Skills.fromMap(json["skills"]),
     linkedin: json["linkedin"],
     workExperiences: json["workExperiences"] == null ? null : WorkExperiences.fromMap(json["workExperiences"]),
@@ -53,7 +53,7 @@ class Candidate {
     "avatar": avatar,
     "phoneCode": phoneCode,
     "phoneNumber": phoneNumber,
-    "address": address,
+    "locationId": locationId,
     "skills": skills?.toMap(),
     "linkedin": linkedin,
     "workExperiences": workExperiences?.toMap(),

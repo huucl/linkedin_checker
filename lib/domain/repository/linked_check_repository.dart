@@ -1,5 +1,6 @@
 import 'package:flutter_chrome_app/model/candidate_input.dart';
 import 'package:flutter_chrome_app/model/linked_check_response.dart';
+import 'package:flutter_chrome_app/model/location_model.dart';
 import 'package:flutter_chrome_app/model/search_item.dart';
 
 abstract class LinkedCheckRepository {
@@ -10,4 +11,6 @@ abstract class LinkedCheckRepository {
   Future<List<SearchItem>> getSkills();
 
   Future<List<SearchItem>> getRoles();
+
+  Future<List<LocationModel>> getLocations();
 }

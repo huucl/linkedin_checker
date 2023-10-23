@@ -1,8 +1,13 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_chrome_app/model/location_model.dart';
 import 'package:flutter_chrome_app/ui/component/component_input.dart';
 import 'package:flutter_chrome_app/ui/screen/add_candidate/add_candidate_controller.dart';
 import 'package:flutter_chrome_app/utils/profile_parser.dart';
 import 'package:get/get.dart';
+import 'package:searchfield/searchfield.dart';
+
+import '../../../utils/style/style.dart';
 
 class AddCandidateScreen extends GetWidget<AddCandidateController> {
   const AddCandidateScreen({super.key});
@@ -74,10 +79,16 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
               const SizedBox(
                 height: 16,
               ),
-              ComponentInput(
-                label: 'Address',
-                controller: controller.addressController,
-              ),
+              Obx(() {
+                return ComponentDropdown(
+                  label: 'Location',
+                  items: controller.locationItems,
+                  selectedValue: controller.matchLocation.value,
+                  onChanged: (value) {
+                    controller.matchLocation.value = value;
+                  },
+                );
+              }),
               const SizedBox(
                 height: 16,
               ),
@@ -93,9 +104,10 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
                 children: [
                   Flexible(
                     flex: 2,
-                    child: ComponentInput(
+                    child: ComponentSearchField(
                       label: 'Work experience',
                       controller: controller.workExperience,
+                      suggestions: controller.searchFieldListRoles,
                     ),
                   ),
                   const SizedBox(
@@ -172,17 +184,22 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
               const SizedBox(
                 height: 16,
               ),
-              ComponentInput(
-                  label: 'Skills',
-                  controller: controller.skill,
-                  customSuffixWidget: IconButton(
-                    onPressed: () {
-                      controller.skills.add(controller.skill.text);
-                      controller.skills.refresh();
-                      controller.skill.clear();
-                    },
-                    icon: const Icon(Icons.add),
-                  )),
+              ComponentSearchField(
+                label: 'Skills',
+                controller: controller.skill,
+                suggestions: controller.searchFieldListSkills,
+                customSuffixWidget: InkWell(
+                  onTap: () {
+                    controller.skills.add(controller.skill.text);
+                    controller.skills.refresh();
+                    controller.skill.clear();
+                  },
+                  child: const Padding(
+                    padding: EdgeInsets.only(right: 8.0),
+                    child: Icon(Icons.add),
+                  ),
+                ),
+              ),
               const SizedBox(
                 height: 8,
               ),
@@ -234,6 +251,143 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class ComponentSearchField extends StatelessWidget {
+  const ComponentSearchField({
+    super.key,
+    required this.controller,
+    required this.suggestions,
+    required this.label,
+    this.customSuffixWidget,
+  });
+
+  final String label;
+  final TextEditingController controller;
+  final List<SearchFieldListItem> suggestions;
+  final Widget? customSuffixWidget;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Text(
+          label,
+          style: TextStyle(
+            color: theme.n800,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 8),
+        SearchField(
+          controller: controller,
+          suggestions: suggestions,
+          searchInputDecoration: InputDecoration(
+            contentPadding: const EdgeInsets.only(top: 14, bottom: 14, left: 16),
+            errorMaxLines: 5,
+            hintStyle: TextStyle(
+              fontSize: 14,
+              color: theme.n600,
+              fontWeight: FontWeight.w500,
+            ),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12.0),
+              borderSide: const BorderSide(
+                width: 0,
+                style: BorderStyle.none,
+              ),
+            ),
+            filled: true,
+            errorStyle: TextStyle(
+              fontSize: 12,
+              color: theme.error400,
+              fontWeight: FontWeight.w300,
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12.0),
+              borderSide: BorderSide(color: theme.n300),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12.0),
+              borderSide: BorderSide(color: theme.n300),
+            ),
+            errorBorder: OutlineInputBorder(
+                borderRadius: const BorderRadius.all(Radius.circular(12.0)),
+                borderSide: BorderSide(
+                  width: 1,
+                  color: theme.error400,
+                )),
+            focusedErrorBorder: OutlineInputBorder(
+              borderRadius: const BorderRadius.all(Radius.circular(12.0)),
+              borderSide: BorderSide(
+                width: 1,
+                color: theme.error400,
+              ),
+            ),
+            suffixIconConstraints: const BoxConstraints(minHeight: 24, minWidth: 24),
+            suffix: customSuffixWidget,
+            fillColor: theme.n000,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class ComponentDropdown extends StatelessWidget {
+  const ComponentDropdown({
+    super.key,
+    required this.label,
+    required this.items,
+    this.selectedValue,
+    this.onChanged,
+  });
+
+  final String label;
+  final List<DropdownMenuItem<LocationModel>> items;
+  final LocationModel? selectedValue;
+  final Function(LocationModel?)? onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Text(
+          label,
+          style: TextStyle(
+            color: theme.n800,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 8),
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 14),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: theme.n300),
+            color: theme.n000,
+          ),
+          child: DropdownButtonHideUnderline(
+            child: DropdownButton2<LocationModel>(
+              isExpanded: true,
+              items: items,
+              value: selectedValue,
+              onChanged: onChanged,
+              buttonStyleData: ButtonStyleData(
+                height: 18,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

@@ -30,7 +30,8 @@ class LinkedinUserDetailModel {
   LinkedinUserDetailModel.fromObjects({
     required LinkedinUserModel user,
     required ProfileResult profileResult,
-  })  : name = user.name,
+  })
+      : name = user.name,
         avatar = user.avatar,
         url = user.url,
         address = user.location,
@@ -53,16 +54,30 @@ class LinkedinUserDetailModel {
     };
   }
 
-  factory LinkedinUserDetailModel.fromMap(Map<String, dynamic> json) => LinkedinUserDetailModel(
-    name: json["name"],
-    avatar: json["avatar"],
-    isFetch: json["isFetch"],
-    url: json["url"],
-    address: json["address"],
-    email: json["email"],
-    skills: json["skills"] == null ? [] : List<String>.from(json["skills"]!.map((x) => x)),
-    roles: json["roles"] == null ? [] : List<Role>.from(json["roles"]!.map((x) => Role.fromMap(x))),
-    phoneCode: json["phoneCode"],
-    phoneNumber: json["phoneNumber"],
-  );
+  factory LinkedinUserDetailModel.fromMap(Map<String, dynamic> json) =>
+      LinkedinUserDetailModel(
+        name: json["name"],
+        avatar: json["avatar"],
+        isFetch: json["isFetch"],
+        url: json["url"],
+        address: json["address"],
+        email: json["email"],
+        skills: json["skills"] == null ? [] : List<String>.from(json["skills"]!.map((x) => x)),
+        roles: json["roles"] == null ? [] : List<Role>.from(json["roles"]!.map((x) => Role.fromMap(x))),
+        phoneCode: json["phoneCode"],
+        phoneNumber: json["phoneNumber"],
+      );
+
+  //sample data
+  static LinkedinUserDetailModel sample() {
+    return LinkedinUserDetailModel(
+      name: 'Nguyen Van A',
+      avatar: 'https://media-exp1.licdn.com/dms/ima',
+      isFetch: true,
+      url: 'https://www.linkedin.com/in/nguyen-van-a-123456789/',
+      address: 'Ho Chi Minh City, Vietnam',
+      email: 'nguyenvana@gmail.com',
+      skills: ['Flutter', 'Dart', 'Java', 'Kotlin'],
+    );
+  }
 }
