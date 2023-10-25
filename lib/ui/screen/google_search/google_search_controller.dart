@@ -4,30 +4,31 @@ import 'package:flutter_chrome_app/app_routes.dart';
 import 'package:flutter_chrome_app/domain/repository/linked_check_repository.dart';
 import 'package:flutter_chrome_app/linkedin_user_model.dart';
 import 'package:flutter_chrome_app/mock.dart';
+import 'package:flutter_chrome_app/model/url_item.dart';
 import 'package:flutter_chrome_app/user_parser.dart';
+import 'package:flutter_chrome_app/utils/google_search_parser.dart';
 import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
+class GoogleSearchController extends GetxController {
   final LinkedCheckRepository _linkedCheckRepository;
 
-  HomeController(this._linkedCheckRepository);
+  GoogleSearchController(this._linkedCheckRepository);
 
   RxBool isSearch = true.obs;
-  RxBool isProfile = true.obs;
   RxBool isLoading = false.obs;
-  RxList<LinkedinUserModel> users = RxList<LinkedinUserModel>();
   String currentTabUrl = '';
+
+  RxList<String> urls = <String>[].obs;
+  RxList<UrlItem> items = <UrlItem>[].obs;
 
   @override
   void onReady() async {
     super.onReady();
     await checkIsCorrectSites();
-    if (isSearch.value || isProfile.value) {
+    if (isSearch.value) {
       fetchData();
     }
-
-    // ever(users, (callback) => checkDuplicateLinkedinProfile());
   }
 
   Future<void> checkIsCorrectSites() async {
@@ -35,12 +36,7 @@ class HomeController extends GetxController {
     var tabs = await chrome.tabs.query(QueryInfo(currentWindow: true, active: true));
     var currentTab = tabs[0];
     currentTabUrl = currentTab.url ?? '';
-    if (currentTab.url?.contains('https://www.linkedin.com/in') == true) {
-      isProfile.value = true;
-    } else {
-      isProfile.value = false;
-    }
-    if (currentTab.url?.contains('https://www.linkedin.com/search/results/people') == true) {
+    if (currentTab.url?.contains('https://www.google.com/search') == true) {
       isSearch.value = true;
     } else {
       isSearch.value = false;
@@ -54,13 +50,10 @@ class HomeController extends GetxController {
       var currentTab = value[0];
       chrome.tabs.sendMessage(currentTab.id!, "message_getList", null).then((value) {
         if (isSearch.value) {
-          users.value = UserParser.bem(value.toString());
+          urls.value = GoogleSearchParser.getLinkedinUrls(value.toString());
+          items.clear();
+          items.addAll(urls.map((e) => UrlItem(url: e, isFetch: null)).toList());
         }
-        if (isProfile.value) {
-          var user = UserProfileParser.userParser(value.toString(), currentTabUrl);
-          users.value = [user];
-        }
-        users.refresh();
         checkDuplicateLinkedinProfile();
         // AppNavigators.gotoLogInfo(users.map((element) => element.toString()).join('\n'));
       }).catchError((onError) {
@@ -69,23 +62,14 @@ class HomeController extends GetxController {
     });
   }
 
-  void fetchData2() {
-    users.value = UserParser.bem(theHtmlString);
-    users.refresh();
-  }
-
   void checkDuplicateLinkedinProfile() async {
-    var urls = users.map((e) => e.url ?? '').toList();
-    // if (isProfile.value == true){
-    //   urls = [currentTabUrl];
-    // }
     isLoading.value = true;
     try {
       var usersResponse = await _linkedCheckRepository.checkLinkedinExistence(urls);
-      for (var user in usersResponse) {
-        users[user.order!].isFetch = user.status != 'NOT_REGISTERED';
+      for (int i = 0; i < usersResponse.length; i++) {
+        items[i].isFetch = usersResponse[i].status != 'NOT_REGISTERED';
       }
-      users.refresh();
+      items.refresh();
       isLoading.value = false;
     } catch (e) {
       AppNavigators.gotoLogInfo(PrefUtils().accessToken + '\n' + e.toString());
@@ -93,3 +77,4 @@ class HomeController extends GetxController {
     }
   }
 }
+

@@ -25,6 +25,15 @@ class SplashScreen extends GetWidget<SplashController> {
           ),
           TextButton(
             onPressed: () {
+              AppNavigators.gotoGoogleSearch();
+            },
+            child: const Text(
+              'FETCH GOOGLE SEARCH',
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
               controller.gotoAddCandidate();
             },
             child: const Text(

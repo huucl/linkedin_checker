@@ -156,4 +156,27 @@ class UserProfileParser {
       location: location ?? '',
     );
   }
+
+  static LinkedinUserModel userParserFromDoc(Document document, String url) {
+    Element contentBlock = document.getElementsByClassName('artdeco-card ember-view pv-top-card').first;
+
+    // Extract the avatar URL
+    final Element? avatarImg = contentBlock.querySelector('.pv-top-card-profile-picture__image');
+    final String? avatarUrl = avatarImg?.attributes['src'];
+
+    // Extract the name
+    final Element? nameElement = contentBlock.querySelector('.text-heading-xlarge');
+    final String? name = nameElement?.text;
+
+    // Extract the location
+    final Element? locationElement = contentBlock.querySelector('.text-body-small.inline.t-black--light.break-words');
+    final String? location = locationElement?.text.trim();
+
+    return LinkedinUserModel(
+      name: name ?? 'NULL',
+      avatar: avatarUrl ?? '',
+      url: url.substring(0, url.length - 1),
+      location: location ?? '',
+    );
+  }
 }

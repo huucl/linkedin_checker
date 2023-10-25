@@ -27,7 +27,7 @@ class UserItem extends StatelessWidget {
     String skillHTML = '';
 
     Future<void> fetchTabHTML(int tabID) async {
-      await Future.delayed(const Duration(seconds: 15));
+      await Future.delayed(const Duration(seconds: 10));
       var value = await chrome.tabs.get(tabID);
       if (value.status != TabStatus.loading) {
         try {

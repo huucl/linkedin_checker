@@ -1,25 +1,43 @@
 import 'package:flutter_chrome_app/utils/mock_data.dart';
-import 'package:html/dom.dart';
-import 'package:html/parser.dart';
+import 'package:html/parser.dart' show parse;
 
 void main() {
-  var document = parse(mockProfileHtml);
-  Element contentBlock = document.getElementsByClassName('artdeco-card ember-view pv-top-card').first;
+  // HTML content
 
-  // Extract the avatar URL
-  final Element? avatarImg = contentBlock.querySelector('.pv-top-card-profile-picture__image');
-  final String? avatarUrl = avatarImg?.attributes['src'];
+  // Parse HTML
+  final document = parse(mockProfileHtml);
+  final contentBlock = document.querySelector('.WtZO4e');
+  final blocks = contentBlock?.getElementsByClassName('arc-srp_110');
+  print(blocks);
+  //
+  // final block = contentBlock?.querySelector('.WtZO4e');
+  // //get all links from block
+  // final links = block?.getElementsByClassName('MjjYud');
+  // print(links);
 
-  // Extract the name
-  final Element? nameElement = contentBlock.querySelector('.text-heading-xlarge');
-  final String? name = nameElement?.text;
+ // print(links);
 
-  // Extract the location
-  final Element? locationElement = contentBlock.querySelector('.text-body-small.inline.t-black--light.break-words');
-  final String? location = locationElement?.text.trim();
 
-  print('avatarUrl: $avatarUrl');
-  print('name: $name');
-  print('location: $location');
+  // final contentBlock = document.querySelector('.eqAnXb');
+  // final bottomBlock = document.querySelector('.WtZO4e');
+  // final links = contentBlock?.querySelectorAll('a') ?? [];
+  // final bottomLinks = bottomBlock?.querySelectorAll('a') ?? [];
+
+  //
+  // print(bottomBlock?.innerHtml);
+  // print(bottomLinks);
+
+  // links.addAll(bottomLinks);
+  // final linkedinUrls = <String>[];
+  // for (final link in links) {
+  //   final href = link.attributes['href'];
+  //   if (href != null && href.contains('linkedin.com/in/')) {
+  //     var temp = href.replaceFirst("https://vn.", "https://");
+  //     temp.replaceFirst('?trk=public_profile_browsemap', '');
+  //     linkedinUrls.add(temp);
+  //   }
+  // }
+
+  // Print results
+  // print(linkedinUrls);
 }
-

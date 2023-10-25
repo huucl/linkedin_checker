@@ -179,7 +179,7 @@ class AddCandidateController extends GetxController {
         url: linkedinUrl.text,
         skills: skills,
         email: emailController.text,
-        address: locationController.text,
+        address: matchLocation.value != LocationModel() ? matchLocation.value!.label : null,
         roles: roles,
         phoneNumber: phoneController.text,
         phoneCode: phoneCodeController.text,
