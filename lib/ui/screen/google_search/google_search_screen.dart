@@ -1,3 +1,4 @@
+import 'package:chrome_extension/windows.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chrome_app/app_routes.dart';
 import 'package:flutter_chrome_app/linkedin_user_detail_model.dart';
@@ -29,21 +30,11 @@ class GoogleSearchScreen extends GetWidget<GoogleSearchController> {
           ),
         ],
       ),
-      body: Column(
+      body: Stack(
         children: [
           Obx(() {
-            if (controller.isLoading.value) {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            } else {
-              return Container();
-            }
-          }),
-          Obx(() {
             if (controller.isSearch.value) {
-              return Expanded(
-                child: ListView.separated(
+              return ListView.separated(
                   itemCount: controller.items.length,
                   itemBuilder: (context, index) {
                     var item = controller.items[index];
@@ -55,13 +46,20 @@ class GoogleSearchScreen extends GetWidget<GoogleSearchController> {
                       color: Colors.blueGrey,
                       height: 8,
                     );
-                  }
-                ),
-              );
+                  });
             } else {
               return const Center(
                 child: Text('Please open google search'),
               );
+            }
+          }),
+          Obx(() {
+            if (controller.isLoading.value) {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            } else {
+              return Container();
             }
           }),
         ],
@@ -89,34 +87,54 @@ class _UrlItemWidgetState extends State<UrlItemWidget> {
 
   List<int> ids = [];
 
-  Future<Document> getHTML({required String url}) async {
-    var tab = await chrome.tabs.create(CreateProperties(url: '$url/details/experience', active: false));
-    await Future.delayed(const Duration(seconds: 5));
+  Future<String> getHTML({required String url}) async {
+    var tab = await chrome.tabs.create(CreateProperties(url: url, active: false));
+    await Future.delayed(const Duration(seconds: 10));
     var value = await chrome.tabs.sendMessage(tab.id!, "message_item", null);
     // chrome.tabs.remove(tab.id!);
     ids.add(tab.id!);
-    return parse(value.toString());
+    return value.toString();
   }
 
   void fetchProfile() async {
+    var googleController = Get.find<GoogleSearchController>();
     try {
-      Document profileHTML = Document();
-      getHTML(url: widget.item.url).then((value) => profileHTML = value);
-      Document skillHTMl = Document();
-      getHTML(url: '${widget.item.url}/details/skills').then((value) => skillHTMl = value);
-      var experienceHTML = await getHTML(url: '${widget.item.url}/details/experience');
+      googleController.isLoading.value = true;
+      var response = await Future.wait([
+        getHTML(url: widget.item.url),
+        getHTML(url: '${widget.item.url}/details/skills'),
+        getHTML(url: '${widget.item.url}/details/experience')
+      ]);
 
-      ProfileResult res = parseExperiences(experienceHTML: experienceHTML.outerHtml, skillHTML: skillHTMl.outerHtml);
-      LinkedinUserModel coverUser = UserProfileParser.userParserFromDoc(profileHTML, widget.item.url);
+      String profileHTML = response[0];
+      String skillHTMl = response[1];
+      String experienceHTML = response[2];
+
+      ProfileResult res = parseExperiences(experienceHTML: experienceHTML, skillHTML: skillHTMl);
+
+      LinkedinUserModel coverUser = UserProfileParser.userParser(profileHTML, widget.item.url);
 
       user = LinkedinUserDetailModel.fromObjects(user: coverUser, profileResult: res);
-      AppNavigators.gotoAddCandidate(user: user);
+      AppNavigators.gotoAddCandidate(user: user)?.then((value) {
+        googleController.checkDuplicateLinkedinProfile();
+      });
       for (var element in ids) {
         chrome.tabs.remove(element);
       }
+      googleController.isLoading.value = false;
     } catch (e) {
+      googleController.isLoading.value = false;
       AppNavigators.gotoLogInfo(e.toString());
     }
+  }
+
+  void launchNewWindow() {
+    chrome.windows.create(
+      CreateData(
+        url: widget.item.url,
+        state: WindowState.minimized,
+      ),
+    );
   }
 
   @override
@@ -128,9 +146,9 @@ class _UrlItemWidgetState extends State<UrlItemWidget> {
         fetchProfile();
       },
       trailing: IconButton(
-        icon: const Icon(Icons.add),
+        icon: const Icon(Icons.open_in_browser),
         onPressed: () {
-          fetchProfile();
+          launchNewWindow();
         },
       ),
     );

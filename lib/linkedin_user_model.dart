@@ -6,8 +6,20 @@ class LinkedinUserModel {
   bool? isFetch;
   String url;
   String location;
+  String? phoneCode;
+  String? phoneNumber;
+  String? email;
 
-  LinkedinUserModel({required this.name, required this.avatar, required this.url, this.isFetch,required this.location});
+  LinkedinUserModel({
+    required this.name,
+    required this.avatar,
+    required this.url,
+    this.isFetch,
+    required this.location,
+    this.phoneCode,
+    this.phoneNumber,
+    this.email,
+  });
 
   @override
   String toString() {

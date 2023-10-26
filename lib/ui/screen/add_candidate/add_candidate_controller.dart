@@ -161,9 +161,6 @@ class AddCandidateController extends GetxController {
     PrefUtils().candidateObject = '';
     try {
       await _linkedCheckRepository.addNewCandidate([candidate]);
-      var homeController = Get.find<HomeController>();
-      homeController.users.where((p0) => p0.url == user.value.url).first.isFetch = true;
-      homeController.users.refresh();
       Get.back();
     } catch (e) {
       AppNavigators.gotoLogInfo(e.toString());

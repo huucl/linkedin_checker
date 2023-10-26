@@ -68,6 +68,10 @@ class AppRoutes {
 }
 
 class AppNavigators {
+  static gotoSplash() {
+    Get.toNamed(AppRoutes.splash);
+  }
+
   static gotoLogin() {
     Get.toNamed(AppRoutes.login);
   }
@@ -84,8 +88,8 @@ class AppNavigators {
     Get.toNamed(AppRoutes.home);
   }
 
-  static gotoAddCandidate({required LinkedinUserDetailModel user}) {
-    Get.toNamed(AppRoutes.addCandidate, arguments: user);
+  static Future<dynamic>? gotoAddCandidate({required LinkedinUserDetailModel user}) {
+    return Get.toNamed(AppRoutes.addCandidate, arguments: user);
   }
 
   static gotoGoogleSearch() {

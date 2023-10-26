@@ -2,10 +2,7 @@ import 'package:chrome_extension/accessibility_features.dart';
 import 'package:chrome_extension/tabs.dart';
 import 'package:flutter_chrome_app/app_routes.dart';
 import 'package:flutter_chrome_app/domain/repository/linked_check_repository.dart';
-import 'package:flutter_chrome_app/linkedin_user_model.dart';
-import 'package:flutter_chrome_app/mock.dart';
 import 'package:flutter_chrome_app/model/url_item.dart';
-import 'package:flutter_chrome_app/user_parser.dart';
 import 'package:flutter_chrome_app/utils/google_search_parser.dart';
 import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
 import 'package:get/get.dart';
@@ -57,7 +54,7 @@ class GoogleSearchController extends GetxController {
         checkDuplicateLinkedinProfile();
         // AppNavigators.gotoLogInfo(users.map((element) => element.toString()).join('\n'));
       }).catchError((onError) {
-        AppNavigators.gotoLogInfo(onError.toString());
+        AppNavigators.gotoLogInfo('Error (fetchData): $onError');
       });
     });
   }
@@ -72,7 +69,7 @@ class GoogleSearchController extends GetxController {
       items.refresh();
       isLoading.value = false;
     } catch (e) {
-      AppNavigators.gotoLogInfo(PrefUtils().accessToken + '\n' + e.toString());
+      AppNavigators.gotoLogInfo('${PrefUtils().accessToken}\n$e');
       isLoading.value = false;
     }
   }

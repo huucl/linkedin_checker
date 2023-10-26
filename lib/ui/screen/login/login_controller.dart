@@ -22,7 +22,7 @@ class LoginController extends GetxController {
       if (loginResponse != LoginResponse()) {
         PrefUtils().accessToken = loginResponse.accessToken ?? '';
       }
-      AppNavigators.gotoHome();
+      AppNavigators.gotoSplash();
     } catch (e) {
       AppNavigators.gotoLogInfo(e.toString());
     }
