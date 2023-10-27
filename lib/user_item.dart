@@ -77,7 +77,7 @@ class UserItem extends StatelessWidget {
     chrome.windows.create(
       CreateData(
         url: item.url,
-        state: WindowState.minimized,
+        focused: true,
       ),
     );
   }

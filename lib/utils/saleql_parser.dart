@@ -1,3 +1,4 @@
+import 'package:flutter_chrome_app/app_routes.dart';
 import 'package:html/parser.dart';
 
 class SaleQLParser {
@@ -10,37 +11,24 @@ class SaleQLParser {
       var phoneBlock = blocks[1];
 
       var allEmails = emailBlock.querySelectorAll('._1s6ahIjeybQUNlWLaOvk._2Eo_7ePJriNTmf_6Z9FA');
-
       String? email;
-      String? verifiedEmail;
+      List<String> emails = allEmails.map((e) => e.text.trim()).toList().sortAlgo();
+      email = emails.first.extractEmail();
 
-      for (var element in allEmails) {
-        if (element.text.trim().contains('verified') && element.text.trim().contains('Direct')) {
-          email = element.text.trim().extractEmail();
-        }
-        if (element.text.trim().contains('verified')){
-          verifiedEmail = element.text.trim().extractEmail();
-        }
-      }
-
-      email ??= verifiedEmail;
 
       //similar for phone block
       String? phoneCode;
       String? phoneNumber;
 
       var allPhones = phoneBlock.querySelectorAll('._1s6ahIjeybQUNlWLaOvk._2Eo_7ePJriNTmf_6Z9FA');
+      var phones = allPhones.map((e) => e.text.trim()).toList().sortAlgo();
+      var res = phones.first.extractPhone();
 
-      for (var element in allPhones) {
-        if (element.text.trim().contains('verified') && element.text.trim().contains('Direct')) {
-          var result = element.text.trim().extractPhone();
-          phoneCode = result.$1;
-          phoneNumber = result.$2;
-        }
-      }
-
+      phoneCode = res.$1;
+      phoneNumber = res.$2;
       return (email, phoneCode, phoneNumber);
     } catch (e) {
+      AppNavigators.gotoLogInfo(e.toString());
       return (null, null, null);
     }
   }
@@ -58,11 +46,43 @@ extension on String {
 
   //record type
   (String? phoneCode, String? phoneNumber) extractPhone() {
-    RegExp phoneRegex = RegExp(r'(\+\d+)\s(\d+-\d+-\d+)');
+    RegExp phoneRegex = RegExp(r'(\+\d+)\s([\d\s]+)');
     final match = phoneRegex.firstMatch(this);
     if (match != null) {
-      return (match.group(1), match.group(2)?.replaceAll('-', ''));
+      return (match.group(1), match.group(2)?.replaceAll(RegExp(r'\s'), ''));
     }
-    return (null, null); // No email found in the string
+    return (null, null); // No phone number found in the string
+  }
+}
+
+extension on List<String> {
+  //sorting base on contains 'verified' and 'Direct' -> 'verified' and 'Work' -> 'Direct' -> 'Work'
+  List<String> sortAlgo() {
+    var verifiedDirect = <String>[];
+    var verifiedWork = <String>[];
+    var direct = <String>[];
+    var work = <String>[];
+
+    for (var element in this) {
+      if (element.contains('verified') && element.contains('Direct')) {
+        verifiedDirect.add(element);
+      }
+      if (element.contains('verified') && element.contains('Work')) {
+        verifiedWork.add(element);
+      }
+      if (element.contains('Direct')) {
+        direct.add(element);
+      }
+      if (element.contains('Work')) {
+        work.add(element);
+      }
+    }
+
+    verifiedDirect.sort((a, b) => a.compareTo(b));
+    verifiedWork.sort((a, b) => a.compareTo(b));
+    direct.sort((a, b) => a.compareTo(b));
+    work.sort((a, b) => a.compareTo(b));
+
+    return verifiedDirect + verifiedWork + direct + work;
   }
 }

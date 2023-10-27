@@ -33,7 +33,7 @@ class GoogleSearchController extends GetxController {
     var tabs = await chrome.tabs.query(QueryInfo(currentWindow: true, active: true));
     var currentTab = tabs[0];
     currentTabUrl = currentTab.url ?? '';
-    if (currentTab.url?.contains('https://www.google.com/search') == true) {
+    if (currentTab.url?.toLowerCase().contains('https://www.google.com/search') == true) {
       isSearch.value = true;
     } else {
       isSearch.value = false;

@@ -132,7 +132,7 @@ class _UrlItemWidgetState extends State<UrlItemWidget> {
     chrome.windows.create(
       CreateData(
         url: widget.item.url,
-        state: WindowState.minimized,
+        focused: true,
       ),
     );
   }

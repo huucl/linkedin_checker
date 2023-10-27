@@ -12,14 +12,10 @@ void main() {
 
   String? email;
 
-  for (var element in allEmails) {
-    var currentString = element.text.trim();
-    if (element.text.trim().contains('verified') && element.text.trim().contains('Direct')) {
-      email = element.text.trim().extractEmail();
-    }
-    print('-------------------');
-  }
+  List<String> emails = allEmails.map((e) => e.text.trim()).toList().sortAlgo();
+  print(emails);
 
+  email = emails.first.extractEmail();
 
 
   //similar for phone block
@@ -28,19 +24,70 @@ void main() {
 
   var allPhones = phoneBlock.querySelectorAll('._1s6ahIjeybQUNlWLaOvk._2Eo_7ePJriNTmf_6Z9FA');
 
-  allPhones.forEach((element) {
-    print(element.text.trim());
-    if (element.text.trim().contains('verified') && element.text.trim().contains('Direct')) {
-      var result = element.text.trim().extractPhone();
-      phoneCode = result.$1;
-      phoneNumber = result.$2;
-    }
-    print('-------------------');
-  });
+  var phones = allPhones.map((e) => e.text.trim()).toList().sortAlgo();
+
+  var res = phones.first.extractPhone();
+
+  phoneCode = res.$1;
+  phoneNumber = res.$2;
 
   print('Email: $email');
   print('Phone code: $phoneCode');
   print('Phone number: $phoneNumber');
+
+
+  String text = """============= 
+verified  
+    +84 94 696 90 03
+    
+        +84 94 696 90 03
+       
+    Direct
+   
+    Copy
+    
+        content_copy
+ ============== 
+verified  
+    +84 313 569 123
+    
+        +84 313 569 123
+       
+    SSI Securities Corporation
+    
+    Work
+   
+    Copy
+    
+        content_copy
+ ============== 
+verified  
+    +84 94 696 90 03
+    
+        +84 94 696 90 03
+       
+    Direct
+   
+    Copy
+    
+        content_copy
+ ============== 
+verified  
+    +84 313 569 123
+    
+        +84 313 569 123
+       
+    SSI Securities Corporation
+    
+    Work
+   
+    Copy
+""";
+
+  var texts = text.split(' ============== ');
+
+
+  print(texts.first.extractPhone());
 
 }
 
@@ -56,11 +103,43 @@ extension on String {
 
   //record type
   (String? phoneCode, String? phoneNumber) extractPhone() {
-    RegExp phoneRegex = RegExp(r'(\+\d+)\s(\d+-\d+-\d+)');
+    RegExp phoneRegex = RegExp(r'(\+\d+)\s([\d\s]+)');
     final match = phoneRegex.firstMatch(this);
     if (match != null) {
-      return (match.group(1), match.group(2)?.replaceAll('-', ''));
+      return (match.group(1), match.group(2)?.replaceAll(RegExp(r'\s'), ''));
     }
-    return (null, null); // No email found in the string
+    return (null, null); // No phone number found in the string
+  }
+}
+
+extension on List<String> {
+  //sorting base on contains 'verified' and 'Direct' -> 'verified' and 'Work' -> 'Direct' -> 'Work'
+  List<String> sortAlgo() {
+    var verifiedDirect = <String>[];
+    var verifiedWork = <String>[];
+    var direct = <String>[];
+    var work = <String>[];
+
+    for (var element in this) {
+      if (element.contains('verified') && element.contains('Direct')) {
+        verifiedDirect.add(element);
+      }
+      if (element.contains('verified') && element.contains('Work')) {
+        verifiedWork.add(element);
+      }
+      if (element.contains('Direct')) {
+        direct.add(element);
+      }
+      if (element.contains('Work')) {
+        work.add(element);
+      }
+    }
+
+    verifiedDirect.sort((a, b) => a.compareTo(b));
+    verifiedWork.sort((a, b) => a.compareTo(b));
+    direct.sort((a, b) => a.compareTo(b));
+    work.sort((a, b) => a.compareTo(b));
+
+    return verifiedDirect + verifiedWork + direct + work;
   }
 }

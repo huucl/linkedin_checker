@@ -12,7 +12,7 @@ class LinkedCheckRepositoryImpl implements LinkedCheckRepository {
 
   @override
   Future<List<LinkedCheckResponse>> checkLinkedinExistence(List<String> urls) async {
-    var queryParam = urls.map((e) => 'urls=$e').join('&');
+    var queryParam = urls.map((e) => 'urls=${Uri.encodeComponent(e)}').join('&');
     try {
       var res = await _client.makeGet('/users/check-linkedin?$queryParam');
       return linkedCheckResponseFromMap(jsonEncode(res));
