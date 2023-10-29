@@ -17,7 +17,7 @@ class GoogleSearchParser {
     for (final link in links) {
       final href = link.attributes['href'];
       if (href != null && href.contains('linkedin.com/in/')) {
-        var temp = href.replaceFirst("https://vn.", "https://");
+        var temp = href.replaceFirst("https://vn.", "https://www.");
         temp.contains('?trk=public_profile')
             ? temp = temp.substring(0, temp.indexOf('?trk=public_profile'))
             : temp = temp;

@@ -69,7 +69,7 @@ class HomeController extends GetxController {
         checkDuplicateLinkedinProfile();
         // AppNavigators.gotoLogInfo(users.map((element) => element.toString()).join('\n'));
       }).catchError((onError) {
-        AppNavigators.gotoLogInfo(onError.toString());
+        AppNavigators.gotoLogInfo('Error (fetchData): $onError');
       });
     });
   }
@@ -80,7 +80,7 @@ class HomeController extends GetxController {
   }
 
   void checkDuplicateLinkedinProfile() async {
-    var urls = users.map((e) => e.url ?? '').toList();
+    var urls = users.map((e) => e.url).toList();
     // if (isProfile.value == true){
     //   urls = [currentTabUrl];
     // }

@@ -15,20 +15,20 @@ class SaleQLParser {
       List<String> emails = allEmails.map((e) => e.text.trim()).toList().sortAlgo();
       email = emails.first.extractEmail();
 
-
       //similar for phone block
       String? phoneCode;
       String? phoneNumber;
 
-      var allPhones = phoneBlock.querySelectorAll('._1s6ahIjeybQUNlWLaOvk._2Eo_7ePJriNTmf_6Z9FA');
-      var phones = allPhones.map((e) => e.text.trim()).toList().sortAlgo();
-      var res = phones.first.extractPhone();
+      try {
+        var allPhones = phoneBlock.querySelectorAll('._1s6ahIjeybQUNlWLaOvk._2Eo_7ePJriNTmf_6Z9FA');
+        var phones = allPhones.map((e) => e.text.trim()).toList().sortAlgo();
+        var res = phones.first.extractPhone();
 
-      phoneCode = res.$1;
-      phoneNumber = res.$2;
+        phoneCode = res.$1;
+        phoneNumber = res.$2;
+      } catch (_) {}
       return (email, phoneCode, phoneNumber);
     } catch (e) {
-      AppNavigators.gotoLogInfo(e.toString());
       return (null, null, null);
     }
   }
