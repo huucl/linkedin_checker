@@ -16,7 +16,7 @@ class GoogleSearchController extends GetxController {
   RxBool isLoading = false.obs;
   String currentTabUrl = '';
 
-  RxList<String> urls = <String>[].obs;
+  RxList<GoogleResultItem> googleResItems = <GoogleResultItem>[].obs;
   RxList<UrlItem> items = <UrlItem>[].obs;
 
   @override
@@ -47,9 +47,15 @@ class GoogleSearchController extends GetxController {
       var currentTab = value[0];
       chrome.tabs.sendMessage(currentTab.id!, "message_getList", null).then((value) {
         if (isSearch.value) {
-          urls.value = GoogleSearchParser.getLinkedinUrls(value.toString());
+          googleResItems.value = GoogleSearchParser.getLinkedinUrls(value.toString());
           items.clear();
-          items.addAll(urls.map((e) => UrlItem(url: e, isFetch: null)).toList());
+          items.addAll(googleResItems
+              .map((e) => UrlItem(
+                    url: e.url,
+                    title: e.title,
+                    isFetch: null,
+                  ))
+              .toList());
         }
         checkDuplicateLinkedinProfile();
         // AppNavigators.gotoLogInfo(users.map((element) => element.toString()).join('\n'));
@@ -62,7 +68,7 @@ class GoogleSearchController extends GetxController {
   void checkDuplicateLinkedinProfile() async {
     isLoading.value = true;
     try {
-      var usersResponse = await _linkedCheckRepository.checkLinkedinExistence(urls);
+      var usersResponse = await _linkedCheckRepository.checkLinkedinExistence(googleResItems.map((element) => element.url).toList());
       for (int i = 0; i < usersResponse.length; i++) {
         items[i].isFetch = usersResponse[i].status != 'NOT_REGISTERED';
       }
@@ -74,4 +80,3 @@ class GoogleSearchController extends GetxController {
     }
   }
 }
-

@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 class UrlItem {
   String url;
+  String title;
   bool? isFetch;
 
   UrlItem({
     required this.url,
+    required this.title,
     this.isFetch,
   });
 

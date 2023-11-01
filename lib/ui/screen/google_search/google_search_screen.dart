@@ -141,7 +141,8 @@ class _UrlItemWidgetState extends State<UrlItemWidget> {
   Widget build(BuildContext context) {
     return ListTile(
       leading: widget.item.getIcon(),
-      title: Text(widget.item.url),
+      title: Text(widget.item.title),
+      subtitle: Text(widget.item.url),
       onTap: () {
         fetchProfile();
       },
