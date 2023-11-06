@@ -60,4 +60,17 @@ class LinkedCheckRepositoryImpl implements LinkedCheckRepository {
       rethrow;
     }
   }
+
+  @override
+  Future<List<LinkedCheckResponse>> newCheckLinkedinExistence(List<String> urls) async {
+    try {
+      var data = {
+        'urls': urls,
+      };
+      var res = await _client.makePatch('/users/new-check-linkedin', data: data);
+      return linkedCheckResponseFromMap(jsonEncode(res));
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

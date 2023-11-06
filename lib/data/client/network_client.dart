@@ -96,6 +96,33 @@ class HTTPProvider {
     }
   }
 
+  //make patch
+  Future<dynamic> makePatch(String path,
+      {data,
+      Map<String, dynamic>? queryParameters,
+      dio.Options? options,
+      dio.CancelToken? cancelToken,
+      dio.ProgressCallback? onSendProgress,
+      dio.ProgressCallback? onReceiveProgress}) async {
+    var accessToken = PrefUtils().accessToken;
+    var opt = Options(
+      headers: {
+        'Authorization': 'Bearer $accessToken',
+      },
+    );
+    try {
+      var response = await _dio.patch(path,
+          options: opt,
+          data: data,
+          queryParameters: queryParameters,
+          cancelToken: cancelToken,
+          onReceiveProgress: onReceiveProgress);
+      return response.data;
+    } catch (e) {
+      _handleException(e);
+    }
+  }
+
   Future<dynamic> makeDelete(String path,
       {Map<String, dynamic>? query,
       data,

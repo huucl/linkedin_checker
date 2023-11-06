@@ -21,7 +21,7 @@ class SaleQLParser {
 
       try {
         var allPhones = phoneBlock.querySelectorAll('._1s6ahIjeybQUNlWLaOvk._2Eo_7ePJriNTmf_6Z9FA');
-        var phones = allPhones.map((e) => e.text.trim()).toList().sortAlgo();
+        var phones = allPhones.map((e) => e.text.trim()).toList().sortAlgoForPhone();
         var res = phones.first.extractPhone();
 
         phoneCode = res.$1;
@@ -84,5 +84,24 @@ extension on List<String> {
     work.sort((a, b) => a.compareTo(b));
 
     return verifiedDirect + verifiedWork + direct + work;
+  }
+
+  List<String> sortAlgoForPhone() {
+    var directVerified = <String>[];
+    var direct = <String>[];
+
+    for (var element in this) {
+      if (element.contains('Direct') && element.contains('verified')) {
+        directVerified.add(element);
+      }
+      if (element.contains('Direct')) {
+        direct.add(element);
+      }
+    }
+
+    directVerified.sort((a, b) => a.compareTo(b));
+    direct.sort((a, b) => a.compareTo(b));
+
+    return directVerified + direct;
   }
 }

@@ -68,7 +68,7 @@ class GoogleSearchController extends GetxController {
   void checkDuplicateLinkedinProfile() async {
     isLoading.value = true;
     try {
-      var usersResponse = await _linkedCheckRepository.checkLinkedinExistence(googleResItems.map((element) => element.url).toList());
+      var usersResponse = await _linkedCheckRepository.newCheckLinkedinExistence(googleResItems.map((element) => element.url).toList());
       for (int i = 0; i < usersResponse.length; i++) {
         items[i].isFetch = usersResponse[i].status != 'NOT_REGISTERED';
       }
