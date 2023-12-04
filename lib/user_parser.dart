@@ -1,4 +1,5 @@
 import 'package:flutter_chrome_app/linkedin_user_model.dart';
+import 'package:flutter_chrome_app/utils/mock_data.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart';
 
@@ -135,7 +136,7 @@ class UserProfileParser {
   static LinkedinUserModel userParser(String htmlString,String url) {
 
     var document = parse(htmlString);
-    Element contentBlock = document.getElementsByClassName('artdeco-card ember-view pv-top-card').first;
+    Element contentBlock = document.getElementsByClassName('artdeco-card pv-top-card').first;
 
     // Extract the avatar URL
     final Element? avatarImg = contentBlock.querySelector('.pv-top-card-profile-picture__image');

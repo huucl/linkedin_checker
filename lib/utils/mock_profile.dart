@@ -1,10 +1,13 @@
-import 'package:flutter_chrome_app/utils/google_search_parser.dart';
-import 'package:flutter_chrome_app/utils/mock_data.dart';
-import 'package:html/parser.dart';
-import 'package:jwt_decoder/jwt_decoder.dart';
+import 'package:flutter_chrome_app/user_parser.dart';
 
-void main() {
-  var jwt = JwtDecoder.decode(accessToken);
-  print(jwt['id']);
+import 'mock_data.dart';
+
+void main(){
+  //check user parser
+  try {
+    var user = UserProfileParser.userParser(mockData, 'https://www.linkedin.com/in/huu-hoang-63240a103/');
+    print(user);
+  } catch (e) {
+    print(e);
+  }
 }
-

@@ -1,9 +1,5487 @@
-var mockData = r'''<div class="GyAeWb" id="rcnt"><div class="s6JM6d" id="center_col"><style>.bqHHPb{line-height:initial;}header .bqHHPb,[data-isc] .bqHHPb{padding-top:3px;height:40px;box-shadow:0px 1px 3px rgba(23,23,23,0.24)}.qAsqQe{border-right:1px solid #3c4043;height:30px;margin-right:7px;margin-left:2px}.nPDzT{align-items:center;display:inline-flex;}a.nPDzT{border-radius:20px;outline-offset:-2px;text-decoration:none}.pkWBse{box-shadow:1px 1px 15px 0px #171717}.pkWBse{border-radius:8px}.UjBGL{display:block}.CcNe6e{cursor:pointer;display:inline-block}.iRQHZe{position:absolute}.Qaqu5{position:relative}.shnMoc.CcNe6e{display:block}.v4Zpbe.CcNe6e{display:-webkit-box;display:-webkit-flex;display:flex;height:100%;width:100%}sentinel{}.PBn44e{border-radius:8px}.yTik0{border:none;display:block;outline:none}.wplJBd{white-space:nowrap}.JM22S::-webkit-scrollbar{width:8px}.JM22S::-webkit-scrollbar-thumb{background-color:#bababa;border-right:4px solid #fff}.iQXTJe{padding:5px 0}sentinel{}.Zt0a5e.LGiluc{border-top-color:#3c4043}.Zt0a5e.LGiluc,.Zt0a5e.EpPYLd[disabled]{color:rgba(255,255,255,0.26)!important}.CjiZvb,.GZnQqe.EpPYLd:active{background-color:rgba(255,255,255,0.1)}.EpPYLd{display:block;position:relative}.YpcDnf{padding:0 16px;vertical-align:middle}.YpcDnf.HG1dvd{padding:0}.HG1dvd>*{padding:0 16px}.WtV5nd .YpcDnf{padding-left:28px}.Zt0a5e .YpcDnf{line-height:48px}.GZnQqe .YpcDnf{line-height:23px}.EpPYLd:hover{cursor:pointer}.EpPYLd,.CB8nDe:hover{cursor:default}.LGiluc,.EpPYLd[disabled]{pointer-events:none;cursor:default}.LGiluc{border-top:1px solid;height:0;margin:5px 0}.Zt0a5e.CB8nDe{background:no-repeat left 8px center}.Zt0a5e.CB8nDe{background-image:url(https://ssl.gstatic.com/images/icons/material/system/1x/done_white_16dp.png)}.GZnQqe.CB8nDe{background:no-repeat left center}.GZnQqe.CB8nDe{background-image:url(https://ssl.gstatic.com/ui/v1/menu/checkmark2-light.png)}.GZnQqe.LGiluc,.GZnQqe.EpPYLd[disabled]{color:#dadce0!important}.GZnQqe.LGiluc{border-top-color:#3c4043}sentinel{}</style><style>.rsGxI.Ww4FFb,.Ww4FFb{background-color:#202124;border-size:0px;border-radius:0px;box-shadow:0px}.Ww4FFb .mnr-c,.mnr-c .Ww4FFb,.Ww4FFb .Ww4FFb{box-shadow:none;margin-bottom:0px}.vt6azd{margin:0px 0px 8px;margin:0px 0px 30px;}.Aysk6e{padding-top:7px}.tF2Cxc.asEBEc{margin-bottom:30px}.N54PNb{position:relative}.cvP2Ce{contain:layout paint;overflow:hidden;}.kb0PBd{display:block;flex:0 0 auto}.byrV5b{-webkit-box-align:center;-webkit-align-items:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;flex-direction:row}.sBJG1d{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center}.kDmHO{-webkit-box-align:center;-webkit-align-items:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;flex-direction:column}.lR4vec{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center}.xTEyc{-webkit-box-align:start;-webkit-align-items:start;align-items:start;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;flex-direction:row}.OjFzvd{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-webkit-justify-content:start;justify-content:start}.YIPhrb{-webkit-box-align:start;-webkit-align-items:start;align-items:start;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;flex-direction:column}.BToiNc{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-webkit-justify-content:start;justify-content:start}.E4bmEc .Va021{-webkit-box-flex:1;-webkit-flex:1 1 100%;flex:1 1 100%}.E4bmEc .Y76LGf{-webkit-box-flex:1;-webkit-flex:1 1 calc(50% - 4px);flex:1 1 calc(50% - 4px)}sentinel{}a:hover h3.LC20lb{text-decoration:underline}.M8OgIe .dG2XIf .fm06If .LC20lb,.n6SJS h3.LC20lb{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%}.LC20lb{display:inline-block;line-height:1.3;margin-bottom:3px;}.DKV0Md{padding-top:4px;padding-top:5px;}.DKV0Md{margin-top:18px;}.VjDLd .TieM1d .tjvcx,.IVvPP .tjvcx,.kno-kp .tjvcx,.VjDLd .kp-wholepage-osrp .tjvcx,#rhs .ss6qqb .tjvcx,#rhs .trNcde .tjvcx{display:inline-block;height:19px;overflow-y:hidden}.TbwUpd.ojE3Fb{display:flex;padding:0;align-items:center;padding-bottom:0}.TbwUpd.ojE3Fb a.fl{padding-top:0;font-size:12px;line-height:18px;}.GvPZzd{font-size:12px;line-height:18px;}.VuuXrf{color:#dadce0;font-size:14px;display:block;line-height:20px;white-space:nowrap;}.H9lube{background-color:#fff;border:1px solid #3c4043;border-radius:50%;display:inline-flex;justify-content:center;align-items:center;height:26px;width:26px;margin-right:12px;vertical-align:middle;}.eqA2re.NjwKYd{margin-right:0}.Vwoesf:not(.oRVWZ){display:inline-block}.Vwoesf{vertical-align:middle}.XNo5Ab.XNo5Ab{display:block;}.ob9lvb{color:#bdc1c6}.dyjrff{color:#bdc1c6}.B6fmyf{position:absolute;top:0;height:0;visibility:hidden;white-space:nowrap}.B6fmyf.Mg1HEd{height:auto}.csDOgf{display:inline;visibility:visible}.csDOgf.BCF2pd.ezY6nb,.csDOgf.L48a4c{height:18px}.csDOgf{margin-left:8px;position:relative}.csDOgf.L48a4c{margin-top:16px}.IjabWd{margin-left:2px}.xTFaxe{top:2px}.xTFaxe{color:#9aa0a6}.D6lY4c{height:22px;width:22px;position:absolute;border-radius:11px}.iTPLzd{cursor:pointer;top:0;line-height:16px}.iTPLzd{left:0;width:28px}.iTPLzd{z-index:1}sentinel{}.rNSxBe{padding-bottom:20px}sentinel{}.eY4mx{padding-left:12px}sentinel{}.lUn2nc{padding-right:12px}sentinel{}.yXK7lf em{color:#bcc0c3}.yXK7lf a:visited em,.yXK7lf a em{color:inherit}.gEBHYd{padding-top:0;margin-bottom:0}.lhLbod{color:#9aa0a6;}.W8l4ac{padding-top:0;margin-bottom:0}.yDYNvb.lyLwlc{color:#bdc1c6}.lEBKkf{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}</style><div id="taw"><div id="oFNiHe" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QL3oECAIQFg"><div class="Ww4FFb vt6azd"><div class="Aysk6e card-section Pqkn2e">Tip:
-  <a href="/search?q=site:vn.linkedin.com+((c%2B%2B+or+java)+and+developer+)&amp;sca_esv=578099941&amp;rlz=1C1CHBF_enVN1049VN1049&amp;lr=lang_en&amp;sa=X&amp;ved=2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QuAF6BAgEEAI">
-    Limit this search to <em>English</em> language
-    results</a>. <a href="https://support.google.com/websearch/?p=language_search_results&amp;hl=en-VN" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://support.google.com/websearch/%3Fp%3Dlanguage_search_results%26hl%3Den-VN&amp;ved=2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QtwF6BAgEEAM">Learn more</a> about filtering by language</div></div></div><div id="tvcap"></div></div><div class="eqAnXb" id="res" role="main"><div id="topstuff"></div><div id="search"><div data-hveid="CAIQGA" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QGnoECAIQGA"><h1 class="bNg8Rb OhScic zsYMMe BBwThe" style="clip:rect(1px,1px,1px,1px);height:1px;overflow:hidden;position:absolute;white-space:nowrap;width:1px;z-index:-1000;-webkit-user-select:none">Search Results</h1><div class="v7W49e" eid="hsxAZbTJEovc2roP0p2O6Ao" data-async-context="query:site%3Avn.linkedin.com%20((c%2B%2B%20or%20java)%20and%20developer%20)" id="rso"><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="vi" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CBQQAA" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFSgAegQIFBAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_oDLq3"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/in/hathuyen90" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECBAQAQ" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/in/hathuyen90&amp;ved=2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECBAQAQ"><br><h3 class="LC20lb MBeuO DKV0Md">Hà Thuyên - C++ Developer, Java Developer - Samsung</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt="" data-atf="1" data-frt="0"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › hathuyen90</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › hathuyen90</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;B/tnuw cECq7c;_;B/tnvA" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q2esEegQIEBAJ"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Qh-4GegQIEBAK"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="lhLbod gEBHYd" jsportable="sass-ported"><span>Vietnam</span><span aria-hidden="true"> · </span><span>C++ Developer, Java Developer</span><span aria-hidden="true"> · </span><span>Samsung</span></div><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2">Hà Thuyên · 1. Design and develop interface between modem and application for communication service (CALL, SMS, Volte) · 2. Develop communication framework, RIL&nbsp;...</div></div></div></div><span id="z9PoV"></span><script nonce="">(function(){var uer=false;var eid='z9PoV';(function(){var a=google.c.wh0,b=google.c.frt,c=google.c.frvt,d=google.c.whu;var e=uer,f=Date.now(),g=google.c.sxs?"load2":"load";if(google.timers&&google.timers[g].t){var h=0;if(eid){var k=document.getElementById(eid);k&&(h=Math.floor(k.getBoundingClientRect().top+window.pageYOffset))}b&&google.tick(g,"frt",f);c&&google.tick(g,"frvt",f);google.tick(g,"frts",f);h&&google.c.e(g,"frtp",String(h));d&&!google.c.wh&&(google.c.wh=Math.floor(window.innerHeight||document.documentElement.clientHeight));var l=google.c.wh,m;m=a&&!l?!1:h>=l;for(var n=document.getElementsByTagName("img"),p=0,q=void 0;q=n[p++];)google.c.setup(q,!0,h);google.c.bofr=
-!1;m&&google.c.ubr(!1,f,h,!e)};}).call(this);})();</script></div><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="vi" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CCAQAA" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFSgAegQIIBAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_qcXbpd"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/in/trung-tran-6437a08a" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECBMQAQ" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/in/trung-tran-6437a08a&amp;ved=2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECBMQAQ"><br><h3 class="LC20lb MBeuO DKV0Md">Trung Tran</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt="" data-atf="1" data-frt="0"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;B/tnvU cECq7c;_;B/tnvk" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q2esEegQIExAJ"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Qh-4GegQIExAK"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2">Understanding about project management, software develop management. - Experienced… | Learn more about Trung Tran's work experience, education,&nbsp;...</div></div><div class="kb0PBd cvP2Ce" data-sncf="2" data-snf="mCCBcf"><div class="fG8Fp uo4vr"></div></div></div></div></div><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="en" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CCMQAA" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFSgAegQIIxAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_JD4Lk"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/jobs/c-c%2B%2B-developer-jobs" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECBUQAQ" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/jobs/c-c%252B%252B-developer-jobs&amp;ved=2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECBUQAQ"><br><h3 class="LC20lb MBeuO DKV0Md">2000+ C C++ Developer jobs in Vietnam (103 new)</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt="" data-atf="1" data-frt="0"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › jobs › c-c++-developer-jobs</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › jobs › c-c++-developer-jobs</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;B/tnu8 cECq7c;_;B/tnvM" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q2esEegQIFRAJ"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Qh-4GegQIFRAK"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span>Today's top 2000+ C <em>C++ Developer</em> jobs in Vietnam. Leverage your professional network, and get hired. New C <em>C++ Developer</em> jobs added daily.</span></div></div><div class="kb0PBd cvP2Ce" data-sncf="2" data-snf="mCCBcf"><div class="fG8Fp uo4vr"></div></div><div class="kb0PBd cvP2Ce" data-sncf="3" data-snf="oyZ5Hb"><div class="TXwUJf"><span>Missing:</span> <s><span>java)</span></s> ‎| Show results with: <a class="fl" href="/search?sca_esv=578099941&amp;rlz=1C1CHBF_enVN1049VN1049&amp;q=site:vn.linkedin.com+((c%2B%2B+or+%22java)%22+and+developer+)&amp;sa=X&amp;ved=2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q5t4CegQIHhAB"><span>java)</span><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></div></div></div></div></div><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="vi" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CCIQAA" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFSgAegQIIhAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_J09tDc"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/in/dat-doan-trong-b5682a172" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECBEQAQ" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/in/dat-doan-trong-b5682a172&amp;ved=2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECBEQAQ"><br><h3 class="LC20lb MBeuO DKV0Md">Dat Doan Trong</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt="" data-atf="1" data-frt="0"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;B/tnu0 cECq7c;_;B/tnvI" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q2esEegQIERAJ"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Qh-4GegQIERAK"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="lhLbod gEBHYd" jsportable="sass-ported"><span>Vietnam</span><span aria-hidden="true"> · </span><span>Microtec Vietnam</span></div><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span>Strong experience in <em>development</em>, integration, testing, deployment and maintenance.… | Learn more about Dat Doan Trong's work experience, education,&nbsp;...</span></div></div></div></div></div><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="en" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CCEQAA" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFSgAegQIIRAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_XjA9Bf"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/jobs/c-developer-jobs" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECA4QAQ" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/jobs/c-developer-jobs&amp;ved=2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECA4QAQ"><br><h3 class="LC20lb MBeuO DKV0Md">218 C Developer jobs in Vietnam (5 new)</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt="" data-atf="1" data-frt="0"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › jobs › c-developer-jobs</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › jobs › c-developer-jobs</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;B/tnvY cECq7c;_;B/tnvg" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q2esEegQIDhAJ"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Qh-4GegQIDhAK"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span>218 C <em>Developer</em> Jobs in Vietnam (5 new) · 1 week ago. Hanoi - DevOps Engineer (C/<em>C++</em> Linux /<em>Java</em> / Python). Hanoi - DevOps Engineer (C/<em>C++</em> Linux /<em>Java</em> / Python).</span></div></div><div class="kb0PBd cvP2Ce" data-sncf="2" data-snf="mCCBcf"><div class="fG8Fp uo4vr"></div></div></div></div></div><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="vi" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CB8QAA" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFSgAegQIHxAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_ulvMi"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/in/minh-duc-bui-882a70169" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECA8QAQ" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/in/minh-duc-bui-882a70169&amp;ved=2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECA8QAQ"><br><h3 class="LC20lb MBeuO DKV0Md">Minh Duc Bui - Senior C++ Developer - Cốc Cốc</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt="" data-atf="4" data-frt="0"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;B/tnvE cECq7c;_;B/tnvc" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q2esEegQIDxAJ"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Qh-4GegQIDxAK"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="lhLbod gEBHYd" jsportable="sass-ported"><span>Vietnam</span><span aria-hidden="true"> · </span><span>Senior C++ Developer</span><span aria-hidden="true"> · </span><span>Cốc Cốc</span></div><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span>A highly experienced Backend <em>Developer</em> with 5+ years of experience in developing and maintaining distributed system. Skilled in designing and developing&nbsp;...</span></div></div></div></div></div><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="vi" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CB0QAA" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFSgAegQIHRAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_m7l6Jc"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/in/h%C6%B0%C6%A1ng-v%C3%B5-957a21132" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECBIQAQ" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/in/h%25C6%25B0%25C6%25A1ng-v%25C3%25B5-957a21132&amp;ved=2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECBIQAQ"><br><h3 class="LC20lb MBeuO DKV0Md">Hương Võ - Software Engineer Qt/C++ - VIVAS (Member of ...</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt="" data-atf="4" data-frt="0"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;B/tnu4 cECq7c;_;B/tnvQ" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q2esEegQIEhAJ"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Qh-4GegQIEhAK"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="lhLbod gEBHYd" jsportable="sass-ported"><span>Vietnam</span><span aria-hidden="true"> · </span><span>Software Engineer Qt/C++</span><span aria-hidden="true"> · </span><span>VIVAS (Member of VNPT Technology)</span></div><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span><em>Java Developer</em> at VIVAS (Member of VNPT Technology). Vietnam · Connect · Hải Ngọc Lâm. Senior <em>Java</em> Team Leader at Vivas. Hanoi Capital Region · Connect · Van-&nbsp;...</span></div></div></div></div></div><div class="MjjYud"><span class="oUAcPd" id="fld_1"></span><script nonce="">(function(){var uer=false;var eid='fld_1';(function(){var a=google.c.wh0,b=google.c.whu;var c=uer,d=Date.now(),e=google.c.sxs?"load2":"load";if(google.timers&&google.timers[e].t){var f=0;if(eid){var g=document.getElementById(eid);g&&(f=Math.floor(g.getBoundingClientRect().top+window.pageYOffset))}b&&!google.c.wh&&(google.c.wh=Math.floor(window.innerHeight||document.documentElement.clientHeight));var h=google.c.wh,k;k=a&&!h?!1:f>=h;for(var l=document.getElementsByTagName("img"),m=0,n=void 0;n=l[m++];)google.c.setup(n,!1,f);k&&google.c.ubr(!1,d,f,!c)};}).call(this);})();</script><style>.ULSxyf{margin-bottom:44px}.hlcw0c{margin-bottom:44px}.oIk2Cb{margin:0}.y6Uyqe{margin-left:-8px;margin-right:-8px;padding:6px 0 0 0}.kfsfbe.kfsfbe{padding:0 0 8px}.adDDi{display:flex;position:relative;flex-wrap:wrap;padding:0 0 12px;margin:0 0}.T6zPgb{min-width:0}.YC72Wc{max-width:calc(100% - 22px)}.mgAbYb{display:block;white-space:nowrap}.YR2tRd{position:relative;align-self:center;height:22px}.EIaa9b{display:flex}.AJLUJb{display:flex;flex:1;flex-direction:column}.gduDCb{margin-left:12px}sentinel{}.k8XOCe{align-items:center;background-color:#303134;border-radius:100px;box-sizing:border-box;display:flex;max-height:none;min-height:48px;padding-left:17px;padding-right:17px;position:relative}.k8XOCe:hover,.k8XOCe:active{color:#bdc1c6}.s75CSd{-webkit-box-orient:vertical;color:#bdc1c6;display:-webkit-box;flex:1;font-size:16px;-webkit-line-clamp:2;max-width:227px;overflow-wrap:break-word;overflow:hidden}.aXBZVd{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='rgba(255,255,255,.54)' d='M20.49 19l-5.73-5.73C15.53 12.2 16 10.91 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49 20.49 19zM5 9.5C5 7.01 7.01 5 9.5 5S14 7.01 14 9.5 11.99 14 9.5 14 5 11.99 5 9.5z'/%3E%3C/svg%3E");background-position:center;background-repeat:no-repeat;background-size:20px;height:20px;padding:10px;width:20px}.VCOFK{margin-left:8px;margin-right:8px}.R0xfCb{margin-bottom:4px;margin-top:4px}.s8bAkb{padding-bottom:0px;padding-top:0px}sentinel{}.unhzXb{border-radius:4px}sentinel{}.u60jwe{margin-right:0px}.r2fjmd{margin-bottom:0px;margin-top:0px}sentinel{}.z1asCe.kQdGHd,.WqQeqc.kQdGHd{position:absolute}.WZH4jc{text-align:center}.WZH4jc .VknLRd{pointer-events:none}.WZH4jc .VknLRd:hover,.WZH4jc .VknLRd:hover h3{text-decoration:none}.WZH4jc .GNJvt{background:#303134;border:1px solid rgba(255,255,255,0);box-sizing:border-box;cursor:pointer;font-size:14px;line-height:20px;pointer-events:auto;position:relative;width:300px;padding:7px 11px;margin:0;flex-direction:row-reverse;align-items:center;display:flex;justify-content:center;margin-left:auto;margin-right:auto;height:36px;border-radius:18px}.WZH4jc .VknLRd:hover .GNJvt{background:#3c4043}.WZH4jc .kQdGHd{position:relative;left:0}.WZH4jc .OTvAmd{display:block}.WZH4jc .RVQdVd{line-height:20px;margin-right:8px}.KXbwLb{background-color:#3c4043;border:0;height:1px;left:0;margin-top:18px;position:absolute;width:100%}.QjmzCd{text-align:center;margin:25px 0;height:30px}.w7LJsc{height:45px;margin-bottom:28px}.GNJvt{display:block;background-color:#303134;text-align:center;font-size:14px;color:#bdc1c6;border-radius:20px;height:24px;line-height:24px;border:1px solid rgba(255,255,255,0);padding:8px 13px;margin:16px 16px 40px 16px;}.RVQdVd{line-height:24px}.kQdGHd{color:#9aa0a6;left:13px;position:absolute}.GNJvt:active{background:#3c4043}.VknLRd{-webkit-tap-highlight-color:transparent;display:block}.ipz2Oe{position:relative}</style><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="vi" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CC8QAA" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFSgAegQILxAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_GZdfY"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/in/nstra9x" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECC0QAQ" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/in/nstra9x&amp;ved=2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECC0QAQ"><br><h3 class="LC20lb MBeuO DKV0Md">Trà Nguyễn - C++ Developer - BlockBase</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt="" data-atf="4" data-frt="0"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;B/tnwA cECq7c;_;B/tnwE" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q2esEegQILRAJ"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Qh-4GegQILRAK"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="lhLbod gEBHYd" jsportable="sass-ported"><span>Ho Chi Minh City, Ho Chi Minh City, Vietnam</span><span aria-hidden="true"> · </span><span>C++ Developer</span><span aria-hidden="true"> · </span><span>BlockBase</span></div><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span><em>Trà</em> Nguyễn. C/C++ Software Engineer. BlockBaseHo Chi Minh University of Technology. Ho Chi Minh City, Ho Chi Minh City, Vietnam.</span></div></div></div></div></div><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="vi" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CCoQAA" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFSgAegQIKhAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_dTZRzf"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/in/h%E1%BA%A3i-linh-tr%E1%BA%A7n-510b38158" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECCsQAQ" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/in/h%25E1%25BA%25A3i-linh-tr%25E1%25BA%25A7n-510b38158&amp;ved=2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECCsQAQ"><br><h3 class="LC20lb MBeuO DKV0Md">Hải Linh Trần - Java Developer - CMCSoft Ltd. Co.</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt="" data-atf="4" data-frt="0"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;B/tnv4 cECq7c;_;B/tnv8" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q2esEegQIKxAJ"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Qh-4GegQIKxAK"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="lhLbod gEBHYd" jsportable="sass-ported"><span>Vietnam</span><span aria-hidden="true"> · </span><span>Java Developer</span><span aria-hidden="true"> · </span><span>CMCSoft Ltd. Co.</span></div><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span>- <em>Java dev</em>, create solutions and resolve the problem, write API with spring framework. - Design Database, write query, functions, and Procedures on Sql Server.</span></div></div></div></div></div><div class="hlcw0c"><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="en" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CCgQAA" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFSgAegQIKBAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_L1m5nf"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/in/anhtuantt" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECCcQAQ" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/in/anhtuantt&amp;ved=2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QFnoECCcQAQ"><br><h3 class="LC20lb MBeuO DKV0Md">Tuan Nguyen - Founder of definotify.net</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt="" data-atf="4" data-frt="0"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › anhtuantt</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › anhtuantt</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;B/tnvw cECq7c;_;B/tnv0" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q2esEegQIJxAJ"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Qh-4GegQIJxAK"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span>Expert C/<em>C++</em>, J2EE architect for the Windows and IBM AS/400. Over 12 years working with <em>Java</em> and <em>Java</em> Web <em>development</em>, specialize in modernizing legacy IBM&nbsp;...</span></div></div><div class="kb0PBd cvP2Ce" data-sncf="2" data-snf="mCCBcf"><div class="fG8Fp uo4vr"></div></div></div></div></div></div></div></div></div></div><div id="bottomads"></div><div id="botstuff"><div data-hveid="CAUQAA" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QCHoECAUQAA"><div></div><div id="bres"><div class="MjjYud"><div id="_hsxAZbTJEovc2roP0p2O6Ao_24"><div jscontroller="ND0kmf" class="L7w3le AVxOgc" data-fc="1" data-q="site:vn.linkedin.com ((c++ or java) and developer )" data-sd="CmKT27ujkdW71PMBqJqx8O3VjO/ZAY+DrqekmPfnLYnopPS8xILa/QG9sc2WtI6uu5EB1diVsbfGuNbVAaH5h56xuuD33AGc6az4l6/8y/0BwpyGlvbS4fPaAZCU0fbq3t78KxAA" jsaction="pbJuwe:P0BF0c;cWX3If:FAhRHe" data-hveid="CCQQAA" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QrpEFegQIJBAA"><div jsname="TGR4F" class="yp" data-async-fc="EosBCkxBTE9ucFlVWXQ2NEs1TnJNXzYyVlZ2bi1POVV0RC1STHp3VF9ZWWFFSFRaMkRMMDdBTkM4LVZpdm8tVldvS2oxa0Q4R3F4ckVDOGkyEhdoc3hBWmJUSkVvdmMycm9QMHAyTzZBbxoiQUp3ay04ZUo0c3JHamhnQ3pBWjRnVHdEc2RRRVhlUmc3dw" data-async-fcv="3" data-async-ons="1261" id="fc_1" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q3_IGegQIJBAB"></div></div></div></div><div class="ULSxyf"><div class="MjjYud"><div data-abe="" data-hveid="CCUQAA" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q26YDegQIJRAA"><div class="oIk2Cb"><div class="kfsfbe adDDi"><div class="T6zPgb YC72Wc"><div aria-level="2" role="heading"><span class="mgAbYb OSrXXb RES9jf IFnjPb">Related searches</span></div></div><span class="YR2tRd"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" jsdata="l7Bhpb;_;B/tnvo cECq7c;_;B/tnvs" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q2esEegQIJRAC"><div jsaction="KyPa0e:RvIhPd;wjOG7e:edHC5b;al5F3e:edHC5b;"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc eY4mx" style="padding-right:5px;position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c IjabWd"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Qh-4GegQIJRAD"></span></div><g-snackbar jsname="t1F84b" jscontroller="OZLguc" style="display:none" jsshadow="" jsaction="rcuQ6b:npT2md" id="ow73" __is_owner="true"><div jsname="Ng57nc" class="yK6jqe" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q4G96BAglEAQ" jsowner="ow73"><div class="b77HKf"><div class="rIxsve" jsslot=""><span class="Txngnb wHYlTd yUTMj">You will see more English now.</span></div></div></div><div jsname="sM5MNb" aria-live="polite" class="LH3wG"></div></g-snackbar></div></span></div><div class="y6Uyqe"><div class="EIaa9b"><div class="AJLUJb"><div data-hveid="CCYQAA"><a class="k8XOCe R0xfCb VCOFK s8bAkb" href="/search?sca_esv=578099941&amp;rlz=1C1CHBF_enVN1049VN1049&amp;q=((+C%2B%2B+or+java+and+developer+salary&amp;sa=X&amp;ved=2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q1QJ6BAgmEAE"><div class="aXBZVd unhzXb"></div><div class="s75CSd u60jwe r2fjmd AB4Wff">(( C++ or java and developer salary</div></a></div></div><div class="AJLUJb"></div></div></div></div></div></div></div></div><div jscontroller="ogmBcd" jsname="BRTknd" jsmodel="oWVrne" class="sdjuGf" jsdata="A7MAsf;_;B/tnuU" jsaction="rcuQ6b:npT2md;Jl3rxb:VimORe;BqPbQ:p5vRo;Kf5VV:CYKeQe;lQkSke:fj32se;aLHH2d:XV6jYd;LYjNec:cyaZJ;QEvNdb:teMyNc;K6ldnc:vK2xWc;xHsTDe:PoQGh"><div jscontroller="Gg40M" jsaction="rcuQ6b:npT2md;yFBEId:dNTL7c;AnqxQb:dNTL7c;aLHH2d:yTpwFc"><div jsname="TCyEnb" aria-owns="rhs"></div><div jsname="nZDdGd" tabindex="-1"></div></div><div jsname="sgxt2d" data-graft-type="insert" id="arc-srp_1" data-jiis="up" data-async-type="arc" data-async-context-required="arc_id,q" class="yp" data-async-rclass="search" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QxK8CegQIBRAC"></div><div jsname="GDPwke" class="WtZO4e"><div id="arc-srp_110" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QxK8CegQIBRAC" data-graft-type="insert" data-async-type="arc" data-async-rclass="search" data-async-context-required="arc_id,q" data-jiis="up" async-ei="Ns1AZYfeIffl2roPoKOFqA0"><div decode-data-ved="1" eid="Ns1AZYfeIffl2roPoKOFqA0" data-async-context="query:site%3Avn.linkedin.com%20((c%2B%2B%20or%20java)%20and%20developer%20)" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChCS4QJ6BAgBEAA"><style>.Lj8KXd{background-color:transparent;top:0;width:100%;white-space:nowrap;height:22px;position:absolute;-webkit-transition:top 220ms ease-in-out;}.muaC1e{overflow-x:scroll;-ms-overflow-style:none;scrollbar-width:none}.muaC1e::-webkit-scrollbar{display:none}.eTnfyc{text-align:right;width:calc(var(--center-abs-margin) + var(--center-width) + var(--rhs-margin) + var(--rhs-width));}.Lj8KXd .QBbvme{margin-top:44px}.yyoM4d{padding-top:3px;padding-bottom:7px;top:7px}.p4DDCd{display:none}.hdtb-mn-hd{color:#9aa0a6;display:inline-block;position:relative;padding-top:0;padding-bottom:0;padding-right:18px;padding-left:12px;line-height:22px;cursor:pointer}.Lj8KXd .hdtb-mn-hd{padding:0 12px;margin-right:6px}.Lj8KXd .rZBQ0c{margin-right:-12px}.Lj8KXd .KTBKoe{padding-right:10px}.Lj8KXd .gTl8xb{border-width:5px 5px 0 5px}.hdtb-mn-hd:hover{color:#ddd}.hdtb-mn-hd:hover .gTl8xb{border-color:#ddd transparent}.hdtb-mn-hd:active{color:#8ab4f8}.hdtb-mn-hd:active .gTl8xb{border-color:#8ab4f8 transparent}.LkcePc{display:inline-block;width:var(--center-abs-margin);}.v5jHUb{display:none}.FcOujd .v5jHUb{display:block;border:1px solid #3c4043;border-top:0;margin-bottom:30px}.ULSxyf{margin-bottom:44px}.H7QZHe{margin:0 0 8px;background-color:#202124}.hlcw0c{margin-bottom:44px}.D0ONmb .hlcw0c:last-child{margin-bottom:0}.FcOujd .ULSxyf:first-child{margin-top:44px}.tF2Cxc{position:relative}.rsGxI.Ww4FFb,.Ww4FFb{background-color:#202124;border-size:0px;border-radius:0px;box-shadow:0px}.Ww4FFb .mnr-c,.mnr-c .Ww4FFb,.Ww4FFb .Ww4FFb{box-shadow:none;margin-bottom:0px}.vt6azd{margin:0px 0px 8px;margin:0px 0px 30px;}.CBvvz{margin:-8px 0px 0px;margin:-30px 0px 0px;}.tF2Cxc.asEBEc{margin-bottom:30px}.N54PNb{position:relative}.cvP2Ce{contain:layout paint;overflow:hidden;}.kb0PBd{display:block;flex:0 0 auto}.A9Y9g{flex:1 1 100%;min-width:0}.pAEXpf{flex:1 1 auto}.KAO3Kc{display:block;height:100%}.IajJf{flex-shrink:1}.myAtwe{margin-top:auto}.cEaSVc{margin-right:auto}.lOdyRd{margin-bottom:auto}.LnCrMe{margin-left:auto}.byrV5b{-webkit-box-align:center;-webkit-align-items:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;flex-direction:row}.sBJG1d{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center}.kDmHO{-webkit-box-align:center;-webkit-align-items:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;flex-direction:column}.lR4vec{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center}.xTEyc{-webkit-box-align:start;-webkit-align-items:start;align-items:start;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;flex-direction:row}.OjFzvd{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-webkit-justify-content:start;justify-content:start}.YIPhrb{-webkit-box-align:start;-webkit-align-items:start;align-items:start;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;flex-direction:column}.BToiNc{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-webkit-justify-content:start;justify-content:start}.E4bmEc .Va021{-webkit-box-flex:1;-webkit-flex:1 1 100%;flex:1 1 100%}.E4bmEc .Y76LGf{-webkit-box-flex:1;-webkit-flex:1 1 calc(50% - 4px);flex:1 1 calc(50% - 4px)}sentinel{}.aBeYNc{right:-23px;position:absolute;top:0;width:48px;height:48px}a:hover h3.LC20lb{text-decoration:underline}.M8OgIe .dG2XIf .fm06If .LC20lb,.n6SJS h3.LC20lb{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%}.LC20lb{display:inline-block;line-height:1.3;margin-bottom:3px;}.c2xzTb .LC20lb{margin-bottom:0}.MMgsKf{padding-top:2px}.DKV0Md{padding-top:4px;padding-top:5px;}.NXKJM{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:1}.DKV0Md{margin-top:18px;}.xvfwl{margin-top:4px}.VjDLd .TieM1d .tjvcx,.IVvPP .tjvcx,.kno-kp .tjvcx,.VjDLd .kp-wholepage-osrp .tjvcx,#rhs .ss6qqb .tjvcx,#rhs .trNcde .tjvcx{display:inline-block;height:19px;overflow-y:hidden}.TbwUpd.ojE3Fb{display:flex;padding:0;align-items:center;padding-bottom:0}.TbwUpd.ojE3Fb a.fl{padding-top:0;font-size:12px;line-height:18px;}.GvPZzd{font-size:12px;line-height:18px;}.iG7WGe{color:#dadce0;padding:0;text-align:center;width:16px}.VuuXrf{color:#dadce0;font-size:14px;display:block;line-height:20px;white-space:nowrap;}.qncq2c{font-size:12px;line-height:16px;margin-left:6px}.H9lube{background-color:#fff;border:1px solid #3c4043;border-radius:50%;display:inline-flex;justify-content:center;align-items:center;height:26px;width:26px;margin-right:12px;vertical-align:middle;}.fJOpI.H9lube{background-color:#2a4165;border:1px solid #2a4165}.P1UpZb{background-color:#fff;border:1px solid #3c4043}.eqA2re.NjwKYd{margin-right:0}.Vwoesf:not(.oRVWZ){display:inline-block}.Vwoesf{vertical-align:middle}.XNo5Ab.XNo5Ab{display:block;}.YSlTVe.YSlTVe .DVXTI{color:#b1c5ff;background-color:#2c303d}.YSlTVe .bJVp8c{color:#b1c5ff}.YSlTVe.YSlTVe .qr5Pe,.YSlTVe.YSlTVe .g7Jr2c{background-color:#2c303d}.YSlTVe .CZ61cb{background-color:#28292a;border:1px solid #333438}.YSlTVe .yidq7b,.YSlTVe .d0FfLc{background-color:#2c303d}.YSlTVe.YSlTVe .Hyrj7c{color:#b1c5ff}.YSlTVe.YSlTVe .GB3ilc{background-color:#fff}.lWlVCe{border-radius:50%}.bJVp8c{color:#e2eeff}.Jj3Uob{color:#e2eeff;}.Hyrj7c{text-align:center;vertical-align:middle}.pBG0nf{color:#202124;font-family:Google Sans,arial,sans-serif;font-size:14px;line-height:18px}.DVXTI.DVXTI{font-family:Google Sans,arial,sans-serif-medium,sans-serif;font-weight:400;font-size:10px;text-transform:capitalize;margin-bottom:0;color:#e2eeff;background-color:#2a4165}.aH7zee{border-radius:50%;background-color:#dadada;}.ob9lvb{color:#bdc1c6}.ob9lvb.HCMUuf{color:#9aa0a6}.dyjrff{color:#bdc1c6}.B6fmyf{position:absolute;top:0;height:0;visibility:hidden;white-space:nowrap}.B6fmyf.Mg1HEd{height:auto}.csDOgf{display:inline;visibility:visible}.csDOgf.I5pXif{position:absolute}.csDOgf.BCF2pd.ezY6nb,.csDOgf.L48a4c{height:18px}.csDOgf{margin-left:8px;position:relative}.csDOgf.Pyz0Gd{margin-top:2px}.csDOgf.L48a4c{margin-top:16px}.IjabWd{margin-left:2px}.xTFaxe{top:2px}.xTFaxe{color:#9aa0a6}.D6lY4c{height:22px;width:22px;position:absolute;border-radius:11px}.iTPLzd{cursor:pointer;top:0;line-height:16px}.iTPLzd{left:0;width:28px}.iTPLzd{z-index:1}sentinel{}.rNSxBe{padding-bottom:20px}sentinel{}.eY4mx{padding-left:12px}sentinel{}.lUn2nc{padding-right:12px}sentinel{}.yXK7lf em{color:#bcc0c3}.yXK7lf a:visited em,.yXK7lf a em{color:inherit}.gEBHYd{padding-top:0;margin-bottom:0}.lhLbod{color:#9aa0a6;}.W8l4ac{padding-top:0;margin-bottom:0}.yDYNvb.lyLwlc{color:#bdc1c6}.lEBKkf{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}.TNT2l{font-style:normal}.i1eWpb .GTERze{display:none}.ky4hfd{display:none}.i1eWpb .ky4hfd{display:block}g-section-with-header{display:block;margin-bottom:0}.Jb0Zif g-section-with-header{margin-bottom:30px}.ss6qqb g-section-with-header{margin-bottom:16px}.U7izfe{padding-left:0px;padding-right:0px;padding-bottom:12px}.U7izfe.axf3qc{padding-bottom:8px}.eejeod .U7izfe{padding-top:0px}.e2BEnf{font-size:20px;line-height:1.3}.EQdXxd{font-family:Google Sans,arial,sans-serif}title-with-lhs-icon:hover .ekf0x h3{color:#80c4ff}title-with-lhs-icon .ekf0x{color:#bdc1c6;display:block;margin-left:-53px}title-with-lhs-icon .hSQtef.ekf0x{display:inline;margin-left:0}title-with-lhs-icon:hover .hSQtef.ekf0x{color:#80c4ff}#rcnt .ekf0x:hover h3{text-decoration:none}.iJ1Kvb{display:inline-block;line-height:24px}.GmE3X{color:#e8eaed;display:inline-block;margin-right:12px;position:relative;top:-3px}.s6JM6d #res .GmE3X{font-size:22px;line-height:28px}.s6JM6d .GmE3X{font-size:22px;line-height:28px}.s6JM6d .GmE3X{max-width:608px;overflow:hidden;text-overflow:ellipsis;vertical-align:text-top;white-space:nowrap}.s6JM6d .GmE3X.kWYf3c{max-width:568px}.SEggnd{border:1px solid #3c4043;border-radius:36px;display:inline-block;margin-right:16px;padding:7px;vertical-align:middle;margin-bottom:5px;margin-top:-3px}.iv236{color:#9aa0a6;display:inline-block;margin-right:12px}.dtIg1b{display:none;margin-right:12px}title-with-lhs-icon:hover .kNmTT{display:none}title-with-lhs-icon:hover .dtIg1b{display:inline-block}.SEggnd .N3S4q{display:block}.wIV7Db{visibility:hidden}.iJddsb{display:inline-block;fill:currentColor}.iJddsb img,.iJddsb svg{display:block;height:100%;width:100%}.ouRJZc{display:inline-block;position:relative;top:1px}.WE2xI{position:relative}.xte2qe{display:flex}.OXEsB{border-radius:8px;overflow:hidden}.OXEsB .Xn9Tkc{border-top-left-radius:8px}.OXEsB .oGwWse{border-top-right-radius:8px}.OXEsB .y0jvId{border-bottom-right-radius:8px}.OXEsB .lM9tvf{border-bottom-left-radius:8px}.o6uAG{border-radius:12px;overflow:hidden}.o6uAG .Xn9Tkc{border-top-left-radius:12px}.o6uAG .oGwWse{border-top-right-radius:12px}.o6uAG .y0jvId{border-bottom-right-radius:12px}.o6uAG .lM9tvf{border-bottom-left-radius:12px}.l5X1Ye{border-radius:16px;overflow:hidden}.l5X1Ye .Xn9Tkc{border-top-left-radius:16px}.l5X1Ye .oGwWse{border-top-right-radius:16px}.l5X1Ye .y0jvId{border-bottom-right-radius:16px}.l5X1Ye .lM9tvf{border-bottom-left-radius:16px}.HdBr8{overflow:visible}.ZZGZKb{display:inline-block;vertical-align:top;margin:auto}html.zAoYTe .ZZGZKb:focus{outline-offset:-1px}.j4hJ8c{min-width:150px;height:100%;display:-webkit-box;display:flex;align-items:center;justify-content:center;}.BlGWBd g-more-button div{transition:opacity 300ms}.hWIMdd{padding-top:0px}sentinel{}.TBC9ub{margin-left:0px;margin-right:0px}sentinel{}.yG4QQe{margin-top:0px}sentinel{}.I7Y2H{padding-right:0px}sentinel{}.zJUuqf{margin-bottom:4px}.AB4Wff{margin-left:16px}.v0rrvd{padding-bottom:16px}@-webkit-keyframes g-snackbar-show{from{pointer-events:none;-webkit-transform:translateY(0);transform:translateY(0)}to{-webkit-transform:translateY(-100%);transform:translateY(-100%)}}@keyframes g-snackbar-show{from{pointer-events:none;-webkit-transform:translateY(0);transform:translateY(0)}to{-webkit-transform:translateY(-100%);transform:translateY(-100%)}}@-webkit-keyframes g-snackbar-hide{from{-webkit-transform:translateY(-100%);transform:translateY(-100%)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes g-snackbar-hide{from{-webkit-transform:translateY(-100%);transform:translateY(-100%)}to{-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes g-snackbar-show-content{from{opacity:0}}@keyframes g-snackbar-show-content{from{opacity:0}}@-webkit-keyframes g-snackbar-hide-content{to{opacity:0}}@keyframes g-snackbar-hide-content{to{opacity:0}}.LH3wG,.jhZvod{bottom:0;height:0;position:fixed;z-index:999}.Ox8Cyd{height:0;position:fixed;z-index:999}.E7Hdgb{box-sizing:border-box;visibility:hidden;display:inline-block}.yK6jqe,.Wu0v9b{box-sizing:border-box;visibility:hidden}.rTYTNb{-webkit-animation:g-snackbar-hide .4s cubic-bezier(0.4,0,0.2,1) both;animation:g-snackbar-hide .4s cubic-bezier(0.4,0,0.2,1) both;visibility:inherit}.UewPMd{-webkit-animation:g-snackbar-show .5s cubic-bezier(0.4,0,0.2,1) both;animation:g-snackbar-show .5s cubic-bezier(0.4,0,0.2,1) both;visibility:inherit}.b77HKf{background-color:#3c4043;padding:0 24px}.rIxsve{-webkit-box-align:center;-webkit-align-items:center;align-items:center;box-align:center;display:box;display:-webkit-box;display:-webkit-flex;display:flex}.rTYTNb .rIxsve{-webkit-animation:g-snackbar-hide-content .35s cubic-bezier(0.4,0,0.2,1) both;animation:g-snackbar-hide-content .35s cubic-bezier(0.4,0,0.2,1) both}.UewPMd .rIxsve{-webkit-animation:g-snackbar-show-content .35s cubic-bezier(0.4,0,0.2,1) .15s both;animation:g-snackbar-show-content .35s cubic-bezier(0.4,0,0.2,1) .15s both}.Txngnb.Txngnb{line-height:20px}.Txngnb{box-flex:1;color:#fff;-webkit-box-flex:1;-webkit-flex:1 1 auto;flex:1 1 auto;margin:14px 0;word-break:break-word}.sHFNYd{margin-right:-8px}@media (min-width:569px) and (min-height:569px){.LH3wG,.jhZvod{text-align:center}.Wu0v9b,.yK6jqe{display:inline-block;max-width:568px;min-width:288px;text-align:left}.b77HKf{border-radius:8px}.sHFNYd{margin-left:40px}}.V9O1Yd .rIxsve{display:block;padding:8px 0}.V9O1Yd .sHFNYd{margin-left:0}.V9O1Yd .sHFNYd g-flat-button{padding-left:0}.jhZvod{left:16px;right:auto}.LH3wG,.Ox8Cyd{left:0;right:0}.yK6jqe,.Wu0v9b,.E7Hdgb{position:relative}.G9jore{position:absolute;top:-24px;bottom:-24px;left:-24px;right:-24px}sentinel{}.FIfWIe{margin-left:4px}.gTewb{padding-left:8px;padding-right:8px}.s8bAkb{padding-bottom:0px;padding-top:0px}.TkZZsf{padding-bottom:4px;padding-top:4px}g-scrolling-carousel{display:block;position:relative}g-scrolling-carousel.tJJouf{overflow-y:visible}g-scrolling-carousel.tJJouf .acCJ4b{position:static}.acCJ4b{display:block;overflow-x:auto;overflow-y:hidden;position:relative;white-space:nowrap}.acCJ4b{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.MGlaC{border-radius:12px}.acCJ4b::-webkit-scrollbar{display:none}.AXejN{overflow-x:hidden}.GpHuwc{display:inline-block}.kjqWgb{display:-webkit-box;display:-webkit-flex;display:flex}.r95t{border-radius:2px;height:24px;background-color:#4487f6;color:#202124;top:50%;position:absolute;margin-top:-12px;box-shadow:0 2px 3px rgba(0,0,0,0.2);opacity:1;visibility:inherit;box-sizing:border-box;-webkit-transition:opacity .3s,visibility .3s;transition:opacity .3s,visibility .3s}.r95t.YdJLG{opacity:0;visibility:hidden}.u1Rise{padding-right:11px;background-position:0 6px;background-size:11px 8px;background-repeat:no-repeat;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAQCAYAAAAS7Y8mAAAAAXNSR0IArs4c6QAAAH5JREFUOBG11N0KgDAIBWDpxft96m7sWBgiuAt1whpr7EPoNKJBMfM62M5tAb0w7tzp4BTAE0OqDwZ2vOT36IEdKnQdBrKL5KoGA9scWF7SDFS6WhAMDsJRfz2j678r4P0fT3XgNsNYNsQtwGtxU1RndNr/Sxu8/xIyePrafABR75/ci3snRwAAAABJRU5ErkJggg==)}.acCJ4b.mecbob{-webkit-transform:none;transform:none}.kNfbm{margin-top:-2px}.kNfbm{margin-left:0;margin-right:0}.EDblX.y74B4{padding-top:2px}.EDblX.y74B4{padding-left:16px;padding-right:16px}.EDblX.k0YrJf{padding-left:0;padding-right:0}.EDblX.Ke2Pl{padding-top:16px}.EDblX.ifNoke{padding-bottom:16px}sentinel{}.eA0Zlc{vertical-align:top;display:inline-block;margin:0;position:relative}html.zAoYTe .eA0Zlc:focus-within{outline:-webkit-focus-ring-color auto 1px}.JX86yc{display:inline-block}.eA0Zlc:not(.JX86yc){overflow:hidden}.c2xzTb .JX86yc:focus-within{outline:none}html.zAoYTe .c2xzTb .JX86yc a:focus{outline-offset:-1px;z-index:100;position:relative}.M8OgIe .eA0Zlc.qN5nNb{margin-right:4px;margin-bottom:4px}.M8OgIe .ifM9O .GMCzAd,.hvs42d .GMCzAd{border-radius:0}.WghbWd{cursor:pointer}.eA0Zlc.qN5nNb{margin-right:2px;margin-bottom:2px}.eA0Zlc.ITO9Cc{margin-right:2px;margin-bottom:2px}.eA0Zlc.LyIfQ{margin-right:10px;margin-bottom:10px}.oRnkrf.LyIfQ{margin-bottom:10px}.eA0Zlc.U1K9Vc{padding:10px;overflow:visible}.eA0Zlc.U1K9Vc .srrRv{background-color:transparent;border:2px solid;border-color:#48a1ff;border-radius:16px;box-sizing:border-box;pointer-events:none;height:100%;left:0;opacity:1;position:absolute;top:0;width:100%}.eA0Zlc.U1K9Vc .ywd3Gc.srrRv{width:calc(100% - 16px);height:calc(100% - 16px);border-radius:14px;left:8px;top:8px}.eA0Zlc.U1K9Vc:focus-within{outline:none}.eA0Zlc.bi-io{border-bottom:1px solid #000;border-right:1px solid #000;left:0;top:0;z-index:1}g-inner-card.xIfh4d{margin-right:4px;position:relative;border-radius:0;border:none;}div.eA0Zlc:first-child g-inner-card.xIfh4d,div.eA0Zlc:first-child g-inner-card.xIfh4d video{-webkit-border-top-left-radius:8px;-webkit-border-bottom-left-radius:8px;}div.eA0Zlc:last-of-type g-inner-card.xIfh4d,div.eA0Zlc:last-of-type g-inner-card.xIfh4d video{-webkit-border-top-right-radius:8px;-webkit-border-bottom-right-radius:8px;}.s6JM6d .ifM9O .GMCzAd,.cUnQKe .GMCzAd{border-radius:12px;margin:16px}.cUnQKe .GMCzAd{margin:0;}.c2xzTb .ifM9O .GMCzAd{margin:0}.XzTjhb .fm06If .ifM9O .GMCzAd{margin:0}.M8OgIe .XzTjhb .fm06If .ifM9O .GMCzAd{margin:4px 4px 0 0}.f8yzVb{width:calc(50% - 10px);border-radius:8px}.PEPRs{width:calc(25% - 20px);border-radius:16px}.EfhPkd{height:100%;left:0;position:absolute;top:0;width:100%;z-index:100}.rkPjCb{background-color:#202124;border-radius:16px;box-shadow:0 1px 6px 0 rgba(32,33,36,0.28);cursor:pointer;display:none;height:fit-content;padding:8px 8px 12px 8px;position:absolute;top:0;width:fit-content;z-index:102}.RjYw8b{background-image:linear-gradient(-180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.8) 100%);position:absolute;width:100%;height:100%;left:0;top:0}.eii6dc{background:rgba(255,255,255,0.54);border-radius:16px;position:absolute;top:8px;right:8px;height:32px;width:32px}.HyRcxe{padding:15px 15px}.zgRAGb{position:absolute;top:0;right:0}.Ib6ph{position:absolute;top:0;right:1px}.TxERsb{display:flex;justify-content:center}.b1Zhoc{display:none}.BfmEZb{box-sizing:border-box;height:100%;left:0;pointer-events:none;position:absolute;top:0;width:100%}.FnEtTd .srrRv{border:2px solid;border-color:#48a1ff}.XOEbc img{transition:transform 200ms}.dB3j8:not(.qyKxnc) .XOEbc img,html.zAoYTe .FnEtTd:focus-within .XOEbc img{transform:scale(1.15)}.FnEtTd:focus-within{outline:none}html.zAoYTe .FnEtTd:focus-within .BfmEZb{border:2px solid;border-color:#8ab4f8}g-inner-card{background-color:#202124;border-radius:8px;display:block;overflow:hidden}.uGymmd{padding:13px 16px 11px}.PBgPab{box-shadow:1px 1px 15px 0px #171717}.wdQNof{border:1px solid #3c4043;border-radius:8px;box-shadow:none}html.zAoYTe g-inner-card:focus-within{outline:Highlight auto 1px;outline:-webkit-focus-ring-color auto 1px}.BYbUcd{overflow:hidden;}.BYbUcd img{height:100%;width:100%}.B68O1d{background-color:rgba(0,0,0,0.54)}sentinel{}.yOdbtf{position:relative}sentinel{}.uhHOwf{position:relative}.uhHOwf::after{background-color:rgba(0,0,0,0.03);bottom:0;content:"";display:block;left:0;pointer-events:none;position:absolute;right:0;top:0}.uhHOwf img{display:block}sentinel{}.YB4h9{background-color:#80c4ff;color:#202124;padding:18px 60px 18px 12px;position:relative}.C85rO{font-size:20px}.Gtr0ne{padding-top:10px}.YB4h9 .Gtr0ne a{color:#202124;text-decoration:underline}.YB4h9 .Job8vb{padding:20px;position:absolute;right:0;top:0}.YB4h9.q7XNbb{margin-bottom:44px}.EIqaib{padding-top:6px;position:relative}.QjI2jc{color:#9aa0a6;font-style:italic;margin-right:16px;font-size:12px}.QjI2jc:hover{text-decoration:underline}.Fra4pb{margin-top:4px}.NhRr3b{cursor:pointer;position:relative;}.fMgO7c{cursor:pointer;position:relative;}.aBOYt{display:inline-block}.ff76ob{color:#9aa0a6;float:right;font-size:12px;line-height:16px;padding-bottom:4px}.C0OCHe{color:#9aa0a6;float:right;font-size:12px;line-height:16px}.nlNnsd{margin-top:12px}.UVSIcb{word-wrap:break-word}.UVSIcb.a0KVvb{margin-top:8px}sentinel{}.r2fjmd{margin-bottom:0px;margin-top:0px}.X3BRhe{margin-left:auto;margin-right:auto}.NN3tNd:hover{background:#303134!important}.V9UyDb{box-shadow:0 5px 13px 2px rgba(66,133,244,0.22)!important}.FgDnmf{border:1px solid #3c4043}g-fab.v8uxXb{box-shadow:none}g-fab.v8uxXb{border:1px solid #609beb}sentinel{}.OvQkSb{border-radius:9999px}.S3PB2d{margin:auto}.sr9hec{display:block;position:relative;z-index:0}.sr9hec{cursor:pointer}.sr9hec{box-shadow:0,0,2,0 rgba(0,0,0,0.5)}.sr9hec:focus{outline:none}.sr9hec .U8v51e{position:absolute;left:0;right:0;top:0;bottom:0;width:24px;height:24px}.s3IB3{width:40px;height:40px}.a11Pr{width:56px;height:56px}.MKCV1b{width:28px;height:28px}.sr9hec.MKCV1b .U8v51e{width:22px;height:22px}.OZQDWd{width:18px;height:18px}.sr9hec.OZQDWd .U8v51e{width:12px;height:12px}sentinel{}.OhScic{margin:0px}.O4tmq{height:24px;pointer-events:none;position:absolute;top:0;width:24px}.O4tmq.tl8m7c{left:0}.O4tmq.tl8m7c{background-image:-webkit-gradient(linear,right top,left top,from(rgba(0,0,0,0)),to(#fff));background-image:-webkit-linear-gradient(right,rgba(0,0,0,0),#fff);background-image:linear-gradient(-90deg,rgba(0,0,0,0),#fff)}.O4tmq.pd818b{right:48px}.O4tmq.pd818b{background-image:-webkit-gradient(linear,left top,right top,from(rgba(0,0,0,0)),to(#fff));background-image:-webkit-linear-gradient(left,rgba(0,0,0,0),#fff);background-image:linear-gradient(90deg,rgba(0,0,0,0),#fff)}sentinel{}.OZ5bRd{margin-bottom:auto;margin-top:auto}.wgbRNb{cursor:pointer;height:72px;position:absolute;display:block;visibility:inherit;width:36px;bottom:0;opacity:.8;top:0;z-index:101}.wgbRNb.tHT0l{-webkit-transition:opacity .5s,visibility .5s;transition:opacity .5s,visibility .5s}.wgbRNb:hover{opacity:.9}.wgbRNb.pQXcHc,.wgbRNb.pQXcHc:hover{cursor:default;opacity:0;visibility:hidden}.b5K9zd{bottom:0;display:block;position:absolute!important;top:0}.wgbRNb.ENJHPd:hover g-fab{color:#dadce0!important}.bCwlI.ENJHPd g-fab,.VdehBf.ENJHPd g-fab{box-shadow:0 7px 15px rgba(0,0,0,0.8)}.wgbRNb.ENJHPd{height:50px;width:50px;opacity:1}.wgbRNb.ENJHPd.pQXcHc,.wgbRNb.ENJHPd.pQXcHc:hover{opacity:0}.bCwlI.ENJHPd g-fab,.VdehBf.ENJHPd g-fab{cursor:pointer;height:50px;width:50px}.bCwlI.ENJHPd{left:-25px}.VdehBf.ENJHPd{right:-25px}.wgbRNb.HEeAqe:hover g-fab{color:#dadce0!important}.wgbRNb.HEeAqe{height:48px;width:48px;opacity:.9}.wgbRNb.HEeAqe:hover{opacity:1}.wgbRNb.HEeAqe.pQXcHc,.wgbRNb.HEeAqe.pQXcHc:hover{opacity:0}.bCwlI.HEeAqe g-fab,.VdehBf.HEeAqe g-fab{box-shadow:0 7px 15px rgba(0,0,0,0.2);cursor:pointer;height:48px;width:48px}.bCwlI.HEeAqe{left:20px}.VdehBf.HEeAqe{right:20px}.wgbRNb.TVgFVb:hover g-fab{color:#dadce0!important}.wgbRNb.TVgFVb{height:40px;width:40px}.bCwlI.TVgFVb g-fab,.VdehBf.TVgFVb g-fab{box-shadow:0 4px 4px rgba(0,0,0,0.3),0 0 4px rgba(0,0,0,0.2);cursor:pointer}.bCwlI.TVgFVb{left:-58px}.VdehBf.TVgFVb{right:-58px}.bCwlI.Yze26d .vWtmKf,.VdehBf.Yze26d .PFY4o{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAuCAYAAAAcEfjaAAABV0lEQVRIx+2VsW7CQBBEDwTpIkXICMuyJdtfQsGXQUVFlSpVmjTESOn4BAoXLigsueAvaM2MBAht7g6v06ZYwNK8893ezGLatjV5ni9QO2PMC599ZdI0nWdZdgbQ4vsH0NgLQLSn+FZ4/gY0cgJBELxCdHiEUF+AhlaAH9jWG0SleNOnDbr/iON4AlEloA9AAyvAiqIogPAooHcnwIJghqrFmTZOgJUkSQRRI6C1E7huL8GbTmJ7Ky2w/PuWVIcOw3Daua2qi1NZQ20+i723XnurA/QQ0aJTRJ8J/oEuAFvNqcjWPwV4ibzM66Weeck+8YhTUNhm7xIPaUAhPtCoVjGtLdxbMgK/zsCwMDRi5YrhsnaJcRQrHzkNrW1l0MXKNQeCy95rsXLDUeNK3EqsfOIQ8/0DLVWAeku9Du1rK6ehE1BfnNoavcwn7L3tZO9eARIRLW4RvQA0+6DNwTHW6QAAAABJRU5ErkJggg==);background-repeat:no-repeat;height:20px;opacity:.56;width:12px}.bCwlI.Yze26d .vWtmKf,.VdehBf.Yze26d .PFY4o{-webkit-filter:invert(1);filter:invert(1)}.bCwlI.Yze26d,.VdehBf.Yze26d{opacity:.9;width:80px}.bCwlI.Yze26d .vWtmKf{background-position:0 -26px;left:2px}.VdehBf.Yze26d .PFY4o{background-position:0 0;right:2px}.bCwlI.Yze26d{background:linear-gradient(90deg,#202124 50%,rgba(48,49,52,0.09) 100%);left:0}.VdehBf.Yze26d{background:linear-gradient(270deg,#202124 50%,rgba(48,49,52,0.09) 100%);right:0}.wgbRNb.T9Wh5:hover g-fab{color:#dadce0!important;box-shadow:0 0 0 1px rgba(0,0,0,0.04),0 4px 8px 0 rgba(0,0,0,0.2)}.wgbRNb.T9Wh5{height:36px;width:36px;opacity:1}.wgbRNb.T9Wh5.pQXcHc,.wgbRNb.T9Wh5.pQXcHc:hover{opacity:0}.bCwlI.T9Wh5 g-fab,.VdehBf.T9Wh5 g-fab{cursor:pointer;height:36px;width:36px}.bCwlI.T9Wh5{left:-18px}.VdehBf.T9Wh5{right:-18px}.bCwlI.SL0Gp .vWtmKf,.VdehBf.SL0Gp .PFY4o{background-repeat:no-repeat;opacity:.54;width:24px}.bCwlI.SL0Gp .vWtmKf{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAQ0lEQVR4AWNABaNAAQhJUv4ACGVJUf6f4TADDw2VHyFN+VEGXmJdfwCo/AeDNIhJqQ2E/UBLLYiApVFMI9ISWWAUAAAy1x3G3j1wxQAAAABJRU5ErkJggg==)}.bCwlI.SL0Gp .vWtmKf{-webkit-filter:invert(1);filter:invert(1)}.VdehBf.SL0Gp .PFY4o{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAUElEQVR4AWOAgFHAAYQkKd8BhCRoUWZ4wfCfNC1aDC/poEWb4RWpWnQYfgK1bCBWOSPDFKDyHwwexCqfTFPlkyDKiQ/SH2DlJAAPIKQIjAIADAMd5ce1j0IAAAAASUVORK5CYII=)}.VdehBf.SL0Gp .PFY4o{-webkit-filter:invert(1);filter:invert(1)}.VdehBf.SL0Gp,.bCwlI.SL0Gp{width:24px}.wgbRNb.SL0Gp.pQXcHc,.wgbRNb.SL0Gp.pQXcHc:hover{cursor:default;opacity:1;visibility:inherit}.wgbRNb.SL0Gp.pQXcHc .vWtmKf,.wgbRNb.SL0Gp.pQXcHc .PFY4o{opacity:.2}.wgbRNb.SL0Gp{height:24px;margin:0}.wgbRNb.SL0Gp:hover{opacity:1}.wgbRNb.zfpUke:hover g-fab{color:#dadce0!important}.wgbRNb.zfpUke{height:36px;width:36px;opacity:0}.z1Mm0e:hover .wgbRNb.zfpUke{opacity:.9}.z1Mm0e .wgbRNb.zfpUke:hover,.z1Mm0e .wgbRNb.zfpUke:focus-visible{opacity:1}.wgbRNb.zfpUke.pQXcHc,.wgbRNb.zfpUke.pQXcHc:hover{opacity:0}.bCwlI.zfpUke g-fab,.VdehBf.zfpUke g-fab{box-shadow:0 0 0 1px rgba(0,0,0,0.04),0 4px 8px 0 rgba(0,0,0,0.2);cursor:pointer;height:36px;width:36px}.bCwlI.zfpUke{left:16px}.VdehBf.zfpUke{right:16px}.bCwlI.ENpXyb .vWtmKf,.VdehBf.ENpXyb .PFY4o{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAuCAYAAAAcEfjaAAABV0lEQVRIx+2VsW7CQBBEDwTpIkXICMuyJdtfQsGXQUVFlSpVmjTESOn4BAoXLigsueAvaM2MBAht7g6v06ZYwNK8893ezGLatjV5ni9QO2PMC599ZdI0nWdZdgbQ4vsH0NgLQLSn+FZ4/gY0cgJBELxCdHiEUF+AhlaAH9jWG0SleNOnDbr/iON4AlEloA9AAyvAiqIogPAooHcnwIJghqrFmTZOgJUkSQRRI6C1E7huL8GbTmJ7Ky2w/PuWVIcOw3Daua2qi1NZQ20+i723XnurA/QQ0aJTRJ8J/oEuAFvNqcjWPwV4ibzM66Weeck+8YhTUNhm7xIPaUAhPtCoVjGtLdxbMgK/zsCwMDRi5YrhsnaJcRQrHzkNrW1l0MXKNQeCy95rsXLDUeNK3EqsfOIQ8/0DLVWAeku9Du1rK6ehE1BfnNoavcwn7L3tZO9eARIRLW4RvQA0+6DNwTHW6QAAAABJRU5ErkJggg==);background-repeat:no-repeat;height:20px;width:12px}.bCwlI.ENpXyb .vWtmKf,.VdehBf.ENpXyb .PFY4o{-webkit-filter:invert(1);filter:invert(1)}.bCwlI.ENpXyb .vWtmKf{background-position:0 -26px;left:8px}.VdehBf.ENpXyb .PFY4o{background-position:0 0;right:8px}.bCwlI.ENpXyb{left:0}.VdehBf.ENpXyb{right:0}.bCwlI.ENpXyb{border-bottom-right-radius:36px;border-top-right-radius:36px;box-shadow:1px 0 2px rgba(0,0,0,0.5)}.VdehBf.ENpXyb{border-bottom-left-radius:36px;border-top-left-radius:36px;box-shadow:-1px 0 2px rgba(0,0,0,0.5)}.bCwlI.AoT6sc .vWtmKf{left:2px}.VdehBf.AoT6sc .PFY4o{right:2px}.bCwlI.AoT6sc{left:-32px;border:1px solid #f8f9fa;border-radius:2px 0 0 2px}.VdehBf.AoT6sc{right:-32px;border:1px solid #f8f9fa;border-radius:0 2px 2px 0}.wgbRNb.AoT6sc{background-image:-webkit-gradient(linear,left top,left bottom,from(#0a0a0a),to(#f8f9fa));background-image:-webkit-linear-gradient(top,#0a0a0a,#f8f9fa);background-image:linear-gradient(top,#0a0a0a,#f8f9fa);height:50px;width:30px}.wgbRNb.AoT6sc:hover{background-image:-webkit-gradient(linear,left top,left bottom,from(#050505),to(#f8f9fa));background-image:-webkit-linear-gradient(top,#050505,#f8f9fa);background-image:linear-gradient(top,#050505,#f8f9fa)}.wgbRNb.btpNFe:hover g-fab{color:#dadce0!important}.wgbRNb.btpNFe{height:36px;width:36px;opacity:.9}.wgbRNb.btpNFe:hover{opacity:1}.wgbRNb.btpNFe.pQXcHc,.wgbRNb.btpNFe.pQXcHc:hover{opacity:0}.bCwlI.btpNFe g-fab,.VdehBf.btpNFe g-fab{box-shadow:0 0 0 1px rgba(0,0,0,0.04),0 4px 8px 0 rgba(0,0,0,0.2);cursor:pointer;height:36px;width:36px}.bCwlI.btpNFe{left:-18px}.VdehBf.btpNFe{right:-18px}.wgbRNb.jSZMre:hover g-fab{color:#dadce0!important}.wgbRNb.jSZMre{height:32px;width:32px;opacity:.9;padding:8px}.wgbRNb.jSZMre:hover{opacity:1}.wgbRNb.jSZMre.pQXcHc,.wgbRNb.jSZMre.pQXcHc:hover{opacity:0}.bCwlI.jSZMre g-fab,.VdehBf.jSZMre g-fab{box-shadow:0 7px 15px rgba(0,0,0,0.2);cursor:pointer;height:32px;width:32px}.bCwlI.jSZMre{left:20px}.VdehBf.jSZMre{right:20px}.wgbRNb.vkcLib{height:40px;width:40px;opacity:0}.z1Mm0e:hover .wgbRNb.vkcLib,.z1Mm0e .wgbRNb.vkcLib:hover,.z1Mm0e .wgbRNb.vkcLib:focus-visible{opacity:1}.wgbRNb.vkcLib.pQXcHc,.wgbRNb.vkcLib.pQXcHc:hover{opacity:0}.bCwlI.vkcLib g-fab,.VdehBf.vkcLib g-fab{box-shadow:0 0 0 1px rgba(0,0,0,0.04),0 4px 8px 0 rgba(0,0,0,0.2);cursor:pointer;height:24px;width:24px;position:relative;top:8px;left:8px}.bCwlI.vkcLib{left:4px}.VdehBf.vkcLib{right:4px}sentinel{}.FbkHNd{margin-top:24px}.rhHIGd.L4oZf{background-color:transparent}.oYWfcb{cursor:pointer;display:block;font-weight:400;line-height:18px;white-space:nowrap}.oYWfcb.RB2q5e{overflow:visible}.oYWfcb.QeBzl{padding:10px 0px}.p8VO6e{color:#9aa0a6;margin-top:-2px;margin-bottom:-2px}.p8VO6e{height:20px}.Z4Cazf{white-space:nowrap;width:auto}.Z4Cazf{margin-right:8px}.S8ee5.CwbYXd{color:#e8eaed;line-height:22px}.oYWfcb{font-size:16px;line-height:1.43}.p8VO6e{-webkit-box-flex:0;-webkit-flex:none;flex:none}.Z4Cazf{white-space:normal}a.CHn7Qb:hover{text-decoration:none}g-more-link a.pYouzb{-webkit-box-align:center;-webkit-align-items:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:flex}g-more-link.RB2q5e{cursor:auto;text-align:center}g-more-link.RB2q5e a.pYouzb{display:inline-block;pointer-events:none}g-more-link.RB2q5e a.pYouzb{color:#e8eaed}g-more-link.lQi8Fc{height:30px;top:12px;position:relative}sentinel{}.S8ee5{box-sizing:border-box;cursor:pointer;background:#303134;border:1px solid transparent;font-size:14px;line-height:20px;pointer-events:auto;position:relative;width:300px}.S8ee5{padding:7px 11px}.S8ee5{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-webkit-flex-direction:row-reverse;flex-direction:row-reverse;-webkit-box-align:center;-webkit-align-items:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;margin-left:auto;margin-right:auto}.S8ee5{height:36px;border-radius:18px}.S8ee5:hover{background-color:#3c4043}.S8ee5:hover{background:#3c4043}.rhHIGd{background-color:#3c4043;border:0;height:1px;left:0;position:absolute;width:100%}.rhHIGd{margin-top:18px}.S8ee5 .p8VO6e{margin-top:0px}.S8ee5 .z1asCe{height:20px;width:20px}.S8ee5 .Z4Cazf{display:inline-block;max-width:220px;white-space:nowrap}#rhs .lQi8Fc{height:auto;top:0}#rhs .S8ee5{max-width:336px;width:100%;border-color:rgba(255,255,255,0)}#rhs .S8ee5 .Z4Cazf{max-width:73.33%}#rhs .oYWfcb .rhHIGd{display:none}.Zeeake{font-family:arial,sans-serif-medium,sans-serif}.Zeeake .p8VO6e{width:20px;height:20px}sentinel{}.HbX59e{margin-left:0px}.U56OG{margin-right:8px}.xTWltf{margin-right:24px}sentinel{}.E6sCHc.E6sCHc{margin-top:8px}.hoUro{margin-bottom:44px}.a1DBFd{margin-top:1em;margin-bottom:1em}.ClPXac.Pqkn2e{line-height:normal}</style><div data-spl="" data-st-tgt="dark" id="YUIDDb" style="display:none"></div><div data-st-tgt="stb"><div class="muaC1e eTnfyc" id="tn_Ns1AZYfeIffl2roPoKOFqA0_1"><div class="LkcePc"></div></div></div><div id="tvcap"></div><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="vi" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CAcQAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAVKAB6BAgHEAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_XzJBgd"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/in/v%C4%83n-t%C3%B9ng-8b1266225" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQIAxAB" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/in/v%25C4%2583n-t%25C3%25B9ng-8b1266225&amp;ved=2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQIAxAB"><br><h3 class="LC20lb MBeuO DKV0Md">Văn Tùng - Java Software Developer - VMO Group</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt=""></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;CIHcb0 cECq7c;_;CIHccI" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDZ6wR6BAgDEAk"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChCH7gZ6BAgDEAo"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="lhLbod gEBHYd" jsportable="sass-ported"><span>Hanoi Capital Region</span><span aria-hidden="true"> · </span><span>Java Software Developer</span><span aria-hidden="true"> · </span><span>VMO Group</span></div><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span>Have 4 years of experience in web <em>development</em> - Strong familiarity with <em>Java</em> language especially <em>Java</em> new features, <em>Java</em> Asynchronous Programing, Generic…</span></div></div></div></div></div><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="vi" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CAkQAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAVKAB6BAgJEAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_h92EI"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/in/tr%E1%BA%A7n-qu%E1%BB%91c-%C4%91%E1%BA%A1t-165b551b2" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQIBRAB" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/in/tr%25E1%25BA%25A7n-qu%25E1%25BB%2591c-%25C4%2591%25E1%25BA%25A1t-165b551b2&amp;ved=2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQIBRAB"><br><h3 class="LC20lb MBeuO DKV0Md">Trần Quốc Đạt - Hanoi, Hanoi, Vietnam | Professional Profile</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt=""></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;CIHcb4 cECq7c;_;CIHccc" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDZ6wR6BAgFEAk"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChCH7gZ6BAgFEAo"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span>This increases the productivity and reputation of the company. I want to be a Full Stack <em>Developer</em>. My main languages are <em>Java</em> and Asp.net. Currently, I am&nbsp;...</span></div></div><div class="kb0PBd cvP2Ce" data-sncf="2" data-snf="mCCBcf"><div class="fG8Fp uo4vr"></div></div></div></div></div><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="vi" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CAgQAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAVKAB6BAgIEAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_RXd6pc"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/in/pham-thanh-hoang-85596b155" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQIBhAB" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/in/pham-thanh-hoang-85596b155&amp;ved=2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQIBhAB"><br><h3 class="LC20lb MBeuO DKV0Md">Pham Thanh Hoang</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt=""></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;CIHccA cECq7c;_;CIHccQ" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDZ6wR6BAgGEAk"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChCH7gZ6BAgGEAo"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span>... <em>C++</em>, <em>Java</em>, C#, Python • Databases: MSSQL, MySQL • Redis (Good), Hadoop (Good) ... <em>Java</em> Software <em>Developer</em> at CMC Telecom. Hanoi · Connect · Hai Vo. Ho Chi Minh&nbsp;...</span></div></div><div class="kb0PBd cvP2Ce" data-sncf="2" data-snf="mCCBcf"><div class="fG8Fp uo4vr"></div></div></div></div></div><div class="hlcw0c"><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="en" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CBMQAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAVKAB6BAgTEAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_ZLmLUe"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/jobs/fresher-c-c%2B%2B-developer-jobs" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQIEBAB" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/jobs/fresher-c-c%252B%252B-developer-jobs&amp;ved=2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQIEBAB"><br><h3 class="LC20lb MBeuO DKV0Md">10 Fresher C C++ Developer jobs in Vietnam</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt=""></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › jobs › fresher-c-c++-developer-...</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › jobs › fresher-c-c++-developer-...</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;CIHccw cECq7c;_;CIHcc0" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDZ6wR6BAgQEAk"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChCH7gZ6BAgQEAo"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span><em>Java</em> Software Engineer. <em>Java</em> Software Engineer. GEM Careers. Hanoi Capital Region. Be an early applicant. 2 weeks ago. Lập trình viên. Công Ty Tnhh Agiletech&nbsp;...</span></div></div><div class="kb0PBd cvP2Ce" data-sncf="2" data-snf="mCCBcf"><div class="fG8Fp uo4vr"></div></div></div></div></div></div><div class="ULSxyf"><div class="MjjYud"><div class="EyBRub"><div jscontroller="Wo3n8" jsname="aadvhe" jsmodel="d5EhJe" data-eas="" data-ekc="" data-fhs="" data-kes="" jsdata="vST7rb;_;CIHcbE zEIyGd;_;" jsaction="kPzEO:MlP2je;w8f1fc:hRwSgb;aIJAdf:UhDUnd;BqbTbe:naa5ve;kYAKrf:CqUGrf;hwhRRe:KyxjCd;rcuQ6b:npT2md"><div jsname="GkjeIf" id="_Ns1AZYfeIffl2roPoKOFqA0_2" data-jiis="up" data-async-type="kp_feedback" class="yp" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDrxwR6BAglEAA"></div></div><div jsmodel="Wn3aEc" class="Lv2Cle" data-count="11" style="position:relative" data-iu="1" data-hveid="CCUQAQ" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDIDSgAegQIJRAB"><g-section-with-header class="yG4QQe TBC9ub"><div class="e2BEnf U7izfe hWIMdd EQdXxd"><title-with-lhs-icon><a class="ekf0x hSQtef" href="/search?sa=N&amp;rlz=1C1CHBF_enVN1049VN1049&amp;sca_esv=578099941&amp;cs=1&amp;q=site:vn.linkedin.com+((c%2B%2B+or+java)+and+developer+)&amp;tbm=isch&amp;source=univ&amp;fir=zytWn87Tb6M5xM%252CEErUrvZ6-SvKtM%252C_%253BSsH039PEi6HneM%252CyyINbpvmi9fXfM%252C_%253Bdqy_n0oa8s9w5M%252CrY8d7wrToKwbHM%252C_%253BHUWtizJVbMLvWM%252CENXBruqHicizNM%252C_%253BWD1FqoQ9zYRVLM%252CCTSJziMKtP0WDM%252C_%253B36Twbab58EZ4dM%252CIuDIgPF_xj3cIM%252C_%253BWmMiq5DJJSXMJM%252CRUi7LZpdJPZBzM%252C_%253BB6wujK5qCn2MNM%252CEErUrvZ6-SvKtM%252C_%253BX1LCDtuB1_SQKM%252CEErUrvZ6-SvKtM%252C_%253BsV7rEFMckrya7M%252CvoTUhTI0El9LaM%252C_&amp;usg=AI4_-kSeBEewsR3WlKDGN8evt1NLw2vv2w&amp;ved=2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChCMmQR6BAglEAI"><div class="iv236 kNmTT"><span class="iJddsb" style="height:20px;width:20px"><svg focusable="false" viewBox="0 0 24 24"><path d="M14 13l4 5H6l4-4 1.79 1.78L14 13zm-6.01-2.99A2 2 0 0 0 8 6a2 2 0 0 0-.01 4.01zM22 5v14a3 3 0 0 1-3 2.99H5c-1.64 0-3-1.36-3-3V5c0-1.64 1.36-3 3-3h14c1.65 0 3 1.36 3 3zm-2.01 0a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h7v-.01h7a1 1 0 0 0 1-1V5"></path></svg></span></div><div class="dtIg1b"><span class="iJddsb" style="height:20px;width:20px"><svg clip-rule="evenodd" fill-rule="evenodd" focusable="false" viewBox="0 0 24 24"><path fill="#4285f4" d="M19 22h-7v-2h7c.55 0 1-.46 1-1V5a1 1 0 0 0-1-.99L12 4V2h7c1.66 0 3 1.36 3 3v14c0 1.65-1.35 3-3 3"></path><path fill="#ea4335" d="M12 22H5c-1.64 0-3-1.36-3-3V5c0-1.64 1.36-3 3-3h7v2H5c-.55 0-.99.45-.99 1L4 19c0 .55.45 1 1 1h7v2"></path><path fill="#34a853" d="M14 13l-2.25 2.75L10 14l-4 4h12"></path><path fill="#fbbc04" d="M10 8c0 1.1-.9 2-2 2s-2-.9-2-2c0-1.09.9-2 2-2s2 .9 2 2"></path></svg></span></div><div class="iJ1Kvb"><h3 class="GmE3X kWYf3c" aria-level="2" role="heading">Images for site:vn.linkedin.com ((c++ or java) and developer )</h3></div></a></title-with-lhs-icon><div class="ouRJZc"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" jsdata="l7Bhpb;_;CIHcbo cECq7c;_;CIHcbs" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDZ6wR6BAglEAM"><div jsaction="KyPa0e:RvIhPd;wjOG7e:edHC5b;al5F3e:edHC5b;"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe I7Y2H WE2xI eY4mx" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c IjabWd"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChCH7gZ6BAglEAQ"></span></div><g-snackbar jsname="t1F84b" jscontroller="OZLguc" style="display:none" jsshadow="" jsaction="rcuQ6b:npT2md" id="ow161" __is_owner="true"><div jsname="Ng57nc" class="yK6jqe" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDgb3oECCUQBQ" jsowner="ow161"><div class="b77HKf"><div class="rIxsve" jsslot=""><span class="Txngnb wHYlTd yUTMj">You will see more English now.</span></div></div></div><div jsname="sM5MNb" aria-live="polite" class="LH3wG"></div></g-snackbar></div></div></div><div id="iur"><div></div><div><div jsmodel="" jscontroller="LdB9sd" jsaction="PdWSXe:h5M12e;rcuQ6b:npT2md;" jsdata="X2sNs;_;CIHcdA"><div><g-scrolling-carousel jsname="mILnFc" jscontroller="pgCXqb" id="_Ns1AZYfeIffl2roPoKOFqA0_4" jsdata="JcTXNb;_;CIHcdE" jsshadow="" jsaction="OaAmdd:EDKYjb;JnGzAc:aJ8u7;qVN0Rc:nnsrCf;OW9R3e:Xj7hvb;EormBc:HFYvKc;gEKQDb:yUtVib;keydown:uYT2Vb;rcuQ6b:npT2md;lnkFzb:jCOVSe"><div jsname="haAclf" class="acCJ4b mecbob MGlaC" jsaction="t3L5Dd:OR1BUb" data-hveid="CCUQCA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDmbSgAegQIJRAI" style="overflow-x: auto;"><div jsname="s2gQvd" class="EDblX kjqWgb" jsslot=""><div jsname="dTDiAc" class="eA0Zlc WghbWd FnEtTd JX86yc ivg-i PZPZlf" jscontroller="Um3BXb" jsdata="j0Opre;zytWn87Tb6M5xM;CIHcc8" data-attrid="images universal" data-docid="zytWn87Tb6M5xM" data-lpage="https://vn.linkedin.com/in/hathuyen90" data-ref-docid="EErUrvZ6-SvKtM" jsaction="rcuQ6b:npT2md;tuz4af:RrAr1;nptbHe:XEuVS;h5M12e;qWWJ8e:.CLIENT" data-hveid="CCcQAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChD0AXoECCcQAA"><div jsname="IOBa3c"><div jsname="qQjpJ" class="XOEbc" role="button" tabindex="0"><g-inner-card class="xIfh4d"><div><div data-bla="" class="uhHOwf BYbUcd" style="height:130px;width:130px"><img data-jslayout-progressive-load="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR77ZN2RHoa1hj7FBtZXFJXCksdgveo5NN_ErAAW0d_YTDk&amp;s" alt="Hà Thuyên - C++ Developer, Java Developer - Samsung | LinkedIn" jsportable="sass-ported" id="dimg_Ns1AZYfeIffl2roPoKOFqA0_9" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-QqQFyvo8g8Ev4aJ-Bw8seXdD-Z-8mEWLm8yY1FJCMw&amp;s" data-ilt="1698745655232"></div></div></g-inner-card></div><div jsname="tdeeNb" class="BfmEZb"></div></div></div><div jsname="dTDiAc" class="eA0Zlc WghbWd FnEtTd JX86yc ivg-i PZPZlf" jscontroller="Um3BXb" jsdata="j0Opre;SsH039PEi6HneM;CIHcc4" data-attrid="images universal" data-docid="SsH039PEi6HneM" data-lpage="https://vn.linkedin.com/in/ph%E1%BA%A1m-v%C4%83n-th%E1%BA%A3o-b5516b95" data-ref-docid="yyINbpvmi9fXfM" jsaction="rcuQ6b:npT2md;tuz4af:RrAr1;nptbHe:XEuVS;h5M12e;qWWJ8e:.CLIENT" data-hveid="CCYQAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChD0AXoECCYQAA"><div jsname="IOBa3c"><div jsname="qQjpJ" class="XOEbc" role="button" tabindex="0"><g-inner-card class="xIfh4d"><div><div data-bla="" class="uhHOwf BYbUcd" style="height:130px;width:130px"><img data-jslayout-progressive-load="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTqeyAA2OOxQ_ZJN3x8y9AQvYpImiObX_RVlapkM7KAkjK&amp;s" alt="Phạm Văn Thảo - C++/Java - VIVOO Corp | LinkedIn" jsportable="sass-ported" id="dimg_Ns1AZYfeIffl2roPoKOFqA0_7" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnRYBhlWT-FSSXDVbcvVPvnfNKzGTQ-Rned6Jzd8g0XQ&amp;s" data-ilt="1698745655168"></div></div></g-inner-card></div><div jsname="tdeeNb" class="BfmEZb"></div></div></div><div jsname="dTDiAc" class="eA0Zlc WghbWd FnEtTd JX86yc ivg-i PZPZlf" jscontroller="Um3BXb" jsdata="j0Opre;dqy_n0oa8s9w5M;CIHcbc" data-attrid="images universal" data-docid="dqy_n0oa8s9w5M" data-lpage="https://vn.linkedin.com/in/lduonghcm" data-ref-docid="rY8d7wrToKwbHM" jsaction="rcuQ6b:npT2md;tuz4af:RrAr1;nptbHe:XEuVS;h5M12e;qWWJ8e:.CLIENT" data-hveid="CCQQAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChD0AXoECCQQAA"><div jsname="IOBa3c"><div jsname="qQjpJ" class="XOEbc" role="button" tabindex="0"><g-inner-card class="xIfh4d"><div><div data-bla="" class="uhHOwf BYbUcd" style="height:130px;width:130px"><img data-jslayout-progressive-load="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlhNfrChPUCorUksrrN16B2_uUXfWGuln7iI4mWvsPxCtb&amp;s" alt="Linh Duong - Ho Chi Minh City, Vietnam | Professional ..." jsportable="sass-ported" id="dimg_Ns1AZYfeIffl2roPoKOFqA0_1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfs9HPa38-nePXjQpWua4LeZ99T4L4YCFujwMN5VLvlw&amp;s" data-ilt="1698745655191"></div></div></g-inner-card></div><div jsname="tdeeNb" class="BfmEZb"></div></div></div><div jsname="dTDiAc" class="eA0Zlc WghbWd FnEtTd JX86yc ivg-i PZPZlf" jscontroller="Um3BXb" jsdata="j0Opre;HUWtizJVbMLvWM;CIHcbU" data-attrid="images universal" data-docid="HUWtizJVbMLvWM" data-lpage="https://vn.linkedin.com/in/tu-nguyen-872736213" data-ref-docid="ENXBruqHicizNM" jsaction="rcuQ6b:npT2md;tuz4af:RrAr1;nptbHe:XEuVS;h5M12e;qWWJ8e:.CLIENT" data-hveid="CCMQAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChD0AXoECCMQAA"><div jsname="IOBa3c"><div jsname="qQjpJ" class="XOEbc" role="button" tabindex="0"><g-inner-card class="xIfh4d"><div><div data-bla="" class="uhHOwf BYbUcd" style="height:130px;width:130px"><img data-jslayout-progressive-load="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJUCpBDBwFruEMYNcnrz2K_rx6qHeB2csiAmJd24uamYT3&amp;s" alt="Tu Nguyen - Java Software Engineer - FPT Software | LinkedIn" jsportable="sass-ported" id="dimg_Ns1AZYfeIffl2roPoKOFqA0_3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjdndQZwX1hzCZdkpUjU71kEiPCVxJ9OGEZqdlfUBJKA&amp;s" data-ilt="1698745655191"></div></div></g-inner-card></div><div jsname="tdeeNb" class="BfmEZb"></div></div></div><div jsname="dTDiAc" class="eA0Zlc WghbWd FnEtTd JX86yc ivg-i PZPZlf" jscontroller="Um3BXb" jsdata="j0Opre;WD1FqoQ9zYRVLM;CIHcbk" data-attrid="images universal" data-docid="WD1FqoQ9zYRVLM" data-lpage="https://vn.linkedin.com/in/minh-duc-bui-882a70169" data-ref-docid="CTSJziMKtP0WDM" jsaction="rcuQ6b:npT2md;tuz4af:RrAr1;nptbHe:XEuVS;h5M12e;qWWJ8e:.CLIENT" data-hveid="CCIQAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChD0AXoECCIQAA"><div jsname="IOBa3c"><div jsname="qQjpJ" class="XOEbc" role="button" tabindex="0"><g-inner-card class="xIfh4d"><div><div data-bla="" class="uhHOwf BYbUcd" style="height:130px;width:130px"><img data-jslayout-progressive-load="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqsKsxQXrFm5cTGTvhOdYLc8yqeLEOsLx65aHrrEMRVtvN&amp;s" alt="Minh Duc Bui - Senior C++ Developer - Cốc Cốc | LinkedIn" jsportable="sass-ported" id="dimg_Ns1AZYfeIffl2roPoKOFqA0_5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIM85w4kaL-fJbGz4T87q4f3E1lsL6udVISP-bOBpemw&amp;s" data-ilt="1698745655190"></div></div></g-inner-card></div><div jsname="tdeeNb" class="BfmEZb"></div></div></div><div jsname="dTDiAc" class="eA0Zlc WghbWd FnEtTd JX86yc ivg-i PZPZlf" jscontroller="Um3BXb" jsdata="j0Opre;36Twbab58EZ4dM;CIHcbM" data-attrid="images universal" data-docid="36Twbab58EZ4dM" data-lpage="https://vn.linkedin.com/in/tuyen-le-b8a11b1b9" data-ni="1" data-ref-docid="IuDIgPF_xj3cIM" jsaction="rcuQ6b:npT2md;tuz4af:RrAr1;nptbHe:XEuVS;h5M12e;qWWJ8e:.CLIENT" data-hveid="CB8QAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChD0AXoECB8QAA"><div jsname="IOBa3c"><div jsname="qQjpJ" class="XOEbc" role="button" tabindex="0"><g-inner-card class="xIfh4d"><div><div data-bla="" class="uhHOwf BYbUcd" style="height:130px;width:174px"><img style="margin-left:-15px;width:204px" alt="Tuyen Le - C++ Developer - Pyramid Technical Vietnam Co ..." jsportable="sass-ported" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT08y0QQlRlXN-8updLOJWaJ-6Hg7P5-mFID36s_6jqig&amp;s" src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" jscontroller="R3fhkb" jsaction="rcuQ6b:npT2md;BUYwVb:QT8fkf;LsLGHf:iSvHDf;DdQV6c:QT8fkf"></div></div></g-inner-card></div><div jsname="tdeeNb" class="BfmEZb"></div></div></div><div jsname="dTDiAc" class="eA0Zlc WghbWd FnEtTd JX86yc ivg-i PZPZlf" jscontroller="Um3BXb" jsdata="j0Opre;WmMiq5DJJSXMJM;CIHcbg" data-attrid="images universal" data-docid="WmMiq5DJJSXMJM" data-lpage="https://vn.linkedin.com/in/nhan-vo-a8630b104" data-ni="1" data-ref-docid="RUi7LZpdJPZBzM" jsaction="rcuQ6b:npT2md;tuz4af:RrAr1;nptbHe:XEuVS;h5M12e;qWWJ8e:.CLIENT" data-hveid="CCEQAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChD0AXoECCEQAA"><div jsname="IOBa3c"><div jsname="qQjpJ" class="XOEbc" role="button" tabindex="0"><g-inner-card class="xIfh4d"><div><div data-bla="" class="uhHOwf BYbUcd" style="height:130px;width:130px"><img alt="Nhan Vo - Solution Architecture, Brse, BA, Java &amp; C++ ..." jsportable="sass-ported" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVFrM6du7fnvwh37v8Jt4C91TTR456TRS5zku2o6svfA&amp;s" src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" jscontroller="R3fhkb" jsaction="rcuQ6b:npT2md;BUYwVb:QT8fkf;LsLGHf:iSvHDf;DdQV6c:QT8fkf"></div></div></g-inner-card></div><div jsname="tdeeNb" class="BfmEZb"></div></div></div><div jsname="dTDiAc" class="eA0Zlc WghbWd FnEtTd JX86yc ivg-i PZPZlf" jscontroller="Um3BXb" jsdata="j0Opre;B6wujK5qCn2MNM;CIHcbY" data-attrid="images universal" data-docid="B6wujK5qCn2MNM" data-lpage="https://vn.linkedin.com/in/hathuyen90" data-ni="1" data-ref-docid="EErUrvZ6-SvKtM" jsaction="rcuQ6b:npT2md;tuz4af:RrAr1;nptbHe:XEuVS;h5M12e;qWWJ8e:.CLIENT" data-hveid="CCAQAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChD0AXoECCAQAA"><div jsname="IOBa3c"><div jsname="qQjpJ" class="XOEbc" role="button" tabindex="0"><g-inner-card class="xIfh4d"><div><div data-bla="" class="uhHOwf BYbUcd" style="height:130px;width:174px"><img style="margin-left:-10px;width:195px" alt="Hà Thuyên - C++ Developer, Java Developer - Samsung | LinkedIn" jsportable="sass-ported" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3reZ5589zsb_YfwArf8KPuztjP8q8_dI8-9-emmhcQg&amp;s" src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" jscontroller="R3fhkb" jsaction="rcuQ6b:npT2md;BUYwVb:QT8fkf;LsLGHf:iSvHDf;DdQV6c:QT8fkf"></div></div></g-inner-card></div><div jsname="tdeeNb" class="BfmEZb"></div></div></div><div jsname="dTDiAc" class="eA0Zlc WghbWd FnEtTd JX86yc ivg-i PZPZlf" jscontroller="Um3BXb" jsdata="j0Opre;X1LCDtuB1_SQKM;CIHcbQ" data-attrid="images universal" data-docid="X1LCDtuB1_SQKM" data-lpage="https://vn.linkedin.com/in/hathuyen90" data-ni="1" data-ref-docid="EErUrvZ6-SvKtM" jsaction="rcuQ6b:npT2md;tuz4af:RrAr1;nptbHe:XEuVS;h5M12e;qWWJ8e:.CLIENT" data-hveid="CB0QAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChD0AXoECB0QAA"><div jsname="IOBa3c"><div jsname="qQjpJ" class="XOEbc" role="button" tabindex="0"><g-inner-card class="xIfh4d"><div><div data-bla="" class="uhHOwf BYbUcd" style="height:130px;width:173px"><img alt="Hà Thuyên - C++ Developer, Java Developer - Samsung | LinkedIn" jsportable="sass-ported" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnuPslMzofTtTAsVdbGKdiK2o9cISti2EZ75IxPj5iAA&amp;s" src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" jscontroller="R3fhkb" jsaction="rcuQ6b:npT2md;BUYwVb:QT8fkf;LsLGHf:iSvHDf;DdQV6c:QT8fkf"></div></div></g-inner-card></div><div jsname="tdeeNb" class="BfmEZb"></div></div></div><div jsname="dTDiAc" class="eA0Zlc WghbWd FnEtTd JX86yc ivg-i PZPZlf" jscontroller="Um3BXb" jsdata="j0Opre;sV7rEFMckrya7M;CIHcbI" data-attrid="images universal" data-docid="sV7rEFMckrya7M" data-lpage="https://vn.linkedin.com/in/tran-du-b40829196" data-ni="1" data-ref-docid="voTUhTI0El9LaM" jsaction="rcuQ6b:npT2md;tuz4af:RrAr1;nptbHe:XEuVS;h5M12e;qWWJ8e:.CLIENT" data-hveid="CB4QAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChD0AXoECB4QAA"><div jsname="IOBa3c"><div jsname="qQjpJ" class="XOEbc" role="button" tabindex="0"><g-inner-card class="xIfh4d"><div><div data-bla="" class="uhHOwf BYbUcd" style="height:130px;width:174px"><img style="margin-left:-43px;width:260px" alt="Tran Du - C++ Developer - Fsoft | LinkedIn" jsportable="sass-ported" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjEBQVvH9fGzzzCfeN8jZNXqF-etP8FkSgFzLql-zpqQ&amp;s" src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" jscontroller="R3fhkb" jsaction="rcuQ6b:npT2md;BUYwVb:QT8fkf;LsLGHf:iSvHDf;DdQV6c:QT8fkf"></div></div></g-inner-card></div><div jsname="tdeeNb" class="BfmEZb"></div></div></div><a jscontroller="Um3BXb" class="ZZGZKb" href="/search?sa=N&amp;rlz=1C1CHBF_enVN1049VN1049&amp;sca_esv=578099941&amp;cs=1&amp;q=site:vn.linkedin.com+((c%2B%2B+or+java)+and+developer+)&amp;tbm=isch&amp;source=univ&amp;fir=zytWn87Tb6M5xM%252CEErUrvZ6-SvKtM%252C_%253BSsH039PEi6HneM%252CyyINbpvmi9fXfM%252C_%253Bdqy_n0oa8s9w5M%252CrY8d7wrToKwbHM%252C_%253BHUWtizJVbMLvWM%252CENXBruqHicizNM%252C_%253BWD1FqoQ9zYRVLM%252CCTSJziMKtP0WDM%252C_%253B36Twbab58EZ4dM%252CIuDIgPF_xj3cIM%252C_%253BWmMiq5DJJSXMJM%252CRUi7LZpdJPZBzM%252C_%253BB6wujK5qCn2MNM%252CEErUrvZ6-SvKtM%252C_%253BX1LCDtuB1_SQKM%252CEErUrvZ6-SvKtM%252C_%253BsV7rEFMckrya7M%252CvoTUhTI0El9LaM%252C_&amp;usg=AI4_-kSeBEewsR3WlKDGN8evt1NLw2vv2w&amp;ved=2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDjbSgAegQIJRAK" style="height:130px" jsaction="rcuQ6b:npT2md;qWWJ8e:.CLIENT"><div class="j4hJ8c"><g-more-button class="BlGWBd"><g-fab class="r2fjmd X3BRhe FgDnmf sr9hec OvQkSb a11Pr" style="background-color:#202124;color:#4285f4"><span class="U8v51e S3PB2d"><span jsportable="sass-ported" class="z1asCe"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span></span></g-fab><div class="UVSIcb nlNnsd VDgVie wHYlTd RES9jf">View all</div></g-more-button></div></a></div></div><div jsname="Y5ANHe"><g-left-button jsname="sIJmDf" class="pQXcHc wgbRNb bCwlI OZ5bRd T9Wh5 tHT0l" style="top: 0px; left: -19px;" aria-hidden="true" jsaction="PfjCMb" aria-label="Previous" role="button"><g-fab class="sr9hec OvQkSb s3IB3" style="background-color:#303134;color:#9aa0a6"><span class="U8v51e S3PB2d z1asCe" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path></svg></span></g-fab></g-left-button></div><div jsname="AK6yne"><g-right-button jsname="IHFM4" style="top:0px;right:-19px" aria-hidden="true" jsaction="sYPGdb" class="wgbRNb VdehBf OZ5bRd T9Wh5 tHT0l" aria-label="Next" role="button"><g-fab class="sr9hec OvQkSb s3IB3" style="background-color:#303134;color:#9aa0a6"><span class="U8v51e S3PB2d z1asCe" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg></span></g-fab></g-right-button></div><script nonce="">(function(){
-(this||self).cVrhhd=function(b,e,q,a,h,k){if((b=document.getElementById(b))&&(0!==b.offsetWidth||0!==b.offsetHeight)){var l=b.querySelector("div"),m=l.querySelector("div"),c=0,g=Math.max(l.scrollWidth-l.offsetWidth,0);if(0<e){var n=m.children;c=n[e].offsetLeft-n[0].offsetLeft;if(a){for(var p=c=0;p<e;++p)c+=n[p].offsetWidth;c=Math.min(g,c)}}c+=q;e=Math.min(a?g-c:c,g);l.scrollLeft=a&&k?c:a&&h?-c:e;var d=b.getElementsByTagName("g-left-button")[0],f=b.getElementsByTagName("g-right-button")[0];d&&f&&(h=
-RegExp("\\btHT0l\\b"),k=RegExp("\\bpQXcHc\\b"),d.className=d.className.replace(h,""),f.className=f.className.replace(h,""),d.className=0===e?"pQXcHc "+d.className:d.className.replace(k,""),f.className=e===g?"pQXcHc "+f.className:f.className.replace(k,""),0<=d.className.indexOf("SL0Gp")&&0===e&&e===g&&(m.style.paddingLeft="0px",m.style.paddingRight="0px",d.style.display="none",f.style.display="none",b.style.paddingLeft=a?"0px":"48px",b.style.paddingRight=a?"48px":"0px",b.style.textAlign=a?"left":"right",(a=document.getElementById("fade_forward"))&&(a.style.display="none"),(a=document.getElementById("fade_reverse"))&&(a.style.display="none")),setTimeout(function(){d.className+=" tHT0l";f.className+=" tHT0l"},50))}};}).call(this);(function(){var id='_Ns1AZYfeIffl2roPoKOFqA0_4';var index=0;var offset=0;var is_rtl=false;var is_gecko=false;var is_edge=false;var init='cVrhhd';window[init](id,index,offset,is_rtl,is_gecko,is_edge);})();</script></g-scrolling-carousel></div></div></div></div><div class="Fra4pb YB4h9 ky4hfd" jscontroller="P10Owf" data-ekc="" jsdata="vST7rb;_;CIHcbE" jsaction="kPzEO:MlP2je;w8f1fc:hRwSgb" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChCWiQZ6BAglEA8"><span class="Job8vb z1asCe wuXmqc" aria-label="Close" role="button" tabindex="0" jsaction="kEOk4d" style="height:20px;line-height:20px;width:20px" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChCYiQZ6BAglEBA"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg></span><div class="C85rO" aria-level="1" role="heading">Select an image to give feedback</div></div><div class="EIqaib GTERze"><div><div class="QjI2jc NnEaBd GTERze a-no-hover-decoration" jscontroller="gSZvdb" role="button" tabindex="0" jsdata="vST7rb;_;CIHcbE" jsaction="i5KCU" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDqxwR6BAglEBE"><div class="NhRr3b aBOYt"><span>Feedback</span></div></div></div><g-more-link class="GTERze oYWfcb OSrXXb RB2q5e"><a class="CHn7Qb pYouzb" href="/search?sa=N&amp;rlz=1C1CHBF_enVN1049VN1049&amp;sca_esv=578099941&amp;cs=1&amp;q=site:vn.linkedin.com+((c%2B%2B+or+java)+and+developer+)&amp;tbm=isch&amp;source=univ&amp;fir=zytWn87Tb6M5xM%252CEErUrvZ6-SvKtM%252C_%253BSsH039PEi6HneM%252CyyINbpvmi9fXfM%252C_%253Bdqy_n0oa8s9w5M%252CrY8d7wrToKwbHM%252C_%253BHUWtizJVbMLvWM%252CENXBruqHicizNM%252C_%253BWD1FqoQ9zYRVLM%252CCTSJziMKtP0WDM%252C_%253B36Twbab58EZ4dM%252CIuDIgPF_xj3cIM%252C_%253BWmMiq5DJJSXMJM%252CRUi7LZpdJPZBzM%252C_%253BB6wujK5qCn2MNM%252CEErUrvZ6-SvKtM%252C_%253BX1LCDtuB1_SQKM%252CEErUrvZ6-SvKtM%252C_%253BsV7rEFMckrya7M%252CvoTUhTI0El9LaM%252C_&amp;usg=AI4_-kSeBEewsR3WlKDGN8evt1NLw2vv2w&amp;ved=2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDsCXoECCUQEw"><hr class="rhHIGd" aria-hidden="true"><div class="S8ee5 CwbYXd wHYlTd" aria-label="More images"><span class="p8VO6e HbX59e" aria-hidden="true"><span jsportable="sass-ported" class="z1asCe"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></span></span><span class="Z4Cazf OSrXXb">View all</span></div></a></g-more-link></div></g-section-with-header></div></div></div></div><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="vi" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CA0QAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAVKAB6BAgNEAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_mKgLZ"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/in/thinh-nguyen-b58968182" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQICxAB" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/in/thinh-nguyen-b58968182&amp;ved=2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQICxAB"><br><h3 class="LC20lb MBeuO DKV0Md">Thinh Nguyen</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt=""></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › thinh-ngu...</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › thinh-ngu...</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;CIHcb8 cECq7c;_;CIHccM" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDZ6wR6BAgLEAk"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChCH7gZ6BAgLEAo"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="lhLbod gEBHYd" jsportable="sass-ported"><span>Vietnam</span><span aria-hidden="true"> · </span><span>Robert Bosch Engineering and Business Solutions Vietnam</span></div><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span>I'm a junior embedded software engineer with a year experience in C/<em>C++</em> technologies, with good knowledge of embedded system, Object-Oriented Programing and&nbsp;...</span></div></div></div></div></div><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="vi" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CAQQAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAVKAB6BAgEEAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_Kq3yTc"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/in/ph%E1%BA%A1m-v%C4%83n-th%E1%BA%A3o-b5516b95" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQIAhAB" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/in/ph%25E1%25BA%25A1m-v%25C4%2583n-th%25E1%25BA%25A3o-b5516b95&amp;ved=2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQIAhAB"><br><h3 class="LC20lb MBeuO DKV0Md">Phạm Văn Thảo - C++/Java - VIVOO Corp</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt=""></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › ...</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;CIHccE cECq7c;_;CIHcck" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDZ6wR6BAgCEAk"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChCH7gZ6BAgCEAo"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="lhLbod gEBHYd" jsportable="sass-ported"><span>Vietnam</span><span aria-hidden="true"> · </span><span>C++/Java</span><span aria-hidden="true"> · </span><span>VIVOO Corp</span></div><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span>Mobile game <em>developer</em> with <em>C++ or Java</em> programming. Make game via Game design document and Resource from artist. Use tile sets to create maps in game.</span></div></div></div></div></div><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="en" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CBIQAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAVKAB6BAgSEAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_CQN9Jb"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/jobs/senior-back-end-developer-%28java-spring%29-ho-chi-minh-city-jobs?trk=public_jobs_search-for-more-jobs-link" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQIDxAB" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/jobs/senior-back-end-developer-%2528java-spring%2529-ho-chi-minh-city-jobs%3Ftrk%3Dpublic_jobs_search-for-more-jobs-link&amp;ved=2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQIDxAB"><br><h3 class="LC20lb MBeuO DKV0Md">55 Senior Back End Developer (java Spring) Ho Chi Minh ...</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt=""></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › jobs › senior-back-end-develop...</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › jobs › senior-back-end-develop...</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;CIHccY cECq7c;_;CIHccs" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDZ6wR6BAgPEAk"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChCH7gZ6BAgPEAo"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span>Today's top 55 Senior Back End <em>Developer</em> (<em>java</em> Spring) Ho Chi Minh City jobs in Vietnam. Leverage your professional network, and get hired.</span></div></div><div class="kb0PBd cvP2Ce" data-sncf="2" data-snf="mCCBcf"><div class="fG8Fp uo4vr"></div></div></div></div></div><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="en" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CAwQAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAVKAB6BAgMEAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_WsMGGe"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/jobs/c%2B%2B-programmer-jobs-hanoi-capital-region" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQIChAB" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/jobs/c%252B%252B-programmer-jobs-hanoi-capital-region&amp;ved=2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQIChAB"><br><h3 class="LC20lb MBeuO DKV0Md">619 C++ Programmer jobs in Hanoi Capital Region (30 new)</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt=""></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › jobs › c++-programmer-jobs-h...</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › jobs › c++-programmer-jobs-h...</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;CIHccU cECq7c;_;CIHcco" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDZ6wR6BAgKEAk"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChCH7gZ6BAgKEAo"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span><em>C++ Developer</em> · Bridge Software Engineer (BrSE with C/C++/C#/Python) · [2023] 15+ HOT JOBs - EMBEDDED/ AUTOSAR · Embedded Software Engineer (Medical) · Mobile &amp; .</span></div></div><div class="kb0PBd cvP2Ce" data-sncf="2" data-snf="mCCBcf"><div class="fG8Fp uo4vr"></div></div></div></div></div><div class="hlcw0c"><div class="MjjYud"><div jscontroller="SC7lYd" class="g Ww4FFb vt6azd tF2Cxc asEBEc" lang="vi" style="width:600px" jsaction="QyLbLe:OMITjf;ewaord:qsYrDe;xd28Mb:A6j43c" data-hveid="CBEQAA" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAVKAB6BAgREAA"><div class="N54PNb BToiNc cvP2Ce" data-snc="ih6Jnb_dFOuWb"><div class="kb0PBd cvP2Ce jGGQ5e" data-snf="x5WNvb" data-snhf="0"><div class="yuRUbf"><div><span jscontroller="msmzHf" jsaction="rcuQ6b:npT2md;PYDNKe:bLV6Bd;mLt3mc"><a jsname="UWckNb" href="https://vn.linkedin.com/in/dungbk95" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQIDhAB" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://vn.linkedin.com/in/dungbk95&amp;ved=2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChAWegQIDhAB"><br><h3 class="LC20lb MBeuO DKV0Md">Tien Dung Nguyen - Software Engineer</h3><div class="notranslate TbwUpd NJjxre iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd Vwoesf" aria-hidden="true"><img class="XNo5Ab" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII=" style="height:18px;width:18px" alt=""></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › dungbk95</span></cite></div></div></div><span jscontroller="IX53Tb" jsaction="rcuQ6b:npT2md" style="display:none"></span></a></span><div class="B6fmyf byrV5b Mg1HEd"><div class="TbwUpd iUh30 ojE3Fb"><span class="H9lube"><div class="eqA2re NjwKYd" style="height:18px;width:18px"></div></span><div><span class="VuuXrf">linkedin.com</span><div class="byrV5b"><cite class="qLRx3b tjvcx GvPZzd cHaqb" role="text">https://vn.linkedin.com<span class="dyjrff ob9lvb" role="text"> › dungbk95</span></cite></div></div></div><div class="csDOgf BCF2pd ezY6nb L48a4c"><div jscontroller="exgaYe" data-bsextraheight="0" data-darkmode="true" data-isdesktop="true" data-movewtractions="true" jsdata="l7Bhpb;_;CIHcbw cECq7c;_;CIHccg" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChDZ6wR6BAgOEAk"><div role="button" tabindex="0" jsaction="RvIhPd" jsname="I3kE2c" class="iTPLzd rNSxBe lUn2nc" style="position:absolute" aria-label="About this result"><span jsname="czHhOd" class="D6lY4c mBswFe"><span jsname="Bil8Ae" class="xTFaxe z1asCe" style="height:18px;line-height:18px;width:18px" jsportable="sass-ported"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></span></span></div><span jsname="zOVa8" data-ved="2ahUKEwiH0bbagKCCAxX3slYBHaBRAdU4ChCH7gZ6BAgOEAo"></span></div></div></div></div></div></div><div class="kb0PBd cvP2Ce" data-sncf="1" data-snf="nke7rc"><div class="lhLbod gEBHYd" jsportable="sass-ported"><span>Hanoi Capital Region</span><span aria-hidden="true"> · </span><span>Software Engineer</span><span aria-hidden="true"> · </span><span>Samsung Electronics Vietnam Co., Ltd</span></div><div class="VwiC3b yXK7lf lyLwlc yDYNvb W8l4ac lEBKkf" jsportable="sass-ported" style="-webkit-line-clamp:2"><span>Tien Dung Nguyen. C/<em>C++ Developer</em> at Samsung Mobile Viet Nam R&amp;D Center (SVMC). Samsung Electronics Vietnam Co., LtdHanoi University of Science and&nbsp;...</span></div></div></div></div></div></div><div class="ClPXac Pqkn2e"><h2 class="bNg8Rb OhScic zsYMMe BBwThe" style="clip:rect(1px,1px,1px,1px);height:1px;overflow:hidden;position:absolute;white-space:nowrap;width:1px;z-index:-1000;-webkit-user-select:none">Notices about Filtered Results</h2><div class="card-section"><p id="ofr"><i> In order to show you the most relevant results, we have omitted some entries very similar to the 20 already displayed.<br>If you like, you can <a href="/search?q=site:vn.linkedin.com+((c%2B%2B+or+java)+and+developer+)&amp;rlz=1C1CHBF_enVN1049VN1049&amp;sca_esv=578099941&amp;cs=1&amp;filter=0">repeat the search with the omitted results included</a>. </i></p></div></div><div jscontroller="ZQOCxe" data-dv-cookie="A7ZNQ5XHdesmUAuW96t36_6-2e5RuJj-BnbWayEtSgIAAAA" jsaction="rcuQ6b:npT2md"></div> <script nonce="">(function(){var pmc='{\x22aa\x22:{},\x22abd\x22:{\x22abd\x22:false,\x22deb\x22:false,\x22det\x22:false},\x22async\x22:{},\x22attn\x22:{},\x22bgd\x22:{\x22ac\x22:true,\x22as\x22:true,\x22at\x22:0,\x22ea\x22:true,\x22ed\x22:0,\x22ei\x22:true,\x22el\x22:true,\x22ep\x22:true,\x22er\x22:true,\x22et\x22:0,\x22eu\x22:false,\x22wl\x22:false},\x22cdos\x22:{\x22bih\x22:955,\x22biw\x22:1920,\x22cdobsel\x22:false,\x22dpr\x22:\x221\x22},\x22d\x22:{},\x22foot\x22:{},\x22gf\x22:{\x22pid\x22:196,\x22si\x22:true},\x22gwc\x22:{},\x22hsm\x22:{},\x22jsa\x22:{\x22csi\x22:true,\x22csir\x22:100},\x22kyn\x22:{},\x22lli\x22:{},\x22mu\x22:{\x22murl\x22:\x22https://adservice.google.com/adsid/google/ui\x22},\x22pHXghd\x22:{},\x22qim\x22:{},\x22sb_wiz\x22:{\x22onf\x22:\x22EAE\x22,\x22scq\x22:\x22\x22,\x22stok\x22:\x22kY9XRW6hu_o2-eIcXdHoQgokqy8\x22,\x22ueh\x22:\x22a5473c4e_85ca84d4_09314a5a_f89b8d04_4739c8c2\x22},\x22sf\x22:{},\x22sonic\x22:{},\x22spch\x22:{\x22ae\x22:\x22Please check your microphone.  \\u003Ca href\x3d\\\x22https://support.google.com/chrome/?p\x3dui_voice_search\\\x22 target\x3d\\\x22_blank\\\x22\\u003ELearn more\\u003C/a\\u003E\x22,\x22ak\x22:\x22\x22,\x22cd\x22:0,\x22fp\x22:false,\x22hl\x22:\x22en-VN\x22,\x22im\x22:\x22Click \\u003Cb\\u003EAllow\\u003C/b\\u003E to start voice search\x22,\x22iw\x22:\x22Waiting...\x22,\x22lm\x22:\x22Listening...\x22,\x22lu\x22:\x22%1$s voice search not available\x22,\x22mb\x22:false,\x22ne\x22:\x22No Internet connection\x22,\x22nt\x22:\x22Didn\x27t get that. \\u003Cspan\\u003ETry again\\u003C/span\\u003E\x22,\x22nv\x22:\x22Please check your microphone and audio levels.  \\u003Ca href\x3d\\\x22https://support.google.com/chrome/?p\x3dui_voice_search\\\x22 target\x3d\\\x22_blank\\\x22\\u003ELearn more\\u003C/a\\u003E\x22,\x22pe\x22:\x22Voice search has been turned off.  \\u003Ca href\x3d\\\x22https://support.google.com/chrome/?p\x3dui_voice_search\\\x22 target\x3d\\\x22_blank\\\x22\\u003EDetails\\u003C/a\\u003E\x22,\x22rm\x22:\x22Speak now\x22,\x22s3\x22:false},\x22tl\x22:{\x22rvkey\x22:\x22AIzaSyC_9Rt88UMjzgg5pIVArnfuIVkJx4zCdTY\x22}}';google.pmc=JSON.parse(pmc);})();</script> </div><script nonce="">window.jsl=window.jsl||{};window.jsl.dh=window.jsl.dh||function(i,c,d){try{var e=document.getElementById(i);if(e){e.innerHTML=c;if(d){d();}}else{if(window.jsl.el){window.jsl.el(new Error('Missing ID.'),{'id':i});}}}catch(e){if(window.jsl.el){window.jsl.el(new Error('jsl.dh'));}}};</script><script nonce="">window.jsl.dh('tn_Ns1AZYfeIffl2roPoKOFqA0_1','\x3cdiv class\x3d\x22LkcePc\x22\x3e\x3c/div\x3e');</script></div></div><div class="WZH4jc w7LJsc" jscontroller="bpec7b" data-dt="1" jsaction="AnqxQb:eFvKib;q8sV4d:eFvKib;Rlvoif:eFvKib;yFBEId:eFvKib"><div jsname="b6rISd" class="QjmzCd" style="display: none;" role="progressbar" aria-label="Loading..." aria-live="polite" data-hveid="CAUQAw" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q66oDegQIBRAD" aria-hidden="false"><div style="height: 36px; width: 36px; display: inline-block; animation: 1568.63ms linear 0s infinite normal none running mspin-rotate; overflow: hidden;"><div style="animation: 5332ms steps(4) 0s infinite normal none running mspin-revrot; transform-origin: 18px 18px;"><div style="position: absolute; top: 0px; left: 0px; animation: 5332ms steps(324) 0s infinite normal none running mspin; background-image: url(&quot;//www.gstatic.com/ui/v2/activityindicator/mspin_googcolor_medium.svg&quot;); background-size: 100%; height: 36px; width: 11664px;"></div></div></div></div><h1 class="bNg8Rb OhScic zsYMMe BBwThe" style="clip:rect(1px,1px,1px,1px);height:1px;overflow:hidden;position:absolute;white-space:nowrap;width:1px;z-index:-1000;-webkit-user-select:none">Page Navigation</h1><a class="T7sFge sW9g3e VknLRd" href="/search?q=site:vn.linkedin.com+((c%2B%2B+or+java)+and+developer+)&amp;sca_esv=578099941&amp;rlz=1C1CHBF_enVN1049VN1049&amp;ei=hsxAZbTJEovc2roP0p2O6Ao&amp;start=10&amp;sa=N" style="transform: scale(0);" jsname="oHxHid" jsaction="qBEZuc" aria-label="More results" data-ve-view="" role="button" data-hveid="CAUQBA" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Qqq4CegQIBRAE" aria-hidden="false"><hr class="KXbwLb" aria-hidden="true"><h3 aria-hidden="true"><div class="GNJvt ipz2Oe"><span class="kQdGHd"><span class="OTvAmd z1asCe QFl0Ff"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></span></span><span class="RVQdVd">More results</span></div></h3></a><a jsname="a79Lwf" jsaction="nF6QQd" class="VknLRd" style="display:none" aria-live="polite" role="button" tabindex="0" data-hveid="CAUQBQ" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QvvYCegQIBRAF" aria-hidden="false"><hr class="KXbwLb" aria-hidden="true"><h3><span class="GNJvt">Try again</span></h3></a></div><a jsname="EvDH1d" style="display:none" data-hveid="CAUQBg" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Q_skCegQIBRAG"></a></div><script nonce="">(function(){var showOptIn=false;var a=document.getElementsByClassName("o8xTWc"),b=document.getElementsByClassName("wxIowe");showOptIn?(0<a.length&&a[0].classList.add("kur4we"),0<b.length&&b[0].classList.remove("kur4we")):(0<a.length&&a[0].classList.remove("kur4we"),0<b.length&&b[0].classList.add("kur4we"));})();</script><div><div class="fp-nh save-components-async yp" data-api="AIzaSyBs-GJEDqBAn0NiEv03nkWgCUTr2vlaVl0" data-jiis="up" data-async-type="svcps" id="gws-plugins-collections-tray__save-components-async" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60QnbUCKAF6BAgFEAc"></div></div></div></div><div data-hveid="CAIQGQ" data-ved="2ahUKEwi0pLGGgKCCAxULrlYBHdKOA60Qh6kJegQIAhAZ"></div><div jscontroller="GU4Gab" style="display:none" data-pcs="2" jsaction="rcuQ6b:npT2md"></div><div role="navigation"><span id="xjs"></span><div id="gfn"></div><span id="fvf"></span></div></div></div>''';
+var mockData = r'''<div class="scaffold-layout
+    scaffold-layout--breakpoint-xl
+    scaffold-layout--main-aside
+    
+    scaffold-layout--reflow
+    
+     pv-profile
+        ">
+    <section class="scaffold-layout-toolbar
+    scaffold-layout-toolbar--is-fixed
+    
+    ">
+  <div class="scaffold-layout-toolbar__content scaffold-layout-container
+      scaffold-layout-container--reflow
+      ">
+    
+      
+        
+    
+    <div class="pv-profile-sticky-header-v2__container pv1">
+      <div id="ember24" class="artdeco-entity-lockup artdeco-entity-lockup--size-1 ember-view pv-profile-sticky-header-v2__mini-profile-container">
+        
+
+    <div class="presence-entity presence-entity--size-1 m1">
+      <img src="https://media.licdn.com/dms/image/C5103AQHL07S9JBrcRg/profile-displayphoto-shrink_100_100/0/1561613934858?e=1707350400&amp;v=beta&amp;t=GWrUmHZObwK7hZ7iX6DYRZKYgdaP7YsjJw49C-ExzoY" loading="lazy" alt="Huu Hoang" id="ember25" class="presence-entity__image   EntityPhoto-circle-1 evi-image lazy-image ember-view">
+
+      
+
+    <div class="presence-entity__indicator
+          
+          presence-entity__indicator--size-1 presence-indicator
+        hidden
+        presence-indicator--size-1">
+      <span class="visually-hidden">
+          Status is offline
+              </span>
+    </div>
+  
+    </div>
+  
+        <div id="ember26" class="artdeco-entity-lockup__content ember-view overflow-hidden ml1 align-self-flex-start">
+          <div id="ember27" class="artdeco-entity-lockup__title ember-view">
+            Huu Hoang
+<!---->          
+</div>
+
+          <div id="ember28" class="artdeco-entity-lockup__subtitle ember-view truncate">
+            Software Engineer @ Codelight
+          </div>
+        </div>
+      
+</div>
+      <div class="pv-profile-sticky-header-v2__actions-container">
+        
+      
+  <div class="display-flex inline-flex">
+        <div class="pvs-sticky-header-profile-actions inline-flex">
+      <div class="pvs-sticky-header-profile-actions__action">
+        <div id="ember86" class="artdeco-dropdown artdeco-dropdown--placement-bottom artdeco-dropdown--justification-left ember-view">
+  <button aria-expanded="false" aria-label="More actions" id="ember85-profile-overflow-action" class="artdeco-dropdown__trigger artdeco-dropdown__trigger--placement-bottom ember-view pvs-profile-actions__action artdeco-button artdeco-button--secondary artdeco-button--muted
+      artdeco-button--2
+      
+      " type="button" tabindex="0" data-dashlane-rid="36ed745b86ccc863">
+      <span>More</span>
+  
+<!----></button>
+  <div tabindex="-1" aria-hidden="true" id="ember88" class="pvs-overflow-actions-dropdown__content artdeco-dropdown__content artdeco-dropdown--is-dropdown-element artdeco-dropdown__content--justification-left artdeco-dropdown__content--placement-bottom ember-view"><div class="artdeco-dropdown__content-inner">
+  
+    <ul>
+        <li>
+          <!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+      <div aria-label="Send Huu Hoang’s profile via message" role="button" id="ember89" class="artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center" tabindex="0"><!---->
+    <svg role="none" aria-hidden="true" class="mr3 flex-grow-0 rtl-flip" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="share-linkedin-medium">
+<!---->    
+
+    <use href="#share-linkedin-medium" width="24" height="24"></use>
+</svg>
+
+    <span class="display-flex t-normal flex-1" aria-hidden="true">
+      Send profile in a message
+    </span>
+  </div>
+
+
+
+
+        </li>
+        <li>
+          <!---->
+<!---->
+<!---->
+<!---->
+<!---->
+      <div aria-label="Save Huu Hoang’s profile to PDF" role="button" id="ember90" class="artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center" tabindex="0"><!---->
+      <svg role="none" aria-hidden="true" class="mr3 flex-grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="download-medium">
+<!---->    
+
+    <use href="#download-medium" width="24" height="24"></use>
+</svg>
+
+    <span class="display-flex t-normal flex-1" aria-hidden="true">Save to PDF</span>
+  </div>
+
+
+
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+
+
+        </li>
+        <li>
+          <!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+        <div aria-label="Give Kudos to Huu Hoang" role="button" id="ember91" class="artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center" tabindex="0"><!---->
+      <svg role="none" aria-hidden="true" class="mr3 flex-grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="trophy-medium">
+<!---->    
+
+    <use href="#trophy-medium" width="24" height="24"></use>
+</svg>
+
+    <span class="display-flex t-normal flex-1" aria-hidden="true">Give Kudos</span>
+  </div>
+
+
+<!---->
+<!----><!----><!---->
+<!---->
+<!---->
+<!---->
+<!---->
+
+
+        </li>
+        <li>
+          <!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!----><!----><!---->        <div aria-label="Request Huu Hoang’s recommendation" role="button" id="ember92" class="artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center" tabindex="0"><!---->
+      <svg role="none" aria-hidden="true" class="mr3 flex-grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="quote-medium">
+<!---->    
+
+    <use href="#quote-medium" width="24" height="24"></use>
+</svg>
+
+    <span class="display-flex t-normal flex-1" aria-hidden="true">Request a recommendation</span>
+  </div>
+
+
+
+<!---->
+<!---->
+<!---->
+<!---->
+
+
+        </li>
+        <li>
+          <!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!----><!---->        <div aria-label="Write a recommendation for Huu Hoang" role="button" id="ember93" class="artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center" tabindex="0"><!---->
+      <svg role="none" aria-hidden="true" class="mr3 flex-grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="comment-medium">
+<!---->    
+
+    <use href="#comment-medium" width="24" height="24"></use>
+</svg>
+
+    <span class="display-flex t-normal flex-1" aria-hidden="true">Recommend</span>
+  </div>
+
+
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+
+
+        </li>
+        <li>
+          <!---->
+    
+    
+    <div aria-label="Following Huu Hoang" role="button" id="ember94" class="artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center" tabindex="0"><!---->
+        <svg role="none" aria-hidden="true" class="mr3 flex-grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="clear-medium">
+<!---->    
+
+    <use href="#clear-medium" width="24" height="24"></use>
+</svg>
+
+      <span class="display-flex t-normal flex-1" aria-hidden="true">Following</span>
+    </div>
+
+
+
+<!---->
+<!---->  
+
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+
+
+        </li>
+        <li>
+          <!---->
+<!---->
+      
+        <div aria-label="Remove your connection to Huu Hoang" role="button" id="ember95" class="artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center" tabindex="0"><!---->
+      <svg role="none" aria-hidden="true" class="mr3 flex-grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="remove-connection-medium">
+<!---->    
+
+    <use href="#remove-connection-medium" width="24" height="24"></use>
+</svg>
+
+    <span class="display-flex t-normal flex-1" aria-hidden="true">Remove Connection</span>
+  </div>
+
+    
+
+
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+
+
+        </li>
+        <li>
+          <!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+      <div aria-label="Report or block Huu Hoang’s profile" role="button" id="ember96" class="artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center" tabindex="0"><!---->
+      <svg role="none" aria-hidden="true" class="mr3 flex-grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="report-medium">
+<!---->    
+
+    <use href="#report-medium" width="24" height="24"></use>
+</svg>
+
+    <span class="display-flex t-normal flex-1" aria-hidden="true">Report / Block</span>
+  </div>
+
+
+<!---->
+
+<!---->
+<!---->
+
+
+        </li>
+
+        <li>
+          
+    <div role="button" id="ember97" class="display-flex align-items-center full-width  artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view" tabindex="0"><!---->
+        <li-icon aria-hidden="true" type="signal-notice" class="mr3 flex-grow-0" size="large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+      <path d="M18 3H6a3 3 0 00-3 3v12a3 3 0 003 3h12a3 3 0 003-3V6a3 3 0 00-3-3zm-4 15h-1a3 3 0 01-3-3 3.22 3.22 0 01.1-.75L11.2 10h2.07L12 14.75A1 1 0 0013 16h1zm-1-9.75A1.25 1.25 0 1114.25 7 1.25 1.25 0 0113 8.25z"></path>
+    </svg></li-icon>
+      <span class="display-flex t-normal flex-1" aria-hidden="true">About this profile</span>
+      <span class="a11y-text" aria-live="off">About this profile</span>
+    </div>
+
+        </li>
+    </ul>
+  
+</div>
+</div>
+</div>
+      </div>
+<!----><!---->      <!---->
+<!---->
+<!---->
+        
+
+    <div class="entry-point profile-action-compose-option">
+      
+    <div></div>
+  
+
+          
+      <button aria-label="Message Huu" id="ember98" class="artdeco-button artdeco-button--2 artdeco-button--primary ember-view pvs-sticky-header-profile-actions__action" data-dashlane-rid="970ec83194acad76">        <svg role="none" aria-hidden="true" class="artdeco-button__icon  rtl-flip" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="send-privately-small">
+<!---->    
+
+    <use href="#send-privately-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Message
+</span></button>
+    
+    </div>
+  
+
+
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+
+
+  </div>
+  <!---->
+
+
+<!---->
+<!---->  </div>
+
+    
+      </div>
+    </div>
+  
+  
+      
+    
+  </div>
+</section>
+
+  <div class="scaffold-layout__inner scaffold-layout-container
+      scaffold-layout-container--reflow
+      ">
+<!---->
+      <div class="scaffold-layout__row scaffold-layout__content
+          scaffold-layout__content--main-aside
+          
+          
+          scaffold-layout__content--has-aside
+          
+          ">
+<!---->
+          <main class="scaffold-layout__main">
+  
+            
+        
+<!----><!---->    
+    <section class="artdeco-card pv-top-card" data-member-id="439953158">
+<!---->
+  
+      
+  <div class="live-video-hero-image
+      " style="min-height: 201px; max-height: 201px;">
+    <div class="live-video-hero-image__bg-image">
+      
+            
+    <div tabindex="-1" class="profile-background-image">
+        <div class="profile-background-image__image-container">
+            <img class="profile-background-image__image relative
+                full-width full-height" id="profile-background-image-target-image" alt="Background Image" src="https://media.licdn.com/dms/image/D5616AQGIbKhMkX-iIg/profile-displaybackgroundimage-shrink_350_1400/0/1684829488600?e=1707350400&amp;v=beta&amp;t=PsGSf6GbDKDAT_WC3Xa8mcTl7YnKaoW7M7EwpvqlUCo" style="left:0px;top:0px;">
+        </div>
+    </div>
+  
+        
+    </div>
+    <div class="live-video-hero-image__live-video">
+<!---->    </div>
+  </div>
+
+      <div class="ph5 pb5">
+        <div class="display-flex">
+          <div class="pv-top-card--photo text-align-left
+              pv-top-card--photo-resize">
+                
+    <div class="pv-top-card__non-self-photo-wrapper ml0">
+      
+    
+
+      <button class="pv-top-card-profile-picture pv-top-card-profile-picture__container display-block
+          pv-top-card__photo presence-entity__image EntityPhoto-circle-9
+          " aria-label="open profile picture" type="button" data-dashlane-rid="d7cf6a225e321393">
+        
+      
+          
+        <img width="200" title="Huu Hoang" src="https://media.licdn.com/dms/image/C5103AQHL07S9JBrcRg/profile-displayphoto-shrink_400_400/0/1561613935273?e=1707350400&amp;v=beta&amp;t=onzi9FFHwpVzakkE2VJSvg2kcX8Z_o0dw4pGu6ZGodE" height="200" alt="Huu Hoang" id="ember29" class="pv-top-card-profile-picture__image pv-top-card-profile-picture__image--show evi-image ember-view">
+
+<!---->
+<!---->    
+        
+  
+      </button>
+  
+  
+      
+
+    <div class="presence-entity__indicator presence-entity__indicator--size-9 presence-indicator
+        hidden
+        presence-indicator--size-9">
+      <span class="visually-hidden">
+          Status is offline
+              </span>
+    </div>
+  
+    </div>
+  
+          </div>
+          <div class="flex-1 flex-column">
+            <div class="pv-top-card__badge-wrap">
+<!----><!---->                
+
+    <span tabindex="-1" id="ember99" class="artdeco-hoverable-trigger artdeco-hoverable-trigger--content-placed-bottom artdeco-hoverable-trigger--is-hoverable ember-view">
+      <button aria-label="Notify me about all of Huu’s posts" aria-describedby="artdeco-hoverable-artdeco-gen-43" id="ember100" class="artdeco-button artdeco-button--circle artdeco-button--muted artdeco-button--3 artdeco-button--tertiary ember-view profile-top-card__subscribe-button" type="button" data-dashlane-rid="8575689bebaf6ce7">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="bell-outline-medium">
+<!---->    
+
+    <use href="#bell-outline-medium" width="24" height="24"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    
+</span></button>
+      <div id="artdeco-gen-43" class="ember-view"><div id="ember102" class="ember-view"></div></div>
+    </span>
+  
+            </div>
+          </div>
+        </div>
+
+        
+    <div class="mt2 relative">
+      <div class="CMRccueKXwwWmPTFcgjdkltureOtuNKkgdMb
+          ">
+        <div class="GJejsteEhiOhjqFUaDXOwITzmdKIBsYng">
+            <span tabindex="-1" id="ember30" class="artdeco-hoverable-trigger artdeco-hoverable-trigger--content-placed-bottom artdeco-hoverable-trigger--is-hoverable ember-view">
+              <a href="/in/huu-hoang-63240a103/overlay/about-this-profile/" id="ember31" class="ember-view pv-text-details__about-this-profile-entrypoint">
+                <h1 class="text-heading-xlarge inline t-24 v-align-middle break-words">Huu Hoang</h1>
+<!----><!---->              </a>
+              <div id="artdeco-gen-42" class="ember-view"><div id="ember33" class="ember-view"></div></div>
+            </span>
+<!----><!----><!---->            
+    <span class="distance-badge t-black--light t-14
+        
+        t-black--light
+        
+         pv-text-details__separator text-body-small v-align-middle">
+      <span class="visually-hidden">
+          1st degree connection
+      </span>
+      <span class="dist-value " aria-hidden="true">
+        1st
+      </span>
+    </span>
+  
+        </div>
+<!---->        <div class="text-body-medium break-words" data-generated-suggestion-target="urn:li:fsu_profileActionDelegate:-2003164436">
+          Software Engineer @ Codelight
+        </div>
+<!----><!----><!---->      </div>
+        <ul class="pv-text-details__right-panel">
+            <li class="ousSKWEKadMumEujuoGNFoTrZYcnchWfpoIQ">
+              <button class="ilTHxDVBwxqSTsTeXkZiwOpKpyZlIHfNI text-align-left" aria-label="Current company: Codelight. Click to skip to experience card" type="button" data-dashlane-rid="7effdae19000155d">
+                <img src="https://media.licdn.com/dms/image/C560BAQH_J-0qtqHsCA/company-logo_100_100/0/1672115646877/codelightco_logo?e=1709769600&amp;v=beta&amp;t=z7Qq_oPJ6HD7Mba3c-jYDqOIdKmoQoqeRJbKLrwcY-0" alt="" id="ember103" class="evi-image ember-view HBQDkUCMgHmfpNuzxDSddVPoQBdfzUdlTTfM EntityPhoto-square-1">
+                <span class="HjlQpAkKceBzQZBgcdxXLOzBydiQaUFLrUw hoverable-link-text break-words text-body-small t-black">
+                  
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         inline" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        Codelight
+      
+<!---->    </div>
+  
+                </span>
+              </button>
+            </li>
+            <li class="ousSKWEKadMumEujuoGNFoTrZYcnchWfpoIQ">
+              <button class="pv-text-details__right-panel-item-link text-align-left" aria-label="Education: Industrial University of HoChiMinh city. Click to skip to education card" type="button" data-dashlane-rid="16d4de39994d4f35">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" id="ember104" class="evi-image ghost-school ember-view pv-text-details__right-panel-item-text-image EntityPhoto-square-1">
+                <span class="pv-text-details__right-panel-item-text hoverable-link-text break-words text-body-small t-black">
+                  
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         inline" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        Industrial University of HoChiMinh city
+      
+<!---->    </div>
+  
+                </span>
+              </button>
+            </li>
+        </ul>
+      <div class="CMRccueKXwwWmPTFcgjdkltureOtuNKkgdMb mt2">
+        <span class="text-body-small inline t-black--light break-words">
+          Ho Chi Minh City, Vietnam
+        </span>
+          <span class="pv-text-details__separator t-black--light">
+            <a href="/in/huu-hoang-63240a103/overlay/contact-info/" id="top-card-text-details-contact-info" class="ember-view link-without-visited-state cursor-pointer text-heading-small inline-block break-words">
+              Contact info
+            </a>
+          </span>
+      </div>
+    </div>
+  
+<!---->
+        
+    <ul class="pv-top-card--list pv-top-card--list-bullet">
+<!---->
+        <li class="text-body-small">
+              <a href="/search/results/people/?connectionOf=%5B%22ACoAABo5JwYBGMljXPw8nNmcjDihgwHQrY6Ibw8%22%5D&amp;network=%5B%22F%22%2C%22S%22%5D&amp;origin=MEMBER_PROFILE_CANNED_SEARCH" id="ember105" class="ember-view">
+                <span class="link-without-visited-state">
+                  <span class="t-bold">500+</span> connections
+                </span>
+              </a>
+        </li>
+    </ul>
+  
+            
+    <a class="app-aware-link  inline-flex align-items-center link-without-hover-visited pt2" href="https://www.linkedin.com/search/results/people/?facetNetwork=%22F%22&amp;facetConnectionOf=%22ACoAABo5JwYBGMljXPw8nNmcjDihgwHQrY6Ibw8%22&amp;origin=MEMBER_PROFILE_CANNED_SEARCH" data-test-app-aware-link="">
+      
+    <div class="ivm-image-view-model    mr2">
+        <ul class="ivm-image-view-model__img-list--stacked list-style-none display-flex justify-center">
+            <li class="ivm-image-view-model__img-list-item--stacked">
+              
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="32" src="https://media.licdn.com/dms/image/D5603AQFkw8YlK-8sBQ/profile-displayphoto-shrink_100_100/0/1690897324359?e=1707350400&amp;v=beta&amp;t=Ypuo0WCLhEwTjRXtECJoMKFhmKLYjPc-90Cr_sROJ3U" loading="lazy" height="32" alt="" id="ember106" class="ivm-view-attr__img--centered ivm-view-attr__img--stacked ivm-view-attr__img--stacked-circle-size-1 EntityPhoto-circle-1-stackedFacepile   evi-image lazy-image ember-view">
+    </div>
+  
+            </li>
+            <li class="ivm-image-view-model__img-list-item--stacked">
+              
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="32" src="https://media.licdn.com/dms/image/C5603AQGAmW_45ARpng/profile-displayphoto-shrink_100_100/0/1532395580601?e=1707350400&amp;v=beta&amp;t=-n_heULtx-IVXZqetp3Bns-th-sGO4nEuBo3UQti5sY" loading="lazy" height="32" alt="" id="ember107" class="ivm-view-attr__img--centered ivm-view-attr__img--stacked ivm-view-attr__img--stacked-circle-size-1 EntityPhoto-circle-1-stackedFacepile   evi-image lazy-image ember-view">
+    </div>
+  
+            </li>
+        </ul>
+
+<!---->    </div>
+  
+      <span class="t-normal t-black--light t-14 hoverable-link-text">
+        <span aria-hidden="true"><strong><!---->Nhat Thanh Vo<!----></strong><!---->,<span class="white-space-pre"> </span><strong><!---->Nhut Anh (Andy) Mai<!----></strong><!---->, and 42 other mutual connections<!----></span><span class="visually-hidden"><strong><!---->Nhat Thanh Vo<!----></strong><!---->,<span class="white-space-pre"> </span><strong><!---->Nhut Anh (Andy) Mai<!----></strong><!---->, and 42 other mutual connections<!----></span>
+      </span>
+    </a>
+  
+
+        
+
+  <div class="pv-top-card-v2-ctas
+      ">
+<!---->
+<!---->
+      <div class="pvs-profile-actions
+    
+    ">
+    <!---->
+<!---->
+<!---->
+        
+
+    <div class="entry-point profile-action-compose-option">
+      
+    <div></div>
+  
+
+          
+      <button aria-label="Message Huu" id="ember108" class="artdeco-button artdeco-button--2 artdeco-button--primary ember-view pvs-profile-actions__action" data-dashlane-rid="17f4412e2070da29">        <svg role="none" aria-hidden="true" class="artdeco-button__icon  rtl-flip" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="send-privately-small">
+<!---->    
+
+    <use href="#send-privately-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Message
+</span></button>
+    
+    </div>
+  
+
+
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+
+
+
+<!---->
+<!---->
+<!---->
+<!---->
+    <div id="ember110" class="artdeco-dropdown artdeco-dropdown--placement-bottom artdeco-dropdown--justification-left ember-view">
+  <button aria-expanded="false" aria-label="More actions" id="ember109-profile-overflow-action" class="artdeco-dropdown__trigger artdeco-dropdown__trigger--placement-bottom ember-view pvs-profile-actions__action artdeco-button artdeco-button--secondary artdeco-button--muted
+      artdeco-button--2
+      
+      " type="button" tabindex="0" data-dashlane-rid="1d43ae08994323ff">
+      <span>More</span>
+  
+<!----></button>
+  <div tabindex="-1" aria-hidden="true" id="ember112" class="pvs-overflow-actions-dropdown__content artdeco-dropdown__content artdeco-dropdown--is-dropdown-element artdeco-dropdown__content--justification-left artdeco-dropdown__content--placement-bottom ember-view"><div class="artdeco-dropdown__content-inner">
+  
+    <ul>
+        <li>
+          <!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+      <div aria-label="Send Huu Hoang’s profile via message" role="button" id="ember113" class="artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center" tabindex="0"><!---->
+    <svg role="none" aria-hidden="true" class="mr3 flex-grow-0 rtl-flip" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="share-linkedin-medium">
+<!---->    
+
+    <use href="#share-linkedin-medium" width="24" height="24"></use>
+</svg>
+
+    <span class="display-flex t-normal flex-1" aria-hidden="true">
+      Send profile in a message
+    </span>
+  </div>
+
+
+
+
+        </li>
+        <li>
+          <!---->
+<!---->
+<!---->
+<!---->
+<!---->
+      <div aria-label="Save Huu Hoang’s profile to PDF" role="button" id="ember114" class="artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center" tabindex="0"><!---->
+      <svg role="none" aria-hidden="true" class="mr3 flex-grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="download-medium">
+<!---->    
+
+    <use href="#download-medium" width="24" height="24"></use>
+</svg>
+
+    <span class="display-flex t-normal flex-1" aria-hidden="true">Save to PDF</span>
+  </div>
+
+
+
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+
+
+        </li>
+        <li>
+          <!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+        <div aria-label="Give Kudos to Huu Hoang" role="button" id="ember115" class="artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center" tabindex="0"><!---->
+      <svg role="none" aria-hidden="true" class="mr3 flex-grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="trophy-medium">
+<!---->    
+
+    <use href="#trophy-medium" width="24" height="24"></use>
+</svg>
+
+    <span class="display-flex t-normal flex-1" aria-hidden="true">Give Kudos</span>
+  </div>
+
+
+<!---->
+<!----><!----><!---->
+<!---->
+<!---->
+<!---->
+<!---->
+
+
+        </li>
+        <li>
+          <!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!----><!----><!---->        <div aria-label="Request Huu Hoang’s recommendation" role="button" id="ember116" class="artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center" tabindex="0"><!---->
+      <svg role="none" aria-hidden="true" class="mr3 flex-grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="quote-medium">
+<!---->    
+
+    <use href="#quote-medium" width="24" height="24"></use>
+</svg>
+
+    <span class="display-flex t-normal flex-1" aria-hidden="true">Request a recommendation</span>
+  </div>
+
+
+
+<!---->
+<!---->
+<!---->
+<!---->
+
+
+        </li>
+        <li>
+          <!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!----><!---->        <div aria-label="Write a recommendation for Huu Hoang" role="button" id="ember117" class="artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center" tabindex="0"><!---->
+      <svg role="none" aria-hidden="true" class="mr3 flex-grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="comment-medium">
+<!---->    
+
+    <use href="#comment-medium" width="24" height="24"></use>
+</svg>
+
+    <span class="display-flex t-normal flex-1" aria-hidden="true">Recommend</span>
+  </div>
+
+
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+
+
+        </li>
+        <li>
+          <!---->
+    
+    
+    <div aria-label="Following Huu Hoang" role="button" id="ember118" class="artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center" tabindex="0"><!---->
+        <svg role="none" aria-hidden="true" class="mr3 flex-grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="clear-medium">
+<!---->    
+
+    <use href="#clear-medium" width="24" height="24"></use>
+</svg>
+
+      <span class="display-flex t-normal flex-1" aria-hidden="true">Following</span>
+    </div>
+
+
+
+<!---->
+<!---->  
+
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+
+
+        </li>
+        <li>
+          <!---->
+<!---->
+      
+        <div aria-label="Remove your connection to Huu Hoang" role="button" id="ember119" class="artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center" tabindex="0"><!---->
+      <svg role="none" aria-hidden="true" class="mr3 flex-grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="remove-connection-medium">
+<!---->    
+
+    <use href="#remove-connection-medium" width="24" height="24"></use>
+</svg>
+
+    <span class="display-flex t-normal flex-1" aria-hidden="true">Remove Connection</span>
+  </div>
+
+    
+
+
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+
+
+        </li>
+        <li>
+          <!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+      <div aria-label="Report or block Huu Hoang’s profile" role="button" id="ember120" class="artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center" tabindex="0"><!---->
+      <svg role="none" aria-hidden="true" class="mr3 flex-grow-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="report-medium">
+<!---->    
+
+    <use href="#report-medium" width="24" height="24"></use>
+</svg>
+
+    <span class="display-flex t-normal flex-1" aria-hidden="true">Report / Block</span>
+  </div>
+
+
+<!---->
+
+<!---->
+<!---->
+
+
+        </li>
+
+        <li>
+          
+    <div role="button" id="ember121" class="display-flex align-items-center full-width  artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view" tabindex="0"><!---->
+        <li-icon aria-hidden="true" type="signal-notice" class="mr3 flex-grow-0" size="large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+      <path d="M18 3H6a3 3 0 00-3 3v12a3 3 0 003 3h12a3 3 0 003-3V6a3 3 0 00-3-3zm-4 15h-1a3 3 0 01-3-3 3.22 3.22 0 01.1-.75L11.2 10h2.07L12 14.75A1 1 0 0013 16h1zm-1-9.75A1.25 1.25 0 1114.25 7 1.25 1.25 0 0113 8.25z"></path>
+    </svg></li-icon>
+      <span class="display-flex t-normal flex-1" aria-hidden="true">About this profile</span>
+      <span class="a11y-text" aria-live="off">About this profile</span>
+    </div>
+
+        </li>
+    </ul>
+  
+</div>
+</div>
+</div>
+</div>
+<!----><!---->
+<!---->
+<!---->
+
+  </div>
+
+<!---->
+      </div>
+      <div id="profile-sticky-header-toggle"></div>
+<!---->
+<!---->
+<!---->    
+</section>
+<!---->  
+  
+        
+    
+    
+<!---->
+  
+  
+        
+<!---->
+    
+<!---->  
+  
+        
+        
+<!---->
+<!---->  
+        
+<!---->
+<!---->  
+        
+        <section class="artdeco-card relative break-words pb3
+            
+            
+            mt2" tabindex="-1" data-view-name="profile-card">
+<!---->
+  
+          <div id="highlights" class="pv-profile-card__anchor">
+          </div>
+            
+          
+<!---->
+    <div class="pvs-header__container">
+      <div class="pvs-header__top-container--no-stack">
+        <div class="pvs-header__left-container--stack">
+          <div class="pvs-header__title-container">
+              <h2 class="pvs-header__title
+                  text-heading-large">
+                <span aria-hidden="true"><!---->Highlights<!----></span><span class="visually-hidden"><!---->Highlights<!----></span>
+              </h2>
+<!----><!---->          </div>
+
+<!---->        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/company/68158315/">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/C560BAQH_J-0qtqHsCA/company-logo_100_100/0/1672115646877/codelightco_logo?e=1709769600&amp;v=beta&amp;t=z7Qq_oPJ6HD7Mba3c-jYDqOIdKmoQoqeRJbKLrwcY-0" loading="lazy" height="48" alt="Company logo" id="ember71" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/company/68158315/">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->You both work at Codelight<!----></span><span class="visually-hidden"><!---->You both work at Codelight<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Huu<!----><span class="white-space-pre"> </span>started at Codelight 2 months before you did<!----></span><span class="visually-hidden"><!---->Huu<!----><span class="white-space-pre"> </span>started at Codelight 2 months before you did<!----></span>
+                </span>
+<!----><!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+    
+
+    <div class="entry-point">
+      
+    <div></div>
+  
+
+          <a href="/messaging/thread/2-OTA3NjMxM2ItMWNmMS00ZTY3LWI0ODItY2I1ZTllODAwNTk1XzAxMA==?controlUrn=highlights_message_shared_experiences&amp;referringModuleKey=NON_SELF_PROFILE_VIEW&amp;messageComposeFlowTrackingId=RM6QA8cWSTyy3xXHtim%2Fxg%3D%3D&amp;body=Hi%20Huu%2C%20we%20both%20work%20at%20Codelight...&amp;subject=Hello%20from%20a%20Codelight%20colleague..." class="message-anywhere-button artdeco-button artdeco-button--secondary artdeco-button--2 artdeco-button--muted" role="button" data-dashlane-rid="a6a81f2359ef1a91">
+              <svg role="none" aria-hidden="true" class="artdeco-button__icon rtl-flip" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="send-privately-small">
+<!---->    
+
+    <use href="#send-privately-small" width="16" height="16"></use>
+</svg>
+
+              Message
+          </a>
+    </div>
+  
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+<!---->        
+</section>
+
+<!---->  
+        
+        <section class="artdeco-card relative break-words pb3
+            
+            
+            mt2" tabindex="-1" data-view-name="profile-card">
+<!---->
+  
+          <div id="about" class="pv-profile-card__anchor">
+          </div>
+            
+          
+<!---->
+    <div class="pvs-header__container">
+      <div class="pvs-header__top-container--no-stack">
+        <div class="pvs-header__left-container--stack">
+          <div class="pvs-header__title-container">
+              <h2 class="pvs-header__title
+                  text-heading-large">
+                <span aria-hidden="true"><!---->About<!----></span><span class="visually-hidden"><!---->About<!----></span>
+              </h2>
+<!----><!---->          </div>
+
+<!---->        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            
+          
+    <div class="display-flex ph5 pv3">
+      
+      <div class="
+          display-flex full-width" data-generated-suggestion-target="urn:li:fsu_profileActionDelegate:330468206">
+        
+          
+      <div class="pv-shared-text-with-see-more full-width t-14 t-normal t-black display-flex align-items-center">
+        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         full-width" style="-webkit-line-clamp:4;" tabindex="-1">
+
+        <span aria-hidden="true"><!---->As a Mobile Engineer at Codelight and HeyDevs, I design, develop, and test mobile applications for various clients and projects. I have over four years of experience in software engineering, with a focus on Android development using Model-View-Presenter (MVP) architecture and REST APIs. I graduated from Industrial University of Ho Chi Minh City in 2017 with a degree in Network and System Administration/Administrator, and I also completed a coding bootcamp at CoderSchool in 2021, where I learned the latest technologies and best practices in mobile development. I am passionate about creating user-friendly, scalable, and secure mobile solutions that meet the needs and expectations of the end-users and stakeholders. I enjoy working with diverse and collaborative teams, and I always strive to improve my skills and learn new things. My goal is to leverage my mobile engineering expertise to create innovative and impactful applications that can make a positive difference in the world.<!----></span><span class="visually-hidden"><!---->As a Mobile Engineer at Codelight and HeyDevs, I design, develop, and test mobile applications for various clients and projects. I have over four years of experience in software engineering, with a focus on Android development using Model-View-Presenter (MVP) architecture and REST APIs. I graduated from Industrial University of Ho Chi Minh City in 2017 with a degree in Network and System Administration/Administrator, and I also completed a coding bootcamp at CoderSchool in 2021, where I learned the latest technologies and best practices in mobile development. I am passionate about creating user-friendly, scalable, and secure mobile solutions that meet the needs and expectations of the end-users and stakeholders. I enjoy working with diverse and collaborative teams, and I always strive to improve my skills and learn new things. My goal is to leverage my mobile engineering expertise to create innovative and impactful applications that can make a positive difference in the world.<!----></span>
+
+          <span class="inline-show-more-text__link-container-collapsed">
+<!---->            <button class="inline-show-more-text__button
+                inline-show-more-text__button--light
+                link" aria-expanded="false" role="button" type="button" data-dashlane-rid="6da3be432e11711c">
+              …see more
+            </button>
+          </span>
+
+<!---->    </div>
+  
+      </div>
+  
+      
+      </div>
+  
+    </div>
+  
+  
+            <div>
+                
+          
+    <div class="pvs-list__outer-container">
+<!----><!----><!---->    </div>
+  
+  
+            </div>
+        
+</section>
+
+<!---->  
+        
+<!---->
+<!---->  
+        
+<!---->
+<!---->  
+        
+        <section class="artdeco-card relative break-words pb3
+            
+            
+            mt2" tabindex="-1" data-view-name="profile-card">
+<!---->
+  
+          <div id="content_collections" class="pv-profile-card__anchor">
+          </div>
+            
+          
+<!---->
+    <div class="pvs-header__container">
+      <div class="pvs-header__top-container--no-stack">
+        <div class="pvs-header__left-container--stack">
+          <div class="pvs-header__title-container">
+              <h2 class="pvs-header__title
+                  text-heading-large">
+                <span aria-hidden="true"><!---->Activity<!----></span><span class="visually-hidden"><!---->Activity<!----></span>
+              </h2>
+              <p class="pvs-header__subtitle pvs-header__optional-link text-body-small">
+                <span aria-hidden="true"><!---->1,885 followers<!----></span><span class="visually-hidden"><!---->1,885 followers<!----></span>
+              </p>
+<!---->          </div>
+
+<!---->        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            
+          
+  
+    
+    <div class="mb3">
+      
+        
+      <div class="pv2 ph5">
+        <div class="display-flex white-space-nowrap" role="group" aria-label="Select type of recent activity">
+            
+  <button aria-pressed="true" tabindex="0" class="profile-creator-shared-pills__pill artdeco-pill artdeco-pill--slate artdeco-pill--choice artdeco-pill--3 artdeco-pill--toggle
+      artdeco-pill--selected" id="content-collection-pill-0" type="button" data-dashlane-rid="c7481fdcae229ca6">
+    <span class="artdeco-pill__text">Posts</span>
+<!---->  </button>
+
+            
+  <button aria-pressed="false" tabindex="-1" class="profile-creator-shared-pills__pill artdeco-pill artdeco-pill--slate artdeco-pill--choice artdeco-pill--3 artdeco-pill--toggle
+      " id="content-collection-pill-1" type="button" data-dashlane-rid="7cff7b00af699cc6">
+    <span class="artdeco-pill__text">Comments</span>
+<!---->  </button>
+
+<!---->        </div>
+      </div>
+  
+      
+    </div>
+    <div class="pv0 ph5">
+      
+          
+      <div>
+        
+              
+    <div class="scaffold-finite-scroll
+    scaffold-finite-scroll--infinite
+     full-width">
+  <!---->
+  
+      <div class="scaffold-finite-scroll__content">
+        
+        <div class="visually-hidden" aria-live="polite">
+          Loaded 3 Posts posts
+        </div>
+        <ul class="display-flex flex-wrap list-style-none justify-space-between">
+              <li class="profile-creator-shared-feed-update__mini-container">
+                <div>
+  
+                      <div class="profile-creator-shared-feed-update__mini-update display-flex flex-column
+      pb4">
+<!---->      
+    
+      <a class="app-aware-link  feed-mini-update-optional-navigation-context-wrapper" aria-label="View full post. Huu Hoang reposted this • 2mo" tabindex="0" href="https://www.linkedin.com/feed/update/urn:li:activity:7115440994338148353?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7115440994338148353%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29" data-test-app-aware-link="">
+        
+      <div class="pt1 ph4 t-12 t-black--light">
+        <span class="feed-mini-update-contextual-description__text">
+          <span aria-hidden="true"><strong><!---->Huu Hoang<!----></strong><span class="white-space-pre"> </span>reposted this • 2mo<!----></span><span class="visually-hidden"><!---->2mo<!----></span>
+        </span>
+      </div>
+    
+      </a>
+  
+  
+    
+<!---->        
+    <div class="feed-mini-update-content__card-wrapper
+        feed-mini-update-content--indented">
+<!---->      
+      <a class="app-aware-link  display-flex flex-1 flex-column overflow-hidden feed-mini-update-optional-navigation-context-wrapper" aria-label="View full post" tabindex="0" href="https://www.linkedin.com/feed/update/urn:li:activity:7115440994338148353?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7115440994338148353%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29" data-test-app-aware-link="">
+        
+          <div class="display-flex pb1 t-12 t-bold t-black--light">
+            <span class="feed-mini-update-content__single-line-text">
+              <!---->Thành Karo<!---->
+            </span>
+          </div>
+<!----><!---->          <div class="display-flex t-12 t-black--light">
+            <span class="feed-mini-update-content__single-line-text">
+              <span dir="ltr"><!---->TRƯỚC KHI QUYẾT ĐỊNH NGHỈ VIỆC.
+
+Lại sắp cuối năm rồi, gần đây gặp nhiều bạn bế tắc tâm sự trong công việc quá, nên viết một bài về những điều cần làm trước khi đưa ra quyết định không vui vẻ này.
+
+1, Đảm bảo mình đưa ra quyết định trong một trạng thái tỉnh táo nhất
+Đa số thường quyết định nghỉ việc thường được đưa ra khi bản thân đang trọng trạng thái không tỉnh táo nhất, tâm trạng tiêu cực dẫn đến các quyết định cũng không được sáng suốt. Giải pháp để có quyết định sáng suốt nhất là khoảng thời gian đấy không đưa ra quyết định gì. Tự cho bản thân một thời gian tĩnh lại sau đó đưa ra quyết định, các quyết định được đưa ra sẽ tự commit với bản thân.
+
+2, Nói chuyện với người quản lý trực tiếp về vấn đề của mình
+Đây là bước rất quan trọng trước khi đưa ra quyết định, thường thì các bạn hay không chia sẻ nhiều với quản lý trực tiếp vì " ngại" hoặc " sợ" hay gì đó. Nhưng cơ bản, mọi vấn đề đều có cách giải quyết, Cấp càng cao thì đầu việc và trách nhiệm càng nhiều, nhiều lúc không thể sát với từng người cấp dưới, vì vậy thay vì tự mình ôm những tâm tư sau đó tự tiêu cực như "điều 1" ở trên thì nên gặp chia sẻ. Nếu, người quản lý trực tiếp hoặc cấp trên cao hơn nữa, không có cách giải quyết vấn đề của mình thì lúc đó cân nhắc.
+
+Trên đây là 2 lời khuyên, Thành đã khuyên đến rất nhiều người. Và nhiều trong số đó áp dụng rất thành công. Tìm việc không bao giờ là dễ thì đừng để nghỉ việc nó là quyết định dễ dàng. 
+
+Hi vọng ai đó có thể tìm thấy mình trong bài viết này.
+
+Have a nice day ahead!<!----></span>
+            </span>
+          </div>
+      
+      </a>
+  
+    </div>
+  
+    
+<!---->  </div>
+
+                
+</div>
+
+              </li>
+              <li class="profile-creator-shared-feed-update__mini-container">
+                <div>
+  
+                      <div class="profile-creator-shared-feed-update__mini-update display-flex flex-column
+      ">
+<!---->      
+    
+      <a class="app-aware-link  feed-mini-update-optional-navigation-context-wrapper" aria-label="View full post. Huu Hoang reposted this • 3mo" tabindex="0" href="https://www.linkedin.com/feed/update/urn:li:activity:7105741966490943488?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7105741966490943488%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29" data-test-app-aware-link="">
+        
+      <div class="pt1 ph4 t-12 t-black--light">
+        <span class="feed-mini-update-contextual-description__text">
+          <span aria-hidden="true"><strong><!---->Huu Hoang<!----></strong><span class="white-space-pre"> </span>reposted this • 3mo<!----></span><span class="visually-hidden"><!---->3mo<!----></span>
+        </span>
+      </div>
+    
+      </a>
+  
+  
+    
+        
+    <div class="display-flex flex-row">
+        
+      <a class="app-aware-link  pl4 pv2 pr1 feed-mini-update-optional-navigation-context-wrapper" aria-label="View full post. Image" tabindex="0" href="https://www.linkedin.com/feed/update/urn:li:activity:7105741966490943488?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7105741966490943488%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29" data-test-app-aware-link="">
+        
+          <div class="relative">
+<!---->            
+    <div class="ivm-image-view-model   ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="64" src="https://media.licdn.com/dms/image/D5622AQE_hAkcQ4cWHg/feedshare-shrink_160/0/1694072888546?e=1704326400&amp;v=beta&amp;t=0X8nUsNf3CILcypN3Vl62tv0gpS7EsI7eojE-oN3gnA" loading="lazy" height="64" alt="" id="ember171" class="ivm-view-attr__img--centered  feed-mini-update-commentary__image evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+          </div>
+        
+      </a>
+  
+      
+      <a class="app-aware-link  pr4 pb2 flex-1
+          pl2
+          pt2 feed-mini-update-optional-navigation-context-wrapper" tabindex="0" aria-label="View full post. Play soccer with us then write some code for fun" href="https://www.linkedin.com/feed/update/urn:li:activity:7105741966490943488?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7105741966490943488%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29" data-test-app-aware-link="">
+        
+<!---->        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         m0 break-words t-14 t-black" style="-webkit-line-clamp:3;" tabindex="-1">
+
+        <span dir="ltr"><!---->Play soccer with us then write some code for fun<!----></span>
+
+<!---->    </div>
+  
+      
+      </a>
+  
+    </div>
+  
+<!---->    
+        <div class="social-details-social-counts
+    
+    
+    
+    
+    
+     b0 m0 ph4 pv3">
+  <div class="display-flex flex-grow-1
+      
+      ">
+    <div class="relative full-width">
+      <ul class="display-flex">
+          <li class="social-details-social-counts__item
+              social-details-social-counts__reactions
+              social-details-social-counts__reactions--left-aligned
+              ">
+            <button aria-label="3 reactions" class="t-black--light display-flex align-items-center social-details-social-counts__count-value
+                t-12
+                hoverable-link-text
+                " type="button" data-dashlane-rid="a7d79494018216c1">
+    <img class="reactions-icon social-detail-social-counts__count-icon social-detail-social-counts__count-icon--0 reactions-icon__consumption--small data-test-reactions-icon-type-LIKE data-test-reactions-icon-theme-dark" src="https://static.licdn.com/aero-v1/sc/h/emei2gdl9ikg7penkh9ij9llx" alt="like" data-test-reactions-icon-type="LIKE" data-test-reactions-icon-theme="dark">
+  
+    <img class="reactions-icon social-detail-social-counts__count-icon social-detail-social-counts__count-icon--1 reactions-icon__consumption--small reactions-icon--stacked data-test-reactions-icon-type-ENTERTAINMENT data-test-reactions-icon-theme-dark" src="https://static.licdn.com/aero-v1/sc/h/41j9d0423ck1snej32brbuuwg" alt="funny" data-test-reactions-icon-type="ENTERTAINMENT" data-test-reactions-icon-theme="dark">
+                  <span aria-hidden="true" class="social-details-social-counts__reactions-count">
+3                </span>
+            </button>
+          </li>
+
+<!---->
+<!---->
+<!---->      </ul>
+<!---->    </div>
+  </div>
+<!----></div>
+  <div>
+  <div id="ember172" class="ember-view"><!----></div>
+</div>
+  <div id="ember173" class="ember-view"><!----></div>
+
+<!---->
+
+  </div>
+
+                
+</div>
+
+              </li>
+              <li class="profile-creator-shared-feed-update__mini-container">
+                <div>
+  
+                      <div class="profile-creator-shared-feed-update__mini-update display-flex flex-column
+      ">
+<!---->      
+    
+      <a class="app-aware-link  feed-mini-update-optional-navigation-context-wrapper" aria-label="View full post. Huu Hoang reposted this • 3mo" tabindex="0" href="https://www.linkedin.com/feed/update/urn:li:activity:7101751433900785664?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7101751433900785664%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29" data-test-app-aware-link="">
+        
+      <div class="pt1 ph4 t-12 t-black--light">
+        <span class="feed-mini-update-contextual-description__text">
+          <span aria-hidden="true"><strong><!---->Huu Hoang<!----></strong><span class="white-space-pre"> </span>reposted this • 3mo<!----></span><span class="visually-hidden"><!---->3mo<!----></span>
+        </span>
+      </div>
+    
+      </a>
+  
+  
+    
+        
+    <div class="display-flex flex-row">
+<!---->      
+      <a class="app-aware-link  pr4 pb2 flex-1
+          pl4
+           feed-mini-update-optional-navigation-context-wrapper" tabindex="0" aria-label="View full post" href="https://www.linkedin.com/feed/update/urn:li:activity:7101751433900785664?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7101751433900785664%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29" data-test-app-aware-link="">
+        
+<!---->        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         m0 break-words t-14 t-black" style="-webkit-line-clamp:3;" tabindex="-1">
+
+        <span dir="ltr"><!----><!----><!----></span>
+
+<!---->    </div>
+  
+      
+      </a>
+  
+    </div>
+  
+<!---->    
+        <div class="social-details-social-counts
+    
+    
+    
+    
+    
+     b0 m0 ph4 pv3">
+  <div class="display-flex flex-grow-1
+      
+      ">
+    <div class="relative full-width">
+      <ul class="display-flex">
+          <li class="social-details-social-counts__item
+              social-details-social-counts__reactions
+              social-details-social-counts__reactions--left-aligned
+              ">
+            <button aria-label="32 reactions" class="t-black--light display-flex align-items-center social-details-social-counts__count-value
+                t-12
+                hoverable-link-text
+                " type="button" data-dashlane-rid="680427d80733494d">
+    <img class="reactions-icon social-detail-social-counts__count-icon social-detail-social-counts__count-icon--0 reactions-icon__consumption--small data-test-reactions-icon-type-LIKE data-test-reactions-icon-theme-dark" src="https://static.licdn.com/aero-v1/sc/h/emei2gdl9ikg7penkh9ij9llx" alt="like" data-test-reactions-icon-type="LIKE" data-test-reactions-icon-theme="dark">
+  
+    <img class="reactions-icon social-detail-social-counts__count-icon social-detail-social-counts__count-icon--1 reactions-icon__consumption--small reactions-icon--stacked data-test-reactions-icon-type-APPRECIATION data-test-reactions-icon-theme-dark" src="https://static.licdn.com/aero-v1/sc/h/2g7ubs8g0yt1r2c0qair42esg" alt="support" data-test-reactions-icon-type="APPRECIATION" data-test-reactions-icon-theme="dark">
+  
+    <img class="reactions-icon social-detail-social-counts__count-icon social-detail-social-counts__count-icon--2 reactions-icon__consumption--small reactions-icon--stacked data-test-reactions-icon-type-ENTERTAINMENT data-test-reactions-icon-theme-dark" src="https://static.licdn.com/aero-v1/sc/h/41j9d0423ck1snej32brbuuwg" alt="funny" data-test-reactions-icon-type="ENTERTAINMENT" data-test-reactions-icon-theme="dark">
+                  <span aria-hidden="true" class="social-details-social-counts__reactions-count">
+32                </span>
+            </button>
+          </li>
+
+<!---->
+          <li class="social-details-social-counts__item
+              social-details-social-counts__item--right-aligned
+              ">
+              <button id="ember175" class="ember-view t-black--light
+                  t-12
+                  hoverable-link-text" aria-label="2 reposts" data-dashlane-rid="bbb32f6482a942f5">
+                <span aria-hidden="true">
+                    2 reposts
+                </span>
+              </button>
+          </li>
+
+<!---->      </ul>
+<!---->    </div>
+  </div>
+<!----></div>
+  <div>
+  <div id="ember176" class="ember-view"><!----></div>
+</div>
+  <div id="ember177" class="ember-view"><!----></div>
+
+<!---->
+
+  </div>
+
+                
+</div>
+
+              </li>
+        </ul>
+      
+      </div>
+    
+
+<!---->
+    <div>
+  
+<!---->    
+</div>
+
+</div>
+  
+                      
+      </div>
+  
+      
+    </div>
+      <footer class="artdeco-card__actions profile-creator-shared-content-view__footer-actions">
+        <a class="app-aware-link  artdeco-button artdeco-button--muted artdeco-button--icon-right artdeco-button--3 artdeco-button--fluid artdeco-button--tertiary" href="https://www.linkedin.com/in/huu-hoang-63240a103/recent-activity/all/" data-test-app-aware-link="">
+          <svg role="none" aria-hidden="true" class="artdeco-button__icon rtl-flip" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="arrow-right-small">
+<!---->    
+
+    <use href="#arrow-right-small" width="16" height="16"></use>
+</svg>
+
+          <span class="artdeco-button__text">
+            Show all posts
+          </span>
+        </a>
+      </footer>
+  
+  
+
+  
+<!---->        
+</section>
+
+<!---->  
+        
+        <section class="artdeco-card relative break-words pb3
+            
+            
+            mt2" tabindex="-1" data-view-name="profile-card">
+<!---->
+  
+          <div id="experience" class="pv-profile-card__anchor">
+          </div>
+            
+          
+<!---->
+    <div class="pvs-header__container">
+      <div class="pvs-header__top-container--no-stack">
+        <div class="pvs-header__left-container--stack">
+          <div class="pvs-header__title-container">
+              <h2 class="pvs-header__title
+                  text-heading-large">
+                <span aria-hidden="true"><!---->Experience<!----></span><span class="visually-hidden"><!---->Experience<!----></span>
+              </h2>
+<!----><!---->          </div>
+
+<!---->        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="experience_company_logo" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/company/68158315/">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/C560BAQH_J-0qtqHsCA/company-logo_100_100/0/1672115646877/codelightco_logo?e=1709769600&amp;v=beta&amp;t=z7Qq_oPJ6HD7Mba3c-jYDqOIdKmoQoqeRJbKLrwcY-0" loading="lazy" height="48" alt="Codelight logo" id="ember72" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+      <div class="
+              display-flex flex-column full-width">
+        
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 t-bold">
+            <span aria-hidden="true"><!---->Mobile Engineer<!----></span><span class="visually-hidden"><!---->Mobile Engineer<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Codelight · Full-time<!----></span><span class="visually-hidden"><!---->Codelight · Full-time<!----></span>
+                </span>
+              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Sep 2022 - Present · 1 yr 4 mos<!----></span><span class="visually-hidden"><!---->Sep 2022 - Present · 1 yr 4 mos<!----></span>
+              </span>
+              <span class="t-14 t-normal t-black--light">
+                <span aria-hidden="true"><!---->Ho Chi Minh City, Vietnam · Hybrid<!----></span><span class="visually-hidden"><!---->Ho Chi Minh City, Vietnam · Hybrid<!----></span>
+              </span>
+          
+      </div>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            </li>
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="experience_company_logo" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/company/93581647/">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/D4D0BAQH4TwiyEOT6Vg/company-logo_100_100/0/1686631085283/heydevshq_logo?e=1709769600&amp;v=beta&amp;t=SaYxzZ12O5qvbor-xHHHx1N_n1MFi7yJcqqMDn26atk" loading="lazy" height="48" alt="HeyDevs Vietnam logo" id="ember73" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+      <div class="
+              display-flex flex-column full-width">
+        
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 t-bold">
+            <span aria-hidden="true"><!---->Software Engineer<!----></span><span class="visually-hidden"><!---->Software Engineer<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->HeyDevs · Full-time<!----></span><span class="visually-hidden"><!---->HeyDevs · Full-time<!----></span>
+                </span>
+              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Feb 2023 - Present · 11 mos<!----></span><span class="visually-hidden"><!---->Feb 2023 - Present · 11 mos<!----></span>
+              </span>
+              <span class="t-14 t-normal t-black--light">
+                <span aria-hidden="true"><!---->Remote<!----></span><span class="visually-hidden"><!---->Remote<!----></span>
+              </span>
+          
+      </div>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+    
+        <a class="optional-action-target-wrapper" target="_self" href="https://heydevs.io/">
+      <div class="display-flex flex-row">
+          <div>
+            
+    
+      <div class="pvs-thumbnail__wrapper">
+        
+      <figure class="pvs-thumbnail">
+          <img src="https://media.licdn.com/dms/image/sync/D5627AQFp3yBYoflupA/articleshare-shrink_160/0/1701288085295?e=1702267200&amp;v=beta&amp;t=wpuSEPsMCM1FvtOlnRaVmoqXunj9BpgiVq1iyzXoR_A" loading="lazy" alt="" id="thumbnail-image-ember74" class="pvs-thumbnail__image evi-image lazy-image ember-view">
+          <div class="pvs-thumbnail__overlay pvs-thumbnail__overlay--icon">
+              <svg role="none" aria-hidden="true" class="t-black--light" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="link-external-small">
+<!---->    
+
+    <use href="#link-external-small" width="16" height="16"></use>
+</svg>
+
+          </div>
+
+<!---->      </figure>
+    
+      </div>
+  
+  
+          </div>
+
+        <div class="flex-column ml1 align-self-center">
+            
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         t-14 t-bold break-words" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        <span aria-hidden="true"><!---->HeyDevs<!----></span><span class="visually-hidden"><!---->HeyDevs<!----></span>
+
+<!---->    </div>
+  
+
+<!---->        </div>
+      </div>
+    </a>
+  
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="experience_company_logo" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/company/13429323/">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/C560BAQFo6MQfhNugmw/company-logo_100_100/0/1652138937332/miraeasset_logo?e=1709769600&amp;v=beta&amp;t=IdbQZ4s5hNry95nyQaLCuBw_wDekAViW7TW513G444I" loading="lazy" height="48" alt="Mirae Asset Securities logo" id="ember76" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+      <div class="
+              display-flex flex-column full-width">
+        
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 t-bold">
+            <span aria-hidden="true"><!---->Mobile Engineer<!----></span><span class="visually-hidden"><!---->Mobile Engineer<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Mirae Asset Securities · Full-time<!----></span><span class="visually-hidden"><!---->Mirae Asset Securities · Full-time<!----></span>
+                </span>
+              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Feb 2022 - Sep 2022 · 8 mos<!----></span><span class="visually-hidden"><!---->Feb 2022 - Sep 2022 · 8 mos<!----></span>
+              </span>
+              <span class="t-14 t-normal t-black--light">
+                <span aria-hidden="true"><!---->On-site<!----></span><span class="visually-hidden"><!---->On-site<!----></span>
+              </span>
+          
+      </div>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            </li>
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="experience_company_logo" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/company/11548937/">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/C4E0BAQEWXimcuQzGpQ/company-logo_100_100/0/1631368075366?e=1709769600&amp;v=beta&amp;t=JOWeNSzqYDVXNXB3dVYEi0YmtTc-5xvodk67TkMTdL4" loading="lazy" height="48" alt="HOPEE logo" id="ember77" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+      <div class="
+              display-flex flex-column full-width">
+        
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 t-bold">
+            <span aria-hidden="true"><!---->Mobile Developer<!----></span><span class="visually-hidden"><!---->Mobile Developer<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->HOPEE · Full-time<!----></span><span class="visually-hidden"><!---->HOPEE · Full-time<!----></span>
+                </span>
+              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Sep 2019 - Dec 2021 · 2 yrs 4 mos<!----></span><span class="visually-hidden"><!---->Sep 2019 - Dec 2021 · 2 yrs 4 mos<!----></span>
+              </span>
+              <span class="t-14 t-normal t-black--light">
+                <span aria-hidden="true"><!---->Ho Chi Minh City, Vietnam · On-site<!----></span><span class="visually-hidden"><!---->Ho Chi Minh City, Vietnam · On-site<!----></span>
+              </span>
+          
+      </div>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          
+      <div class="pv-shared-text-with-see-more full-width t-14 t-normal t-black display-flex align-items-center">
+        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        <span aria-hidden="true"><strong><!---->Skills:<!----></strong><span class="white-space-pre"> </span>Mobile Application Development<!----></span><span class="visually-hidden"><strong><!---->Skills:<!----></strong><span class="white-space-pre"> </span>Mobile Application Development<!----></span>
+
+<!---->    </div>
+  
+      </div>
+  
+      
+      </div>
+  
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="experience_company_logo" class="optional-action-target-wrapper 
+            display-flex" target="_self" tabindex="-1" aria-hidden="true" href="https://www.linkedin.com/search/results/all/?keywords=The+Red+Bean">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+        <div class="EntityPhoto-square-3-ghost-company ivm-view-attr__ghost-entity  ">
+<!---->        </div>
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+      <div class="
+              display-flex flex-column full-width">
+        
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 t-bold">
+            <span aria-hidden="true"><!---->Android Developer<!----></span><span class="visually-hidden"><!---->Android Developer<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->The Red Bean<!----></span><span class="visually-hidden"><!---->The Red Bean<!----></span>
+                </span>
+              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Aug 2017 - Sep 2019 · 2 yrs 2 mos<!----></span><span class="visually-hidden"><!---->Aug 2017 - Sep 2019 · 2 yrs 2 mos<!----></span>
+              </span>
+              <span class="t-14 t-normal t-black--light">
+                <span aria-hidden="true"><!---->Ho chi Minh<!----></span><span class="visually-hidden"><!---->Ho chi Minh<!----></span>
+              </span>
+          
+      </div>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+<!---->        
+</section>
+
+<!---->  
+        
+        <section class="artdeco-card relative break-words pb3
+            
+            
+            mt2" tabindex="-1" data-view-name="profile-card">
+<!---->
+  
+          <div id="education" class="pv-profile-card__anchor">
+          </div>
+            
+          
+<!---->
+    <div class="pvs-header__container">
+      <div class="pvs-header__top-container--no-stack">
+        <div class="pvs-header__left-container--stack">
+          <div class="pvs-header__title-container">
+              <h2 class="pvs-header__title
+                  text-heading-large">
+                <span aria-hidden="true"><!---->Education<!----></span><span class="visually-hidden"><!---->Education<!----></span>
+              </h2>
+<!----><!---->          </div>
+
+<!---->        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+      <div class="
+            display-flex" tabindex="-1" aria-hidden="true">
+        
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+        <div class="EntityPhoto-square-3-ghost-school ivm-view-attr__ghost-entity  ">
+<!---->        </div>
+    </div>
+  
+          </div>
+  
+        
+      </div>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/search/results/all/?keywords=Industrial+University+of+HoChiMinh+city">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Industrial University of HoChiMinh city<!----></span><span class="visually-hidden"><!---->Industrial University of HoChiMinh city<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Network and System Administration/Administrator<!----></span><span class="visually-hidden"><!---->Network and System Administration/Administrator<!----></span>
+                </span>
+              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->2014 - 2017<!----></span><span class="visually-hidden"><!---->2014 - 2017<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+    <div class="
+        mv1
+        display-flex align-items-center">
+      
+      <div class="display-flex link-without-hover-visited">
+        
+<!---->          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          
+      <div class="pv-shared-text-with-see-more full-width t-14 t-normal t-black display-flex align-items-center">
+        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        <span aria-hidden="true"><!---->Grade: CDTH16<!----></span><span class="visually-hidden"><!---->Grade: CDTH16<!----></span>
+
+<!---->    </div>
+  
+      </div>
+  
+      
+      </div>
+  
+    </div>
+  
+      
+      </div>
+  
+<!---->    </div>
+  
+  
+            </li>
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          
+      <div class="pv-shared-text-with-see-more full-width t-14 t-normal t-black display-flex align-items-center">
+        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        <span aria-hidden="true"><!---->NetWorking<!----></span><span class="visually-hidden"><!---->NetWorking<!----></span>
+
+<!---->    </div>
+  
+      </div>
+  
+      
+      </div>
+  
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/company/7324197/">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/C560BAQHN0gVLfrrs6g/company-logo_100_100/0/1630668059396/coderschool_logo?e=1709769600&amp;v=beta&amp;t=XcFbRiviYjuGNkUZHEs5y4spfx8ziWGlqIcvlSvgqmk" loading="lazy" height="48" alt="CoderSchool (IT W21) logo" id="ember78" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/company/7324197/">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->CoderSchool (IT W21)<!----></span><span class="visually-hidden"><!---->CoderSchool (IT W21)<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Android<!----></span><span class="visually-hidden"><!---->Android<!----></span>
+                </span>
+<!----><!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+<!---->        
+</section>
+
+<!---->  
+        
+<!---->
+<!---->  
+        
+<!---->
+<!---->  
+        
+<!---->
+<!---->  
+        
+        <section class="artdeco-card relative break-words pb3
+            
+            
+            mt2" tabindex="-1" data-view-name="profile-card">
+<!---->
+  
+          <div id="skills" class="pv-profile-card__anchor">
+          </div>
+            
+          
+<!---->
+    <div class="pvs-header__container">
+      <div class="pvs-header__top-container--no-stack">
+        <div class="pvs-header__left-container--stack">
+          <div class="pvs-header__title-container">
+              <h2 class="pvs-header__title
+                  text-heading-large">
+                <span aria-hidden="true"><!---->Skills<!----></span><span class="visually-hidden"><!---->Skills<!----></span>
+              </h2>
+<!----><!---->          </div>
+
+<!---->        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+      <div class="
+            display-flex" tabindex="-1" aria-hidden="true">
+        
+<!---->        
+      </div>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="skill_card_skill_topic" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/search/results/all/?keywords=Mobile+Application+Development&amp;origin=PROFILE_PAGE_SKILL_NAVIGATION">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Mobile Application Development<!----></span><span class="visually-hidden"><!---->Mobile Application Development<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+<!----><!----><!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+    <div class="
+        mv1
+        display-flex align-items-center">
+      
+      <div class="display-flex link-without-hover-visited">
+        
+          <div class="mr2
+              mv1
+              
+              ">
+            
+    <ul class="ivm-entity-pile
+        display-flex align-items-center t-black">
+        <li class="ivm-entity-pile__img-item--stacked">
+            
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="24" src="https://media.licdn.com/dms/image/C4E0BAQEWXimcuQzGpQ/company-logo_100_100/0/1631368075366?e=1709769600&amp;v=beta&amp;t=JOWeNSzqYDVXNXB3dVYEi0YmtTc-5xvodk67TkMTdL4" loading="lazy" height="24" alt="" id="ember129" class="ivm-view-attr__img--centered ivm-view-attr__img--stacked ivm-view-attr__img--stacked-square-size-0 EntityPhoto-square-0-stackedFacepile   evi-image lazy-image ember-view">
+    </div>
+  
+        </li>
+    </ul>
+  
+          </div>
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          
+      <div class="pv-shared-text-with-see-more full-width t-14 t-normal t-black display-flex align-items-center">
+        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        <span aria-hidden="true"><!---->Mobile Developer at HOPEE<!----></span><span class="visually-hidden"><!---->Mobile Developer at HOPEE<!----></span>
+
+<!---->    </div>
+  
+      </div>
+  
+      
+      </div>
+  
+    </div>
+  
+      
+      </div>
+  
+<!---->    </div>
+  
+  
+            </li>
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+    <button id="ember130" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button" data-dashlane-rid="1cfc9e49814003d6"><!---->
+<span class="artdeco-button__text">
+    Endorse
+</span></button>
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+      <div class="
+            display-flex" tabindex="-1" aria-hidden="true">
+        
+<!---->        
+      </div>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="skill_card_skill_topic" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/search/results/all/?keywords=android&amp;origin=PROFILE_PAGE_SKILL_NAVIGATION">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->android<!----></span><span class="visually-hidden"><!---->android<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+<!----><!----><!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+    <div class="
+        mv1
+        display-flex align-items-center">
+      
+      <div class="display-flex link-without-hover-visited">
+        
+          <div class="mr2
+              mv1
+              
+              ">
+            
+    <ul class="ivm-entity-pile
+        display-flex align-items-center t-black">
+        <li class="ivm-entity-pile__img-item--stacked">
+            
+    <div class="ivm-view-attr__img-wrapper display-flex">
+        <li-icon aria-hidden="true" type="clipboard-check" class="ivm-view-attr__icon--brand  " size="medium"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+      <path d="M14.73 10H17l-5.5 8L8 14.5l1.34-1.34L11.21 15zM20 3v16a3 3 0 01-3 3H7a3 3 0 01-3-3V3h5.69l.52-1A2 2 0 0112 1a2 2 0 011.76 1l.52 1zm-2 2h-2.6l.6 1.1V7H8v-.9L8.6 5H6v14a1 1 0 001 1h10a1 1 0 001-1z"></path>
+    </svg></li-icon>
+    </div>
+  
+        </li>
+    </ul>
+  
+          </div>
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          
+      <div class="pv-shared-text-with-see-more full-width t-14 t-normal t-black display-flex align-items-center">
+        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        <span aria-hidden="true"><!---->Passed LinkedIn Skill Assessment<!----></span><span class="visually-hidden"><!---->Passed LinkedIn Skill Assessment<!----></span>
+
+<!---->    </div>
+  
+      </div>
+  
+      
+      </div>
+  
+    </div>
+  
+      
+      </div>
+  
+<!---->    </div>
+  
+  
+            </li>
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+    <div class="
+        mv1
+        display-flex align-items-center">
+      
+        <a class="optional-action-target-wrapper display-flex link-without-hover-visited" target="_self" href="https://www.linkedin.com/in/huu-hoang-63240a103/overlay/urn:li:fsd_skill:(ACoAABo5JwYBGMljXPw8nNmcjDihgwHQrY6Ibw8,1)/endorsers?profileUrn=urn%3Ali%3Afsd_profile%3AACoAABo5JwYBGMljXPw8nNmcjDihgwHQrY6Ibw8&amp;tabIndex=1&amp;modalTabIndex=1">
+          <div class="mr2
+              mv1
+              
+              ">
+            
+    <ul class="ivm-entity-pile
+        display-flex align-items-center t-black">
+        <li class="ivm-entity-pile__img-item--stacked">
+            
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="24" src="https://media.licdn.com/dms/image/D5603AQEWHJmibL23tg/profile-displayphoto-shrink_100_100/0/1689784371209?e=1707350400&amp;v=beta&amp;t=44Gi3WxgBO75CwwDr3QauAAqBr3u4_-tXyXOuXbEVYg" loading="lazy" height="24" alt="" id="ember131" class="ivm-view-attr__img--centered ivm-view-attr__img--stacked ivm-view-attr__img--stacked-circle-size-0 EntityPhoto-circle-0-stackedFacepile   evi-image lazy-image ember-view">
+    </div>
+  
+        </li>
+    </ul>
+  
+          </div>
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          
+      <div class="pv-shared-text-with-see-more full-width t-14 t-normal t-black hoverable-link-text display-flex align-items-center">
+        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        <span aria-hidden="true"><!---->Endorsed by<span class="white-space-pre"> </span><!---->Phat Nguyen<!----><span class="white-space-pre"> </span>who is highly skilled at this<!----></span><span class="visually-hidden"><!---->Endorsed by<span class="white-space-pre"> </span><!---->Phat Nguyen<!----><span class="white-space-pre"> </span>who is highly skilled at this<!----></span>
+
+<!---->    </div>
+  
+      </div>
+  
+      
+      </div>
+  
+    </div>
+  
+      </a>
+  
+<!---->    </div>
+  
+  
+            </li>
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+    <div class="
+        mv1
+        display-flex align-items-center">
+      
+        <a class="optional-action-target-wrapper display-flex link-without-hover-visited" target="_self" href="https://www.linkedin.com/in/huu-hoang-63240a103/overlay/urn:li:fsd_skill:(ACoAABo5JwYBGMljXPw8nNmcjDihgwHQrY6Ibw8,1)/endorsers?profileUrn=urn%3Ali%3Afsd_profile%3AACoAABo5JwYBGMljXPw8nNmcjDihgwHQrY6Ibw8&amp;tabIndex=2&amp;modalTabIndex=2">
+          <div class="mr2
+              mv1
+              
+              ">
+            
+    <ul class="ivm-entity-pile
+        display-flex align-items-center t-black">
+        <li class="ivm-entity-pile__img-item--stacked">
+            
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="24" src="https://media.licdn.com/dms/image/D5603AQF9mHzR7JDgJw/profile-displayphoto-shrink_100_100/0/1695014983451?e=1707350400&amp;v=beta&amp;t=pEu-hbLda3S4kHDs0N1udb0o8PV3zn0-vE6428TavYw" loading="lazy" height="24" alt="" id="ember132" class="ivm-view-attr__img--centered ivm-view-attr__img--stacked ivm-view-attr__img--stacked-circle-size-0 EntityPhoto-circle-0-stackedFacepile   evi-image lazy-image ember-view">
+    </div>
+  
+        </li>
+    </ul>
+  
+          </div>
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          
+      <div class="pv-shared-text-with-see-more full-width t-14 t-normal t-black hoverable-link-text display-flex align-items-center">
+        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        <span aria-hidden="true"><!---->Endorsed by 1 people in the last 6 months<!----></span><span class="visually-hidden"><!---->Endorsed by 1 people in the last 6 months<!----></span>
+
+<!---->    </div>
+  
+      </div>
+  
+      
+      </div>
+  
+    </div>
+  
+      </a>
+  
+<!---->    </div>
+  
+  
+            </li>
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center align-self-flex-start button-placement-wrap
+            
+            " target="_self" id="navigation-overlay-section-with-parent-Show-all-4-details" href="https://www.linkedin.com/in/huu-hoang-63240a103/overlay/urn:li:fsd_skill:(ACoAABo5JwYBGMljXPw8nNmcjDihgwHQrY6Ibw8,1)/skill-insights?profileUrn=urn%3Ali%3Afsd_profile%3AACoAABo5JwYBGMljXPw8nNmcjDihgwHQrY6Ibw8&amp;tabIndex=0&amp;modalTabIndex=0">
+<!---->            <span class="pvs-navigation__text">
+              Show all 4 details
+            </span>
+            <div class="pvs-navigation__icon">
+              <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="arrow-right-small" class="rtl-flip">
+<!---->    
+
+    <use href="#arrow-right-small" width="16" height="16"></use>
+</svg>
+
+            </div>
+        </a>
+  
+      </div>
+  
+        </div>
+  
+  
+            </li>
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+    <button id="ember133" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button" data-dashlane-rid="30a7cd0578d15f04">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="check-small">
+<!---->    
+
+    <use href="#check-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Endorsed
+</span></button>
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+        </ul>
+        <div class="pvs-list__footer-wrapper
+            ">
+          
+        <div class="">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center full-width align-items-center artdeco-button--fluid
+            
+            " target="_self" id="navigation-index-Show-all-13-skills" href="https://www.linkedin.com/in/huu-hoang-63240a103/details/skills?profileUrn=urn%3Ali%3Afsd_profile%3AACoAABo5JwYBGMljXPw8nNmcjDihgwHQrY6Ibw8">
+<!---->            <span class="pvs-navigation__text">
+              Show all 13 skills
+            </span>
+            <div class="pvs-navigation__icon">
+              <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="arrow-right-small" class="rtl-flip">
+<!---->    
+
+    <use href="#arrow-right-small" width="16" height="16"></use>
+</svg>
+
+            </div>
+        </a>
+  
+      </div>
+  
+        </div>
+  
+        </div>
+    </div>
+  
+  
+<!---->        
+</section>
+
+<!---->  
+        
+<!---->
+<!---->  
+        
+<!---->
+<!---->  
+        
+<!---->
+<!---->  
+        
+<!---->
+<!---->  
+        
+<!---->
+<!---->  
+        
+<!---->
+<!---->  
+        
+        <section class="artdeco-card relative break-words pb3
+            
+            
+            mt2" tabindex="-1" data-view-name="profile-card">
+<!---->
+  
+          <div id="languages" class="pv-profile-card__anchor">
+          </div>
+            
+          
+<!---->
+    <div class="pvs-header__container">
+      <div class="pvs-header__top-container--no-stack">
+        <div class="pvs-header__left-container--stack">
+          <div class="pvs-header__title-container">
+              <h2 class="pvs-header__title
+                  text-heading-large">
+                <span aria-hidden="true"><!---->Languages<!----></span><span class="visually-hidden"><!---->Languages<!----></span>
+              </h2>
+<!----><!---->          </div>
+
+<!---->        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+      <div class="
+            display-flex" tabindex="-1" aria-hidden="true">
+        
+<!---->        
+      </div>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+      <div class="
+              display-flex flex-column full-width">
+        
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 t-bold">
+            <span aria-hidden="true"><!---->English<!----></span><span class="visually-hidden"><!---->English<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+<!----><!----><!---->          
+      </div>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            </li>
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+      <div class="
+            display-flex" tabindex="-1" aria-hidden="true">
+        
+<!---->        
+      </div>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+      <div class="
+              display-flex flex-column full-width">
+        
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 t-bold">
+            <span aria-hidden="true"><!---->Vietnamese<!----></span><span class="visually-hidden"><!---->Vietnamese<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+<!----><!----><!---->          
+      </div>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+<!---->        
+</section>
+
+<!---->  
+        
+<!---->
+<!---->  
+        
+        <section class="artdeco-card relative break-words pb3
+            
+            
+            mt2" tabindex="-1" data-view-name="profile-card">
+<!---->
+  
+          <div id="interests" class="pv-profile-card__anchor">
+          </div>
+            
+          
+<!---->
+    <div class="pvs-header__container">
+      <div class="pvs-header__top-container--no-stack">
+        <div class="pvs-header__left-container--stack">
+          <div class="pvs-header__title-container">
+              <h2 class="pvs-header__title
+                  text-heading-large">
+                <span aria-hidden="true"><!---->Interests<!----></span><span class="visually-hidden"><!---->Interests<!----></span>
+              </h2>
+<!----><!---->          </div>
+
+<!---->        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            
+          
+      <div id="ember134" class="artdeco-tabs artdeco-tabs--size-t-48 ember-view">
+          <div aria-multiselectable="false" id="ember135" class="artdeco-tablist ember-view" role="tablist">
+              <button tabindex="0" aria-selected="true" id="ember136" class="artdeco-tab active artdeco-tab--selected ember-view" role="tab" aria-controls="ember141" data-dashlane-rid="dd5869bd2e358d7b">
+                <span aria-hidden="true"><!---->Top Voices<!----></span><span class="visually-hidden"><!---->Top Voices<!----></span>
+              </button>
+
+              <button tabindex="-1" aria-selected="false" id="ember137" class="artdeco-tab ember-view" role="tab" aria-controls="ember146" data-dashlane-rid="e18e322f75852233">
+                <span aria-hidden="true"><!---->Companies<!----></span><span class="visually-hidden"><!---->Companies<!----></span>
+              </button>
+
+              <button tabindex="-1" aria-selected="false" id="ember138" class="artdeco-tab ember-view" role="tab" aria-controls="ember151" data-dashlane-rid="b56904594a19b8c2">
+                <span aria-hidden="true"><!---->Groups<!----></span><span class="visually-hidden"><!---->Groups<!----></span>
+              </button>
+
+              <button tabindex="-1" aria-selected="false" id="ember139" class="artdeco-tab ember-view" role="tab" aria-controls="ember156" data-dashlane-rid="9a52d6a8e302569e">
+                <span aria-hidden="true"><!---->Newsletters<!----></span><span class="visually-hidden"><!---->Newsletters<!----></span>
+              </button>
+
+              <button tabindex="-1" aria-selected="false" id="ember140" class="artdeco-tab ember-view" role="tab" aria-controls="ember162" data-dashlane-rid="e9f76f15b6cd2f5e">
+                <span aria-hidden="true"><!---->Schools<!----></span><span class="visually-hidden"><!---->Schools<!----></span>
+              </button>
+
+          
+</div>
+          <div tabindex="0" id="ember141" class="artdeco-tabpanel active ember-view" role="tabpanel" aria-labelledby="ember136">
+              
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            ph5 display-flex flex-row flex-wrap
+            
+            ">
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP pvs-list__item--two-column">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="active_tab_influencers_interests" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/in/jeffweiner08">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/C4D03AQFM3Y2r-OEStw/profile-displayphoto-shrink_100_100/0/1515623805035?e=1707350400&amp;v=beta&amp;t=lDkFxIm93Ja65l_Hd5fvQaUlIgyXovkadATv-Vh2nI8" loading="lazy" height="48" alt="Jeff Weiner profile picture" id="ember142" class="ivm-view-attr__img--centered EntityPhoto-circle-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="active_tab_influencers_interests" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/in/jeffweiner08">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Jeff Weiner<!----></span><span class="visually-hidden"><!---->Jeff Weiner<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!---->                
+    <div class="ivm-image-view-model  mr1 ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+        <li-icon aria-hidden="true" type="linkedin-bug-influencer-color" class=" " size="small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" class="mercado-match" width="16" height="16" focusable="false">
+      <path d="M14 0H2a1 1 0 00-1 1v15l3-2h10a1 1 0 001-1V1a1 1 0 00-1-1zM5 12H3V5h2zM4 4.2A1.27 1.27 0 012.75 3a1.25 1.25 0 012.5 0A1.27 1.27 0 014 4.2zm9 7.8h-2V8.73c0-.79-.18-1.93-1.34-1.93A1.74 1.74 0 008 8.61V12H6V5h1.85v1a2.72 2.72 0 012.29-1.2C12.27 4.8 13 6.09 13 8.29z" fill="#0a66c2"></path>
+    </svg></li-icon>
+    </div>
+  
+          </div>
+  
+                <span class="pvs-entity__supplementary-info t-14 t-black--light t-normal mr1">
+                  <span aria-hidden="true"><!---->· 3rd<!----></span><span class="visually-hidden"><!---->Third degree connection<!----></span>
+                </span>
+            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Executive Chairman at LinkedIn / Founding Partner Next Play Ventures<!----></span><span class="visually-hidden"><!---->Executive Chairman at LinkedIn / Founding Partner Next Play Ventures<!----></span>
+                </span>
+              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->10,439,234 followers<!----></span><span class="visually-hidden"><!---->10,439,234 followers<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+        
+      
+    
+        
+    <button aria-label="Follow Jeff Weiner" id="ember143" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button" data-dashlane-rid="5f8e1d1b3b6ed4a8">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="add-small">
+<!---->    
+
+    <use href="#add-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Follow
+</span></button>
+  
+      
+
+<!---->
+<!---->  
+  
+
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP pvs-list__item--two-column">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="active_tab_influencers_interests" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/in/jkevinscott">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/C5603AQEqSzA5NjrWQw/profile-displayphoto-shrink_100_100/0/1552068056666?e=1707350400&amp;v=beta&amp;t=AMmLmoVYMvPyiMT3piyT_LDlrtk3tbVZdlYq06BCQaA" loading="lazy" height="48" alt="Kevin Scott profile picture" id="ember144" class="ivm-view-attr__img--centered EntityPhoto-circle-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="active_tab_influencers_interests" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/in/jkevinscott">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Kevin Scott<!----></span><span class="visually-hidden"><!---->Kevin Scott<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!---->                
+    <div class="ivm-image-view-model  mr1 ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+        <li-icon aria-hidden="true" type="linkedin-bug-influencer-color" class=" " size="small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" class="mercado-match" width="16" height="16" focusable="false">
+      <path d="M14 0H2a1 1 0 00-1 1v15l3-2h10a1 1 0 001-1V1a1 1 0 00-1-1zM5 12H3V5h2zM4 4.2A1.27 1.27 0 012.75 3a1.25 1.25 0 012.5 0A1.27 1.27 0 014 4.2zm9 7.8h-2V8.73c0-.79-.18-1.93-1.34-1.93A1.74 1.74 0 008 8.61V12H6V5h1.85v1a2.72 2.72 0 012.29-1.2C12.27 4.8 13 6.09 13 8.29z" fill="#0a66c2"></path>
+    </svg></li-icon>
+    </div>
+  
+          </div>
+  
+<!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->CTO Microsoft, Author of "Reprogramming the American Dream"<!----></span><span class="visually-hidden"><!---->CTO Microsoft, Author of "Reprogramming the American Dream"<!----></span>
+                </span>
+              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->732,524 followers<!----></span><span class="visually-hidden"><!---->732,524 followers<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+        
+      
+    
+        
+    <button aria-label="Follow Kevin Scott" id="ember145" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button" data-dashlane-rid="a347f566bad87783">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="add-small">
+<!---->    
+
+    <use href="#add-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Follow
+</span></button>
+  
+      
+
+<!---->
+<!---->  
+  
+
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+        </ul>
+        <div class="pvs-list__footer-wrapper
+            ">
+          
+        <div class="">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center full-width align-items-center artdeco-button--fluid
+            
+            " target="_self" id="navigation-index-see-all-influencers" href="https://www.linkedin.com/in/huu-hoang-63240a103/details/interests?profileUrn=urn%3Ali%3Afsd_profile%3AACoAABo5JwYBGMljXPw8nNmcjDihgwHQrY6Ibw8&amp;tabIndex=0&amp;detailScreenTabIndex=0">
+<!---->            <span class="pvs-navigation__text">
+              Show all Top Voices
+            </span>
+            <div class="pvs-navigation__icon">
+              <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="arrow-right-small" class="rtl-flip">
+<!---->    
+
+    <use href="#arrow-right-small" width="16" height="16"></use>
+</svg>
+
+            </div>
+        </a>
+  
+      </div>
+  
+        </div>
+  
+        </div>
+    </div>
+  
+  
+          </div>
+          <div tabindex="0" hidden="" id="ember146" class="artdeco-tabpanel artdeco-tabpanel--hidden ember-view" role="tabpanel" aria-labelledby="ember137">
+              
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            ph5 display-flex flex-row flex-wrap
+            
+            ">
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP pvs-list__item--two-column">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="active_tab_companies_interests" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/company/3033/">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/D560BAQGmlDR0g_2XIg/company-logo_100_100/0/1688575032847/avanade_logo?e=1709769600&amp;v=beta&amp;t=Ys1R5HDe8tWzVeAJ8pFvQfUxbEMWA7RULpOzxVsqJhE" loading="lazy" height="48" alt="Avanade logo" id="ember147" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="active_tab_companies_interests" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/company/3033/">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Avanade<!----></span><span class="visually-hidden"><!---->Avanade<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+<!---->              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->426,259 followers<!----></span><span class="visually-hidden"><!---->426,259 followers<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+    <button id="ember148" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="add-small">
+<!---->    
+
+    <use href="#add-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Follow
+</span></button>
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP pvs-list__item--two-column">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="active_tab_companies_interests" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/company/18343/">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/D560BAQHqIVL7Oir8VQ/company-logo_100_100/0/1689234125838/netpower_logo?e=1709769600&amp;v=beta&amp;t=AajmgPAtCb_M4BPy2j-_P3Hnmpx4Q4EAgMf4-IL_NrI" loading="lazy" height="48" alt="Netpower logo" id="ember149" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="active_tab_companies_interests" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/company/18343/">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Netpower<!----></span><span class="visually-hidden"><!---->Netpower<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+<!---->              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->1,639 followers<!----></span><span class="visually-hidden"><!---->1,639 followers<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+    <button id="ember150" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="add-small">
+<!---->    
+
+    <use href="#add-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Follow
+</span></button>
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+        </ul>
+        <div class="pvs-list__footer-wrapper
+            ">
+          
+        <div class="">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center full-width align-items-center artdeco-button--fluid
+            
+            " target="_self" id="navigation-index-see-all-companies" href="https://www.linkedin.com/in/huu-hoang-63240a103/details/interests?profileUrn=urn%3Ali%3Afsd_profile%3AACoAABo5JwYBGMljXPw8nNmcjDihgwHQrY6Ibw8&amp;tabIndex=1&amp;detailScreenTabIndex=1">
+<!---->            <span class="pvs-navigation__text">
+              Show all companies
+            </span>
+            <div class="pvs-navigation__icon">
+              <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="arrow-right-small" class="rtl-flip">
+<!---->    
+
+    <use href="#arrow-right-small" width="16" height="16"></use>
+</svg>
+
+            </div>
+        </a>
+  
+      </div>
+  
+        </div>
+  
+        </div>
+    </div>
+  
+  
+          </div>
+          <div tabindex="0" hidden="" id="ember151" class="artdeco-tabpanel artdeco-tabpanel--hidden ember-view" role="tabpanel" aria-labelledby="ember138">
+              
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            ph5 display-flex flex-row flex-wrap
+            
+            ">
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP pvs-list__item--two-column">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="active_tab_groups_interests" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/groups/14300770">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/D5607AQEsT24GKf2dwA/group-logo_image-shrink_48x48/0/1693717223617?e=1702267200&amp;v=beta&amp;t=N265zP58zNRXMpVqFdHqA_DPYSYaQPBPnqbfeYqaD2M" loading="lazy" height="48" alt="Top IT x Software Outsourcing Companies In Vietnam logo" id="ember152" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="active_tab_groups_interests" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/groups/14300770">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Top IT x Software Outsourcing Companies In Vietnam<!----></span><span class="visually-hidden"><!---->Top IT x Software Outsourcing Companies In Vietnam<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+<!---->              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->115 members<!----></span><span class="visually-hidden"><!---->115 members<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+      
+      <button id="ember153" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button"><!---->
+<span class="artdeco-button__text">
+    Join
+</span></button>
+  
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP pvs-list__item--two-column">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="active_tab_groups_interests" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/groups/121874">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/C4D07AQFxOYDfViCF6Q/group-logo_image-shrink_48x48/0/1631375447889?e=1702267200&amp;v=beta&amp;t=6Wzon0nFVq5jHYKGoJmKZIDcIySZ5kC8M67AckvsA5c" loading="lazy" height="48" alt="iOS Developers Group logo" id="ember154" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="active_tab_groups_interests" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/groups/121874">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->iOS Developers Group<!----></span><span class="visually-hidden"><!---->iOS Developers Group<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+<!---->              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->148,460 members<!----></span><span class="visually-hidden"><!---->148,460 members<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+      
+      <button id="ember155" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button"><!---->
+<span class="artdeco-button__text">
+    Join
+</span></button>
+  
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+        </ul>
+        <div class="pvs-list__footer-wrapper
+            ">
+          
+        <div class="">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center full-width align-items-center artdeco-button--fluid
+            
+            " target="_self" id="navigation-index-see-all-groups" href="https://www.linkedin.com/in/huu-hoang-63240a103/details/interests?profileUrn=urn%3Ali%3Afsd_profile%3AACoAABo5JwYBGMljXPw8nNmcjDihgwHQrY6Ibw8&amp;tabIndex=2&amp;detailScreenTabIndex=2">
+<!---->            <span class="pvs-navigation__text">
+              Show all groups
+            </span>
+            <div class="pvs-navigation__icon">
+              <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="arrow-right-small" class="rtl-flip">
+<!---->    
+
+    <use href="#arrow-right-small" width="16" height="16"></use>
+</svg>
+
+            </div>
+        </a>
+  
+      </div>
+  
+        </div>
+  
+        </div>
+    </div>
+  
+  
+          </div>
+          <div tabindex="0" hidden="" id="ember156" class="artdeco-tabpanel artdeco-tabpanel--hidden ember-view" role="tabpanel" aria-labelledby="ember139">
+              
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            ph5 display-flex flex-row flex-wrap
+            
+            ">
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP pvs-list__item--two-column">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="active_tab_newsletters_interests" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/newsletters/7135530239383781376">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/D5612AQHXUigtsUi1KQ/series-logo_image-shrink_100_100/0/1701242934714?e=1707350400&amp;v=beta&amp;t=cKAAlctK8m0xusj9NphiNrRRF-nTkWMz5yEK_v1nEFA" loading="lazy" height="48" alt="Image for Gen Z: zoom in &amp; zoom out" id="ember157" class="ivm-view-attr__img--centered EntityPhoto-square-3 ivm-view-attr__img--aspect-fit  evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="active_tab_newsletters_interests" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/newsletters/7135530239383781376">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Gen Z: zoom in &amp; zoom out<!----></span><span class="visually-hidden"><!---->Gen Z: zoom in &amp; zoom out<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Đối thoại với Gen Z thông qua podcast GEN Z STORIES<!----></span><span class="visually-hidden"><!---->Đối thoại với Gen Z thông qua podcast GEN Z STORIES<!----></span>
+                </span>
+              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Published biweekly<!----></span><span class="visually-hidden"><!---->Published biweekly<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+    <div class="
+        mv1
+        display-flex align-items-center">
+      
+        <a class="optional-action-target-wrapper display-flex link-without-hover-visited" target="_self" href="https://www.linkedin.com/in/hhtai">
+          <div class="mr2
+              mv1
+              
+              ">
+            
+    <ul class="ivm-entity-pile
+        display-flex align-items-center t-black">
+        <li class="ivm-entity-pile__img-item--stacked">
+            
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="24" src="https://media.licdn.com/dms/image/C5603AQGmYDaVKyolBw/profile-displayphoto-shrink_100_100/0/1588226856680?e=1707350400&amp;v=beta&amp;t=LXqefUojNZ3rCseLUypj2IB22BLKU6FUsFvi0Bw67lI" loading="lazy" height="24" alt="" id="ember158" class="ivm-view-attr__img--centered ivm-view-attr__img--stacked ivm-view-attr__img--stacked-circle-size-0 EntityPhoto-circle-0-stackedFacepile   evi-image lazy-image ember-view">
+    </div>
+  
+        </li>
+    </ul>
+  
+          </div>
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="hoverable-link-text display-flex align-items-center
+              t-14 t-normal t-black">
+            <span aria-hidden="true"><!---->Huynh Huu Tai<!----></span><span class="visually-hidden"><!---->Huynh Huu Tai<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+      </a>
+  
+<!---->    </div>
+  
+  
+            </li>
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+    <button id="ember159" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="add-small">
+<!---->    
+
+    <use href="#add-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Subscribe
+</span></button>
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP pvs-list__item--two-column">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="active_tab_newsletters_interests" class="optional-action-target-wrapper 
+            display-flex" target="_self" tabindex="-1" aria-hidden="true" href="https://www.linkedin.com/newsletters/7127661773029052416">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+        <div class="EntityPhoto-square-3-ghost-publication ivm-view-attr__ghost-entity ivm-view-attr__img--aspect-fit ">
+<!---->        </div>
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="active_tab_newsletters_interests" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/newsletters/7127661773029052416">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Inner Join<!----></span><span class="visually-hidden"><!---->Inner Join<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Business Intelligence for practitioners<!----></span><span class="visually-hidden"><!---->Business Intelligence for practitioners<!----></span>
+                </span>
+              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Published weekly<!----></span><span class="visually-hidden"><!---->Published weekly<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+    <div class="
+        mv1
+        display-flex align-items-center">
+      
+        <a class="optional-action-target-wrapper display-flex link-without-hover-visited" target="_self" href="https://www.linkedin.com/in/nvquanghuy">
+          <div class="mr2
+              mv1
+              
+              ">
+            
+    <ul class="ivm-entity-pile
+        display-flex align-items-center t-black">
+        <li class="ivm-entity-pile__img-item--stacked">
+            
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="24" src="https://media.licdn.com/dms/image/D5603AQEs0XF-ij-mhQ/profile-displayphoto-shrink_100_100/0/1699542410414?e=1707350400&amp;v=beta&amp;t=Qxk8Z81el3oYCGtmQEg8hYbCzU4db1gl_FhHbKdzhhM" loading="lazy" height="24" alt="" id="ember160" class="ivm-view-attr__img--centered ivm-view-attr__img--stacked ivm-view-attr__img--stacked-circle-size-0 EntityPhoto-circle-0-stackedFacepile   evi-image lazy-image ember-view">
+    </div>
+  
+        </li>
+    </ul>
+  
+          </div>
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="hoverable-link-text display-flex align-items-center
+              t-14 t-normal t-black">
+            <span aria-hidden="true"><!---->Huy Nguyen<!----></span><span class="visually-hidden"><!---->Huy Nguyen<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+      </a>
+  
+<!---->    </div>
+  
+  
+            </li>
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+    <button id="ember161" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="add-small">
+<!---->    
+
+    <use href="#add-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Subscribe
+</span></button>
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+        </ul>
+        <div class="pvs-list__footer-wrapper
+            ">
+          
+        <div class="">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center full-width align-items-center artdeco-button--fluid
+            
+            " target="_self" id="navigation-index-see-all-newsletters" href="https://www.linkedin.com/in/huu-hoang-63240a103/details/interests?profileUrn=urn%3Ali%3Afsd_profile%3AACoAABo5JwYBGMljXPw8nNmcjDihgwHQrY6Ibw8&amp;tabIndex=3&amp;detailScreenTabIndex=3">
+<!---->            <span class="pvs-navigation__text">
+              Show all newsletters
+            </span>
+            <div class="pvs-navigation__icon">
+              <svg role="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="arrow-right-small" class="rtl-flip">
+<!---->    
+
+    <use href="#arrow-right-small" width="16" height="16"></use>
+</svg>
+
+            </div>
+        </a>
+  
+      </div>
+  
+        </div>
+  
+        </div>
+    </div>
+  
+  
+          </div>
+          <div tabindex="0" hidden="" id="ember162" class="artdeco-tabpanel artdeco-tabpanel--hidden ember-view" role="tabpanel" aria-labelledby="ember140">
+              
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            ph5 display-flex flex-row flex-wrap
+            
+            ">
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP pvs-list__item--two-column">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="active_tab_schools_interests" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/company/7324197/">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/C560BAQHN0gVLfrrs6g/company-logo_100_100/0/1630668059396/coderschool_logo?e=1709769600&amp;v=beta&amp;t=XcFbRiviYjuGNkUZHEs5y4spfx8ziWGlqIcvlSvgqmk" loading="lazy" height="48" alt="CoderSchool (IT W21) logo" id="ember163" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="active_tab_schools_interests" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/school/7324197/">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->CoderSchool (IT W21)<!----></span><span class="visually-hidden"><!---->CoderSchool (IT W21)<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+<!---->              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->2,255 followers<!----></span><span class="visually-hidden"><!---->2,255 followers<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+    <button id="ember164" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="add-small">
+<!---->    
+
+    <use href="#add-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Follow
+</span></button>
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+          </div>
+      </div>
+  
+  
+<!---->        
+</section>
+
+<!---->  
+        
+        <section class="artdeco-card relative break-words pb3
+            
+            
+            mt2" tabindex="-1" data-view-name="profile-card">
+<!---->
+  
+          <div id="volunteer_causes" class="pv-profile-card__anchor">
+          </div>
+            
+          
+<!---->
+    <div class="pvs-header__container">
+      <div class="pvs-header__top-container--no-stack">
+        <div class="pvs-header__left-container--stack">
+          <div class="pvs-header__title-container">
+              <h2 class="pvs-header__title
+                  text-heading-large">
+                <span aria-hidden="true"><!---->Causes<!----></span><span class="visually-hidden"><!---->Causes<!----></span>
+              </h2>
+<!----><!---->          </div>
+
+<!---->        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            
+          
+    <div class="display-flex ph5 pv3">
+      
+      <div class="
+          display-flex full-width">
+        
+          
+      <div class="pv-shared-text-with-see-more full-width t-14 t-normal t-black display-flex align-items-center">
+        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         full-width" style="-webkit-line-clamp:4;" tabindex="-1">
+
+        <span aria-hidden="true"><!---->Education<!----></span><span class="visually-hidden"><!---->Education<!----></span>
+
+<!---->    </div>
+  
+      </div>
+  
+      
+      </div>
+  
+    </div>
+  
+  
+<!---->        
+</section>
+
+<!---->  
+  
+      
+          
+</main>
+
+          <aside class="scaffold-layout__aside
+    
+    ">
+  
+            
+        
+    
+<!---->
+<!---->
+              <section class="ad-banner-container
+    
+    artdeco-card overflow-hidden xl
+     mb2">
+  <iframe data-ad-banner="" class="ad-banner" width="300" height="250" src="about:blank" scrolling="no" title="advertisement" data-dashlane-rid="968defbeeb784d72"></iframe>
+
+<!---->
+  
+<!---->  
+
+<!---->
+<!----></section>
+
+<!---->
+        
+        <section class="artdeco-card relative break-words pb3
+            
+            
+            mt2" tabindex="-1" data-view-name="profile-card">
+<!---->
+  
+          <div id="pymk_recommendation_from_title" class="pv-profile-card__anchor">
+          </div>
+            
+          
+<!---->
+    <div class="pvs-header__container">
+      <div class="pvs-header__top-container--no-stack">
+        <div class="pvs-header__left-container--stack">
+          <div class="pvs-header__title-container">
+              <h2 class="pvs-header__title
+                  text-heading-medium">
+                <span aria-hidden="true"><!---->People you may know<!----></span><span class="visually-hidden"><!---->People you may know<!----></span>
+              </h2>
+              <p class="pvs-header__subtitle pvs-header__optional-link text-body-small">
+                <span aria-hidden="true"><!---->From Huu's job title<!----></span><span class="visually-hidden"><!---->From Huu's job title<!----></span>
+              </p>
+<!---->          </div>
+
+<!---->        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="pymk_job_title_card_click" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/in/quannguyen25">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/D5603AQFI9fVXMRPxDA/profile-displayphoto-shrink_100_100/0/1684549413112?e=1707350400&amp;v=beta&amp;t=nuhlLzgPuAbJvpeln7yBXwUSlJucugJqo0LrhQah3IY" loading="lazy" height="48" alt="Nguyen Anh Quan profile picture" id="ember56" class="ivm-view-attr__img--centered EntityPhoto-circle-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="pymk_job_title_card_click" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/in/quannguyen25?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADc6dPwB0FcYNcfvIHzc4bDJgoucSlkxzCg">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Nguyen Anh Quan<!----></span><span class="visually-hidden"><!---->Nguyen Anh Quan<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          
+      <div class="pv-shared-text-with-see-more full-width t-14 t-normal display-flex align-items-center">
+        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        <span aria-hidden="true"><!---->Backend Developer at NTT DATA Vietnam<!----></span><span class="visually-hidden"><!---->Backend Developer at NTT DATA Vietnam<!----></span>
+
+<!---->    </div>
+  
+      </div>
+  
+      
+      </div>
+  
+    </div>
+  
+<!----><!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+        
+      
+        
+    
+          
+        
+    <button aria-label="Invite Nguyen Anh Quan to connect" id="ember57" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button" data-dashlane-rid="7168a0d1f963f4dd">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="connect-small">
+<!---->    
+
+    <use href="#connect-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Connect
+</span></button>
+  
+      
+        
+
+<!---->  
+
+<!---->
+<!---->
+<!---->  
+  
+
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="pymk_job_title_card_click" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/in/anhhuy-nguyen">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/C5103AQH3jx8Xr04xPQ/profile-displayphoto-shrink_100_100/0/1528903278631?e=1707350400&amp;v=beta&amp;t=T8WLCwE6g0QsgGV_cIcpWeeBOlruICStO4HqT0eKTm8" loading="lazy" height="48" alt="Anh Huy Nguyễn profile picture" id="ember58" class="ivm-view-attr__img--centered EntityPhoto-circle-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="pymk_job_title_card_click" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/in/anhhuy-nguyen?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACFdxdwB0wcGgjp9Zscvm0lb6tuRfGrsHZo">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Anh Huy Nguyễn<!----></span><span class="visually-hidden"><!---->Anh Huy Nguyễn<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          
+      <div class="pv-shared-text-with-see-more full-width t-14 t-normal display-flex align-items-center">
+        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        <span aria-hidden="true"><!---->Senior Software Engineer, Backend<!----></span><span class="visually-hidden"><!---->Senior Software Engineer, Backend<!----></span>
+
+<!---->    </div>
+  
+      </div>
+  
+      
+      </div>
+  
+    </div>
+  
+<!----><!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+        
+      
+        
+    
+          
+        
+    <button aria-label="Invite Anh Huy Nguyễn to connect" id="ember59" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button" data-dashlane-rid="e62dff5f892705d3">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="connect-small">
+<!---->    
+
+    <use href="#connect-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Connect
+</span></button>
+  
+      
+        
+
+<!---->  
+
+<!---->
+<!---->
+<!---->  
+  
+
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="pymk_job_title_card_click" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/in/duc-truong-hoai-09ba6b15b">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/D5603AQGTUXWRULyXQw/profile-displayphoto-shrink_100_100/0/1669015773109?e=1707350400&amp;v=beta&amp;t=AsqrCFE5Pkh-VtkBs6xo6EPTKrHzmT3A-F4-86rszwY" loading="lazy" height="48" alt="Duc Truong Hoai profile picture" id="ember60" class="ivm-view-attr__img--centered EntityPhoto-circle-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="pymk_job_title_card_click" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/in/duc-truong-hoai-09ba6b15b?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACZsGLcB-wc0bG391BvIEgB313FTTKs0pw0">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Duc Truong Hoai<!----></span><span class="visually-hidden"><!---->Duc Truong Hoai<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          
+      <div class="pv-shared-text-with-see-more full-width t-14 t-normal display-flex align-items-center">
+        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        <span aria-hidden="true"><!---->Frontend Engineer<!----></span><span class="visually-hidden"><!---->Frontend Engineer<!----></span>
+
+<!---->    </div>
+  
+      </div>
+  
+      
+      </div>
+  
+    </div>
+  
+<!----><!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+        
+      
+        
+    
+          
+        
+    <button aria-label="Invite Duc Truong Hoai to connect" id="ember61" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button" data-dashlane-rid="b15bbf26e3b50ae2">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="connect-small">
+<!---->    
+
+    <use href="#connect-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Connect
+</span></button>
+  
+      
+        
+
+<!---->  
+
+<!---->
+<!---->
+<!---->  
+  
+
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="pymk_job_title_card_click" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/in/toan-dinh-2504231a2">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/D5603AQHPD0sZUvA0rQ/profile-displayphoto-shrink_100_100/0/1666076435370?e=1707350400&amp;v=beta&amp;t=_iNB4g4BFWVYEi9HemtN3x6chZZiHMpQIyJ6qojaQPM" loading="lazy" height="48" alt="Toan Dinh profile picture" id="ember62" class="ivm-view-attr__img--centered EntityPhoto-circle-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="pymk_job_title_card_click" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/in/toan-dinh-2504231a2?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAC9nh5wBdGXAShj3BzAMmPhZMYr-rfwW3k4">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Toan Dinh<!----></span><span class="visually-hidden"><!---->Toan Dinh<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          
+      <div class="pv-shared-text-with-see-more full-width t-14 t-normal display-flex align-items-center">
+        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        <span aria-hidden="true"><!---->Software Engineer at DEK Technologies Vietnam<!----></span><span class="visually-hidden"><!---->Software Engineer at DEK Technologies Vietnam<!----></span>
+
+<!---->    </div>
+  
+      </div>
+  
+      
+      </div>
+  
+    </div>
+  
+<!----><!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+        
+      
+        
+    
+          
+        
+    <button aria-label="Invite Toan Dinh to connect" id="ember63" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button" data-dashlane-rid="e9ad5b093b2950c4">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="connect-small">
+<!---->    
+
+    <use href="#connect-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Connect
+</span></button>
+  
+      
+        
+
+<!---->  
+
+<!---->
+<!---->
+<!---->  
+  
+
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="pymk_job_title_card_click" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/in/nguy%E1%BB%85n-th%E1%BB%8D-1515b6270">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/D4D03AQG1zrxk2-9FVQ/profile-displayphoto-shrink_100_100/0/1680138486297?e=1707350400&amp;v=beta&amp;t=v3qeBG1HBCUyVqNsOPgq91c3Q3F5eJk5jJ76lykODxk" loading="lazy" height="48" alt="Nguyễn Thọ profile picture" id="ember64" class="ivm-view-attr__img--centered EntityPhoto-circle-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="pymk_job_title_card_click" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/in/nguy%E1%BB%85n-th%E1%BB%8D-1515b6270?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAEJL4E0BQ8Ei882PtO-oiq3EmsgojAUfICg">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Nguyễn Thọ<!----></span><span class="visually-hidden"><!---->Nguyễn Thọ<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          
+      <div class="pv-shared-text-with-see-more full-width t-14 t-normal display-flex align-items-center">
+        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        <span aria-hidden="true"><!---->Back End Developer at VNDIRECT Securities Corporation<!----></span><span class="visually-hidden"><!---->Back End Developer at VNDIRECT Securities Corporation<!----></span>
+
+<!---->
+<!---->    </div>
+  
+      </div>
+  
+      
+      </div>
+  
+    </div>
+  
+<!----><!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+        
+      
+        
+    
+          
+        
+    <button aria-label="Invite Nguyễn Thọ to connect" id="ember65" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button" data-dashlane-rid="2c19d41f5f1fa049">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="connect-small">
+<!---->    
+
+    <use href="#connect-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Connect
+</span></button>
+  
+      
+        
+
+<!---->  
+
+<!---->
+<!---->
+<!---->  
+  
+
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+        </ul>
+        <div class="pvs-list__footer-wrapper
+            ">
+          
+        <div class="">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center full-width align-items-center artdeco-button--fluid
+            
+            " target="_self" id="navigation-overlay-section-pymk-job-title-see-more" href="https://www.linkedin.com/in/huu-hoang-63240a103/overlay/pymk-recommendations-from-title?isPrefetched=true&amp;profileUrn=urn%3Ali%3Afsd_profile%3AACoAABo5JwYBGMljXPw8nNmcjDihgwHQrY6Ibw8">
+<!---->            <span class="pvs-navigation__text">
+              Show all
+            </span>
+<!---->        </a>
+  
+      </div>
+  
+        </div>
+  
+        </div>
+    </div>
+  
+  
+<!---->        
+</section>
+
+<!---->  
+
+        
+        <section class="artdeco-card relative break-words pb3
+            
+            
+            mt2" tabindex="-1" data-view-name="profile-card">
+<!---->
+  
+          <div id="company_recommendation" class="pv-profile-card__anchor">
+          </div>
+            
+          
+<!---->
+    <div class="pvs-header__container">
+      <div class="pvs-header__top-container--no-stack">
+        <div class="pvs-header__left-container--stack">
+          <div class="pvs-header__title-container">
+              <h2 class="pvs-header__title
+                  text-heading-medium">
+                <span aria-hidden="true"><!---->You might like<!----></span><span class="visually-hidden"><!---->You might like<!----></span>
+              </h2>
+              <p class="pvs-header__subtitle pvs-header__optional-link text-body-small">
+                <span aria-hidden="true"><!---->Pages for you<!----></span><span class="visually-hidden"><!---->Pages for you<!----></span>
+              </p>
+<!---->          </div>
+
+<!---->        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+            
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="company_card_click" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/company/82540973/">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/C560BAQF1lnr4bvrLKQ/company-logo_100_100/0/1660157151780/flutterdevofficial_logo?e=1709769600&amp;v=beta&amp;t=fxxylRdANC0iUB0Xm0MKizZYbn3BOtIRVCLweINydy0" loading="lazy" height="48" alt="Flutter Dev logo" id="ember45" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="company_card_click" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/company/82540973/">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Flutter Dev<!----></span><span class="visually-hidden"><!---->Flutter Dev<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          
+      <div class="pv-shared-text-with-see-more full-width t-14 t-normal display-flex align-items-center">
+        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        <span aria-hidden="true"><!---->Technology, Information and Internet<!----></span><span class="visually-hidden"><!---->Technology, Information and Internet<!----></span>
+
+<!---->    </div>
+  
+      </div>
+  
+      
+      </div>
+  
+    </div>
+  
+              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->46,190 followers<!----></span><span class="visually-hidden"><!---->46,190 followers<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+    <div class="
+        mv1
+        display-flex align-items-center">
+      
+        <a class="optional-action-target-wrapper display-flex link-without-hover-visited" target="_self" href="https://www.linkedin.com/company/82540973/">
+          <div class="mr2
+              mv1
+              
+              ">
+            
+    <ul class="ivm-entity-pile
+        display-flex align-items-center t-black">
+        <li class="ivm-entity-pile__img-item--stacked">
+            
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="24" src="https://media.licdn.com/dms/image/D5603AQHjeo5BveskCA/profile-displayphoto-shrink_100_100/0/1693903287205?e=1707350400&amp;v=beta&amp;t=DbunSE_Q2z3fcRbfRScFpL2FkFLAOCTqLU7EOOii_Kk" loading="lazy" height="24" alt="" id="ember46" class="ivm-view-attr__img--centered ivm-view-attr__img--stacked ivm-view-attr__img--stacked-circle-size-0 EntityPhoto-circle-0-stackedFacepile   evi-image lazy-image ember-view">
+    </div>
+  
+        </li>
+        <li class="ivm-entity-pile__img-item--stacked">
+            
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="24" src="https://media.licdn.com/dms/image/D5635AQHGXDsXQ6Q1pQ/profile-framedphoto-shrink_100_100/0/1701415082559?e=1702267200&amp;v=beta&amp;t=4sO3iXLR-kWUJqdHQT4d9l5qlzDVgB4QmAibnb9qeS4" loading="lazy" height="24" alt="" id="ember47" class="ivm-view-attr__img--centered ivm-view-attr__img--stacked ivm-view-attr__img--stacked-circle-size-0 EntityPhoto-circle-0-stackedFacepile   evi-image lazy-image ember-view">
+    </div>
+  
+        </li>
+    </ul>
+  
+          </div>
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="hoverable-link-text display-flex align-items-center
+              t-14 t-normal t-black">
+            <!---->2 connections follow this page<!---->
+          </div>
+      
+      </div>
+  
+    </div>
+  
+      </a>
+  
+<!---->    </div>
+  
+  
+            </li>
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+    <button id="ember48" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button" data-dashlane-rid="24a99afd1130e527">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="add-small">
+<!---->    
+
+    <use href="#add-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Follow
+</span></button>
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+            <li class="artdeco-list__item DEwutlzKWKCJfmvSchIdFRUhlloAjdP RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+<!---->    <div class="SkpnBrDsrToaigHrxDCkGINuJffakWAElnE
+        pvs-entity--padded CSRACXLazigALGCoCxrFRvXIBjTdrVaCCQioA
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a data-field="company_card_click" class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/company/80245327/">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/C560BAQHTJOlDEd71QA/company-logo_100_100/0/1649264538350?e=1709769600&amp;v=beta&amp;t=mUfkqWLOl8N9UsjG2hehNoixe4YiA-FA81ACd7MNTuI" loading="lazy" height="48" alt="ByteByteGo logo" id="ember49" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a data-field="company_card_click" class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/company/80245327/">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->ByteByteGo<!----></span><span class="visually-hidden"><!---->ByteByteGo<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          
+      <div class="pv-shared-text-with-see-more full-width t-14 t-normal display-flex align-items-center">
+        
+    <div class="inline-show-more-text
+        inline-show-more-text--is-collapsed
+        inline-show-more-text--is-collapsed-with-line-clamp
+        
+        
+         full-width" style="-webkit-line-clamp:2;" tabindex="-1">
+
+        <span aria-hidden="true"><!---->Software Development<!----></span><span class="visually-hidden"><!---->Software Development<!----></span>
+
+<!---->    </div>
+  
+      </div>
+  
+      
+      </div>
+  
+    </div>
+  
+              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->283,502 followers<!----></span><span class="visually-hidden"><!---->283,502 followers<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+    <div class="
+        mv1
+        display-flex align-items-center">
+      
+        <a class="optional-action-target-wrapper display-flex link-without-hover-visited" target="_self" href="https://www.linkedin.com/company/80245327/">
+          <div class="mr2
+              mv1
+              
+              ">
+            
+    <ul class="ivm-entity-pile
+        display-flex align-items-center t-black">
+        <li class="ivm-entity-pile__img-item--stacked">
+            
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="24" src="https://media.licdn.com/dms/image/D5603AQFkw8YlK-8sBQ/profile-displayphoto-shrink_100_100/0/1690897324359?e=1707350400&amp;v=beta&amp;t=Ypuo0WCLhEwTjRXtECJoMKFhmKLYjPc-90Cr_sROJ3U" loading="lazy" height="24" alt="" id="ember50" class="ivm-view-attr__img--centered ivm-view-attr__img--stacked ivm-view-attr__img--stacked-circle-size-0 EntityPhoto-circle-0-stackedFacepile   evi-image lazy-image ember-view">
+    </div>
+  
+        </li>
+        <li class="ivm-entity-pile__img-item--stacked">
+            
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="24" src="https://media.licdn.com/dms/image/C5603AQGAmW_45ARpng/profile-displayphoto-shrink_100_100/0/1532395580601?e=1707350400&amp;v=beta&amp;t=-n_heULtx-IVXZqetp3Bns-th-sGO4nEuBo3UQti5sY" loading="lazy" height="24" alt="" id="ember51" class="ivm-view-attr__img--centered ivm-view-attr__img--stacked ivm-view-attr__img--stacked-circle-size-0 EntityPhoto-circle-0-stackedFacepile   evi-image lazy-image ember-view">
+    </div>
+  
+        </li>
+        <li class="ivm-entity-pile__img-item--stacked">
+            
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="24" src="https://media.licdn.com/dms/image/C5603AQHNfLgql3Tx4g/profile-displayphoto-shrink_100_100/0/1664177140670?e=1707350400&amp;v=beta&amp;t=nuqrxL0vI73icds95Va9G36xqy1kzWcL0NQQILbihoA" loading="lazy" height="24" alt="" id="ember52" class="ivm-view-attr__img--centered ivm-view-attr__img--stacked ivm-view-attr__img--stacked-circle-size-0 EntityPhoto-circle-0-stackedFacepile   evi-image lazy-image ember-view">
+    </div>
+  
+        </li>
+    </ul>
+  
+          </div>
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="hoverable-link-text display-flex align-items-center
+              t-14 t-normal t-black">
+            <!---->21 connections follow this page<!---->
+          </div>
+      
+      </div>
+  
+    </div>
+  
+      </a>
+  
+<!---->    </div>
+  
+  
+            </li>
+            <li class="RUrvOeBrvYEVUmIOmijYcnnpDOEGbxHwVOaQJc">
+              
+          
+        <div class="pv2">
+          
+    <button id="ember53" class="artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view" type="button" data-dashlane-rid="0e000510b657fe1f">        <svg role="none" aria-hidden="true" class="artdeco-button__icon " xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-supported-dps="16x16" data-test-icon="add-small">
+<!---->    
+
+    <use href="#add-small" width="16" height="16"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    Follow
+</span></button>
+  
+        </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+            </li>
+        </ul>
+        <div class="pvs-list__footer-wrapper
+            ">
+          
+        <div class="">
+          
+      <div>
+        
+        <a class="optional-action-target-wrapper artdeco-button artdeco-button--tertiary artdeco-button--standard artdeco-button--2 artdeco-button--muted 
+            inline-flex justify-center full-width align-items-center artdeco-button--fluid
+            
+            " target="_self" id="navigation-overlay-section-see-more" href="https://www.linkedin.com/in/huu-hoang-63240a103/overlay/company-recommendations?isPrefetched=true&amp;profileUrn=urn%3Ali%3Afsd_profile%3AACoAABo5JwYBGMljXPw8nNmcjDihgwHQrY6Ibw8">
+<!---->            <span class="pvs-navigation__text">
+              Show all
+            </span>
+<!---->        </a>
+  
+      </div>
+  
+        </div>
+  
+        </div>
+    </div>
+  
+  
+<!---->        
+</section>
+
+<!---->  
+
+        <div class="mt2">
+          
+    <div class="sticky
+        
+        " style="height: 250px; width: 300px; margin: 0px auto;">
+      
+            <div class="pv-right-rail__sticky-ad-banner">
+              <section class="ad-banner-container
+    
+    artdeco-card overflow-hidden
+    ">
+  <iframe data-ad-banner="" class="ad-banner" width="300" height="250" src="about:blank" scrolling="no" title="advertisement" data-dashlane-frameid="3358" data-dashlane-rid="21d6f2634420fe04"></iframe>
+
+<!---->
+  
+<!---->  
+
+<!---->
+<!----></section>
+            </div>
+          
+    </div>
+  
+        </div>
+  
+  
+      
+          
+</aside>
+      </div>
+
+<!---->  </div>
+</div>''';
 
 var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MjJjMGVkLTZiMTktNGY4YS05NmYzLWU5ZGJjYTAyN2QzYyIsImVtYWlsIjoibmh1dGFuaEBjb2RlbGlnaHQuY28iLCJpYXQiOjE2OTg3MzU4MDksImV4cCI6MTY5OTM0MDYwOX0.SYxpnAqqjyWsBtGysJQ613eHZObk8GZGvDFQkFPtfUE';

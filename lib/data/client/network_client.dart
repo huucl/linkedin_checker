@@ -2,7 +2,6 @@
 
 import 'package:dio/dio.dart' as dio;
 import 'package:dio/dio.dart';
-import 'package:flutter_chrome_app/app_routes.dart';
 import 'package:flutter_chrome_app/domain/exception/base_exception.dart';
 import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
 
