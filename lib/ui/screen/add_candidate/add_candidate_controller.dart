@@ -6,6 +6,7 @@ import 'package:flutter_chrome_app/domain/repository/linked_check_repository.dar
 import 'package:flutter_chrome_app/linkedin_user_detail_model.dart';
 import 'package:flutter_chrome_app/model/candidate_input.dart';
 import 'package:flutter_chrome_app/model/location_model.dart';
+import 'package:flutter_chrome_app/model/role.dart';
 import 'package:flutter_chrome_app/model/search_item.dart';
 import 'package:flutter_chrome_app/ui/screen/home/home_controller.dart';
 import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
@@ -163,7 +164,7 @@ class AddCandidateController extends GetxController {
       skills: skills.toSkills(searchSkills),
       assigneeId: assigneeId,
       avatar: user.value.avatar,
-      workExperiences: roles.toWorkExperiences(searchRoles),
+      // workExperiences: roles.toWorkExperiences(searchRoles),
     );
   }
 

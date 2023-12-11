@@ -133,8 +133,7 @@ class UserParser {
 }
 
 class UserProfileParser {
-  static LinkedinUserModel userParser(String htmlString,String url) {
-
+  static LinkedinUserModel userParser(String htmlString, String url) {
     var document = parse(htmlString);
     Element contentBlock = document.getElementsByClassName('artdeco-card pv-top-card').first;
 

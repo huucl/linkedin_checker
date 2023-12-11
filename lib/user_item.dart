@@ -8,6 +8,7 @@ import 'package:flutter_chrome_app/app_routes.dart';
 import 'package:flutter_chrome_app/linkedin_user_detail_model.dart';
 import 'package:flutter_chrome_app/linkedin_user_model.dart';
 import 'package:flutter_chrome_app/ui/screen/home/home_controller.dart';
+import 'package:flutter_chrome_app/utils/education_parser.dart';
 import 'package:flutter_chrome_app/utils/profile_parser.dart';
 import 'package:get/get.dart';
 import 'package:html/parser.dart';
@@ -27,9 +28,11 @@ class UserItem extends StatelessWidget {
   void launchNewTabURL(String url) async {
     int experienceTabId = 0;
     int skillTabId = 0;
+    int educationTabId = 0;
 
     String experienceHTML = '';
     String skillHTML = '';
+    String educationHTML = '';
 
     var user = item;
 
@@ -42,8 +45,10 @@ class UserItem extends StatelessWidget {
           var html = parse(value.toString());
           if (tabID == experienceTabId) {
             experienceHTML = html.outerHtml;
-          } else {
+          } else if (tabID == skillTabId) {
             skillHTML = html.outerHtml;
+          } else if (tabID == educationTabId) {
+            educationHTML = html.outerHtml;
           }
         } catch (e) {
           AppNavigators.gotoLogInfo(e.toString());
@@ -57,17 +62,22 @@ class UserItem extends StatelessWidget {
     var skillValue = await chrome.tabs.create(CreateProperties(url: '$url/details/skills', active: false));
     skillTabId = skillValue.id ?? 0;
 
-    var res = await Future.wait([fetchTabHTML(experienceTabId), fetchTabHTML(skillTabId)]);
+    var educationValue = await chrome.tabs.create(CreateProperties(url: '$url/details/education', active: false));
+    educationTabId = educationValue.id ?? 0;
+
+    var res = await Future.wait([fetchTabHTML(experienceTabId), fetchTabHTML(skillTabId), fetchTabHTML(educationTabId)]);
 
     var profile = parseExperiences(experienceHTML: experienceHTML, skillHTML: skillHTML);
+    var education = parseEducations(educationHTML: educationHTML);
 
     //close tabs
     chrome.tabs.remove(experienceTabId);
     chrome.tabs.remove(skillTabId);
+    chrome.tabs.remove(educationTabId);
 
     var homeController = Get.find<HomeController>();
     homeController.isLoading.value = false;
-    AppNavigators.gotoAddCandidate(user: LinkedinUserDetailModel.fromObjects(user: user, profileResult: profile))
+    AppNavigators.gotoAddCandidate(user: LinkedinUserDetailModel.fromObjects(user: user, profileResult: profile, educations: education))
         ?.then((value) {
       homeController.checkDuplicateLinkedinProfile();
     });

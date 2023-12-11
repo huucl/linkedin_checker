@@ -93,7 +93,7 @@ class HomeController extends GetxController {
       users.refresh();
       isLoading.value = false;
     } catch (e) {
-      AppNavigators.gotoLogInfo(PrefUtils().accessToken + '\n' + e.toString());
+      AppNavigators.gotoLogInfo('${PrefUtils().accessToken}\n$e');
       isLoading.value = false;
     }
   }

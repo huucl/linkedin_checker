@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chrome_app/app_routes.dart';
 import 'package:flutter_chrome_app/linkedin_user_detail_model.dart';
 import 'package:flutter_chrome_app/linkedin_user_model.dart';
+import 'package:flutter_chrome_app/model/education_model.dart';
+import 'package:flutter_chrome_app/model/profile_result.dart';
 import 'package:flutter_chrome_app/model/url_item.dart';
 import 'package:flutter_chrome_app/user_parser.dart';
+import 'package:flutter_chrome_app/utils/education_parser.dart';
 import 'package:flutter_chrome_app/utils/profile_parser.dart';
 import 'package:get/get.dart';
 import 'package:html/dom.dart' hide Text;
@@ -103,18 +106,22 @@ class _UrlItemWidgetState extends State<UrlItemWidget> {
       var response = await Future.wait([
         getHTML(url: widget.item.url),
         getHTML(url: '${widget.item.url}/details/skills'),
-        getHTML(url: '${widget.item.url}/details/experience')
+        getHTML(url: '${widget.item.url}/details/experience'),
+        getHTML(url: '${widget.item.url}/details/education'),
       ]);
 
       String profileHTML = response[0];
       String skillHTMl = response[1];
       String experienceHTML = response[2];
+      String educationHTML = response[3];
 
       ProfileResult res = parseExperiences(experienceHTML: experienceHTML, skillHTML: skillHTMl);
 
       LinkedinUserModel coverUser = UserProfileParser.userParser(profileHTML, widget.item.url);
 
-      user = LinkedinUserDetailModel.fromObjects(user: coverUser, profileResult: res);
+      List<EducationModel> educations = parseEducations(educationHTML: educationHTML);
+
+      user = LinkedinUserDetailModel.fromObjects(user: coverUser, profileResult: res, educations: educations);
       AppNavigators.gotoAddCandidate(user: user)?.then((value) {
         googleController.checkDuplicateLinkedinProfile();
       });

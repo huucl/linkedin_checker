@@ -1,5 +1,8 @@
 import 'package:flutter_chrome_app/linkedin_user_model.dart';
 import 'package:flutter_chrome_app/model/candidate_input.dart';
+import 'package:flutter_chrome_app/model/education_model.dart';
+import 'package:flutter_chrome_app/model/profile_result.dart';
+import 'package:flutter_chrome_app/model/role.dart';
 import 'package:flutter_chrome_app/utils/profile_parser.dart';
 
 class LinkedinUserDetailModel {
@@ -10,6 +13,7 @@ class LinkedinUserDetailModel {
   String? address;
   List<String>? skills;
   List<Role>? roles;
+  List<EducationModel>? educations;
   String? email;
   String? phoneCode;
   String? phoneNumber;
@@ -23,6 +27,7 @@ class LinkedinUserDetailModel {
     this.skills,
     this.email,
     this.roles,
+    this.educations,
     this.phoneCode,
     this.phoneNumber,
   });
@@ -30,6 +35,7 @@ class LinkedinUserDetailModel {
   LinkedinUserDetailModel.fromObjects({
     required LinkedinUserModel user,
     required ProfileResult profileResult,
+    required List<EducationModel> this.educations,
   })  : name = user.name,
         avatar = user.avatar,
         url = user.url,
@@ -51,6 +57,7 @@ class LinkedinUserDetailModel {
       'email': email,
       'skills': skills,
       'roles': roles == null ? [] : List<dynamic>.from(roles!.map((x) => x.toMap())),
+      'educations': educations == null ? [] : List<EducationModel>.from(educations!.map((x) => x.toMap())),
       'phoneCode': phoneCode,
       'phoneNumber': phoneNumber,
     };
@@ -65,6 +72,7 @@ class LinkedinUserDetailModel {
         email: json["email"],
         skills: json["skills"] == null ? [] : List<String>.from(json["skills"]!.map((x) => x)),
         roles: json["roles"] == null ? [] : List<Role>.from(json["roles"]!.map((x) => Role.fromMap(x))),
+        educations: json["educations"] == null ? [] : List<EducationModel>.from(json["educations"]!.map((x) => EducationModel.fromMap(x))),
         phoneCode: json["phoneCode"],
         phoneNumber: json["phoneNumber"],
       );

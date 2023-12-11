@@ -1,6 +1,8 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_chrome_app/model/duration_model.dart';
 import 'package:flutter_chrome_app/model/location_model.dart';
+import 'package:flutter_chrome_app/model/role.dart';
 import 'package:flutter_chrome_app/ui/component/component_input.dart';
 import 'package:flutter_chrome_app/ui/screen/add_candidate/add_candidate_controller.dart';
 import 'package:flutter_chrome_app/utils/profile_parser.dart';
@@ -34,6 +36,7 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
               const SizedBox(
                 height: 16,
               ),
+              Text('educations: ${controller.user.value.educations?.firstOrNull?.toMap().toString() ?? ''}'),
               ComponentInput(
                 label: 'First name *',
                 controller: controller.firstNameController,
@@ -129,11 +132,13 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
                       onPressed: () {
                         //if have a same role, remove it
                         if (controller.isEdit) {
-                          controller.roles.removeWhere((element) => element.name == controller.workExperience.text);
+                          controller.roles.removeWhere((element) => element.title == controller.workExperience.text);
                           controller.isEdit = false;
                         }
-                        var role = Role(controller.workExperience.text,
-                            DurationModel(year: int.parse(controller.yearExperience.text), month: 0));
+                        var role = Role(
+                          title: controller.workExperience.text,
+                          // DurationModel(year: int.parse(controller.yearExperience.text), month: 0),
+                        );
                         controller.roles.add(role);
                         controller.roles.refresh();
                         controller.workExperience.clear();
@@ -162,19 +167,26 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
                               InkWell(
                                 onTap: () {
                                   controller.isEdit = true;
-                                  controller.workExperience.text = e.name;
-                                  controller.yearExperience.text = e.duration.year.toString();
+                                  // controller.workExperience.text = e.title;
+                                  // controller.yearExperience.text = e.duration.year.toString();
                                 },
                                 child: const Icon(
                                   Icons.edit,
                                   color: Color(0xFF5D25FD),
                                 ),
                               ),
-                              Chip(
-                                label: Text(e.getTextDisplay()),
-                                onDeleted: () {
-                                  controller.roles.remove(e);
-                                },
+                              Flexible(
+                                child: Chip(
+                                  label: Text(
+                                    e.getTextDisplay(),
+                                    overflow: TextOverflow.visible,
+                                    softWrap: true,
+                                    maxLines: 2,
+                                  ),
+                                  onDeleted: () {
+                                    controller.roles.remove(e);
+                                  },
+                                ),
                               ),
                             ],
                           ),
@@ -210,7 +222,12 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
                     children: controller.skills
                         .map(
                           (e) => Chip(
-                            label: Text(e),
+                            label: Text(
+                              e,
+                              overflow: TextOverflow.visible,
+                              softWrap: true,
+                              maxLines: 2,
+                            ),
                             onDeleted: () {
                               controller.skills.remove(e);
                             },
