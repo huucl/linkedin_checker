@@ -1,9 +1,10 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_chrome_app/model/duration_model.dart';
 import 'package:flutter_chrome_app/model/location_model.dart';
+import 'package:flutter_chrome_app/model/role.dart';
 import 'package:flutter_chrome_app/ui/component/component_input.dart';
 import 'package:flutter_chrome_app/ui/screen/add_candidate/add_candidate_controller.dart';
-import 'package:flutter_chrome_app/utils/profile_parser.dart';
 import 'package:get/get.dart';
 import 'package:searchfield/searchfield.dart';
 

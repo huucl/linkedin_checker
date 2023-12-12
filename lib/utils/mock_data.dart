@@ -5485,3 +5485,1001 @@ Have a nice day ahead!<!----></span>
 </div>''';
 
 var accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MjJjMGVkLTZiMTktNGY4YS05NmYzLWU5ZGJjYTAyN2QzYyIsImVtYWlsIjoibmh1dGFuaEBjb2RlbGlnaHQuY28iLCJpYXQiOjE2OTg3MzU4MDksImV4cCI6MTY5OTM0MDYwOX0.SYxpnAqqjyWsBtGysJQ613eHZObk8GZGvDFQkFPtfUE';
+
+var mockRoles = r'''<main class="scaffold-layout__main">
+  
+            
+        <section class="artdeco-card pb3">
+<!---->
+  
+          
+      <div class="display-flex justify-flex-start align-items-center pt3 ph3">
+        <button aria-label="Back to the main profile page" id="ember81" class="artdeco-button artdeco-button--circle artdeco-button--muted artdeco-button--3 artdeco-button--tertiary ember-view" type="button" data-dashlane-rid="25650651aaab6dbc" data-form-type="action,search" data-dashlane-label="true">        <svg role="none" aria-hidden="true" class="artdeco-button__icon  rtl-flip" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-supported-dps="24x24" data-test-icon="arrow-left-medium">
+<!---->    
+
+    <use href="#arrow-left-medium" width="24" height="24"></use>
+</svg>
+
+
+<span class="artdeco-button__text">
+    
+</span></button>
+        <div class="flex-grow-1 display-flex justify-space-between">
+          <h2 class="t-20 t-bold ph3 pt3 pb2">
+            Experience
+          </h2>
+          <div class="display-flex align-items-center">
+<!----><!----><!---->          </div>
+        </div>
+      </div>
+  
+            
+          
+    <div class="pvs-list__container">
+        <div class="scaffold-finite-scroll
+    scaffold-finite-scroll--infinite
+    ">
+  <!---->
+  
+      <div class="scaffold-finite-scroll__content">
+        
+              <ul class="pvs-list " tabindex="-1">
+                  <li class="pvs-list__paged-list-item artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column" id="profilePagedListComponent-ACoAABkPYqQBadTG-yEieiq9HqyE-seegMNeb7E-EXPERIENCE-VIEW-DETAILS-profile-ACoAABkPYqQBadTG-yEieiq9HqyE-seegMNeb7E-NONE-en-US-0">
+                    <div>
+  
+                      
+          
+<!---->    <div class="sKUMKZbjPNmCUFIiAWqGbOShUWmArCPQPo
+        pvs-entity--padded jMUKVPNKxhrGQLArxwrYvTbwsCHKMNgQ
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/company/90571539/">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/C560BAQG1klgzTDSwtw/company-logo_100_100/0/1677479072626?e=1710374400&amp;v=beta&amp;t=Y-ZAKEuwwiIGQoFwJegMBI7rsm-scLpenGpLVJXOWXs" loading="lazy" height="48" alt="World Wave Culture Technology logo" id="ember82" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/company/90571539/">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->World Wave Culture Technology<!----></span><span class="visually-hidden"><!---->World Wave Culture Technology<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Full-time · 8 mos<!----></span><span class="visually-hidden"><!---->Full-time · 8 mos<!----></span>
+                </span>
+              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->On-site<!----></span><span class="visually-hidden"><!---->On-site<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="pvs-list__container">
+        <div class="scaffold-finite-scroll
+    scaffold-finite-scroll--infinite
+    ">
+  <!---->
+  
+      <div class="scaffold-finite-scroll__content">
+        
+              <ul class="pvs-list " tabindex="-1">
+                  <li class="pvs-list__paged-list-item  pvs-list__item--one-column" id="profilePagedListComponent-ACoAABkPYqQBadTG-yEieiq9HqyE-seegMNeb7E-EXPERIENCE-VIEW-DETAILS-profilePositionGroup-ACoAABkPYqQBadTG-yEieiq9HqyE-seegMNeb7E-38b1d5ecf8537c97d9acb12cf437e99d21170ef1-NONE-en-US-0">
+                    <div>
+  
+                      
+          
+      <span class="pvs-entity__path-node"></span>
+    <div class="sKUMKZbjPNmCUFIiAWqGbOShUWmArCPQPo
+        
+        CuDaIkNDQrpRhhmvVKToSmaRMJINvw
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+      <div class="
+            display-flex" tabindex="-1" aria-hidden="true">
+        
+<!---->        
+      </div>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/company/90571539/">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Product Manager<!----></span><span class="visually-hidden"><!---->Product Manager<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+<!---->              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Sep 2023 - Present · 4 mos<!----></span><span class="visually-hidden"><!---->Sep 2023 - Present · 4 mos<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+                  <li class="pvs-list__paged-list-item  pvs-list__item--one-column" id="profilePagedListComponent-ACoAABkPYqQBadTG-yEieiq9HqyE-seegMNeb7E-EXPERIENCE-VIEW-DETAILS-profilePositionGroup-ACoAABkPYqQBadTG-yEieiq9HqyE-seegMNeb7E-38b1d5ecf8537c97d9acb12cf437e99d21170ef1-NONE-en-US-1">
+                    <div>
+  
+                      
+          
+      <span class="pvs-entity__path-node"></span>
+    <div class="sKUMKZbjPNmCUFIiAWqGbOShUWmArCPQPo
+        
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+      <div class="
+            display-flex" tabindex="-1" aria-hidden="true">
+        
+<!---->        
+      </div>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/company/90571539/">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Operations Manager<!----></span><span class="visually-hidden"><!---->Operations Manager<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+<!---->              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->May 2023 - Present · 8 mos<!----></span><span class="visually-hidden"><!---->May 2023 - Present · 8 mos<!----></span>
+              </span>
+              <span class="t-14 t-normal t-black--light">
+                <span aria-hidden="true"><!---->Ho Chi Minh City, Vietnam<!----></span><span class="visually-hidden"><!---->Ho Chi Minh City, Vietnam<!----></span>
+              </span>
+          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+<!---->      </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+              </ul>
+          
+      </div>
+    
+
+<!---->
+    <div>
+  
+<!---->    
+</div>
+
+</div>
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+                  <li class="pvs-list__paged-list-item artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column" id="profilePagedListComponent-ACoAABkPYqQBadTG-yEieiq9HqyE-seegMNeb7E-EXPERIENCE-VIEW-DETAILS-profile-ACoAABkPYqQBadTG-yEieiq9HqyE-seegMNeb7E-NONE-en-US-1">
+                    <div>
+  
+                      
+          
+<!---->    <div class="sKUMKZbjPNmCUFIiAWqGbOShUWmArCPQPo
+        pvs-entity--padded jMUKVPNKxhrGQLArxwrYvTbwsCHKMNgQ
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/company/1059735/">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/D560BAQEZVKpU1mJ0Wg/company-logo_100_100/0/1695981678802/vng_corporation_logo?e=1710374400&amp;v=beta&amp;t=-isb4JybtLMwD82tgoG3oNk57qtLC16ST6gy_dj0Pjc" loading="lazy" height="48" alt="VNG Corporation logo" id="ember83" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+      <div class="
+              display-flex flex-column full-width">
+        
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 t-bold">
+            <span aria-hidden="true"><!---->Product Manager<!----></span><span class="visually-hidden"><!---->Product Manager<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->VNG Corporation · Full-time<!----></span><span class="visually-hidden"><!---->VNG Corporation · Full-time<!----></span>
+                </span>
+              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Apr 2014 - Dec 2022 · 8 yrs 9 mos<!----></span><span class="visually-hidden"><!---->Apr 2014 - Dec 2022 · 8 yrs 9 mos<!----></span>
+              </span>
+              <span class="t-14 t-normal t-black--light">
+                <span aria-hidden="true"><!---->Ho Chi Minh City, Vietnam · On-site<!----></span><span class="visually-hidden"><!---->Ho Chi Minh City, Vietnam · On-site<!----></span>
+              </span>
+          
+      </div>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              t-14 t-normal t-black">
+            <span aria-hidden="true"><!---->- Develop strategies for the project team, look for opportunities, new projects with good quality and suitable for the market to buy, build proposals with partners.<!----><br><!---->- Having good relationship with partners: Tencent, 7Road, 37WAN,FriendTimes,...<!----><br><!---->- Management, responsible for maintaining and developing the business situation (revenue, profit of products). Ensure the project is operated on schedule and the committed KPIs.<!----><br><!---->- Work and coordinate with the project management team of the China/Japan partner to discuss the project Launching plan, operation and product development.<!----><br><!---->- Collaborate with the company's internal team: Marketing, Country Teams for each country to provide communication and product promotion directions to suit each stage of the product.<!----><br><!---->- Analyze market, product and customer feedback data daily/weekly/monthly to evaluate product performance and make appropriate operational adjustments.<!----><br><!---->- Manage and coordinate the operational work of team members. Nurturing and training legacy human resources with good skills and core values for the team and the company.<!----></span><span class="visually-hidden"><!---->- Develop strategies for the project team, look for opportunities, new projects with good quality and suitable for the market to buy, build proposals with partners.
+- Having good relationship with partners: Tencent, 7Road, 37WAN,FriendTimes,...
+- Management, responsible for maintaining and developing the business situation (revenue, profit of products). Ensure the project is operated on schedule and the committed KPIs.
+- Work and coordinate with the project management team of the China/Japan partner to discuss the project Launching plan, operation and product development.
+- Collaborate with the company's internal team: Marketing, Country Teams for each country to provide communication and product promotion directions to suit each stage of the product.
+- Analyze market, product and customer feedback data daily/weekly/monthly to evaluate product performance and make appropriate operational adjustments.
+- Manage and coordinate the operational work of team members. Nurturing and training legacy human resources with good skills and core values for the team and the company.<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+            <li class="fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              t-14 t-normal t-black">
+            <span aria-hidden="true"><strong><!---->Skills:<!----></strong><span class="white-space-pre"> </span>Strategy · Data Analysis · Communication · Risk Management · Teamwork · Product Management · Planning · Business Management · Team Leadership · Product Strategy · Product Planning<!----></span><span class="visually-hidden"><strong><!---->Skills:<!----></strong><span class="white-space-pre"> </span>Strategy · Data Analysis · Communication · Risk Management · Teamwork · Product Management · Planning · Business Management · Team Leadership · Product Strategy · Product Planning<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+                  <li class="pvs-list__paged-list-item artdeco-list__item pvs-list__item--line-separated pvs-list__item--one-column" id="profilePagedListComponent-ACoAABkPYqQBadTG-yEieiq9HqyE-seegMNeb7E-EXPERIENCE-VIEW-DETAILS-profile-ACoAABkPYqQBadTG-yEieiq9HqyE-seegMNeb7E-NONE-en-US-2">
+                    <div>
+  
+                      
+          
+<!---->    <div class="sKUMKZbjPNmCUFIiAWqGbOShUWmArCPQPo
+        pvs-entity--padded jMUKVPNKxhrGQLArxwrYvTbwsCHKMNgQ
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+        <a class="optional-action-target-wrapper 
+            display-flex" target="_self" href="https://www.linkedin.com/company/1059735/">
+            
+    <div class="ivm-image-view-model  pvs-entity__image ">
+        
+    <div class="ivm-view-attr__img-wrapper display-flex">
+<!---->          <img width="48" src="https://media.licdn.com/dms/image/D560BAQEZVKpU1mJ0Wg/company-logo_100_100/0/1695981678802/vng_corporation_logo?e=1710374400&amp;v=beta&amp;t=-isb4JybtLMwD82tgoG3oNk57qtLC16ST6gy_dj0Pjc" loading="lazy" height="48" alt="VNG Corporation logo" id="ember84" class="ivm-view-attr__img--centered EntityPhoto-square-3   evi-image lazy-image ember-view">
+    </div>
+  
+          </div>
+  
+        </a>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/company/1059735/">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->VNG Corporation<!----></span><span class="visually-hidden"><!---->VNG Corporation<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+                <span class="t-14 t-normal">
+                  <span aria-hidden="true"><!---->Full-time · 7 yrs 6 mos<!----></span><span class="visually-hidden"><!---->Full-time · 7 yrs 6 mos<!----></span>
+                </span>
+              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Ho Chi Minh City, Vietnam · On-site<!----></span><span class="visually-hidden"><!---->Ho Chi Minh City, Vietnam · On-site<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="pvs-list__container">
+        <div class="scaffold-finite-scroll
+    scaffold-finite-scroll--infinite
+    ">
+  <!---->
+  
+      <div class="scaffold-finite-scroll__content">
+        
+              <ul class="pvs-list " tabindex="-1">
+                  <li class="pvs-list__paged-list-item  pvs-list__item--one-column" id="profilePagedListComponent-ACoAABkPYqQBadTG-yEieiq9HqyE-seegMNeb7E-EXPERIENCE-VIEW-DETAILS-profilePositionGroup-ACoAABkPYqQBadTG-yEieiq9HqyE-seegMNeb7E-7973e7fc247e1cf611a4bb025627e4436448eada-NONE-en-US-0">
+                    <div>
+  
+                      
+          
+      <span class="pvs-entity__path-node"></span>
+    <div class="sKUMKZbjPNmCUFIiAWqGbOShUWmArCPQPo
+        
+        CuDaIkNDQrpRhhmvVKToSmaRMJINvw
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+      <div class="
+            display-flex" tabindex="-1" aria-hidden="true">
+        
+<!---->        
+      </div>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/company/1059735/">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Senior Product Excute<!----></span><span class="visually-hidden"><!---->Senior Product Excute<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+<!---->              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Jan 2012 - Feb 2014 · 2 yrs 2 mos<!----></span><span class="visually-hidden"><!---->Jan 2012 - Feb 2014 · 2 yrs 2 mos<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              t-14 t-normal t-black">
+            <span aria-hidden="true"><!---->- Working with Product Manager (PM) to carry out the entire product release<!----><br><!---->process (product testing, project implementation, Log, Operation Tool, ...<!----><br><!---->according to the process of VNG company). Ensure product quality is always<!----><br><!---->good when launched.<!----><br><!---->- Planning, controlling and reminding team members to follow the progress plan<!----><br><!---->for the product (Launching / Release / Maintain).<!----><br><!---->- Manage and coordinate the appropriate version updates for the product. Set up<!----><br><!---->the operation plan (Tournament, Promotion, Ingame/Outgame event, holiday<!----><br><!---->event, special event), manage and coordinate the contents of the product (items,<!----><br><!---->features...etc... ) to maintain the best performance.<!----><br><!---->- Manage and coordinate the appropriate version updates for the product<!----><br><!---->- Communicate and coordinate with the Marketing team on communication<!----><br><!---->orientation and product promotion. Support to create content contents as MKT<!----><br><!---->materials for products.<!----><br><!---->- Analyze and report weekly/monthly product status to PM.<!----><br><!---->Key Projects:<!----><br><!---->+ Project 3Q - Top 2 MOBA games in Vietnam market<!----></span><span class="visually-hidden"><!---->- Working with Product Manager (PM) to carry out the entire product release
+process (product testing, project implementation, Log, Operation Tool, ...
+according to the process of VNG company). Ensure product quality is always
+good when launched.
+- Planning, controlling and reminding team members to follow the progress plan
+for the product (Launching / Release / Maintain).
+- Manage and coordinate the appropriate version updates for the product. Set up
+the operation plan (Tournament, Promotion, Ingame/Outgame event, holiday
+event, special event), manage and coordinate the contents of the product (items,
+features...etc... ) to maintain the best performance.
+- Manage and coordinate the appropriate version updates for the product
+- Communicate and coordinate with the Marketing team on communication
+orientation and product promotion. Support to create content contents as MKT
+materials for products.
+- Analyze and report weekly/monthly product status to PM.
+Key Projects:
++ Project 3Q - Top 2 MOBA games in Vietnam market<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+            <li class="fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              t-14 t-normal t-black">
+            <span aria-hidden="true"><strong><!---->Skills:<!----></strong><span class="white-space-pre"> </span>Data Analysis · Communication · Project Planning · Analytical Skills · Teamwork<!----></span><span class="visually-hidden"><strong><!---->Skills:<!----></strong><span class="white-space-pre"> </span>Data Analysis · Communication · Project Planning · Analytical Skills · Teamwork<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+                  <li class="pvs-list__paged-list-item  pvs-list__item--one-column" id="profilePagedListComponent-ACoAABkPYqQBadTG-yEieiq9HqyE-seegMNeb7E-EXPERIENCE-VIEW-DETAILS-profilePositionGroup-ACoAABkPYqQBadTG-yEieiq9HqyE-seegMNeb7E-7973e7fc247e1cf611a4bb025627e4436448eada-NONE-en-US-1">
+                    <div>
+  
+                      
+          
+      <span class="pvs-entity__path-node"></span>
+    <div class="sKUMKZbjPNmCUFIiAWqGbOShUWmArCPQPo
+        
+        CuDaIkNDQrpRhhmvVKToSmaRMJINvw
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+      <div class="
+            display-flex" tabindex="-1" aria-hidden="true">
+        
+<!---->        
+      </div>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/company/1059735/">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->Technical Manager<!----></span><span class="visually-hidden"><!---->Technical Manager<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+<!---->              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Jan 2009 - Dec 2011 · 3 yrs<!----></span><span class="visually-hidden"><!---->Jan 2009 - Dec 2011 · 3 yrs<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              t-14 t-normal t-black">
+            <span aria-hidden="true"><!---->- Manage all technical issues of the products in charge.<!----><br><!---->- Working with Chinese partners (KingSoft, KingNet, ..) to deploy/develop more<!----><br><!---->new products at VNG (VinaGame).<!----><br><!---->- Research and plan solutions to optimize operating time and personnel for the<!----><br><!---->project. Control and manage server costs in operating the product according to<!----><br><!---->the product's budget and revenue situation.<!----><br><!---->- Introducing new technologies, solutions and new alternatives to support<!----><br><!---->business and operations.<!----><br><!---->- Training and fostering new personnel for Game Tech Department.<!----><br><!---->Key Projects:<!----><br><!---->+ Project Võ Lâm Truyền Kỳ 2 - Manage and operate the entire game system<!----><br><!---->and successfully convert the entire server operating system from Windows to Linux.<!----><br><!---->Reduce the number of servers and operating costs by 50%<!----></span><span class="visually-hidden"><!---->- Manage all technical issues of the products in charge.
+- Working with Chinese partners (KingSoft, KingNet, ..) to deploy/develop more
+new products at VNG (VinaGame).
+- Research and plan solutions to optimize operating time and personnel for the
+project. Control and manage server costs in operating the product according to
+the product's budget and revenue situation.
+- Introducing new technologies, solutions and new alternatives to support
+business and operations.
+- Training and fostering new personnel for Game Tech Department.
+Key Projects:
++ Project Võ Lâm Truyền Kỳ 2 - Manage and operate the entire game system
+and successfully convert the entire server operating system from Windows to Linux.
+Reduce the number of servers and operating costs by 50%<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+            <li class="fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              t-14 t-normal t-black">
+            <span aria-hidden="true"><strong><!---->Skills:<!----></strong><span class="white-space-pre"> </span>Systems Engineering · Communication · Training · Leadership · Engineering · Product Planning · Project Management<!----></span><span class="visually-hidden"><strong><!---->Skills:<!----></strong><span class="white-space-pre"> </span>Systems Engineering · Communication · Training · Leadership · Engineering · Product Planning · Project Management<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+                  <li class="pvs-list__paged-list-item  pvs-list__item--one-column" id="profilePagedListComponent-ACoAABkPYqQBadTG-yEieiq9HqyE-seegMNeb7E-EXPERIENCE-VIEW-DETAILS-profilePositionGroup-ACoAABkPYqQBadTG-yEieiq9HqyE-seegMNeb7E-7973e7fc247e1cf611a4bb025627e4436448eada-NONE-en-US-2">
+                    <div>
+  
+                      
+          
+      <span class="pvs-entity__path-node"></span>
+    <div class="sKUMKZbjPNmCUFIiAWqGbOShUWmArCPQPo
+        
+        
+        
+        " data-view-name="profile-component-entity">
+      <div>
+        
+      <div class="
+            display-flex" tabindex="-1" aria-hidden="true">
+        
+<!---->        
+      </div>
+  
+      </div>
+
+      <div class="display-flex flex-column full-width align-self-center">
+        <div class="display-flex flex-row justify-space-between">
+          
+        <a class="optional-action-target-wrapper 
+              display-flex flex-column full-width" target="_self" href="https://www.linkedin.com/company/1059735/">
+            <div class="display-flex flex-wrap align-items-center full-height">
+                
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              mr1 hoverable-link-text t-bold">
+            <span aria-hidden="true"><!---->System Engineer<!----></span><span class="visually-hidden"><!---->System Engineer<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+<!----><!----><!---->            </div>
+<!---->              <span class="t-14 t-normal t-black--light">
+                <span class="pvs-entity__caption-wrapper" aria-hidden="true"><!---->Sep 2006 - Dec 2008 · 2 yrs 4 mos<!----></span><span class="visually-hidden"><!---->Sep 2006 - Dec 2008 · 2 yrs 4 mos<!----></span>
+              </span>
+<!---->          </a>
+  
+
+<!---->
+          <div class="pvs-entity__action-container">
+<!---->          </div>
+        </div>
+
+          
+    <div class="pvs-list__outer-container pvs-entity__sub-components">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              t-14 t-normal t-black">
+            <span aria-hidden="true"><!---->- Build server infrastructure system for new game projects.<!----><br><!---->- Monitor and operate server systems.<!----><br><!---->- Research new system techniques/tools to improve existing systems and fix<!----><br><!---->problems quickly.<!----><br><!---->- Developing shell scripts, APIs, etc. to make operating system management easier<!----><br><!---->and faster.<!----><br><!---->Key Projects:<!----><br><!---->+ Project VLTK 2 - Collaborate with Tech OM to setup and operate the game<!----><br><!---->system<!----></span><span class="visually-hidden"><!---->- Build server infrastructure system for new game projects.
+- Monitor and operate server systems.
+- Research new system techniques/tools to improve existing systems and fix
+problems quickly.
+- Developing shell scripts, APIs, etc. to make operating system management easier
+and faster.
+Key Projects:
++ Project VLTK 2 - Collaborate with Tech OM to setup and operate the game
+system<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+            <li class="fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="pvs-list__outer-container">
+<!---->        <ul class="pvs-list
+            
+            
+            ">
+            <li class="pvs-list__item--with-top-padding fgSglhtLuVODHIeJjkmHGzHCIJUqYdkP">
+              
+          
+    <div class="display-flex ">
+      
+      <div class="
+          display-flex full-width">
+        
+          <div class="display-flex align-items-center
+              t-14 t-normal t-black">
+            <span aria-hidden="true"><strong><!---->Skills:<!----></strong><span class="white-space-pre"> </span>Systems Engineering · Relationship Building · System Operations<!----></span><span class="visually-hidden"><strong><!---->Skills:<!----></strong><span class="white-space-pre"> </span>Systems Engineering · Relationship Building · System Operations<!----></span>
+          </div>
+      
+      </div>
+  
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+              </ul>
+          
+      </div>
+    
+
+<!---->
+    <div>
+  
+<!---->    
+</div>
+
+</div>
+    </div>
+  
+  
+            </li>
+        </ul>
+<!---->    </div>
+  
+      </div>
+    </div>
+  
+  
+                    
+</div>
+
+                  </li>
+              </ul>
+          
+      </div>
+    
+
+<!---->
+    <div>
+  
+<!---->    
+</div>
+
+</div>
+    </div>
+  
+  
+        
+</section>
+  
+          
+</main>''';

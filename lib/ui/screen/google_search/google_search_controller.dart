@@ -3,7 +3,7 @@ import 'package:chrome_extension/tabs.dart';
 import 'package:flutter_chrome_app/app_routes.dart';
 import 'package:flutter_chrome_app/domain/repository/linked_check_repository.dart';
 import 'package:flutter_chrome_app/model/url_item.dart';
-import 'package:flutter_chrome_app/utils/google_search_parser.dart';
+import 'package:flutter_chrome_app/utils/parser/google_search_parser.dart';
 import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
 import 'package:get/get.dart';
 

@@ -6,7 +6,7 @@ import 'package:flutter_chrome_app/linkedin_user_model.dart';
 import 'package:flutter_chrome_app/mock.dart';
 import 'package:flutter_chrome_app/user_parser.dart';
 import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
-import 'package:flutter_chrome_app/utils/saleql_parser.dart';
+import 'package:flutter_chrome_app/utils/parser/saleql_parser.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {

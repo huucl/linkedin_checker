@@ -1,6 +1,9 @@
 import 'package:flutter_chrome_app/model/candidate_input.dart';
+import 'package:flutter_chrome_app/model/duration_model.dart';
+import 'package:flutter_chrome_app/model/role.dart';
 import 'package:flutter_chrome_app/model/search_item.dart';
 import 'package:flutter_chrome_app/utils/mock_profile.dart';
+import 'package:flutter_chrome_app/utils/parser/role_parser.dart';
 import 'package:get/get.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart';
@@ -13,7 +16,7 @@ ProfileResult parseExperiences({required String experienceHTML, required String 
   List<Role> roles = [];
 // Loop through each experience
   for (var experience in experienceBlocks) {
-    roles.addAll(getRoles(experience));
+    roles.addAll(RoleParser.getRoles(experience));
   }
 
   // Set<String> setRoles = Set<String>.from(roles);
@@ -41,125 +44,9 @@ List<String> getSkills({required String skillHTML}) {
   return skillNames;
 }
 
-List<Role> getRoles(Element element) {
-  List<Element> roleElements = element.querySelectorAll('.t-bold');
 
-  List<Element> durationElements = element.querySelectorAll('.t-14.t-normal.t-black--light > span[aria-hidden="true"]');
 
-  List<Role> roles = [];
 
-  List<String> durationString = durationElements.map((element) => element.text.trim()).toList();
-
-  durationString.removeWhere((element) => element.isDuration() == false);
-
-  for (int i = 0; i < durationString.length; i++) {
-    int length = roleElements.length; // Role elements length
-    int currentIndex = length - durationString.length + i; // Current index of role element
-    Role roleDetails = Role(roleElements[currentIndex].querySelector('span[aria-hidden="true"]')?.text ?? 'NULL',
-        DurationModel.fromString(durationString[i]));
-    roles.add(roleDetails);
-  }
-
-  return roles;
-}
-
-class Role {
-  String name;
-  DurationModel duration;
-
-  Role(this.name, this.duration);
-
-  @override
-  String toString() {
-    return 'Role{name: $name, dates: ${duration.year} years ${duration.month} months}}';
-  }
-
-  String getTextDisplay() {
-    if (duration.year > 1) {
-      return '$name - ${duration.year} years ${duration.month} months';
-    }
-    if (duration.year == 1) {
-      return '$name - ${duration.year} year';
-    } else {
-      return '$name - ${duration.month} months';
-    }
-    return '${duration.year} years ${duration.month} months';
-  }
-
-  int getYOE() {
-    if (duration.year >= 1) {
-      return duration.year;
-    } else {
-      return 1;
-    }
-  }
-
-  Map<String, dynamic> toMap() {
-    return {
-      'name': name,
-      'duration': duration.toMap(),
-    };
-  }
-
-  factory Role.fromMap(Map<String, dynamic> map) {
-    return Role(
-      map['name'] as String,
-      DurationModel.fromMap(map["duration"]),
-    );
-  }
-}
-
-class DurationModel {
-  int year;
-  int month;
-  bool? isNew;
-
-  DurationModel({
-    required this.year,
-    required this.month,
-    this.isNew,
-  });
-
-  //parser
-  DurationModel.fromString(String duration)
-      : year = 0,
-        month = 0,
-        isNew = false {
-    if (duration.contains('Present')) {
-      isNew = true;
-    } else {
-      isNew = false;
-    }
-    duration = duration.split(' · ')[1];
-    if (duration.contains('yr')) {
-      year = int.parse(duration.split('yr')[0].trim());
-      if (duration.contains('yrs')) {
-        duration = duration.split('yrs')[1];
-      } else {
-        duration = duration.split('yr')[1];
-      }
-    }
-    if (duration.contains('mos')) {
-      month = int.parse(duration.split('mo')[0].trim());
-    }
-  }
-
-  Map<String, dynamic> toMap() {
-    return {
-      'year': year,
-      'month': month,
-      'isNew': isNew,
-    };
-  }
-
-  factory DurationModel.fromMap(Map<String, dynamic> map) {
-    return DurationModel(
-      year: map['year'] as int,
-      month: map['month'] as int,
-      isNew: map['isNew'] as bool,
-    );
-  }
-}
 
 class ProfileResult {
   List<String> skills;
@@ -173,11 +60,6 @@ class ProfileResult {
   }
 }
 
-extension StringExtension on String {
-  bool isDuration() {
-    return contains('mos') || contains('yr');
-  }
-}
 
 extension RoleExtension on Role {
   Role operator +(Role other) {

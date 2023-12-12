@@ -1,6 +1,8 @@
 import 'package:flutter_chrome_app/linkedin_user_model.dart';
 import 'package:flutter_chrome_app/model/candidate_input.dart';
-import 'package:flutter_chrome_app/utils/profile_parser.dart';
+import 'package:flutter_chrome_app/model/education_model.dart';
+import 'package:flutter_chrome_app/model/role.dart';
+import 'package:flutter_chrome_app/utils/parser/profile_parser.dart';
 
 class LinkedinUserDetailModel {
   String? name;
@@ -10,6 +12,7 @@ class LinkedinUserDetailModel {
   String? address;
   List<String>? skills;
   List<Role>? roles;
+  List<EducationModel>? educations;
   String? email;
   String? phoneCode;
   String? phoneNumber;
@@ -23,6 +26,7 @@ class LinkedinUserDetailModel {
     this.skills,
     this.email,
     this.roles,
+    this.educations,
     this.phoneCode,
     this.phoneNumber,
   });
@@ -30,6 +34,7 @@ class LinkedinUserDetailModel {
   LinkedinUserDetailModel.fromObjects({
     required LinkedinUserModel user,
     required ProfileResult profileResult,
+    required List<EducationModel> this.educations,
   })  : name = user.name,
         avatar = user.avatar,
         url = user.url,
