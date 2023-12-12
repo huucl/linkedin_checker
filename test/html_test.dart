@@ -12,7 +12,7 @@ main() {
 }
 
 void _testProfile() {
-  var html = ProfileParser.bem(mockProfileHtml);
+  var html = ProfileParser.bem(mockData);
   var name = html.getElementsByClassName("pv-text-details__title")[0].getElementsByTagName("h1")[0].text;
   print("✅ name: $name");
 

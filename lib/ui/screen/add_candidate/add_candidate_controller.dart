@@ -11,6 +11,7 @@ import 'package:flutter_chrome_app/ui/screen/home/home_controller.dart';
 import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
 import 'package:flutter_chrome_app/utils/profile_parser.dart';
 import 'package:get/get.dart';
+import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:searchfield/searchfield.dart';
 
 class AddCandidateController extends GetxController {
@@ -47,12 +48,21 @@ class AddCandidateController extends GetxController {
   bool isEdit = false;
   Rxn<LocationModel> matchLocation = Rxn<LocationModel>();
 
+  String? assigneeId;
+
   @override
   void onInit() {
     super.onInit();
     user.value = Get.arguments;
     initData();
     fetchItems();
+    getAssigneeId();
+  }
+
+  void getAssigneeId() {
+    try {
+      assigneeId = JwtDecoder.decode(PrefUtils().accessToken)['id'];
+    } catch (_) {}
   }
 
   void fetchItems() {
@@ -151,6 +161,7 @@ class AddCandidateController extends GetxController {
       phoneNumber: phoneController.text,
       locationId: matchLocation.value?.id,
       skills: skills.toSkills(searchSkills),
+      assigneeId: assigneeId,
       avatar: user.value.avatar,
       workExperiences: roles.toWorkExperiences(searchRoles),
     );
@@ -161,9 +172,6 @@ class AddCandidateController extends GetxController {
     PrefUtils().candidateObject = '';
     try {
       await _linkedCheckRepository.addNewCandidate([candidate]);
-      var homeController = Get.find<HomeController>();
-      homeController.users.where((p0) => p0.url == user.value.url).first.isFetch = true;
-      homeController.users.refresh();
       Get.back();
     } catch (e) {
       AppNavigators.gotoLogInfo(e.toString());
@@ -179,7 +187,7 @@ class AddCandidateController extends GetxController {
         url: linkedinUrl.text,
         skills: skills,
         email: emailController.text,
-        address: locationController.text,
+        address: matchLocation.value != LocationModel() ? matchLocation.value!.label : null,
         roles: roles,
         phoneNumber: phoneController.text,
         phoneCode: phoneCodeController.text,

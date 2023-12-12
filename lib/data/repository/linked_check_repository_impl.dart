@@ -12,8 +12,7 @@ class LinkedCheckRepositoryImpl implements LinkedCheckRepository {
 
   @override
   Future<List<LinkedCheckResponse>> checkLinkedinExistence(List<String> urls) async {
-    var queryParam = urls.map((e) => 'urls=$e').join('&');
-    print('QUERY: $queryParam');
+    var queryParam = urls.map((e) => 'urls=${Uri.encodeComponent(e)}').join('&');
     try {
       var res = await _client.makeGet('/users/check-linkedin?$queryParam');
       return linkedCheckResponseFromMap(jsonEncode(res));
@@ -57,6 +56,19 @@ class LinkedCheckRepositoryImpl implements LinkedCheckRepository {
     try {
       var res = await _client.makeGet('/locations');
       return locationFromMap(jsonEncode(res));
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<List<LinkedCheckResponse>> newCheckLinkedinExistence(List<String> urls) async {
+    try {
+      var data = {
+        'urls': urls,
+      };
+      var res = await _client.makePatch('/users/new-check-linkedin', data: data);
+      return linkedCheckResponseFromMap(jsonEncode(res));
     } catch (e) {
       rethrow;
     }

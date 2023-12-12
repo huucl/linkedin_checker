@@ -3,6 +3,8 @@ import 'package:flutter_chrome_app/linkedin_user_detail_model.dart';
 import 'package:flutter_chrome_app/main.dart';
 import 'package:flutter_chrome_app/ui/screen/add_candidate/add_candidate_binding.dart';
 import 'package:flutter_chrome_app/ui/screen/add_candidate/add_candidate_screen.dart';
+import 'package:flutter_chrome_app/ui/screen/google_search/google_search_binding.dart';
+import 'package:flutter_chrome_app/ui/screen/google_search/google_search_screen.dart';
 import 'package:flutter_chrome_app/ui/screen/home/home_binding.dart';
 import 'package:flutter_chrome_app/ui/screen/home/home_screen.dart';
 import 'package:flutter_chrome_app/ui/screen/log_info/log_info_binding.dart';
@@ -48,7 +50,11 @@ final routes = [
     page: () => const AddCandidateScreen(),
     bindings: [AddCandidateBinding()],
   ),
-
+  GetPage(
+    name: AppRoutes.googleSearch,
+    page: () => const GoogleSearchScreen(),
+    binding: GoogleSearchBinding(),
+  ),
 ];
 
 class AppRoutes {
@@ -58,9 +64,14 @@ class AppRoutes {
   static const logInfo = '/logInfo';
   static const home = '/home';
   static const addCandidate = '/addCandidate';
+  static const googleSearch = '/googleSearch';
 }
 
 class AppNavigators {
+  static gotoSplash() {
+    Get.toNamed(AppRoutes.splash);
+  }
+
   static gotoLogin() {
     Get.toNamed(AppRoutes.login);
   }
@@ -77,7 +88,11 @@ class AppNavigators {
     Get.toNamed(AppRoutes.home);
   }
 
-  static gotoAddCandidate({required LinkedinUserDetailModel user}) {
-    Get.toNamed(AppRoutes.addCandidate, arguments: user);
+  static Future<dynamic>? gotoAddCandidate({required LinkedinUserDetailModel user}) {
+    return Get.toNamed(AppRoutes.addCandidate, arguments: user);
+  }
+
+  static gotoGoogleSearch() {
+    Get.toNamed(AppRoutes.googleSearch);
   }
 }

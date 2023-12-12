@@ -55,6 +55,9 @@ class LoginScreen extends GetWidget<LoginController> {
               const SizedBox(height: 30),
               ComponentInput(
                 controller: controller.passwordController,
+                onFieldSubmitted: (_) {
+                  controller.login();
+                },
                 label: 'Your password',
                 hintText: 'Insert your password',
                 isPasswordForm: true,

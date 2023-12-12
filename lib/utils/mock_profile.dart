@@ -1,25 +1,13 @@
-import 'package:flutter_chrome_app/utils/mock_data.dart';
-import 'package:html/dom.dart';
-import 'package:html/parser.dart';
+import 'package:flutter_chrome_app/user_parser.dart';
 
-void main() {
-  var document = parse(mockProfileHtml);
-  Element contentBlock = document.getElementsByClassName('artdeco-card ember-view pv-top-card').first;
+import 'mock_data.dart';
 
-  // Extract the avatar URL
-  final Element? avatarImg = contentBlock.querySelector('.pv-top-card-profile-picture__image');
-  final String? avatarUrl = avatarImg?.attributes['src'];
-
-  // Extract the name
-  final Element? nameElement = contentBlock.querySelector('.text-heading-xlarge');
-  final String? name = nameElement?.text;
-
-  // Extract the location
-  final Element? locationElement = contentBlock.querySelector('.text-body-small.inline.t-black--light.break-words');
-  final String? location = locationElement?.text.trim();
-
-  print('avatarUrl: $avatarUrl');
-  print('name: $name');
-  print('location: $location');
+void main(){
+  //check user parser
+  try {
+    var user = UserProfileParser.userParser(mockData, 'https://www.linkedin.com/in/huu-hoang-63240a103/');
+    print(user);
+  } catch (e) {
+    print(e);
+  }
 }
-

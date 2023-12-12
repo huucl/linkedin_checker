@@ -2,7 +2,6 @@
 
 import 'package:dio/dio.dart' as dio;
 import 'package:dio/dio.dart';
-import 'package:flutter_chrome_app/app_routes.dart';
 import 'package:flutter_chrome_app/domain/exception/base_exception.dart';
 import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
 
@@ -85,6 +84,33 @@ class HTTPProvider {
     );
     try {
       var response = await _dio.put(path,
+          options: opt,
+          data: data,
+          queryParameters: queryParameters,
+          cancelToken: cancelToken,
+          onReceiveProgress: onReceiveProgress);
+      return response.data;
+    } catch (e) {
+      _handleException(e);
+    }
+  }
+
+  //make patch
+  Future<dynamic> makePatch(String path,
+      {data,
+      Map<String, dynamic>? queryParameters,
+      dio.Options? options,
+      dio.CancelToken? cancelToken,
+      dio.ProgressCallback? onSendProgress,
+      dio.ProgressCallback? onReceiveProgress}) async {
+    var accessToken = PrefUtils().accessToken;
+    var opt = Options(
+      headers: {
+        'Authorization': 'Bearer $accessToken',
+      },
+    );
+    try {
+      var response = await _dio.patch(path,
           options: opt,
           data: data,
           queryParameters: queryParameters,

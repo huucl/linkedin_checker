@@ -1,4 +1,5 @@
 import 'package:flutter_chrome_app/linkedin_user_model.dart';
+import 'package:flutter_chrome_app/utils/mock_data.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart';
 
@@ -12,7 +13,7 @@ class UserParser {
   static List<LinkedinUserModel> bem(String htmlString) {
     var html = parse(htmlString);
 
-    var items = html.getElementsByClassName("entity-result__item");
+    var items = html.getElementsByClassName("reusable-search__result-container");
 
     List<LinkedinUserModel> users = [];
     for (int i = 0; i < items.length; i++) {
@@ -135,7 +136,7 @@ class UserProfileParser {
   static LinkedinUserModel userParser(String htmlString,String url) {
 
     var document = parse(htmlString);
-    Element contentBlock = document.getElementsByClassName('artdeco-card ember-view pv-top-card').first;
+    Element contentBlock = document.getElementsByClassName('artdeco-card').first;
 
     // Extract the avatar URL
     final Element? avatarImg = contentBlock.querySelector('.pv-top-card-profile-picture__image');
@@ -152,7 +153,7 @@ class UserProfileParser {
     return LinkedinUserModel(
       name: name ?? 'NULL',
       avatar: avatarUrl ?? '',
-      url: url.substring(0,url.length-1),
+      url: url.endsWith('/') ? url.substring(0,url.length-1) : url,
       location: location ?? '',
     );
   }

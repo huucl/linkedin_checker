@@ -6,6 +6,7 @@ import 'package:flutter_chrome_app/linkedin_user_model.dart';
 import 'package:flutter_chrome_app/mock.dart';
 import 'package:flutter_chrome_app/user_parser.dart';
 import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
+import 'package:flutter_chrome_app/utils/saleql_parser.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
@@ -35,12 +36,12 @@ class HomeController extends GetxController {
     var tabs = await chrome.tabs.query(QueryInfo(currentWindow: true, active: true));
     var currentTab = tabs[0];
     currentTabUrl = currentTab.url ?? '';
-    if (currentTab.url?.contains('https://www.linkedin.com/in') == true) {
+    if (currentTab.url?.toLowerCase().contains('https://www.linkedin.com/in') == true) {
       isProfile.value = true;
     } else {
       isProfile.value = false;
     }
-    if (currentTab.url?.contains('https://www.linkedin.com/search/results/people') == true) {
+    if (currentTab.url?.toLowerCase().contains('https://www.linkedin.com/search/results/people') == true) {
       isSearch.value = true;
     } else {
       isSearch.value = false;
@@ -58,13 +59,17 @@ class HomeController extends GetxController {
         }
         if (isProfile.value) {
           var user = UserProfileParser.userParser(value.toString(), currentTabUrl);
+          var result = SaleQLParser.getData(doc: value.toString());
+          user.email = result.$1;
+          user.phoneCode = result.$2;
+          user.phoneNumber = result.$3;
           users.value = [user];
         }
         users.refresh();
         checkDuplicateLinkedinProfile();
         // AppNavigators.gotoLogInfo(users.map((element) => element.toString()).join('\n'));
       }).catchError((onError) {
-        AppNavigators.gotoLogInfo(onError.toString());
+        AppNavigators.gotoLogInfo('Error (fetchData): $onError');
       });
     });
   }

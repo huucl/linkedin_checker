@@ -22,6 +22,7 @@ class ComponentInput extends StatefulWidget {
   final Color? backgroundColor;
   final TextStyle? textStyle;
   final Widget? prefixIcon;
+  final Function(String?)? onFieldSubmitted;
 
   // region for button only
   final bool? isButton;
@@ -55,6 +56,7 @@ class ComponentInput extends StatefulWidget {
     this.backgroundColor,
     this.textStyle,
     this.prefixIcon,
+    this.onFieldSubmitted,
   });
 
   @override
@@ -138,6 +140,8 @@ class _ComponentInputState extends State<ComponentInput> {
         //endregion
         widget.label == null ? Container() : const SizedBox(height: 8),
         TextFormField(
+          //on Enter
+          onFieldSubmitted: widget.onFieldSubmitted,
           focusNode: widget.isDisable == true ? AlwaysDisabledFocusNode() : null,
           autovalidateMode: widget.autoValidateMode,
           obscureText: _isObscure,

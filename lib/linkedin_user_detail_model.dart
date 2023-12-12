@@ -30,12 +30,14 @@ class LinkedinUserDetailModel {
   LinkedinUserDetailModel.fromObjects({
     required LinkedinUserModel user,
     required ProfileResult profileResult,
-  })
-      : name = user.name,
+  })  : name = user.name,
         avatar = user.avatar,
         url = user.url,
         address = user.location,
         isFetch = user.isFetch,
+        email = user.email,
+        phoneCode = user.phoneCode,
+        phoneNumber = user.phoneNumber,
         skills = profileResult.skills,
         roles = profileResult.roles;
 
@@ -54,8 +56,7 @@ class LinkedinUserDetailModel {
     };
   }
 
-  factory LinkedinUserDetailModel.fromMap(Map<String, dynamic> json) =>
-      LinkedinUserDetailModel(
+  factory LinkedinUserDetailModel.fromMap(Map<String, dynamic> json) => LinkedinUserDetailModel(
         name: json["name"],
         avatar: json["avatar"],
         isFetch: json["isFetch"],

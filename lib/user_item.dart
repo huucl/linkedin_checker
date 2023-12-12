@@ -13,7 +13,12 @@ import 'package:get/get.dart';
 import 'package:html/parser.dart';
 
 class UserItem extends StatelessWidget {
-  const UserItem({super.key, required this.item, required this.stt, this.onTap});
+  const UserItem({
+    super.key,
+    required this.item,
+    required this.stt,
+    this.onTap,
+  });
 
   final LinkedinUserModel item;
   final int stt;
@@ -26,8 +31,10 @@ class UserItem extends StatelessWidget {
     String experienceHTML = '';
     String skillHTML = '';
 
+    var user = item;
+
     Future<void> fetchTabHTML(int tabID) async {
-      await Future.delayed(const Duration(seconds: 15));
+      await Future.delayed(const Duration(seconds: 10));
       var value = await chrome.tabs.get(tabID);
       if (value.status != TabStatus.loading) {
         try {
@@ -46,11 +53,11 @@ class UserItem extends StatelessWidget {
 
     var experienceValue = await chrome.tabs.create(CreateProperties(url: '$url/details/experience', active: false));
     experienceTabId = experienceValue.id ?? 0;
-    fetchTabHTML(experienceTabId);
 
     var skillValue = await chrome.tabs.create(CreateProperties(url: '$url/details/skills', active: false));
     skillTabId = skillValue.id ?? 0;
-    await fetchTabHTML(skillTabId);
+
+    var res = await Future.wait([fetchTabHTML(experienceTabId), fetchTabHTML(skillTabId)]);
 
     var profile = parseExperiences(experienceHTML: experienceHTML, skillHTML: skillHTML);
 
@@ -58,15 +65,19 @@ class UserItem extends StatelessWidget {
     chrome.tabs.remove(experienceTabId);
     chrome.tabs.remove(skillTabId);
 
-    Get.find<HomeController>().isLoading.value = false;
-    AppNavigators.gotoAddCandidate(user: LinkedinUserDetailModel.fromObjects(user: item, profileResult: profile));
+    var homeController = Get.find<HomeController>();
+    homeController.isLoading.value = false;
+    AppNavigators.gotoAddCandidate(user: LinkedinUserDetailModel.fromObjects(user: user, profileResult: profile))
+        ?.then((value) {
+      homeController.checkDuplicateLinkedinProfile();
+    });
   }
 
   void launchNewWindow() {
     chrome.windows.create(
       CreateData(
         url: item.url,
-        state: WindowState.minimized,
+        focused: true,
       ),
     );
   }
