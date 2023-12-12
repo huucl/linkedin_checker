@@ -4,13 +4,14 @@ import 'package:flutter_chrome_app/model/role.dart';
 import 'package:flutter_chrome_app/model/search_item.dart';
 import 'package:flutter_chrome_app/utils/mock_profile.dart';
 import 'package:flutter_chrome_app/utils/parser/role_parser.dart';
+import 'package:flutter_chrome_app/utils/parser/skill_parser.dart';
 import 'package:get/get.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart';
 
 ProfileResult parseExperiences({required String experienceHTML, required String skillHTML}) {
   var document = parse(experienceHTML);
-  var skills = getSkills(skillHTML: skillHTML);
+  var skills = SkillParser.getSkills(skillHTML: skillHTML);
 // Get all experience elements
   List<Element> experienceBlocks = document.querySelectorAll('.pvs-list__item--line-separated');
   List<Role> roles = [];
@@ -24,30 +25,6 @@ ProfileResult parseExperiences({required String experienceHTML, required String 
   return (ProfileResult(skills, roles.combineRoles()));
 }
 
-List<String> getSkills({required String skillHTML}) {
-  var document = parse(skillHTML);
-
-  var skills = document.querySelectorAll('.pvs-entity');
-
-  List<String> skillNames = [];
-
-  for (var skill in skills) {
-    var name = skill.querySelector('.hoverable-link-text > span[aria-hidden="true"]')?.text;
-    if (name != null) {
-      name = name.trim();
-      if (!skillNames.contains(name)) {
-        skillNames.add(name);
-      }
-    }
-  }
-
-  return skillNames;
-}
-
-
-
-
-
 class ProfileResult {
   List<String> skills;
   List<Role> roles;
@@ -59,7 +36,6 @@ class ProfileResult {
     return 'SKILLS:\n ・ ${skills.join('\n ・ ')}\n ROLES:\n ・ ${roles.join('\n ・ ')}';
   }
 }
-
 
 extension RoleExtension on Role {
   Role operator +(Role other) {

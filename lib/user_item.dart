@@ -45,8 +45,10 @@ class UserItem extends StatelessWidget {
           var html = parse(value.toString());
           if (tabID == experienceTabId) {
             experienceHTML = html.outerHtml;
-          } else {
+          } else if (tabID == skillTabId) {
             skillHTML = html.outerHtml;
+          } else if (tabID == educationTabId) {
+            educationHTML = html.outerHtml;
           }
         } catch (e) {
           AppNavigators.gotoLogInfo(e.toString());
@@ -75,6 +77,7 @@ class UserItem extends StatelessWidget {
     //close tabs
     chrome.tabs.remove(experienceTabId);
     chrome.tabs.remove(skillTabId);
+    chrome.tabs.remove(educationTabId);
 
     var homeController = Get.find<HomeController>();
     homeController.isLoading.value = false;
