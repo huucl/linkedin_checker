@@ -171,11 +171,18 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
                                   color: Color(0xFF5D25FD),
                                 ),
                               ),
-                              Chip(
-                                label: Text(e.getTextDisplay()),
-                                onDeleted: () {
-                                  controller.roles.remove(e);
-                                },
+                              Flexible(
+                                child: Chip(
+                                  label: Text(
+                                    e.getTextDisplay(),
+                                    overflow: TextOverflow.visible,
+                                    maxLines: 2,
+                                    softWrap: true,
+                                  ),
+                                  onDeleted: () {
+                                    controller.roles.remove(e);
+                                  },
+                                ),
                               ),
                             ],
                           ),
@@ -211,7 +218,12 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
                     children: controller.skills
                         .map(
                           (e) => Chip(
-                            label: Text(e),
+                            label: Text(
+                              e,
+                              overflow: TextOverflow.visible,
+                              maxLines: 2,
+                              softWrap: true,
+                            ),
                             onDeleted: () {
                               controller.skills.remove(e);
                             },
