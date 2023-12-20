@@ -52,7 +52,7 @@ class SplashScreen extends GetWidget<SplashController> {
             bottom: 10,
             right: 10,
             child: Text(
-              'Version 1.1.1',
+              'Version 1.1.3',
               style: TextStyle(fontSize: 12),
             ),
           ),

@@ -30,12 +30,8 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future checkToken() async {
-    try {
-      await _client.makeGet('/locations');
-    } catch (e) {
-      rethrow;
-    }
+  Future<void> checkToken() async {
+    await _client.makeGet('/locations');
   }
 
 }

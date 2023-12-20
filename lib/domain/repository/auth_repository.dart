@@ -7,5 +7,5 @@ abstract class AuthRepository {
 
   Future logout();
 
-  Future checkToken();
+  Future<void> checkToken();
 }

@@ -15,9 +15,9 @@ class HTTPProvider {
           'Content-Type': 'application/json',
           'Accept': '*/*'
         },
-        connectTimeout: const Duration(seconds: 10),
-        receiveTimeout: const Duration(seconds: 10),
-        sendTimeout: const Duration(seconds: 5) // 30 seconds
+        connectTimeout: const Duration(seconds: 60),
+        receiveTimeout: const Duration(seconds: 60),
+        sendTimeout: const Duration(seconds: 60) // 30 seconds
         ),
   );
 
