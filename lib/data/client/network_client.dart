@@ -8,16 +8,16 @@ import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
 class HTTPProvider {
   final _dio = dio.Dio(
     BaseOptions(
-        baseUrl: 'https://dev.api-crm.heydevs.io/v1',
+        baseUrl: 'https://api-crm.heydevs.io/v1',
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Credentials": true,
           'Content-Type': 'application/json',
           'Accept': '*/*'
         },
-        connectTimeout: const Duration(seconds: 60),
+        connectTimeout: const Duration(seconds: 10),
         receiveTimeout: const Duration(seconds: 60),
-        sendTimeout: const Duration(seconds: 60) // 30 seconds
+        sendTimeout: const Duration(seconds: 5) // 30 seconds
         ),
   );
 
