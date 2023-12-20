@@ -5,12 +5,11 @@ import 'package:flutter_chrome_app/app_routes.dart';
 import 'package:flutter_chrome_app/domain/repository/linked_check_repository.dart';
 import 'package:flutter_chrome_app/linkedin_user_detail_model.dart';
 import 'package:flutter_chrome_app/model/candidate_input.dart';
+import 'package:flutter_chrome_app/model/education_model.dart';
 import 'package:flutter_chrome_app/model/location_model.dart';
 import 'package:flutter_chrome_app/model/role.dart';
 import 'package:flutter_chrome_app/model/search_item.dart';
-import 'package:flutter_chrome_app/ui/screen/home/home_controller.dart';
 import 'package:flutter_chrome_app/utils/pref_util/pref_util.dart';
-import 'package:flutter_chrome_app/utils/parser/profile_parser.dart';
 import 'package:get/get.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:searchfield/searchfield.dart';
@@ -29,12 +28,24 @@ class AddCandidateController extends GetxController {
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController phoneCodeController = TextEditingController(text: '+84');
   final TextEditingController locationController = TextEditingController();
-  final TextEditingController workExperience = TextEditingController();
-  final TextEditingController yearExperience = TextEditingController();
+  final TextEditingController jobTitle = TextEditingController();
+  final TextEditingController companyName = TextEditingController();
+  final TextEditingController institution = TextEditingController();
+  final TextEditingController degree = TextEditingController();
+  final TextEditingController fromYear = TextEditingController();
+  final TextEditingController fromMonth = TextEditingController();
+  final TextEditingController toYear = TextEditingController();
+  final TextEditingController toMonth = TextEditingController();
   final TextEditingController skill = TextEditingController();
+
+  final TextEditingController fromYearEdu = TextEditingController();
+  final TextEditingController fromMonthEdu = TextEditingController();
+  final TextEditingController toYearEdu = TextEditingController();
+  final TextEditingController toMonthEdu = TextEditingController();
 
   RxList<String> skills = <String>[].obs;
   RxList<Role> roles = <Role>[].obs;
+  RxList<EducationModel> educations = <EducationModel>[].obs;
   Candidate candidate = Candidate();
 
   List<SearchItem> searchSkills = [];
@@ -47,6 +58,7 @@ class AddCandidateController extends GetxController {
   RxList<DropdownMenuItem<LocationModel>> locationItems = <DropdownMenuItem<LocationModel>>[].obs;
 
   bool isEdit = false;
+  bool isEditEdu = false;
   Rxn<LocationModel> matchLocation = Rxn<LocationModel>();
 
   String? assigneeId;
@@ -113,32 +125,6 @@ class AddCandidateController extends GetxController {
     });
   }
 
-  void listenToOnChange() {
-    firstNameController.addListener(() {
-      saveToSharePref();
-    });
-    lastNameController.addListener(() {
-      saveToSharePref();
-    });
-    linkedinUrl.addListener(() {
-      saveToSharePref();
-    });
-    emailController.addListener(() {
-      saveToSharePref();
-    });
-    phoneController.addListener(() {
-      saveToSharePref();
-    });
-    phoneCodeController.addListener(() {
-      saveToSharePref();
-    });
-    locationController.addListener(() {
-      saveToSharePref();
-    });
-    ever(skills, (callback) => saveToSharePref());
-    ever(roles, (callback) => saveToSharePref());
-  }
-
   void initData() {
     var index = user.value.name!.lastIndexOf(' ');
     firstNameController.text = user.value.name!.substring(0, index);
@@ -150,6 +136,7 @@ class AddCandidateController extends GetxController {
     locationController.text = user.value.address ?? '';
     skills.value = user.value.skills ?? [];
     roles.value = user.value.roles ?? [];
+    educations.value = user.value.educations ?? [];
   }
 
   void mapCandidate() {
@@ -164,7 +151,8 @@ class AddCandidateController extends GetxController {
       skills: skills.toSkills(searchSkills),
       assigneeId: assigneeId,
       avatar: user.value.avatar,
-      workExperiences: roles.toWorkExperiences(searchRoles),
+      workExperiences: roles.toWorkExperience(),
+      educations: educations,
     );
   }
 
@@ -192,6 +180,7 @@ class AddCandidateController extends GetxController {
         roles: roles,
         phoneNumber: phoneController.text,
         phoneCode: phoneCodeController.text,
+        educations: educations,
       );
 
       String encryptData = jsonEncode(savedUser.toMap());

@@ -1,8 +1,6 @@
 import 'package:flutter_chrome_app/utils/string_extension.dart';
 
 class DurationModel {
-  int year;
-  int month;
   int? fromMonth;
   int? fromYear;
   int? toMonth;
@@ -10,8 +8,6 @@ class DurationModel {
   bool? isNew;
 
   DurationModel({
-    required this.year,
-    required this.month,
     this.isNew,
     this.fromMonth,
     this.fromYear,
@@ -20,28 +16,13 @@ class DurationModel {
   });
 
   //parser
-  DurationModel.fromString(String duration)
-      : year = 0,
-        month = 0,
-        isNew = false {
+  DurationModel.fromString(String duration) : isNew = false {
     if (duration.contains('Present')) {
       isNew = true;
     } else {
       isNew = false;
     }
     var firstPart = duration.split(' · ')[0];
-    duration = duration.split(' · ')[1];
-    if (duration.contains('yr')) {
-      year = int.parse(duration.split('yr')[0].trim());
-      if (duration.contains('yrs')) {
-        duration = duration.split('yrs')[1];
-      } else {
-        duration = duration.split('yr')[1];
-      }
-    }
-    if (duration.contains('mos')) {
-      month = int.parse(duration.split('mo')[0].trim());
-    }
     try {
       if (isNew == false) {
         var from = firstPart.split(' - ')[0];
@@ -62,8 +43,6 @@ class DurationModel {
 
   Map<String, dynamic> toMap() {
     return {
-      'year': year,
-      'month': month,
       'isNew': isNew,
       'fromMonth': fromMonth,
       'fromYear': fromYear,
@@ -74,8 +53,6 @@ class DurationModel {
 
   factory DurationModel.fromMap(Map<String, dynamic> map) {
     return DurationModel(
-      year: map['year'] as int,
-      month: map['month'] as int,
       isNew: map['isNew'] as bool,
       fromMonth: map['fromMonth'] as int?,
       fromYear: map['fromYear'] as int?,

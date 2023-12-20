@@ -18,9 +18,10 @@ class EducationModel {
 
   Map<String, dynamic> toMap() {
     return {
-      'schoolName': schoolName,
-      'degree': degree,
-      'dateRange': dateRange == null ? null : dateRange!.toMap(),
+      "institution": schoolName,
+      "degree": degree,
+      "fromMonth": dateRange?.fromMonth,
+      "fromYear": dateRange?.fromYear,
     };
   }
 
@@ -30,5 +31,9 @@ class EducationModel {
       degree: map['degree'],
       dateRange: map['dateRange'] == null ? null : DurationModel.fromMap(map['dateRange']),
     );
+  }
+
+  String getTextDisplay() {
+    return '$schoolName, $degree, Graduate - ${dateRange?.toMonth}/${dateRange?.toYear}';
   }
 }

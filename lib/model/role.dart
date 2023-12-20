@@ -1,47 +1,48 @@
+import 'package:flutter_chrome_app/model/candidate_input.dart';
 import 'package:flutter_chrome_app/model/duration_model.dart';
 
 class Role {
-  String name;
+  String title;
+  String? companyName;
   DurationModel duration;
 
-  Role(this.name, this.duration);
+  Role(this.title, this.duration, {this.companyName});
 
   @override
   String toString() {
-    return 'Role{name: $name, dates: ${duration.year} years ${duration.month} months}} from ${duration.fromMonth} ${duration.fromYear} to ${duration.toMonth} ${duration.toYear}';
+    return 'Role{name: $title, from ${duration.fromMonth} ${duration.fromYear} to ${duration.toMonth} ${duration.toYear}';
   }
 
   String getTextDisplay() {
-    if (duration.year > 1) {
-      return '$name - ${duration.year} years ${duration.month} months';
-    }
-    if (duration.year == 1) {
-      return '$name - ${duration.year} year';
-    } else {
-      return '$name - ${duration.month} months';
-    }
-    return '${duration.year} years ${duration.month} months';
+    var to = duration.isNew == true ? 'Present' : '${duration.toMonth} ${duration.toYear}';
+    return '$title at $companyName from ${duration.fromMonth}/${duration.fromYear} to $to';
   }
 
-  int getYOE() {
-    if (duration.year >= 1) {
-      return duration.year;
-    } else {
-      return 1;
-    }
-  }
 
   Map<String, dynamic> toMap() {
     return {
-      'name': name,
+      'title': title,
       'duration': duration.toMap(),
     };
   }
 
   factory Role.fromMap(Map<String, dynamic> map) {
     return Role(
-      map['name'] as String,
+      map['title'] as String,
       DurationModel.fromMap(map["duration"]),
     );
+  }
+}
+
+extension ListRolesExtension on List<Role> {
+  List<WorkExperience> toWorkExperience() {
+    return map((e) => WorkExperience(
+      companyName: e.companyName,
+      position: e.title,
+      fromMonth: e.duration.fromMonth,
+      fromYear: e.duration.fromYear,
+      toMonth: e.duration.toMonth,
+      toYear: e.duration.toYear,
+    )).toList();
   }
 }

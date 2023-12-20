@@ -1,6 +1,7 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chrome_app/model/duration_model.dart';
+import 'package:flutter_chrome_app/model/education_model.dart';
 import 'package:flutter_chrome_app/model/location_model.dart';
 import 'package:flutter_chrome_app/model/role.dart';
 import 'package:flutter_chrome_app/ui/component/component_input.dart';
@@ -97,18 +98,71 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
                 label: 'Linkedin link*',
                 controller: controller.linkedinUrl,
               ),
+              const SizedBox(height: 8),
+              const Divider(),
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  Text(
+                    'Education',
+                    style: TextStyle(
+                      color: theme.n800,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Spacer(),
+                  CircleAvatar(
+                    backgroundColor: const Color(0xFF5D25FD),
+                    child: IconButton(
+                      onPressed: () {
+                        //if have a same role, remove it
+                        if (controller.isEditEdu) {
+                          controller.educations.removeWhere((element) => element.schoolName == controller.institution.text);
+                          controller.isEditEdu = false;
+                        }
+                        var education = EducationModel(
+                          schoolName: controller.institution.text,
+                          degree: controller.degree.text,
+                          dateRange: DurationModel(
+                            toMonth: int.tryParse(controller.toMonthEdu.text),
+                            toYear: int.tryParse(controller.toYearEdu.text),
+                            isNew: controller.toYearEdu.text.isEmpty,
+                          ),
+                        );
+
+                        controller.educations.add(education);
+                      },
+                      icon: const Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              ComponentInput(
+                label: 'Institution',
+                controller: controller.institution,
+              ),
+              const SizedBox(height: 8),
+              ComponentInput(
+                label: 'Degree',
+                controller: controller.degree,
+              ),
               const SizedBox(
-                height: 16,
+                height: 8,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Flexible(
-                    flex: 2,
-                    child: ComponentSearchField(
-                      label: 'Work experience',
-                      controller: controller.workExperience,
-                      suggestions: controller.searchFieldListRoles,
+                    flex: 1,
+                    child: ComponentInput(
+                      label: 'To',
+                      controller: controller.toMonthEdu,
+                      hintText: 'Month',
                     ),
                   ),
                   const SizedBox(
@@ -117,33 +171,167 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
                   Flexible(
                     flex: 1,
                     child: ComponentInput(
-                      label: 'Year',
-                      controller: controller.yearExperience,
+                      controller: controller.toYearEdu,
+                      hintText: 'Year',
                     ),
                   ),
-                  const SizedBox(
-                    width: 8,
+                ],
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Obx(() {
+                return Wrap(
+                    spacing: 4,
+                    runSpacing: 4,
+                    children: controller.educations
+                        .map(
+                          (e) => Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              controller.isEditEdu = true;
+                              controller.institution.text = e.schoolName ?? '';
+                              controller.degree.text = e.degree ?? '';
+                              controller.toYearEdu.text = e.dateRange?.toYear?.toString() ?? '';
+                              controller.toMonthEdu.text = e.dateRange?.toMonth?.toString() ?? '';
+                            },
+                            child: const Icon(
+                              Icons.edit,
+                              color: Color(0xFF5D25FD),
+                            ),
+                          ),
+                          Flexible(
+                            child: Chip(
+                              label: Text(
+                                e.getTextDisplay(),
+                                overflow: TextOverflow.visible,
+                                maxLines: 2,
+                                softWrap: true,
+                              ),
+                              onDeleted: () {
+                                controller.educations.remove(e);
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                        .toList());
+              }),
+              const SizedBox(
+                height: 8,
+              ),
+              const SizedBox(height: 8),
+              const Divider(),
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  Text(
+                    'Work experience',
+                    style: TextStyle(
+                      color: theme.n800,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
+                  const Spacer(),
                   CircleAvatar(
                     backgroundColor: const Color(0xFF5D25FD),
                     child: IconButton(
                       onPressed: () {
                         //if have a same role, remove it
                         if (controller.isEdit) {
-                          controller.roles.removeWhere((element) => element.name == controller.workExperience.text);
+                          controller.roles.removeWhere((element) => element.title == controller.jobTitle.text);
                           controller.isEdit = false;
                         }
-                        var role = Role(controller.workExperience.text,
-                            DurationModel(year: int.parse(controller.yearExperience.text), month: 0));
+                        var role = Role(
+                          controller.jobTitle.text,
+                          DurationModel(
+                            fromMonth: int.tryParse(controller.fromMonth.text),
+                            fromYear: int.tryParse(controller.fromYear.text),
+                            toMonth: int.tryParse(controller.toMonth.text),
+                            toYear: int.tryParse(controller.toYear.text),
+                            isNew: controller.toYear.text.isEmpty,
+                          ),
+                          companyName: controller.companyName.text,
+                        );
                         controller.roles.add(role);
                         controller.roles.refresh();
-                        controller.workExperience.clear();
-                        controller.yearExperience.clear();
+                        controller.jobTitle.clear();
+                        controller.fromYear.clear();
+                        controller.fromMonth.clear();
+                        controller.toYear.clear();
+                        controller.toMonth.clear();
+                        controller.companyName.clear();
                       },
                       icon: const Icon(
                         Icons.add,
                         color: Colors.white,
                       ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              ComponentSearchField(
+                label: 'Job title',
+                controller: controller.jobTitle,
+                suggestions: controller.searchFieldListRoles,
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              ComponentInput(
+                label: 'Company',
+                controller: controller.companyName,
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Flexible(
+                    flex: 1,
+                    child: ComponentInput(
+                      label: 'From',
+                      controller: controller.fromMonth,
+                      hintText: 'Month',
+                      keyboardType: TextInputType.number,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Flexible(
+                    flex: 1,
+                    child: ComponentInput(
+                      controller: controller.fromYear,
+                      hintText: 'Year',
+                      keyboardType: TextInputType.number,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Flexible(
+                    flex: 1,
+                    child: ComponentInput(
+                      label: 'To',
+                      controller: controller.toMonth,
+                      hintText: 'Month',
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Flexible(
+                    flex: 1,
+                    child: ComponentInput(
+                      controller: controller.toYear,
+                      hintText: 'Year',
                     ),
                   ),
                 ],
@@ -163,8 +351,12 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
                               InkWell(
                                 onTap: () {
                                   controller.isEdit = true;
-                                  controller.workExperience.text = e.name;
-                                  controller.yearExperience.text = e.duration.year.toString();
+                                  controller.jobTitle.text = e.title;
+                                  controller.fromYear.text = e.duration.fromYear?.toString() ?? '';
+                                  controller.fromMonth.text = e.duration.fromMonth?.toString() ?? '';
+                                  controller.toYear.text = e.duration.toYear?.toString() ?? '';
+                                  controller.toMonth.text = e.duration.toMonth?.toString() ?? '';
+                                  controller.companyName.text = e.companyName ?? '';
                                 },
                                 child: const Icon(
                                   Icons.edit,
@@ -190,7 +382,11 @@ class AddCandidateScreen extends GetWidget<AddCandidateController> {
                         .toList());
               }),
               const SizedBox(
-                height: 16,
+                height: 8,
+              ),
+              const Divider(),
+              const SizedBox(
+                height: 8,
               ),
               ComponentSearchField(
                 label: 'Skills',

@@ -4,6 +4,8 @@
 
 import 'dart:convert';
 
+import 'package:flutter_chrome_app/model/education_model.dart';
+
 Candidate candidateFromMap(String str) => Candidate.fromMap(json.decode(str));
 
 String candidateToMap(Candidate data) => json.encode(data.toMap());
@@ -19,7 +21,8 @@ class Candidate {
   final Skills? skills;
   final String? assigneeId;
   final String? linkedin;
-  final WorkExperiences? workExperiences;
+  final List<WorkExperience>? workExperiences;
+  final List<EducationModel>? educations;
 
   Candidate({
     this.email,
@@ -33,6 +36,7 @@ class Candidate {
     this.linkedin,
     this.assigneeId,
     this.workExperiences,
+    this.educations,
   });
 
   factory Candidate.fromMap(Map<String, dynamic> json) => Candidate(
@@ -46,7 +50,7 @@ class Candidate {
     skills: json["skills"] == null ? null : Skills.fromMap(json["skills"]),
     assigneeId: json["assigneeId"],
     linkedin: json["linkedin"],
-    workExperiences: json["workExperiences"] == null ? null : WorkExperiences.fromMap(json["workExperiences"]),
+    workExperiences: json["workExperiences"] == null ? null : List<WorkExperience>.from(json["workExperiences"].map((x) => WorkExperience.fromMap(x))),
   );
 
   Map<String, dynamic> toMap() => {
@@ -60,7 +64,8 @@ class Candidate {
     "skills": skills?.toMap(),
     "assigneeId": assigneeId,
     "linkedin": linkedin,
-    "workExperiences": workExperiences?.toMap(),
+    "workExperiences": workExperiences?.map((x) => x.toMap()).toList(),
+    "educations": educations?.map((x) => x.toMap()).toList(),
   };
 }
 
@@ -84,65 +89,48 @@ class Skills {
   };
 }
 
-class WorkExperiences {
-  final List<ExistRoleExperience>? existRoleExperience;
-  final List<NewRoleExperience>? newRoleExperience;
 
-  WorkExperiences({
-    this.existRoleExperience,
-    this.newRoleExperience,
+
+WorkExperience workExperienceFromMap(String str) => WorkExperience.fromMap(json.decode(str));
+
+String workExperienceToMap(WorkExperience data) => json.encode(data.toMap());
+
+class WorkExperience {
+  final String? companyName;
+  final String? position;
+  final int? fromMonth;
+  final int? fromYear;
+  final int? toMonth;
+  final int? toYear;
+
+  WorkExperience({
+    this.companyName,
+    this.position,
+    this.fromMonth,
+    this.fromYear,
+    this.toMonth,
+    this.toYear,
   });
 
-  factory WorkExperiences.fromMap(Map<String, dynamic> json) => WorkExperiences(
-    existRoleExperience: json["existRoleExperience"] == null ? [] : List<ExistRoleExperience>.from(json["existRoleExperience"]!.map((x) => ExistRoleExperience.fromMap(x))),
-    newRoleExperience: json["newRoleExperience"] == null ? [] : List<NewRoleExperience>.from(json["newRoleExperience"]!.map((x) => NewRoleExperience.fromMap(x))),
+  factory WorkExperience.fromMap(Map<String, dynamic> json) => WorkExperience(
+    companyName: json["companyName"],
+    position: json["position"],
+    fromMonth: json["fromMonth"],
+    fromYear: json["fromYear"],
+    toMonth: json["toMonth"],
+    toYear: json["toYear"],
   );
 
   Map<String, dynamic> toMap() => {
-    "existRoleExperience": existRoleExperience == null ? [] : List<dynamic>.from(existRoleExperience!.map((x) => x.toMap())),
-    "newRoleExperience": newRoleExperience == null ? [] : List<dynamic>.from(newRoleExperience!.map((x) => x.toMap())),
+    "companyName": companyName,
+    "position": position,
+    "fromMonth": fromMonth,
+    "fromYear": fromYear,
+    "toMonth": toMonth,
+    "toYear": toYear,
   };
 }
 
-class ExistRoleExperience {
-  final String? roleExperienceId;
-  final int? yearsOfExperience;
-
-  ExistRoleExperience({
-    this.roleExperienceId,
-    this.yearsOfExperience,
-  });
-
-  factory ExistRoleExperience.fromMap(Map<String, dynamic> json) => ExistRoleExperience(
-    roleExperienceId: json["roleExperienceId"],
-    yearsOfExperience: json["yearsOfExperience"],
-  );
-
-  Map<String, dynamic> toMap() => {
-    "roleExperienceId": roleExperienceId,
-    "yearsOfExperience": yearsOfExperience,
-  };
-}
-
-class NewRoleExperience {
-  final String? newRoleExperience;
-  final int? yearsOfExperience;
-
-  NewRoleExperience({
-    this.newRoleExperience,
-    this.yearsOfExperience,
-  });
-
-  factory NewRoleExperience.fromMap(Map<String, dynamic> json) => NewRoleExperience(
-    newRoleExperience: json["newRoleExperience"],
-    yearsOfExperience: json["yearsOfExperience"],
-  );
-
-  Map<String, dynamic> toMap() => {
-    "newRoleExperience": newRoleExperience,
-    "yearsOfExperience": yearsOfExperience,
-  };
-}
 
 extension MapExtension on Map<String,dynamic>{
   Map<String,dynamic> removeNull(){
