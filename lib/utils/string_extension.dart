@@ -31,6 +31,6 @@ extension ParseDateRange on String {
   }
 
   bool isDuration() {
-    return contains('mos') || contains('yr');
+    return contains('mo') || contains('yr');
   }
 }
