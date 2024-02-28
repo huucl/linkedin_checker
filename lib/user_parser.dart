@@ -1,5 +1,4 @@
 import 'package:flutter_chrome_app/linkedin_user_model.dart';
-import 'package:flutter_chrome_app/utils/mock_data.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart';
 
@@ -13,7 +12,11 @@ class UserParser {
   static List<LinkedinUserModel> bem(String htmlString) {
     var html = parse(htmlString);
 
-    var items = html.getElementsByClassName("reusable-search__result-container");
+    var scaffold = html.getElementsByClassName("scaffold-layout__main")[0];
+
+    var items = scaffold.getElementsByClassName("reusable-search__result-container");
+
+    print('items length: ${items.length}');
 
     List<LinkedinUserModel> users = [];
     for (int i = 0; i < items.length; i++) {
@@ -58,27 +61,11 @@ class UserParser {
   static String? _getName(Element element) {
     String? result = '';
 
+
     try {
-      if (element
-              .getElementsByClassName("entity-result__universal-image")[0]
-              .getElementsByClassName("app-aware-link")[0]
-              .getElementsByTagName("img")
-              .isEmpty ==
-          true) {
-        result = element
-            .getElementsByClassName("entity-result__universal-image")[0]
-            .getElementsByClassName("app-aware-link")[0]
-            .getElementsByClassName("visually-hidden")[0]
-            .text;
-      } else {
-        result = element
-            .getElementsByClassName("entity-result__universal-image")[0]
-            .getElementsByClassName("app-aware-link")[0]
-            .getElementsByTagName("img")[0]
-            .attributes['alt'];
-      }
-    } on Exception catch (e) {
-      result = "KO CO _getName";
+      result = element.querySelector('.entity-result__title-text')?.querySelector('span[aria-hidden="true"]')?.text;
+    } catch (e) {
+      result = "Unknown";
     }
     return result;
   }

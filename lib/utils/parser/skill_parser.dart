@@ -4,7 +4,9 @@ class SkillParser {
   static List<String> getSkills({required String skillHTML}) {
     var document = parse(skillHTML);
 
-    var skills = document.getElementsByClassName('display-flex flex-row justify-space-between');
+    var mainScaffold = document.getElementsByClassName('scaffold-layout__main')[0];
+
+    var skills = mainScaffold.getElementsByClassName('display-flex flex-row justify-space-between');
 
     List<String> skillNames = [];
 

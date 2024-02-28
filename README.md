@@ -1,3 +1,4 @@
+
 # How to build a Chrome Extension on Flutter and use the Chrome API ?
 
 Unleash the power of Flutter and Chrome API by building a basic Chrome extension with ease. This tutorial guides you through the different components of a Chrome extension, including the background script, content script, popup, and the essential manifest file.
@@ -10,6 +11,7 @@ For a comprehensive understanding, be sure to check out the full tutorial availa
 
 BUILD:
 flutter build web --web-renderer html --csp
-flutter build web --web-renderer html --csp --no-tree-shake-icons 
+flutter build web --web-renderer html --csp --no-tree-shake-icons
+/Users/trandangtu/fvm/versions/3.13.9/bin/flutter build web --web-renderer html --csp --no-tree-shake-icons
 
 
